@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-15T07:10:42.000Z</updated>
+  <updated>2018-05-16T03:27:54.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ajax实现</title>
+    <link href="http://yoursite.com/2018/05/16/ajax%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://yoursite.com/2018/05/16/ajax实现/</id>
+    <published>2018-05-16T03:18:33.000Z</published>
+    <updated>2018-05-16T03:27:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Q1: 何谓ajax，它有何优点？<br>A1:AJAX = 异步 JavaScript 和 XML。AJAX 是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量数据    交换，AJAX 可以使网页实现异步更新</p><p>Q2:ajax 如何实现？<br>A2:<br>步骤：(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.<br>     (2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.<br>     (3)设置响应HTTP请求状态变化的函数.<br>     (4)发送HTTP请求.<br>     (5)获取异步调用返回的数据.<br>     (6)使用JavaScript和DOM实现局部刷新.</p><p>  代码实现：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>AJAX实例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"javascript"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined">    </span></span><br><span class="line"><span class="undefined">      var xmlHttpRequest;  //定义一个变量用于存放XMLHttpRequest对象</span></span><br><span class="line"><span class="undefined">      //定义一个用于创建XMLHttpRequest对象的函数</span></span><br><span class="line"><span class="undefined">      function createXMLHttpRequest()&#123;</span></span><br><span class="line"><span class="undefined">        if(window.ActiveXObject)&#123;</span></span><br><span class="line"><span class="undefined">          //IE浏览器的创建方式</span></span><br><span class="line"><span class="undefined">          xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");</span></span><br><span class="line"><span class="undefined">        &#125;else if(windew.XMLHttpRequest)&#123;</span></span><br><span class="line"><span class="undefined">          //Netscape浏览器中的创建方式</span></span><br><span class="line"><span class="undefined">          xmlHttpRequest = new XMLHttpRequest();</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      //响应HTTP请求状态变化的函数</span></span><br><span class="line"><span class="undefined">      function httpStateChange()&#123;</span></span><br><span class="line"><span class="undefined">        //判断异步调用是否完成</span></span><br><span class="line"><span class="undefined">        if(xmlHttpRequest.readyState == 4)&#123;</span></span><br><span class="line"><span class="undefined">          //判断异步调用是否成功,如果成功开始局部更新数据</span></span><br><span class="line"><span class="undefined">          if(xmlHttpRequest.status == 200||xmlHttpRequest.status == 0)&#123;</span></span><br><span class="line"><span class="undefined">            //查找节点</span></span><br><span class="line"><span class="undefined">            var node = document.getElementById("myDIv");</span></span><br><span class="line"><span class="undefined">            //更新数据</span></span><br><span class="line"><span class="undefined">            node.firstChild.nodeValue = xmlHttpRequest .responseText;</span></span><br><span class="line"><span class="undefined">          &#125;else&#123;</span></span><br><span class="line"><span class="undefined">            //如果异步调用未成功,弹出警告框,并显示出错信息</span></span><br><span class="line"><span class="undefined">            alert("异步调用出错/n返回的HTTP状态码为:"+xmlHttpRequest.status + "/n返回的HTTP状态信息为:" + xmlHttpRequest.statusText);</span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      //异步调用服务器段数据</span></span><br><span class="line"><span class="undefined">      function getData(name,value)&#123;                   </span></span><br><span class="line"><span class="undefined">        //创建XMLHttpRequest对象</span></span><br><span class="line"><span class="undefined">        createXMLHttpRequest();</span></span><br><span class="line"><span class="undefined">        if(xmlHttpRequest!=null)&#123;</span></span><br><span class="line"><span class="undefined">          //创建HTTP请求</span></span><br><span class="line"><span class="undefined">          xmlHttpRequest.open("get","ajax.text",true)</span></span><br><span class="line"><span class="undefined">          //设置HTTP请求状态变化的函数</span></span><br><span class="line"><span class="undefined">          xmlHttpRequest.onreadystatechange = httpStateChange;</span></span><br><span class="line"><span class="undefined">          //发送请求</span></span><br><span class="line"><span class="undefined">          xmlHttpRequest.send(null);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span>&gt;</span>原数据<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"button"</span> <span class="attr">value</span> = <span class="string">"更新数据"</span> <span class="attr">onclick</span> = <span class="string">"getData()"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Q1: 何谓ajax，它有何优点？&lt;br&gt;A1:AJAX = 异步 JavaScript 和 XML。AJAX 是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量数据    交换，AJAX 可以使网页实现异步更新&lt;/p&gt;
+&lt;p&gt;Q2:ajax 如何实现？&lt;br&gt;A
+      
+    
+    </summary>
+    
+      <category term="Demo练习" scheme="http://yoursite.com/categories/Demo%E7%BB%83%E4%B9%A0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>跨域问题探究</title>
@@ -503,9 +529,9 @@
       <category term="Demo练习" scheme="http://yoursite.com/categories/Demo%E7%BB%83%E4%B9%A0/"/>
     
     
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
       <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
     
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
@@ -535,32 +561,6 @@
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Event Loop 问题理解</title>
-    <link href="http://yoursite.com/2018/05/09/Event-Loop-%E9%97%AE%E9%A2%98%E7%90%86%E8%A7%A3/"/>
-    <id>http://yoursite.com/2018/05/09/Event-Loop-问题理解/</id>
-    <published>2018-05-09T02:08:43.000Z</published>
-    <updated>2018-05-14T09:59:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Q1:事件循环机制是什么？<br>A1:JavaScript 是典型的单线程单并发语言，即表示在同一时间内其只能执行单个任务，同域浏览器中 JavaScript 主线程拥有一个函数调用栈(主线程)以及多个任务队列。</p><p>Q2:什么是任务？<br>A2:任务分为两种，一种是同步任务，一种是异步任务。<br>      同步任务，就是主线程中排队执行的任务；<br>      异步任务，不先进入主线程，而是先进入“任务队列”的任务，只有任务队列通知了主线程，某个异步任务可以执行了，该任务才会进入主线程执行</p><p>Q3:事件循环（Event Loop）的原理是什么？<br>A3:首先，主线程会依次执行代码。<br>    当主线栈的函数调用栈为空时，即会根据事件循环（Event Loop）机制来从任务队列中提取出待执行的回调并执行。<br>    执行的过程同样会进行函数帧的入栈出栈操作。这样不断的循环往复，这就是事件循环（Event Loop）。<br>    只要主线程空了，就会去读取”任务队列”，这就是JavaScript的运行机制</p><p>Q4:任务队列中的任务有几种？<br>A4:任务队列中的任务分为两种：MacroTask (task) 和 MicroTask 。Event Loop 处理这两种任务。</p><p>Q5:MacroTask (task) 和 MicroTask各包含什么任务？<br>A5: </p><h2 id="microtasks"><a href="#microtasks" class="headerlink" title="microtasks:"></a>microtasks:</h2><pre><code>process.nextTickpromiseObject.observeMutationObserver</code></pre><h2 id="macrotasks"><a href="#macrotasks" class="headerlink" title="macrotasks:"></a>macrotasks:</h2><pre><code>setTimeoutsetIntervalsetImmediateI/OUI渲染</code></pre><p>Q6:MacroTask和MicroTask的运行机制是什么？<br>A6:事件循环的顺序，决定了JavaScript代码的执行顺序。它从script(整体代码)开始第一次循环。之后全局上下文进入函数调用栈。直到调用栈清空(只剩全局)，然后执行所有的microtask。当所有可执行的micro-task执行完毕之后。循环再次从macro-task开始，找到其中一个任务队列执行完毕，然后再执行所有的micro-task，这样一直循环下去。<br>一句话说，microtask将会被添加到任务队列末尾进行处理。</p><p>MacroTask运行机制<br><img src="https://github.com/kaisa911/studyNotes/blob/master/public/image/macroTask.png?raw=true" alt="MacroTask运行机制"><br>MicroTask运行机制<br><img src="https://github.com/kaisa911/studyNotes/blob/master/public/image/microTask.png?raw=true" alt="MicroTask运行机制"><br>Q7:来尝试一道面试题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'start'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> interval = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'setInterval'</span>)</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'setTimeout 1'</span>)</span><br><span class="line">  <span class="built_in">Promise</span>.resolve()</span><br><span class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'promise 3'</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'promise 4'</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">'setTimeout 2'</span>)</span><br><span class="line">          <span class="built_in">Promise</span>.resolve()</span><br><span class="line">              .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'promise 5'</span>)</span><br><span class="line">              &#125;)</span><br><span class="line">              .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'promise 6'</span>)</span><br><span class="line">              &#125;)</span><br><span class="line">              .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                clearInterval(interval)</span><br><span class="line">              &#125;)</span><br><span class="line">        &#125;, <span class="number">0</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve()</span><br><span class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;  </span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'promise 1'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'promise 2'</span>)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure></p><p>A7:start<br>promise 1<br>promise 2<br>setInterval<br>setTimeout 1<br>promise 3<br>promise 4<br>setInterval<br>setTimeout 2<br>promise 5<br>promise 6</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Q1:事件循环机制是什么？&lt;br&gt;A1:JavaScript 是典型的单线程单并发语言，即表示在同一时间内其只能执行单个任务，同域浏览器中 JavaScript 主线程拥有一个函数调用栈(主线程)以及多个任务队列。&lt;/p&gt;
-&lt;p&gt;Q2:什么是任务？&lt;br&gt;A2:任务分为两种
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
     
   </entry>
   

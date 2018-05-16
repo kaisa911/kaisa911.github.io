@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ajax实现]]></title>
+    <url>%2F2018%2F05%2F16%2Fajax%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[Q1: 何谓ajax，它有何优点？A1:AJAX = 异步 JavaScript 和 XML。AJAX 是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量数据 交换，AJAX 可以使网页实现异步更新 Q2:ajax 如何实现？A2:步骤：(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象. (2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息. (3)设置响应HTTP请求状态变化的函数. (4)发送HTTP请求. (5)获取异步调用返回的数据. (6)使用JavaScript和DOM实现局部刷新. 代码实现： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&lt;html&gt; &lt;head&gt; &lt;title&gt;AJAX实例&lt;/title&gt; &lt;script language="javascript" type="text/javascript"&gt; var xmlHttpRequest; //定义一个变量用于存放XMLHttpRequest对象 //定义一个用于创建XMLHttpRequest对象的函数 function createXMLHttpRequest()&#123; if(window.ActiveXObject)&#123; //IE浏览器的创建方式 xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP"); &#125;else if(windew.XMLHttpRequest)&#123; //Netscape浏览器中的创建方式 xmlHttpRequest = new XMLHttpRequest(); &#125; &#125; //响应HTTP请求状态变化的函数 function httpStateChange()&#123; //判断异步调用是否完成 if(xmlHttpRequest.readyState == 4)&#123; //判断异步调用是否成功,如果成功开始局部更新数据 if(xmlHttpRequest.status == 200||xmlHttpRequest.status == 0)&#123; //查找节点 var node = document.getElementById("myDIv"); //更新数据 node.firstChild.nodeValue = xmlHttpRequest .responseText; &#125;else&#123; //如果异步调用未成功,弹出警告框,并显示出错信息 alert("异步调用出错/n返回的HTTP状态码为:"+xmlHttpRequest.status + "/n返回的HTTP状态信息为:" + xmlHttpRequest.statusText); &#125; &#125; &#125; //异步调用服务器段数据 function getData(name,value)&#123; //创建XMLHttpRequest对象 createXMLHttpRequest(); if(xmlHttpRequest!=null)&#123; //创建HTTP请求 xmlHttpRequest.open("get","ajax.text",true) //设置HTTP请求状态变化的函数 xmlHttpRequest.onreadystatechange = httpStateChange; //发送请求 xmlHttpRequest.send(null); &#125; &#125; &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id="myDiv"&gt;原数据&lt;/div&gt; &lt;input type = "button" value = "更新数据" onclick = "getData()"&gt; &lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>Demo练习</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[跨域问题探究]]></title>
     <url>%2F2018%2F05%2F15%2F%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E6%8E%A2%E7%A9%B6%2F</url>
     <content type="text"><![CDATA[Q1: 什么是跨域？A1: 一个域上加载的脚本获取或操作另一个域上的文档属性，是指a页面想获取b页面资源，如果a、b页面的协议、域名、端口、子域名不同，或是a页面为ip地址，b页面为域名地址，所进行的访问行动都是跨域的。而浏览器为了安全问题一般都限制了跨域访问，也就是不允许跨域请求资源。 Q2: 怎么算跨域？A2: Uri 说明 是否跨域 http://www.cnblogs.com/a.js http://www.a.com/b.js 不同域名 是 http://www.a.com/lab/a.js http://www.a.com/script/b.js 同域名下不同文件 否 http://www.a.com:8000/a.js http://www.a.com/b.js 同域名下不同端口 是 http://www.a.com/a.js s https://www.a.com/b.js 同域名 不同协议 是 http://www.a.com/a.js http://70.32.92.74/b.jss 域名和域名对应ip 是 http://www.a.com/a.js http://script.a.com/b.js 主域名相同 子域名不同 是（cookie不可访问） http://www.a.com/a.js http://a.com/b.js 同一域名，不同二级域名（同上） 是 Q3: 什么是浏览器的同源策略？A3: 计算机的本地与Web是不同的层面，Web世界（通常称为Internet域）运行在浏览器上，而被限制了直接进行本地数据（通常称为本地域）的读写。同源策略是众多安全策略的一个，是Web层面上的策略，同源策略规定：不同域的客户端脚本在没明确授权的情况下，不能读写对方的资源。 Q4: 怎么解决跨域？A4: 有那么几种方法可以来解决跨域：1、Jsonp 需要目标服务器配合一个callback函数，但是注意JSONP只支持GET请求，不支持POST请求。 123456789101112131415&lt;script type="text/javascript" src="jquery.js"&gt;&lt;/script&gt; &lt;script type="text/javascript"&gt; $.ajax(&#123; url: api.testURI, dataType:'jsonp', data:'', jsonp:'callback', success:function(result) &#123; for(var i in result) &#123; alert(i+":"+result[i]);//循环输出a:1,b:2,etc. &#125; &#125;, timeout:3000 &#125;); &lt;/script&gt; 2、通过修改document.domain来跨子域将子域和主域的document.domain设为同一个主域.前提条件：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域。主域相同的使用document.domain 3、使用window.name来进行跨域 12345window.name = data; //接着，子窗口跳回一个与主窗口同域的网址。 location = 'http://parent.url.com/xxx.html'; //然后，主窗口就可以读取子窗口的window.name了 var data = document.getElementById('iframe').contentWindow.name; 4、通过CORS解决AJAX跨域 12345678910111213141516171819function test() &#123; $.ajax(&#123; url: api.testURI, type: "get", async: false, data:&#123; "id":1 &#125;, dataType:"json", withCredentials:true, success: function(data)&#123; alert(data); alert(data.code); &#125;, error: function()&#123; alert('fail'); &#125; &#125;)&#125; 5.服务器设置Access-Control-Allow-Origin实现跨域 123456app.all("*", function(req, res, next) &#123; const host = req.headers.origin; res.header('Access-Control-Allow-Origin', host) //res.header('Access-Control-Allow-Origin', *) next();&#125;);]]></content>
@@ -204,8 +215,8 @@
         <category>Demo练习</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
         <tag>CSS</tag>
+        <tag>Javascript</tag>
         <tag>html</tag>
       </tags>
   </entry>

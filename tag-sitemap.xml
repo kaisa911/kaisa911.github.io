@@ -44,15 +44,15 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/Javascript/</loc>
-        <lastmod>2018-05-14T10:16:35.000Z</lastmod>
+        <loc>http://yoursite.com/tags/webpack/</loc>
+        <lastmod>2018-05-15T06:14:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/webpack/</loc>
-        <lastmod>2018-05-15T06:14:09.000Z</lastmod>
+        <loc>http://yoursite.com/tags/Javascript/</loc>
+        <lastmod>2018-05-16T03:27:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
