@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/05/19/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</loc>
+        <lastmod>2018-05-19T06:13:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/05/19/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</loc>
         <lastmod>2018-05-19T05:43:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -143,7 +151,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-bindActionCreators/</loc>
+        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-compose/</loc>
         <lastmod>2018-05-14T09:59:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -151,7 +159,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-compose/</loc>
+        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-bindActionCreators/</loc>
         <lastmod>2018-05-14T09:59:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
