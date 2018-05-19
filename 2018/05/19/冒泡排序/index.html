@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="javascript的继承方式有好多方式，之前ES5通过原型链继承，ES6中引入了Class，javascript可以像java一样使用extends关键字继承。现在整理一下js中的继承方式。 ES5中的继承方式 一、构造函数的继承现在有一个”动物”对象的构造函数123function Animal()&amp;#123;  this.species = &quot;动物&quot;;&amp;#125; 还有一个”猫”对象的构造函">
-<meta name="keywords" content="Javascript">
+  <meta name="description" content="冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。 冒泡排序算法的运作如下：（从后往前）比较相邻的元素。如果第一个比第二个大，就交换他们两个。对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的">
+<meta name="keywords" content="Javascript,算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript 继承学习">
-<meta property="og:url" content="http://yoursite.com/2018/05/08/Javascript 继承学习/index.html">
+<meta property="og:title" content="冒泡排序">
+<meta property="og:url" content="http://yoursite.com/2018/05/19/冒泡排序/index.html">
 <meta property="og:site_name" content="Milestone">
-<meta property="og:description" content="javascript的继承方式有好多方式，之前ES5通过原型链继承，ES6中引入了Class，javascript可以像java一样使用extends关键字继承。现在整理一下js中的继承方式。 ES5中的继承方式 一、构造函数的继承现在有一个”动物”对象的构造函数123function Animal()&amp;#123;  this.species = &quot;动物&quot;;&amp;#125; 还有一个”猫”对象的构造函">
+<meta property="og:description" content="冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。 冒泡排序算法的运作如下：（从后往前）比较相邻的元素。如果第一个比第二个大，就交换他们两个。对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-14T09:59:24.000Z">
+<meta property="og:updated_time" content="2018-05-19T05:43:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript 继承学习">
-<meta name="twitter:description" content="javascript的继承方式有好多方式，之前ES5通过原型链继承，ES6中引入了Class，javascript可以像java一样使用extends关键字继承。现在整理一下js中的继承方式。 ES5中的继承方式 一、构造函数的继承现在有一个”动物”对象的构造函数123function Animal()&amp;#123;  this.species = &quot;动物&quot;;&amp;#125; 还有一个”猫”对象的构造函">
+<meta name="twitter:title" content="冒泡排序">
+<meta name="twitter:description" content="冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。 冒泡排序算法的运作如下：（从后往前）比较相邻的元素。如果第一个比第二个大，就交换他们两个。对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/08/Javascript 继承学习/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/19/冒泡排序/"/>
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>Javascript 继承学习 | Milestone</title>
+  <title>冒泡排序 | Milestone</title>
   
 
 
@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/Javascript 继承学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/冒泡排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="啪叽">
@@ -352,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Javascript 继承学习
+          <h1 class="post-title" itemprop="name headline">冒泡排序
               
             
           </h1>
@@ -377,24 +377,12 @@
                 
               
 
-              <time title="创建时间：2018-05-08 15:07:28" itemprop="dateCreated datePublished" datetime="2018-05-08T15:07:28+08:00">2018-05-08</time>
+              <time title="创建时间：2018-05-19 13:35:51 / 修改时间：13:43:36" itemprop="dateCreated datePublished" datetime="2018-05-19T13:35:51+08:00">2018-05-19</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-14 17:59:24" itemprop="dateModified" datetime="2018-05-14T17:59:24+08:00">2018-05-14</time>
               
             
           </span>
@@ -411,7 +399,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
 
                 
                 
@@ -426,8 +414,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/08/Javascript 继承学习/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/05/08/Javascript 继承学习/" itemprop="commentCount"></span>
+                <a href="/2018/05/19/冒泡排序/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/05/19/冒泡排序/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -455,57 +443,10 @@
       
 
       
-        <p>javascript的继承方式有好多方式，之前ES5通过原型链继承，ES6中引入了Class，javascript可以像java一样使用extends关键字继承。现在整理一下js中的继承方式。</p>
-<p></p><h2>ES5中的继承方式</h2><p></p>
-<p></p><h3>一、构造函数的继承</h3><br>现在有一个”动物”对象的构造函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.species = <span class="string">"动物"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<p>还有一个”猫”对象的构造函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>1.构造函数绑定:使用call或apply方法，将父对象的构造函数绑定在子对象上。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</span><br><span class="line">  Animal.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
-<p>此种继承方式只能继承父构造函数中的属性,不能继承父构造函数原型上的属性.Animal.apply(this, arguments)也可用Animal.call(this)替换.cat对象有两个层级,第一级存放着自有属性以及父构造器中的属性,第二级存放着自己函数原型上的属性(Cat.prototype)</p>
-<p>2.prototype模式:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
-<p>遵循一点，即如果替换了prototype对象，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o.prototype = &#123;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>那么，下一步必然是为新的prototype对象加上constructor属性，并将这个属性指回原来的构造函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o.prototype.constructor = o;</span><br></pre></td></tr></table></figure></p>
-<p>此种继承方式既能继承父构造函数中的属性,也能继承父构造函数原型上的属性.cat对象有三个层级,第一级存放着自有属性,第二级存放着父构造器的属性(加上constructor,指向创建该对象(cat)的构造器(Cat)),第三级存放着父构造器原型上的属性.</p>
-<p>3.直接继承prototype:<br>第3种方法是对第2种方法的改进。由于Animal对象中，不变的属性都可以直接写入Animal.prototype。所以，我们也可以让Cat()跳过 Animal()，直接继承Animal.prototype。</p>
-<p>先将Animal对象改写</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123; &#125;</span><br><span class="line">Animal.prototype.species = <span class="string">"动物"</span>;</span><br></pre></td></tr></table></figure>
-<p>然后，将Cat的prototype对象，然后指向Animal的prototype对象，这样就完成了继承。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype = Animal.prototype;</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
-<p>此种继承方式只能继承父构造器原型上的属性.cat对象有两个层级,第一级存放着自有属性,第二级存放着父构造器原型上的属性(加上constructor,指向创建该对象(cat)的构造器(Cat)).注意:Cat.prototype.constructor = Cat会将Animal.prototype.constructor也改成Cat,从而影响父构造器创建对象</p>
-<p>4.空对象作为中介:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">  F.prototype = Parent.prototype;</span><br><span class="line">  Child.prototype = <span class="keyword">new</span> F();</span><br><span class="line">  Child.prototype.constructor = Child;</span><br><span class="line">  Child.uber = Parent.prototype;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>用法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">extend(Cat,Animal);</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
-<p>此种继承方式只能继承父构造器原型上的属性.cat对象有三个层级,第一级存放着自有属性,第二级存放着临时构造器F的属性(加上constructor,指向创建该对象(cat)的构造器(Cat)),第三级存放着父构造器原型上的属性.注意:临时构造器只充当中介的作用,一般不会有自己的属性.</p>
-<p>5.浅拷贝继承:<br>首先，还是把Animal的所有不变属性，都放到它的prototype对象上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123; &#125;</span><br><span class="line">Animal.prototype.species = <span class="string">"动物"</span>;</span><br></pre></td></tr></table></figure></p>
-<p>然后，再写一个函数，实现属性拷贝的目的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend2</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> p = Parent.prototype;</span><br><span class="line">  <span class="keyword">var</span> c = Child.prototype;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;</span><br><span class="line">    c[i] = p[i];</span><br><span class="line">  &#125;</span><br><span class="line">  c.uber = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>用法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">extend2(Cat, Animal);</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
-<p>此种继承方式只能继承父构造器原型上的属性.cat对象有两个层级,第一级存放着自有属性,第二级存放着父构造器原型上的除了constructor和<strong>proto</strong>的属性(不会拷贝原型上的constructor和<strong>proto</strong>属性).适合父构造器原型上的自增属性为基本数据类型的情况.</p>
-<p></p><h3>二、非构造函数的继承</h3><br>比如，现在有一个对象，叫做”中国人”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Chinese = &#123;</span><br><span class="line">  nation:<span class="string">'中国'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p></p>
-<p>还有一个对象，叫做”医生”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Doctor =&#123;</span><br><span class="line">  career:<span class="string">'医生'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>1.object()方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = o;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个object()函数，其实只做一件事，就是把子对象的prototype属性，指向父对象，从而使得子对象与父对象连在一起。<br>用法：<br>第一步先在父对象的基础上，生成子对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Doctor = object(Chinese);</span><br></pre></td></tr></table></figure></p>
-<p>然后，再加上子对象本身的属性：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Doctor.career = <span class="string">'医生'</span>;</span><br></pre></td></tr></table></figure></p>
-<p>这时，子对象已经继承了父对象的属性了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(Doctor.nation); <span class="comment">//中国</span></span><br></pre></td></tr></table></figure></p>
-<p>2.浅拷贝<br>除了使用”prototype链”以外，还有另一种思路：把父对象的属性，全部拷贝给子对象，也能实现继承。</p>
-<p>就是在做拷贝：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extendCopy</span>(<span class="params">p</span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> c = &#123;&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123; </span><br><span class="line">  c[i] = p[i];</span><br><span class="line">&#125;</span><br><span class="line">c.uber = p;</span><br><span class="line"><span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>用法，这样写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Doctor = extendCopy(Chinese);</span><br><span class="line">Doctor.career = <span class="string">'医生'</span>;</span><br><span class="line">alert(Doctor.nation); <span class="comment">// 中国</span></span><br></pre></td></tr></table></figure></p>
-<p>样的拷贝有一个问题。那就是，如果父对象的属性等于数组或另一个对象，那么实际上，子对象获得的只是一个内存地址，而不是真正拷贝，因此存在父对象被篡改的可能。</p>
-<p>3.深拷贝<br>所谓”深拷贝”，就是能够实现真正意义上的数组和对象的拷贝。它的实现并不难，只要递归调用”浅拷贝”就行了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">p, c</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> c = c || &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> p[i] === <span class="string">'object'</span>) &#123;</span><br><span class="line">      c[i] = (p[i].constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</span><br><span class="line">      deepCopy(p[i], c[i]);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        c[i] = p[i];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>使用的时候这样写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Doctor = deepCopy(Chinese);</span><br></pre></td></tr></table></figure></p>
-<p>现在，给父对象加一个属性，值为数组。然后，在子对象上修改这个属性：<br>这时，父对象就不会受到影响了。<br>目前，jQuery库使用的就是这种继承方法。</p>
-<p></p><h2>ES6中的继承方式</h2><br>Class 可以通过extends关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="comment">//一些属性</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="comment">//一些属性</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(...args) &#123;</span><br><span class="line">    <span class="keyword">super</span>(...args);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
-<ul>
-<li>上面代码定义了一个ColorPoint类，该类通过extends关键字，继承了Point类的所有属性和方法。但是由于没有部署任何代码，所以这两个类完全一样，等于复制了一个Point类。</li>
-<li>如果子类没有定义constructor方法，这个方法会被默认添加，代码如下。也就是说，不管有没有显式定义，任何一个子类都有constructor方法。</li>
-<li>在子类的构造函数中，只有调用super之后，才可以使用this关键字，否则会报错。这是因为子类实例的构建，是基于对父类实例加工，只有super方法才能返回父类实例。</li>
-<li>ES6 规定，在子类普通方法中通过super调用父类的方法时，方法内部的this指向当前的子类实例。</li>
-</ul>
-
+        <p>冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。<br>它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。</p>
+<p>冒泡排序算法的运作如下：（从后往前）<br>比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。<br>针对所有的元素重复以上的步骤，除了最后一个。<br>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 </p>
+<p>时间复杂度：<br>冒泡排序最好的时间复杂度为O(n)。<br>冒泡排序的最坏时间复杂度为O(n^2)。<br>冒泡排序总的平均时间复杂度为O(n^2)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bubbleSort = <span class="function">(<span class="params">arr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> len = arr.length;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - j; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">let</span> temp = arr[j+<span class="number">1</span>];</span><br><span class="line">        arr[j+<span class="number">1</span>] = arr[j];</span><br><span class="line">        arr[j] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -538,6 +479,8 @@
           
             <a href="/tags/Javascript/" <i class="fa fa-tag"></i> Javascript</a>
           
+            <a href="/tags/算法/" <i class="fa fa-tag"></i> 算法</a>
+          
         </div>
       
 
@@ -549,15 +492,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/05/16/ajax实现/" rel="next" title="ajax实现">
+                <i class="fa fa-chevron-left"></i> ajax实现
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/08/PWA-之Q-A/" rel="prev" title="PWA 之Q&A">
-                PWA 之Q&A <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -609,17 +552,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -736,22 +670,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">ES5中的继承方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">一、构造函数的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">二、非构造函数的继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">ES6中的继承方式</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
