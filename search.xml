@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[选择排序]]></title>
+    <url>%2F2018%2F05%2F19%2F%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。 简单选择排序的基本思想：第1趟，在待排序记录r[1]~r[n]中选出最小的记录，将它与r[1]交换；第2趟，在待排序记录r[2]~r[n]中选出最小的记录，将它与r[2]交换；以此类推，第i趟在待排序记录r[i]~r[n]中选出最小的记录，将它与r[i]交换，使有序序列不断增长直到全部排序完毕。 最佳情况：T(n) = O(n^2)最差情况：T(n) = O(n^2)平均情况：T(n) = O(n^2) 1234567891011const selectSort = (arr) =&gt; &#123; let len = arr.length, min; for (let i = 0; i &lt; len - 1; i++) &#123; min = i; for (let j = i + 1; j &lt; len; j++)&#123; arr[j] &lt; arr[min] &amp;&amp; (min = j); &#125; min != i &amp;&amp; swap(i,min,arr); &#125; return arr&#125;]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[快速排序]]></title>
     <url>%2F2018%2F05%2F19%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%2F</url>
     <content type="text"><![CDATA[快速排序（Quicksort）是对冒泡排序的一种改进。快速排序的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。 一趟快速排序的算法是：（1）在数据集之中，选择一个元素作为”基准”（pivot）。（2）所有小于”基准”的元素，都移到”基准”的左边；所有大于”基准”的元素，都移到”基准”的右边。（3）对”基准”左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。 最佳情况：T(n) = O(nlogn)最差情况：T(n) = O(n2)平均情况：T(n) = O(nlogn) 123456789101112131415const quickSort = (arr) =&gt; &#123; if (arr.length &lt;= 1) &#123; return arr; &#125; let pivotIndex = Math.floor(arr.length / 2); let pivot = arr.splice(pivotIndex, 1)[0]; let left = []; let right = []; for (let i = 0; i &lt; arr.length; i++)&#123; if (arr[i] &lt; pivot) &#123; left.push(arr[i]); &#125; else &#123; right.push(arr[i]); &#125; &#125; return quickSort(left).concat([pivot], quickSort(right));&#125;]]></content>
