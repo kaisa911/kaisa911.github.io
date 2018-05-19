@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[归并排序]]></title>
+    <url>%2F2018%2F05%2F19%2F%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法,该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。 把长度为n的输入序列分成两个长度为n/2的子序列；对这两个子序列分别采用归并排序；将两个排序好的子序列合并成一个最终的排序序列。 归并操作的工作原理如下：第一步：申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列第二步：设定两个指针，最初位置分别为两个已经排序序列的起始位置第三步：比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置重复步骤3直到某一指针超出序列尾将另一序列剩下的所有元素直接复制到合并序列尾 最佳情况：T(n) = O(n)最差情况：T(n) = O(nlogn)平均情况：T(n) = O(nlogn) 123456789101112131415161718const mergeSort = (arr) =&gt; &#123; let len = arr.lenght; if (len &lt; 2) &#123; return arr; &#125; let m = (len &gt;&gt; 1), left = array.slice(0, m), right = array.slice(m); //拆分为两个子数组 return merge(mergeSort(left), mergeSort(right));//子数组继续递归拆分,然后再合并&#125;const merge = (left, right) =&gt; &#123; //合并两个子数组 let res = []; while (left.length &amp;&amp; right.length) &#123; let item = left[0] &lt;= right[0] ? left.shift() : right.shift();//注意:判断的条件是小于或等于,如果只是小于,那么排序将不稳定. result.push(item); &#125; return result.concat(left.length ? left : right);&#125;]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[选择排序]]></title>
     <url>%2F2018%2F05%2F19%2F%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%2F</url>
     <content type="text"><![CDATA[选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。 简单选择排序的基本思想：第1趟，在待排序记录r[1]~r[n]中选出最小的记录，将它与r[1]交换；第2趟，在待排序记录r[2]~r[n]中选出最小的记录，将它与r[2]交换；以此类推，第i趟在待排序记录r[i]~r[n]中选出最小的记录，将它与r[i]交换，使有序序列不断增长直到全部排序完毕。 最佳情况：T(n) = O(n^2)最差情况：T(n) = O(n^2)平均情况：T(n) = O(n^2) 1234567891011const selectSort = (arr) =&gt; &#123; let len = arr.length, min; for (let i = 0; i &lt; len - 1; i++) &#123; min = i; for (let j = i + 1; j &lt; len; j++)&#123; arr[j] &lt; arr[min] &amp;&amp; (min = j); &#125; min != i &amp;&amp; swap(i,min,arr); &#125; return arr&#125;]]></content>
