@@ -58,14 +58,14 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/Javascript/</loc>
+        <loc>http://yoursite.com/tags/CSS/</loc>
         <lastmod>2018-05-24T09:37:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/CSS/</loc>
+        <loc>http://yoursite.com/tags/Javascript/</loc>
         <lastmod>2018-05-24T09:37:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

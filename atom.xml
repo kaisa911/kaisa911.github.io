@@ -41,9 +41,9 @@
       <category term="Glory Road" scheme="http://yoursite.com/categories/Glory-Road/"/>
     
     
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
       <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
     
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
