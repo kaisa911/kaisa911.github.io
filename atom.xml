@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-24T08:27:31.000Z</updated>
+  <updated>2018-05-24T09:37:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>放飞的thinking～</title>
+    <link href="http://yoursite.com/2018/05/24/%E6%94%BE%E9%A3%9E%E7%9A%84thinking%EF%BD%9E/"/>
+    <id>http://yoursite.com/2018/05/24/放飞的thinking～/</id>
+    <published>2018-05-24T08:53:09.000Z</published>
+    <updated>2018-05-24T09:37:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1>百度前端技术学院学习笔记</h1><h2 id="目标简介"><a href="#目标简介" class="headerlink" title="目标简介"></a>目标简介</h2><ul><li>Date: 2018.05.24 Thr</li><li>Flag: 真男人就坚持66天。</li><li>Target: 了解前端。</li><li>Time: 1h</li></ul><h2 id="课程内容"><a href="#课程内容" class="headerlink" title="课程内容"></a>课程内容</h2><p>1、什么是前端？<br>  前端这个概念，我觉得应该这么来理解，<b>前</b>：表示与用户直接有关的部分，比如页面的展示，与用户的交互等，<b>端</b>：是终端的部分，包括pc，移动端以及其他的一些可以与用于交互的终端。<br>  从百度百科上看到了前端的解释：<br>  <blockquote>前端即网站前台部分，运行在PC端，移动端等浏览器上展现给用户浏览的网页。随着互联网技术的发展，HTML5，CSS3，前端框架的应用，跨平台响应式网页设计能够适应各种屏幕分辨率，完美的动效设计，给用户带来极高的用户体验。</blockquote><br>  感觉差不多吧…</p><p>2、什么是html？<br>  <blockquote>html：超文本标记语言，标准通用标记语言下的一个应用。</blockquote><br>  我理解的是，用来构建页面的骨架的语言。<br>  html提供了语义化的标签，以及相关的属性，根据标签和属性以及内容构建页面的骨架。</p><p>3、什么是CSS？<br>  <blockquote>CSS：层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</blockquote><br>  CSS，可以理解成骨架的衣服，好的页面有了骨架还不行，还得需要漂亮的衣服。html写好了骨架，通过写CSS来写样式，让页面变得更好看。</p><p>4、什么是Javascript？<br>  <blockquote>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</blockquote><br>  js是一种脚本语言，可以给页面添加交互，以及相关的逻辑，还有和后台通过接口交互数据等。</p><h2 id="课程疑问"><a href="#课程疑问" class="headerlink" title="课程疑问"></a>课程疑问</h2><p>1、现在背景下的大前端该如何发展？<br>2、框架的不断推出，框架的学习和个人技能的发展的均衡？<br>3、因为node的存在，前端工程师往全栈工程师的发展是否成为必要？</p><p></p><h1>总结</h1><br>学习前端有一年的时间了，半路出家，从机械转到了前端。从开始写外包，囫囵吞枣，会用就行，到工作之后，发现自己欠缺的东西还有好多好多。开始逐渐的弥补自己的知识。<br>虽然起步比较晚，但是还是很喜欢js这个不断进步的语言～<br>希望能够通过自己的努力，成为一个真正的FE developer！<p></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1&gt;百度前端技术学院学习笔记&lt;/h1&gt;
+
+&lt;h2 id=&quot;目标简介&quot;&gt;&lt;a href=&quot;#目标简介&quot; class=&quot;headerlink&quot; title=&quot;目标简介&quot;&gt;&lt;/a&gt;目标简介&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Date: 2018.05.24 Thr&lt;/li&gt;
+&lt;li&gt;Fla
+      
+    
+    </summary>
+    
+      <category term="Glory Road" scheme="http://yoursite.com/categories/Glory-Road/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+  </entry>
   
   <entry>
     <title>koa2源码学习--application.js</title>
@@ -49,7 +82,7 @@
     <link href="http://yoursite.com/2018/05/22/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%90%86%E8%A7%A3/"/>
     <id>http://yoursite.com/2018/05/22/react生命周期理解/</id>
     <published>2018-05-22T06:13:57.000Z</published>
-    <updated>2018-05-22T07:45:52.000Z</updated>
+    <updated>2018-05-24T08:29:23.000Z</updated>
     
     <content type="html"><![CDATA[<h1>react组建的生命周期</h1><p>React组件的生命周期有两种情况，初次渲染和状态更新导致再次渲染。<br>React 生命周期分为三种状态 1. 挂载 2.更新 3.销毁</p><h2 id="组件加载"><a href="#组件加载" class="headerlink" title="组件加载"></a>组件加载</h2><p>组件的初次挂载，有以下几个步骤，分别是<br>1、构造函数，指定This，初始状态，绑定函数（constructor）<br>2、组件安装（componentWillMount）<br>3、将组建或者虚拟DOM元素渲染到真实的DOM上（render）<br>4、组件生成，DOM查找等(componentDidMount)</p><h2 id="组件更新"><a href="#组件更新" class="headerlink" title="组件更新"></a>组件更新</h2><p>组件的更新，有三种情况：<br>1.父组件的props发生更新<br>2.调用this.forceUpdate更新（重复componentWillUpdate方法之后的操作）<br>3.调用this.setState方法更新组件state,触发组件更新</p><h3 id="状态更新"><a href="#状态更新" class="headerlink" title="状态更新"></a>状态更新</h3><p>步骤：<br>1、构造函数，指定This，初始状态，绑定函数（constructor）<br>2、组件安装（componentWillMount）<br>3、将组建或者虚拟DOM元素渲染到真实的DOM上（render）<br>4、组件生成，DOM查找等(componentDidMount)<br>5、组建更新状态(componentWillUpdate)<br>6、将组建或者虚拟DOM元素渲染到真实的DOM上（render）<br>7、组建更新完成(componentDidUpdate)</p><h3 id="调用this-forceUpdate更新"><a href="#调用this-forceUpdate更新" class="headerlink" title="调用this.forceUpdate更新"></a>调用this.forceUpdate更新</h3><p>当组件调用forceUpdata方法更新时，会进入componentWillUpdate方法。<br>直接跳过shouldComponentUpdtavoid<br>之后执行render函数更新DOMReactElement<br>执行完render函数之后执行componentDidUpdata,<br>除了首次render之后调用componentDidMount，其它render结束之后都是调用componentDidUpdate。</p><h3 id="父组建更新props"><a href="#父组建更新props" class="headerlink" title="父组建更新props"></a>父组建更新props</h3><p>步骤：<br>1、父组件构造函数，指定This，初始状态，绑定函数（constructor）<br>2、父组件安装（componentWillMount）<br>3、父组件或者虚拟DOM元素渲染到真实的DOM上（render）<br>4、子组件或者虚拟DOM元素渲染到真实的DOM上（render）<br>5、父组件生成，DOM查找等(componentDidMount)<br>6、父组建更新状态(componentWillUpdate)<br>7、父组件或者虚拟DOM元素渲染到真实的DOM上（render）<br>8、子组件接收父组件props(componentWillReceiveProps)<br>9、子组件判断是否更新(shouldComponentUpdate)<br>10、子组建更新状态(componentWillUpdate)<br>11、子组件或者虚拟DOM元素渲染到真实的DOM上（render）<br>12、子组件更新完成(componentDidUpdate)<br>12、父组件更新完成(componentDidUpdate)</p><h2 id="组件销毁"><a href="#组件销毁" class="headerlink" title="组件销毁"></a>组件销毁</h2><p>单页应用中，切换页面原组件需要销毁释放资源，如果原组件中有定时器等不能销毁时，需要在componentWillUnmount中清理资源占用，手动销毁定时器。</p><h1>总结</h1><p><img src="https://github.com/kaisa911/studyNotes/blob/master/public/image/reactLifeCycle.png?raw=true" alt="react生命周期"></p>]]></content>
     
@@ -512,37 +545,6 @@
     
       <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    
-      <category term="redux" scheme="http://yoursite.com/tags/redux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>redux源码学习--applyMiddleware</title>
-    <link href="http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-applyMiddleware/"/>
-    <id>http://yoursite.com/2018/05/11/redux源码学习-applyMiddleware/</id>
-    <published>2018-05-11T08:03:07.000Z</published>
-    <updated>2018-05-14T09:59:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1>applyMiddleware理解</h1><p>中间件的本质是作为enhancer而存在的。它是通过createStore方法传递到redux的内部中的,中间件模块是一个高阶函数<br>下面是redux中间件的基本格式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reduxMiddleware = <span class="function">(<span class="params">&#123;dispatch, getState&#125;[简化的store]</span>) =&gt;</span> (next[上一个中间件的dispatch方法]) =&gt; <span class="function">(<span class="params">action[实际派发的action对象]</span>) =&gt;</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">applyMiddleware</span>(<span class="params">...middlewares</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// middlewares就是我们传递给applyMiddlewarez函数的一系列中间件函数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">createStore</span>) =&gt;</span> (...args) =&gt; &#123;</span><br><span class="line">    <span class="comment">// createStore就是redux用于创建store的方法,args === [reducers, preloadedState]。下面这句话就是在中间件的内部，使用我们传递的参数创建一个store对象</span></span><br><span class="line">    <span class="comment">// 注：这一块没有传递enhancer,所以返回的就是我们经常使用的store对象</span></span><br><span class="line">    <span class="keyword">const</span> store = createStore(...args)</span><br><span class="line">    <span class="comment">// 获取store对象的dispatch方法</span></span><br><span class="line">    <span class="keyword">let</span> dispatch = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(</span><br><span class="line">        <span class="string">`Dispatching while constructing your middleware is not allowed. `</span> +</span><br><span class="line">          <span class="string">`Other middleware would not be applied to this dispatch.`</span></span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 传递给中间件的第一层的函数的参数，</span></span><br><span class="line">    <span class="keyword">const</span> middlewareAPI = &#123;</span><br><span class="line">      getState: store.getState,</span><br><span class="line">      <span class="comment">// 重写了dispatch方法，其实就是store.dispatch(...args)</span></span><br><span class="line">      dispatch: <span class="function">(<span class="params">...args</span>) =&gt;</span> dispatch(...args)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 着重给大家详细的解释一下这一块</span></span><br><span class="line"><span class="comment">     * 假设我们给applyMiddleware函数传递的中间件是</span></span><br><span class="line"><span class="comment">     * applyMiddleware(</span></span><br><span class="line"><span class="comment">     *      f1 =&gt; g1 =&gt; h1(...arg) =&gt; &#123;&#125;,</span></span><br><span class="line"><span class="comment">     *      f2 =&gt; g2 =&gt; h2(...arg) =&gt; &#123;&#125;</span></span><br><span class="line"><span class="comment">     * )</span></span><br><span class="line"><span class="comment">     * 运行下面的这行代码之后，chain中保存的内容是</span></span><br><span class="line"><span class="comment">     * chain = [g1 =&gt; h1(...arg) =&gt; &#123;&#125;, g2 =&gt; h2(...arg) =&gt; &#123;&#125;]</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> chain = middlewares.map(<span class="function"><span class="params">middleware</span> =&gt;</span> middleware(middlewareAPI))</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 当我们把chain传入到 compose中后，根据我们对compose的分析，</span></span><br><span class="line"><span class="comment">     * compose(...chain)(store.dispatch)的结果就是:</span></span><br><span class="line"><span class="comment">     * g1(h2(...arg)) =&gt; h1(...arg)</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * 也就是说，按照上面的这个形式，下面的dispatch和h1函数是一样的，所以，h1的参数，就是我们需要派发的action，当我们调用dispatch的时候，其实就相当于调用h1(action)，而在h1的内部，这个action是由g1的参数</span></span><br><span class="line"><span class="comment">     * 也就是h2进行派发的，所以这个时候action就传递到了h2的内部，而h2的参数是由g2的参数，也就是实际传入的store.dispatch进行派发的，就这样层层传入，层层输出，就形成了我们强大的中间件机制。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    dispatch = compose(...chain)(store.dispatch)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回的也是一个store对象</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      ...store,</span><br><span class="line">      <span class="comment">// 这个dispatch其实就是，各个中间件的最底层(第三层)的哪个函数组成的圆环函数构成的</span></span><br><span class="line">      dispatch</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1&gt;applyMiddleware理解&lt;/h1&gt;
-
-&lt;p&gt;中间件的本质是作为enhancer而存在的。它是通过createStore方法传递到redux的内部中的,中间件模块是一个高阶函数&lt;br&gt;下面是redux中间件的基本格式：&lt;br&gt;&lt;figure class=&quot;high
-      
-    
-    </summary>
-    
-      <category term="redux源码学习" scheme="http://yoursite.com/categories/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
       <category term="redux" scheme="http://yoursite.com/tags/redux/"/>
     

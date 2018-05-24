@@ -42,15 +42,22 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-05-22T07:45:52.000Z</lastmod>
+        <loc>http://yoursite.com/categories/koa2%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-05-24T08:27:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/koa2%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2018-05-24T08:27:31.000Z</lastmod>
+        <loc>http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-05-24T08:29:23.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/Glory-Road/</loc>
+        <lastmod>2018-05-24T09:37:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

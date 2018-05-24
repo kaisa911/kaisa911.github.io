@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/24/koa2%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0--application.js/</loc>
-        <lastmod>2018-05-24T08:27:31.000Z</lastmod>
+        <loc>http://yoursite.com/2018/05/24/%E6%94%BE%E9%A3%9E%E7%9A%84thinking%EF%BD%9E/</loc>
+        <lastmod>2018-05-24T09:37:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,15 @@
 
     <url>
         <loc>http://yoursite.com/2018/05/22/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%90%86%E8%A7%A3/</loc>
-        <lastmod>2018-05-22T07:45:52.000Z</lastmod>
+        <lastmod>2018-05-24T08:29:23.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/05/24/koa2%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0--application.js/</loc>
+        <lastmod>2018-05-24T08:27:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -111,7 +119,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/09/Event-Loop-%E9%97%AE%E9%A2%98%E7%90%86%E8%A7%A3/</loc>
+        <loc>http://yoursite.com/2018/05/08/Javascript%20%E7%BB%A7%E6%89%BF%E5%AD%A6%E4%B9%A0/</loc>
         <lastmod>2018-05-14T09:59:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -119,7 +127,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/08/Javascript%20%E7%BB%A7%E6%89%BF%E5%AD%A6%E4%B9%A0/</loc>
+        <loc>http://yoursite.com/2018/05/09/Event-Loop-%E9%97%AE%E9%A2%98%E7%90%86%E8%A7%A3/</loc>
         <lastmod>2018-05-14T09:59:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -175,7 +183,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/11/redux-%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E2%80%94createStore/</loc>
+        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-bindActionCreators/</loc>
         <lastmod>2018-05-14T09:59:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -183,7 +191,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-applyMiddleware/</loc>
+        <loc>http://yoursite.com/2018/05/11/redux-%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E2%80%94createStore/</loc>
         <lastmod>2018-05-14T09:59:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -199,7 +207,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-bindActionCreators/</loc>
+        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-applyMiddleware/</loc>
         <lastmod>2018-05-14T09:59:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
