@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-25T07:07:24.000Z</updated>
+  <updated>2018-05-25T08:12:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>插入排序</title>
+    <link href="http://yoursite.com/2018/05/25/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    <id>http://yoursite.com/2018/05/25/插入排序/</id>
+    <published>2018-05-25T08:07:55.000Z</published>
+    <updated>2018-05-25T08:12:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>插入排序的基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据，算法适用于少量数据的排序，时间复杂度为O(n^2)。是稳定的排序方法。插入算法把要排序的数组分成两部分：第一部分包含了这个数组的所有元素，但将最后一个元素除外（让数组多一个空间才有插入的位置），而第二部分就只包含这一个元素（即待插入元素）。在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。<br>插入排序的基本思想是：每步将一个待排序的记录，按其关键码值的大小插入前面已经排序的文件中适当位置上，直到全部插入完为止。</p><p>直接插入排序的算法思路：<br>（1） 设置监视哨r[0]，将待插入记录的值赋值给r[0]；<br>（2） 设置开始查找的位置j；<br>（3） 在数组中进行搜索，搜索中将第j个记录后移，直至r[0].key≥r[j].key为止；<br>（4） 将r[0]插入r[j+1]的位置上。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> insertionSort = <span class="function">(<span class="params">arr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> len = arr.length;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;len; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> j = i;</span><br><span class="line">    <span class="keyword">let</span> tmp = arr[i];</span><br><span class="line">    <span class="keyword">while</span>(j &gt; <span class="number">0</span> &amp;&amp; arr[j<span class="number">-1</span>] &gt; tmp) &#123;</span><br><span class="line">        arr[j] = arr[j<span class="number">-1</span>];</span><br><span class="line">        j--;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[j] = tmp;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;插入排序的基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据，算法适用于少量数据的排序，时间复杂度为O(n^2)。是稳定的排序方法。插入算法把要排序的数组分成两部分：第一部分包含了这个数组的所有元素，但将最后一个元素除外（让数组多一个空
+      
+    
+    </summary>
+    
+      <category term="算法学习" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>正则填坑</title>
@@ -68,9 +95,9 @@
       <category term="Glory Road" scheme="http://yoursite.com/categories/Glory-Road/"/>
     
     
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
-    
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
@@ -526,29 +553,6 @@
     
     
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2018 书单</title>
-    <link href="http://yoursite.com/2018/05/14/2018-%E4%B9%A6%E5%8D%95/"/>
-    <id>http://yoursite.com/2018/05/14/2018-书单/</id>
-    <published>2018-05-14T06:44:03.000Z</published>
-    <updated>2018-05-14T09:59:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>☐ 《原则》瑞·达利欧 著 中信出版社<br>✔ 《爆裂》伊藤穰一 杰夫·豪 著 中信出版社<br>☐ 《基因传》悉达多•穆克吉 著 中信出版社<br>☐ 《未来简史》尤瓦尔·赫拉利 著 中信出版社<br>☐ 《人类简史》尤瓦尔·赫拉利 著 中信出版社<br>✔ 《你的第一本哲学书》托马斯·内格尔 著 中信出版社<br>☐ 《自私的基因》理查德·道金斯 著 中信出版社<br>☐ 《不会被机器替代的人》杰夫·科尔文 著 中信出版社<br>☐ 《好好说话》马薇薇、黄执中、周玄毅等 著 中信出版社<br>☐ 《跃迁》古典 著 中信出版社<br>☐ 《智能时代》吴军  著 中信出版社<br>☐ 《细节：如何轻松影响他人》史蒂夫·马丁  诺瓦·戈尔茨坦  等 著 中信出版社<br>☐ 《向前一步》谢丽尔·桑德伯<br>✔ 《人人都是产品经理》<br>☐ 《穷爸爸富爸爸》<br>☐ 《中国经济2018》</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;☐ 《原则》瑞·达利欧 著 中信出版社&lt;br&gt;✔ 《爆裂》伊藤穰一 杰夫·豪 著 中信出版社&lt;br&gt;☐ 《基因传》悉达多•穆克吉 著 中信出版社&lt;br&gt;☐ 《未来简史》尤瓦尔·赫拉利 著 中信出版社&lt;br&gt;☐ 《人类简史》尤瓦尔·赫拉利 著 中信出版社&lt;br&gt;✔ 《你的第一
-      
-    
-    </summary>
-    
-      <category term="浮生小记" scheme="http://yoursite.com/categories/%E6%B5%AE%E7%94%9F%E5%B0%8F%E8%AE%B0/"/>
-    
     
   </entry>
   
