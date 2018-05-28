@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-28T03:54:45.000Z</updated>
+  <updated>2018-05-28T08:43:38.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>链表</title>
+    <link href="http://yoursite.com/2018/05/28/%E9%93%BE%E8%A1%A8/"/>
+    <id>http://yoursite.com/2018/05/28/链表/</id>
+    <published>2018-05-28T08:20:40.000Z</published>
+    <updated>2018-05-28T08:43:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>链表是由一组节点组成的集合。每一个节点都使用一个对象的引用指向它的后续借点。指向另外一个节点的引用叫做链。<br>链表元素则是靠相互之间的关系进行引用。在链表中就说这个元素是某个元素的后面一个元素。遍历链表就是跟着链表从链表的头元素（head）一直走到尾元素（但是不包含链表的头节点，头通常用来作为链表的接入点）。链表的尾元素指向一个null节点。<br><img src="https://images2015.cnblogs.com/blog/72678/201609/72678-20160917225805820-1415213828.png" alt="链表的结构"></p><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>单链表<br>（见定义）</p><p>循环链表<br>循环链表的运算与单链表的运算基本一致。所不同的有以下几点：<br>1、在建立一个循环链表时，必须使其最后一个结点的指针指向表头结点，而不是象单链表那样置为NULL。此种情况还使用于在最后一个结点后插入一个新的结点。<br>2、在判断是否到表尾时，是判断该结点链域的值是否是表头结点，当链域值等于表头指针时，说明已到表尾。而非象单链表那样判断链域值是否为NULL。</p><p>双向链表<br>双向链表其实是单链表的改进。<br>当我们对单链表进行操作时，有时你要对某个结点的直接前驱进行操作时，又必须从表头开始查找。这是由单链表结点的结构所限制的。因为单链表每个结点只有一个存储直接后继结点地址的链域，那么能不能定义一个既有存储直接后继结点地址的链域，又有存储直接前驱结点地址的链域的这样一个双链域结点结构呢？这就是双向链表。<br>在双向链表中，结点除含有数据域外，还有两个链域，一个存储直接后继结点地址，一般称之为右链域；一个存储直接前驱结点地址，一般称之为左链域。</p><h2 id="链表的操作"><a href="#链表的操作" class="headerlink" title="链表的操作"></a>链表的操作</h2><p>链表的操作通常需要操作两个节点，例如，向链表中插入一个节点，需要修改它前面的节点，使其指向新加入的节点，而新加入的节点则指向前面指向的节点<br>从链表中删除一个节点也很简单，将待删除的元素的前驱节点指向待删除的后续节点，同时将待删除元素指向null来释放。</p><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Definition for singly-linked list.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ListNode</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.val = val;</span><br><span class="line">  <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>查找：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> findListNode = <span class="function">(<span class="params">listNode, target</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">while</span>(listNode) &#123;</span><br><span class="line">    <span class="keyword">if</span> (listNode.val === target) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    listNode = listNode.next ? listNode.next : <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="string">"not hava this target"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>插入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在第target个元素后添加一个节点</span></span><br><span class="line"><span class="keyword">const</span> insertListNode = <span class="function">(<span class="params">listNode1, node, target</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> count = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span>(listNode) &#123;</span><br><span class="line">    <span class="keyword">if</span> (count === target) &#123;</span><br><span class="line">      node.next = listNode.next;</span><br><span class="line">      listNode.next = node</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    listNode = listNode.next ? listNode.next : <span class="literal">null</span></span><br><span class="line">    count++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;链表是由一组节点组成的集合。每一个节点都使用一个对象的引用指向它的后续借点。指向另外一个节点的引用叫做链。&lt;br&gt;链表元素则是靠相互之间的关
+      
+    
+    </summary>
+    
+      <category term="算法学习" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>html5语意化学习</title>
@@ -530,32 +557,6 @@
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
     
       <category term="Jquery" scheme="http://yoursite.com/tags/Jquery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS中position属性总结笔记</title>
-    <link href="http://yoursite.com/2018/05/14/CSS%E4%B8%ADposition%E5%B1%9E%E6%80%A7%E6%80%BB%E7%BB%93%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/05/14/CSS中position属性总结笔记/</id>
-    <published>2018-05-14T06:55:43.000Z</published>
-    <updated>2018-05-14T09:59:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>写了好多的position，一直在用它们字面的意思，最近项目写到的position的问题，竟然又出问题了。。总结一下：</p><p><strong>1. positon:static; 静态定位（默认的 ）</strong><br>　　这个是默认的，写不写都会是这个定位，所有的标准文档流里面的元素都是静态定位。</p><p><strong>2. positon:relative;  相对定位</strong><br>　　相对定位不会使有该属性的元素脱离标准文档流<br>　　相对定位会在页面原始的位置占据位置，而元素的位置会根据原始的位置进行偏移。<br>　　<br>　<strong><em>相对定位的作用一般是用来给子元素的绝对定位提供参考的。</em></strong></p><p><strong>3. position:absolute;  绝对定位</strong><br>　　绝对定位会使有该属性的元素脱离标准文档流<br>　　特点：</p><pre><code>如果这个元素没有父元素，top、left、right、bottom就相对于浏览器窗口来定位如果绝对定位的元素有父元素，且父元素没有相对定位，top、left、right、bottom相对于浏览窗口来定位如果绝对定位的元素有父元素，且父元素有定位（非static），top、left、right、bottom以父元素为基础偏移绝对定位之后的元素在页面上不会占据位置</code></pre><p><strong>4. position:fixed;   固定定位</strong><br>　　固定定位会使有该属性的元素脱离标准文档流<br>　　位置不变，适用于广告或者飘窗</p><p>总结：<strong><em>写页面时，用到最多是绝对定位与相对定位一起使用，较多的是子元素使用绝对定位，父元素使用相对定位</em></strong></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;写了好多的position，一直在用它们字面的意思，最近项目写到的position的问题，竟然又出问题了。。总结一下：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1. positon:static; 静态定位（默认的 ）&lt;/strong&gt;&lt;br&gt;　　这个是默认的，写不写都会是这个定位，
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
   </entry>
   
