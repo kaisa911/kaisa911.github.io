@@ -35,13 +35,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Glory-Road/</loc>
-        <lastmod>2018-05-24T10:10:37.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/koa2%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</loc>
         <lastmod>2018-05-25T05:58:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -58,6 +51,13 @@
     <url>
         <loc>http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
         <lastmod>2018-05-25T08:12:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/Glory-Road/</loc>
+        <lastmod>2018-05-28T03:54:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
