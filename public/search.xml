@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[window.location的属性]]></title>
+    <url>%2F2018%2F06%2F10%2Fwindow.location%E7%9A%84%E5%B1%9E%E6%80%A7%2F</url>
+    <content type="text"><![CDATA[关于http的相关的BOM的问题 获取当前url的协议1const protocol = window.location.protocol; 获取当前的host和端口号1const host = window.location.host; 获取当前完整的URL1const host = window.location.href; 获取当前pathName1const host = window.location.pathname; 获取当前url的查找内容1const host = window.location.search;]]></content>
+      <categories>
+        <category>bug汇总</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CSS占坑]]></title>
     <url>%2F2018%2F05%2F29%2FCSS%E5%8D%A0%E5%9D%91%2F</url>
     <content type="text"><![CDATA[占个坑就留着回家写吧～哈哈哈]]></content>
