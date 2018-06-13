@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Javascript 基本概念（三）]]></title>
+    <url>%2F2018%2F06%2F13%2FJavascript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%88%E4%B8%89%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[这是JS高程第三章的第三部分。这一章内容是真的多。。我觉得重新刷高程，对我来说，也是一种不一样的进步吧。本节的主要内容是 操作符 一元操作符只能操作一个一个值的操作符叫做一元操作符。1、递增递减操作符 有两个版本，前置型和后置型。 前置型，先操作，后执行。 后置型，先执行，后操作。123456let a = 5, b = 6;let sum = ++a + b;let sum2 = a++ + b;console.log(sum); //12console.log(sum2) //12console.log(a); //7 递增递减操作符对数值，布尔，字符串，对象都有作用！！！！！ 规则如下： 如果字符串包含有效数字，则先转化成数值变量，然后加减1；不包含有效数字，则转化成NaN。字符串变量变成数值变量 数值变量加减1； 布尔变量，true先变成1，false变成0，然后加减1,布尔变了转换成数值变量； 对象变量，先查看valueOf()方法，如果是NaN，则调用toString()，对象转换成数值变量。 2、一元加减操作符。 一元+操作符，会像Number()方法一样对变量转换成数值变量var a; a = +a; 一元-操作符，主要是变成负数。会像Number()方法一样，不过是负数。 位操作符首先ES里所有的数值都是有64位来储存，但是位操作符并不是操作64位，而是先转化成32位的整数，然后操作，再将结果转换成64位的，这样，NaN和Infinity就会变成0。对于有符号数，第32位是符号位，0代表正数，1代表负数，符号位决定了其他位数值的格式。剩下31位用来储存数据。正数都是以二进制格式存储，负数以二进制的补码格式存储。默认情况下，ES里所有的正数都是有符号数。无符号数，第32位是数值。但是无符号数只能是正数。位操作符对其他变量，会先用Number()方法变成数值，然后再按位操作。1、按位非（NOT） 按位非是用～表示，执行按位非的结果是返回数值的反码。2、按位与（AND） 按位与是用&amp;表示，它有两个操作符数，运算的时候，将两个数的二进制每一位对齐，都是1得1，其他为0；3、按位或（OR） 按位或是用|表示，它有两个操作符数，运算的时候，将两个数的二进制每一位对齐，都是0得0，其他为1；4、按位异或（XOR） 按位或是用^表示，它有两个操作符数，运算的时候，将两个数的二进制每一位对齐，相同得0，不同为1；5、左移 左移用&lt;&lt;表示，会将数值所有位数向左移动指定的位数。后面补0；左移不会影响符号。6、有符号右移 有符号右移用&gt;&gt;表示，会将数值所有位数向右移动指定的位数。前面补0；保留符号位，不会影响符号。7、无符号右移 无符号右移用&gt;&gt;&gt;表示，会将数值所有位数向右移动指定的位数。前面补0；会影响符号。而且会把负数的补码当成二进制码来运算。 布尔运算符]]></content>
+      <categories>
+        <category>JS高程填坑笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[display的属性们]]></title>
     <url>%2F2018%2F06%2F13%2Fdisplay%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BB%AC%2F</url>
     <content type="text"><![CDATA[display： none | inline | block | list-item | inline-block | table | inline-table | table-caption | table-cell | table-row | table-row-group | table-column | table-column-group | table-footer-group | table-header-group | run-in | box | inline-box | flexbox | inline-flexbox | flex | inline-flex默认值：inline none： 隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间inline： 指定对象为内联元素。block： 指定对象为块元素。list-item： 指定对象为列表项目。inline-block： 指定对象为内联块元素。（CSS2）table： 指定对象作为块元素级的表格。类同于html标签&lt;table&gt;（CSS2）inline-table： 指定对象作为内联元素级的表格。类同于html标签&lt;table&gt;（CSS2）table-caption： 指定对象作为表格标题。类同于html标签&lt;caption&gt;（CSS2）table-cell： 指定对象作为表格单元格。类同于html标签&lt;td&gt;（CSS2）table-row： 指定对象作为表格行。类同于html标签&lt;tr&gt;（CSS2）table-row-group： 指定对象作为表格行组。类同于html标签&lt;tbody&gt;（CSS2）table-column： 指定对象作为表格列。类同于html标签&lt;col&gt;（CSS2）table-column-group： 指定对象作为表格列组显示。类同于html标签&lt;colgroup&gt;（CSS2）table-header-group： 指定对象作为表格标题组。类同于html标签&lt;thead&gt;（CSS2）table-footer-group： 指定对象作为表格脚注组。类同于html标签&lt;tfoot&gt;（CSS2）run-in： 根据上下文决定对象是内联对象还是块级对象。（CSS3）box： 将对象作为弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）inline-box： 将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）flexbox： 将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）inline-flexbox： 将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）flex： 将对象作为弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）inline-flex： 将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）]]></content>
@@ -35,7 +46,7 @@
   </entry>
   <entry>
     <title><![CDATA[Javascript基本概念（一）]]></title>
-    <url>%2F2018%2F06%2F11%2Fjavascript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <url>%2F2018%2F06%2F11%2FJavascript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
     <content type="text"><![CDATA[这是JS高程的第三章，内容比较多的一章，所以拆分开来，慢慢的填坑。路漫漫其修远兮啊本节包括三个部分 JS语法 JS关键字 JS变量 JS语法1、JS中的一切(变量、函数名和操作符)都区分大小写2、标识符，就是指变量、函数、属性的名字，或者函数的参数。第一个字符必须是一个字母、下划线(_)或一个美元符号($）;其他字符可以是字母、下划线、美元符号或数字3、注释：12345// 单行注释/** 这是一个多行 * (块级)注释 */ 4、严格模式ECMAScript5引入了严格模式(strict mode)的概念。严格模式是为JavaScript定义了一种不同的解析与执行模型。1"use strict"; 它是一个编译指示(pragma)，用于告诉支持的JavaScript引擎切换到严格模式。这是为不破坏ECMAScript 3语法而特意选定的语法。5、ECMAScript 中的语句以一个分号结尾;如果省略分号，则由解析器确定语句的结尾。建议在语句结尾处添加“;” 关键字和保留字1、关键字，可用于表示控制语句的开始或结束，或者用于执行特定操作等。按照规则，关键字也是语言保留的，不能用作标识符。2、保留字，保留字在这门语言中还没有任何特定的用途，但它们有可能在将来被用作关键字。 变量ECMAScript的变量是松散类型的，松散类型就是可以用来保存任何类型的数据。换句话说，每个变量仅仅是一个用于保存值的占位符而已。ECMAScript 也支持直接初始化变量，因此在定义变量的同时就可以设置变量的值用var操作符定义的变量将成为定义该变量的作用域中的局部变量。也就是说，如果在函数中使用var定义一个变量，那么这个变量在函数退出后就会被销毁。（块级作用域中可以使用let 和 const来声明块级变量，形成暂时性死区）]]></content>
       <categories>
         <category>JS高程填坑笔记</category>

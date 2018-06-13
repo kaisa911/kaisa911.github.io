@@ -1,5 +1,5 @@
 ---
-title: ' Javascript基本概念(二）'
+title: Javascript基本概念(二）
 date: 2018-06-11 14:20:09
 tags: Javascript
 categories: JS高程填坑笔记
