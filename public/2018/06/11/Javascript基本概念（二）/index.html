@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Milestone">
 <meta property="og:description" content="JS高程的第三章第二节，对数据类型进行一下学习 JS有五种基本数据类型：Number，String，Boolean，Undefined，Null和一种复杂类型：Object，Object本质上是由一组无序的名值对组成的（说好的万物皆对象来着）。JS不支持任何创建自定义类型的机制。 typeof 操作符ECMAScript是松散类型的，typeof就是负责来检测给定变量的数据类型的操作符。typeo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-13T15:26:36.000Z">
+<meta property="og:updated_time" content="2018-06-15T02:28:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript基本概念(二）">
 <meta name="twitter:description" content="JS高程的第三章第二节，对数据类型进行一下学习 JS有五种基本数据类型：Number，String，Boolean，Undefined，Null和一种复杂类型：Object，Object本质上是由一组无序的名值对组成的（说好的万物皆对象来着）。JS不支持任何创建自定义类型的机制。 typeof 操作符ECMAScript是松散类型的，typeof就是负责来检测给定变量的数据类型的操作符。typeo">
@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-13 23:26:36" itemprop="dateModified" datetime="2018-06-13T23:26:36+08:00">2018-06-13</time>
+                <time title="修改时间：2018-06-15 10:28:29" itemprop="dateModified" datetime="2018-06-15T10:28:29+08:00">2018-06-15</time>
               
             
           </span>
@@ -498,7 +498,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h2><p>Number类型使用IEEE754格式来表示整数和浮点数值(浮点数值在某些语言中也被称为双精度数值)。<br>最基本的数值字面量格式是十进制整数：<code>const num = 254;</code><br>八进制字面值的第一位必须是零(0)，然后是八进制数字序列(0~7)<code>const num2 = 03</code>;八进制字面量在严格模式下是无效的<br>十六进制字面值的前两位必须是 0x,<code>const num2 = 0xff</code><br>算术计算时，所有以八进制和十六进制表示的数值都会被转换成十进制数值<br>在JavaScript中保存数值的方式，可以保存正零(+0)和负零(0)。正零和负零被认为相等<br>1、浮点数值<br>数值中必须包含一个小数点，并且小数点后面必须至少有一位数字.浮点数保存空间是整数的两倍，如果小数点后的值为0或者没有任何数值，那么该数值就会保存成整数<br>用e或E表示10的幂。<code>2e5</code>,浮点数的最高精度为17位。算术运算的时候，精度比整数差的多。不要测试浮点数相等。<br>2、最值：<code>Number.MIN_VALUE, Number.MAX_VALUE</code><br>3、NaN：<br>该值表示一个本来要返回Number类型的操作数未返回数值的情况。<br>设计NaN的所有操作都等于NaN，且NaN与任何值都不想等，包括NaN<br>isNaN()函数,用来判断一个值是否为数值（number）<br>isNaN也适用于对象，在判断对象的时候，会先调用对象的valueOf()方法，确定该返回值是否是数值，如果不行，会调用toString()方法，再判断是否是数值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isNaN</span>()</span><br></pre></td></tr></table></figure></p>
+<h2 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h2><p>Number类型使用IEEE754格式来表示整数和浮点数值(浮点数值在某些语言中也被称为双精度数值)。<br>最基本的数值字面量格式是十进制整数：<code>const num = 254;</code>，最高具有53位有效数字精度<br>八进制字面值的第一位必须是零(0)，然后是八进制数字序列(0~7)<code>const num2 = 03</code>;八进制字面量在严格模式下是无效的<br>十六进制字面值的前两位必须是 0x,<code>const num2 = 0xff</code><br>算术计算时，所有以八进制和十六进制表示的数值都会被转换成十进制数值<br>在JavaScript中保存数值的方式，可以保存正零(+0)和负零(0)。正零和负零被认为相等<br>1、浮点数值<br>数值中必须包含一个小数点，并且小数点后面必须至少有一位数字.浮点数保存空间是整数的两倍，如果小数点后的值为0或者没有任何数值，那么该数值就会保存成整数<br>用e或E表示10的幂。<code>2e5</code>,浮点数的最高精度为17位。算术运算的时候，精度比整数差的多。不要测试浮点数相等。<br>2、最值：<code>Number.MIN_VALUE, Number.MAX_VALUE</code><br>3、NaN：<br>该值表示一个本来要返回Number类型的操作数未返回数值的情况。<br>设计NaN的所有操作都等于NaN，且NaN与任何值都不想等，包括NaN<br>isNaN()函数,用来判断一个值是否为数值（number）<br>isNaN也适用于对象，在判断对象的时候，会先调用对象的valueOf()方法，确定该返回值是否是数值，如果不行，会调用toString()方法，再判断是否是数值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isNaN</span>()</span><br></pre></td></tr></table></figure></p>
 <p>4、数值转换<br>有3个方法可以将非数值类型的值转换成数值类型：Number() parseInt()  parseFloat()。<br>Number()方法可以将任何数值类型转化成数值类型，其他两个需要字符串类型<br>Number()转换规则：</p>
 <ul>
 <li>Boolean的值，true转换成1， false转化成0</li>
