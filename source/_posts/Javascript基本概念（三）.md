@@ -85,3 +85,78 @@ console.log(a); //7
 ## 乘性操作符
 ES有三个乘性操作符，乘法，除法和求模。
 如果乘性操作符的某一个操作数不是数值，则将会用Number()方法，先转换成数值。
+1、乘法(*)
+规则：
+  * 乘积超过限制，则显示Infinity或者-Infinity
+  * 有一个操作数为NaN，结果为NaN
+  * Infinity与0相乘，结果是NaN
+  * Infinity与非0数相乘，结果是Infinity或者-Infinity
+  * Infinity与Infinity相乘，结果是Infinity
+2、除法(/)
+规则：
+  * Infinity与Infinity相除，结果是NaN
+  * 0/0结果是NaN
+  * 其他操作数／0 结果是Infinity或者-Infinity
+3、求模(%)
+规则：
+  * Infinity%操作数 结果是NaN
+  * 操作数%0，结果是NaN
+  * Infinity%Infinity，结果是NaN
+  * 操作数%Infinity，结果是操作数
+
+## 加性操作符
+ES中有两个加性操作符，加法和减法
+1、加法(+)
+规则：
+  * 有一个操作数是NaN，结果就是NaN
+  * Infinity + Infinity = Infinity
+  * -Infinity + -Infinity = -Infinity
+  * Infinity + -Infinity = NaN
+  * +0 + +0 = +0
+  * -0 + -0 = -0
+  * +0 + -0 = +0
+  * 两个操作数都是字符串，则将字符串拼接起来
+  * 只有一个操作数是字符串，另一个操作数则会转换成字符串，然后拼接起来。
+
+2、减法(-)
+规则：
+  * Infinity - Infinity = NaN
+  * -Infinity - -Infinity = NaN
+  * Infinity - -Infinity = Infinity
+  * -Infinity - Infinity = -Infinity
+
+## 关系操作符
+关系操作符有大于(>)，小于(<),小于等于(<=),大于等于(>=)
+规则：
+  * 都是数值，执行数值比较
+  * 都是字符串，执行字符串编码比较
+  * 一个是数值，则另一个转换成数值比较
+
+## 相等操作符
+ES中提供了两种相等操作符：
+相等操作符：先转换再比较
+全等操作符：不转换只比较
+1、相等操作符(==,!=),强制转型，然后比较。
+规则：
+  * 如果有一个是布尔类型的操作数，则先转换成数值。
+  * 如果有一个是数值，一个是字符串，则将字符串转换成数值
+  * 如果有一个是对象，则用valueOf转成基本类型比较
+  * null 和undefined 相等
+  * 如果有一个操作数是NaN，则==返回false，!=返回true
+  * 如果都是对象，则比较两个对象是不是一个对象，是否来指向同一个对象。
+2、全等操作符(===,!==),不转换，只比较。
+规则：
+  * 只要是完全一样就为true，其他为false。
+
+##条件操作符
+ES中的条件操作符(?:)
+```javascript
+variable ? console.log(true): console.log(false);
+```
+##赋值操作符
+其中有+= ，-=，*=，／=，%=，<<=, >>=, >>>=
+
+##逗号操作符
+```javascript
+var a = 1, b = 2, c = 3;
+```
