@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-19T07:29:37.000Z</updated>
+  <updated>2018-06-21T03:00:44.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,84 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>对象字面量声明和构造函数声明的比较</title>
+    <link href="http://yoursite.com/2018/06/20/%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E7%9A%84%E6%AF%94%E8%BE%83/"/>
+    <id>http://yoursite.com/2018/06/20/对象字面量声明和构造函数声明的比较/</id>
+    <published>2018-06-20T15:58:01.000Z</published>
+    <updated>2018-06-21T03:00:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>去某家面试的时候，在笔试的时候，看到了这个问题，回来研究一下。<br>JS 中有很多种对象的声明方式，一般我用到的也就是这两种，通过字面量来声明对象和通过构造函数来声明对象。</p><h2 id="用字面量来声明对象"><a href="#用字面量来声明对象" class="headerlink" title="用字面量来声明对象"></a>用字面量来声明对象</h2><p>我们可以直接在创建对象的时候添加功能</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">  name: <span class="string">'paji'</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  sex: <span class="string">'male'</span>,</span><br><span class="line">  speak: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'大家好'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>或者在一开始先声明一个空的对象，当然这个空对象也不是空对象，也是从 object 上继承了好多 object 的属性，只是没有自有属性</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;&#125;,</span><br><span class="line">person.name = <span class="string">'paji'</span>;</span><br><span class="line">person.age = <span class="number">18</span>;</span><br><span class="line">person.sex = <span class="string">'male'</span>;</span><br><span class="line">person.speak = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'大家好'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="用构造函数声明对象"><a href="#用构造函数声明对象" class="headerlink" title="用构造函数声明对象"></a>用构造函数声明对象</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person.name = <span class="string">'paji'</span>;</span><br><span class="line">person.age = <span class="number">18</span>;</span><br><span class="line">person.sex = <span class="string">'male'</span>;</span><br><span class="line">person.speak = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'大家好'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="字面量的优势"><a href="#字面量的优势" class="headerlink" title="字面量的优势"></a>字面量的优势</h2><ul><li>代码量更少，更易读</li><li>强调对象就是一个简单的可变的散列表，而不必一定派生自某个类</li><li>对象字面量运行速度更快，因为它们可以在解析的时候被优化：它们不需要”作用域解析(scope resolution)”；因为存在我们创建了一个同名的构造函数Object()的可能，当我们调用Object()的时候，解析器需要顺着作用域链从当前作用域开始查找，如果在当前作用域找到了名为Object()的函数就执行，如果没找到，就继续顺着作用域链往上照，直到找到全局Object()构造函数为止</li><li>Object()构造函数可以接收参数，通过这个参数可以把对象实例的创建过程委托给另一个内置构造函数，并返回另外一个对象实例，而这往往不是你想要的。</li></ul><p><b><i>尽量用对象字面量的方式来创建对象</i></b></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;去某家面试的时候，在笔试的时候，看到了这个问题，回来研究一下。&lt;br&gt;JS 中有很多种对象的声明方式，一般我用到的也就是这两种，通过字面量来声明对象和通过构造函数来声明对象。&lt;/p&gt;
+&lt;h2 id=&quot;用字面量来声明对象&quot;&gt;&lt;a href=&quot;#用字面量来声明对象&quot; class
+      
+    
+    </summary>
+    
+      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS中数值类型</title>
+    <link href="http://yoursite.com/2018/06/19/JS%E4%B8%AD%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://yoursite.com/2018/06/19/JS中数值类型/</id>
+    <published>2018-06-19T07:35:51.000Z</published>
+    <updated>2018-06-21T03:01:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h1><p>JavaScript 中的数字类型只有 Number 一种，Number 类型采用 IEEE754 标准中的“双精度浮点数”来表示一个数字，不区分整数和浮点数 。<br>先挖个坑</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;数值类型&quot;&gt;&lt;a href=&quot;#数值类型&quot; class=&quot;headerlink&quot; title=&quot;数值类型&quot;&gt;&lt;/a&gt;数值类型&lt;/h1&gt;&lt;p&gt;JavaScript 中的数字类型只有 Number 一种，Number 类型采用 IEEE754 标准中的“双精度浮点数”
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS包装对象</title>
+    <link href="http://yoursite.com/2018/06/19/JS%E5%8C%85%E8%A3%85%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2018/06/19/JS包装对象/</id>
+    <published>2018-06-19T07:35:19.000Z</published>
+    <updated>2018-06-21T03:01:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>先挖个坑</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;先挖个坑&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Javascript基本概念（四）</title>
     <link href="http://yoursite.com/2018/06/19/Javascript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
     <id>http://yoursite.com/2018/06/19/Javascript基本概念（四）/</id>
     <published>2018-06-19T06:32:32.000Z</published>
-    <updated>2018-06-19T07:29:37.000Z</updated>
+    <updated>2018-06-19T09:15:47.000Z</updated>
     
     <content type="html"><![CDATA[<p>这是 JS 高程第三章的第四部分。<br>本节的主要内容是</p><ul><li>语句</li><li>函数</li></ul><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><p><code>if (condition) statement1 else statement2</code><br>eg:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &gt; <span class="number">25</span>) &#123;</span><br><span class="line">  alert(<span class="string">'Greater than 25.'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; <span class="number">0</span>) &#123;</span><br><span class="line">  alert(<span class="string">'Less than 0.'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">'Between 0 and 25, inclusive.'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="do-while-语句"><a href="#do-while-语句" class="headerlink" title="do-while 语句"></a>do-while 语句</h3><p>后测试循环语句</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  statement;</span><br><span class="line">&#125; <span class="keyword">while</span> (expression);</span><br></pre></td></tr></table></figure><h3 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a>while 语句</h3><p>前测试循环语句<br><code>while(expression) statement</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  i += <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="for-语句"><a href="#for-语句" class="headerlink" title="for 语句"></a>for 语句</h3><p>前测试循环语句<br><code>for (initialization; expression; post-loop-expression) statement</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">  alert(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="for-in-语句"><a href="#for-in-语句" class="headerlink" title="for-in 语句"></a>for-in 语句</h3><p>精准迭代语句，可以用来枚举对象属性<br><code>for (property in expression) statement</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> propName <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">  <span class="built_in">document</span>.write(propName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="label-语句"><a href="#label-语句" class="headerlink" title="label 语句"></a>label 语句</h3><p><code>label: statement</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">start: <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">  alert(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这个例子中的 start 标签，可以在将来由 break 和 continue 语句引用，加标签的语句一般都要与 for 语句等循环语句配合使用。</p><h3 id="break-和-continue-语句"><a href="#break-和-continue-语句" class="headerlink" title="break 和 continue 语句"></a>break 和 continue 语句</h3><p>break 语句会立即跳出循环，然后执行循环后的代码<br>continue 语句会跳出循环，然后从循环顶部开始执行循环。</p><h3 id="switch-语句"><a href="#switch-语句" class="headerlink" title="switch 语句"></a>switch 语句</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (expression) &#123;</span><br><span class="line">  <span class="keyword">case</span> value:</span><br><span class="line">    statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> value:</span><br><span class="line">    statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> value:</span><br><span class="line">    statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>ES 中采用 function 来声明一个函数，后面跟一组参数和函数体，函数会在执行完 return 语句之后停止并立即退出。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span>(<span class="params">arg0, arg1,...,argN</span>) </span>&#123;</span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="参数理解"><a href="#参数理解" class="headerlink" title="参数理解"></a>参数理解</h3><p>函数内部通过一个数组arguments来接收参数。arguments对象只是与数组很像，但是并不是Array的实例。<br>可以用arguments[0]来获取内部的元素。<br>ECMAScript 中的所有的参数传递的都是值，不可能通过引用传递参数</p><h3 id="没有重载"><a href="#没有重载" class="headerlink" title="没有重载"></a>没有重载</h3><p>ES中的函数没有重载</p>]]></content>
     
@@ -479,88 +552,6 @@
       
       
         &lt;p&gt;堆排序(Heapsort)是指利用堆积树（堆）这种数据结构所设计的一种排序算法，它是选择排序的一种。可以利用数组的特点快速定位指定索引的元素。堆分为大根堆和小根堆，是完全二叉树。大根堆的要求是每个节点的值都不大于其父节点的值，即A[PARENT[i]] &amp;gt;= A[i]
-      
-    
-    </summary>
-    
-      <category term="算法学习" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>归并排序</title>
-    <link href="http://yoursite.com/2018/05/19/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
-    <id>http://yoursite.com/2018/05/19/归并排序/</id>
-    <published>2018-05-19T06:45:11.000Z</published>
-    <updated>2018-05-21T07:03:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法,该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。</p><p>把长度为n的输入序列分成两个长度为n/2的子序列；<br>对这两个子序列分别采用归并排序；<br>将两个排序好的子序列合并成一个最终的排序序列。</p><p>归并操作的工作原理如下：<br>第一步：申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列<br>第二步：设定两个指针，最初位置分别为两个已经排序序列的起始位置<br>第三步：比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置<br>重复步骤3直到某一指针超出序列尾<br>将另一序列剩下的所有元素直接复制到合并序列尾</p><p>最佳情况：T(n) = O(n)<br>最差情况：T(n) = O(nlogn)<br>平均情况：T(n) = O(nlogn)</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mergeSort = <span class="function">(<span class="params">arr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> len = arr.lenght;</span><br><span class="line">  <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> m = (len &gt;&gt; <span class="number">1</span>), <span class="comment">//通过位运算符，将len取为一半。</span></span><br><span class="line">    left = array.slice(<span class="number">0</span>, m),</span><br><span class="line">    right = array.slice(m); <span class="comment">//拆分为两个子数组</span></span><br><span class="line">  <span class="keyword">return</span> merge(mergeSort(left), mergeSort(right));<span class="comment">//子数组继续递归拆分,然后再合并</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> merge = <span class="function">(<span class="params">left, right</span>) =&gt;</span> &#123; <span class="comment">//合并两个子数组</span></span><br><span class="line">  <span class="keyword">let</span> res = [];</span><br><span class="line">  <span class="keyword">while</span> (left.length &amp;&amp; right.length) &#123;</span><br><span class="line">    <span class="keyword">let</span> item = left[<span class="number">0</span>] &lt;= right[<span class="number">0</span>] ? left.shift() : right.shift();<span class="comment">//注意:判断的条件是小于或等于,如果只是小于,那么排序将不稳定.</span></span><br><span class="line">    result.push(item);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result.concat(left.length ? left : right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法,该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二
-      
-    
-    </summary>
-    
-      <category term="算法学习" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>选择排序</title>
-    <link href="http://yoursite.com/2018/05/19/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/"/>
-    <id>http://yoursite.com/2018/05/19/选择排序/</id>
-    <published>2018-05-19T06:27:21.000Z</published>
-    <updated>2018-05-19T06:39:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。</p><p>简单选择排序的基本思想：<br>第1趟，在待排序记录r[1]~r[n]中选出最小的记录，将它与r[1]交换；<br>第2趟，在待排序记录r[2]~r[n]中选出最小的记录，将它与r[2]交换；<br>以此类推，<br>第i趟在待排序记录r[i]~r[n]中选出最小的记录，将它与r[i]交换，使有序序列不断增长直到全部排序完毕。</p><p>最佳情况：T(n) = O(n^2)<br>最差情况：T(n) = O(n^2)<br>平均情况：T(n) = O(n^2)</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> selectSort = <span class="function">(<span class="params">arr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> len = arr.length, min;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    min = i;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; len; j++)&#123;</span><br><span class="line">      arr[j] &lt; arr[min] &amp;&amp; (min = j);</span><br><span class="line">    &#125;</span><br><span class="line">    min != i &amp;&amp; swap(i,min,arr);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。&lt;/p&gt;
-&lt;p&gt;简单选择排序的基本思想：&lt;br&gt;第1趟，
-      
-    
-    </summary>
-    
-      <category term="算法学习" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速排序</title>
-    <link href="http://yoursite.com/2018/05/19/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
-    <id>http://yoursite.com/2018/05/19/快速排序/</id>
-    <published>2018-05-19T06:01:19.000Z</published>
-    <updated>2018-05-21T08:11:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>快速排序（Quicksort）是对冒泡排序的一种改进。<br>快速排序的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p><p>一趟快速排序的算法是：<br>（1）在数据集之中，选择一个元素作为”基准”（pivot）。<br>（2）所有小于”基准”的元素，都移到”基准”的左边；所有大于”基准”的元素，都移到”基准”的右边。<br>（3）对”基准”左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。</p><p>最佳情况：T(n) = O(nlogn)<br>最差情况：T(n) = O(n2)<br>平均情况：T(n) = O(nlogn)</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> quickSort = <span class="function">(<span class="params">arr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123; <span class="keyword">return</span> arr; &#125;</span><br><span class="line">  <span class="keyword">let</span> pivotIndex = arr.length &gt;&gt; <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(pivotIndex);</span><br><span class="line">  <span class="keyword">let</span> pivot = arr.splice(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">let</span> left = [];</span><br><span class="line">  <span class="keyword">let</span> right = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</span><br><span class="line">      left.push(arr[i]);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      right.push(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> quickSort(left).concat([pivot], quickSort(right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;快速排序（Quicksort）是对冒泡排序的一种改进。&lt;br&gt;快速排序的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成
       
     
     </summary>
