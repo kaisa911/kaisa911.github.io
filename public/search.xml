@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[项目action封装]]></title>
+    <url>%2F2018%2F06%2F25%2F%E9%A1%B9%E7%9B%AEaction%E5%B0%81%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445import callApi from '../../utils/callApi';import api from '../../api';//对dispatch的函数进行封装。const commonCallApi = (dispatch, formData, url, type) =&gt; &#123; return callApi.post(url, formData).then(res =&gt; &#123; if (res.code === 200) &#123; const data = type ? dispatch(&#123; type, data: res.data &#125;) : res; return Promise.resolve(data); &#125; return Promise.reject(res); &#125;);&#125;;/** * 公共action * @param requestUrl * @param data * @param type 设置action的type * @returns &#123;function(*)&#125; */const commonAction = (requestUrl, data, type) =&gt; &#123; return dispatch =&gt; &#123; return commonCallApi(dispatch, requestUrl, data, type); &#125;;&#125;;/** * 获取列表 * @form: * @param formData * @returns &#123;function(*)&#125; */const getList = formData =&gt; &#123; return commonAction(api.getList, formData, 'get_list');&#125;;export default &#123; getList&#125;;]]></content>
+      <categories>
+        <category>Demo练习</category>
+      </categories>
+      <tags>
+        <tag>Javascript redux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[对象字面量声明和构造函数声明的比较]]></title>
     <url>%2F2018%2F06%2F20%2F%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E7%9A%84%E6%AF%94%E8%BE%83%2F</url>
     <content type="text"><![CDATA[去某家面试的时候，在笔试的时候，看到了这个问题，回来研究一下。JS 中有很多种对象的声明方式，一般我用到的也就是这两种，通过字面量来声明对象和通过构造函数来声明对象。 用字面量来声明对象我们可以直接在创建对象的时候添加功能 12345678let person = &#123; name: 'paji', age: 18, sex: 'male', speak: function() &#123; console.log('大家好'); &#125;&#125;; 或者在一开始先声明一个空的对象，当然这个空对象也不是空对象，也是从 object 上继承了好多 object 的属性，只是没有自有属性 1234567let person = &#123;&#125;,person.name = 'paji';person.age = 18;person.sex = 'male';person.speak = function() &#123; console.log('大家好');&#125; 用构造函数声明对象1234567var person = new Object();person.name = 'paji';person.age = 18;person.sex = 'male';person.speak = function() &#123; console.log('大家好');&#125;; 字面量的优势 代码量更少，更易读 强调对象就是一个简单的可变的散列表，而不必一定派生自某个类 对象字面量运行速度更快，因为它们可以在解析的时候被优化：它们不需要”作用域解析(scope resolution)”；因为存在我们创建了一个同名的构造函数Object()的可能，当我们调用Object()的时候，解析器需要顺着作用域链从当前作用域开始查找，如果在当前作用域找到了名为Object()的函数就执行，如果没找到，就继续顺着作用域链往上照，直到找到全局Object()构造函数为止 Object()构造函数可以接收参数，通过这个参数可以把对象实例的创建过程委托给另一个内置构造函数，并返回另外一个对象实例，而这往往不是你想要的。 尽量用对象字面量的方式来创建对象]]></content>
