@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="applyMiddleware理解  中间件的本质是作为enhancer而存在的。它是通过createStore方法传递到redux的内部中的,中间件模块是一个高阶函数下面是redux中间件的基本格式：1const reduxMiddleware = (&amp;#123;dispatch, getState&amp;#125;[简化的store]) =&amp;gt; (next[上一个中间件的dispatch方法])">
-<meta name="keywords" content="Javascript,react,redux">
+  <meta name="description" content="分享大佬写的深拷贝的方法。。1、JSON.parse(JSON.stringify(obj))这个小方法可以把 obj 里的除了 RegExp 和 function 的属性拷贝下来。function 就忽略了，RegExp 转成{} 2、大佬们写的两个方法。。 123456789101112131415161718192021222324252627282930313233343536373839">
+<meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="redux源码学习--applyMiddleware">
-<meta property="og:url" content="http://yoursite.com/2018/05/11/redux源码学习-applyMiddleware/index.html">
+<meta property="og:title" content="对象深拷贝方法">
+<meta property="og:url" content="http://yoursite.com/2018/06/25/对象深拷贝方法/index.html">
 <meta property="og:site_name" content="Milestone">
-<meta property="og:description" content="applyMiddleware理解  中间件的本质是作为enhancer而存在的。它是通过createStore方法传递到redux的内部中的,中间件模块是一个高阶函数下面是redux中间件的基本格式：1const reduxMiddleware = (&amp;#123;dispatch, getState&amp;#125;[简化的store]) =&amp;gt; (next[上一个中间件的dispatch方法])">
+<meta property="og:description" content="分享大佬写的深拷贝的方法。。1、JSON.parse(JSON.stringify(obj))这个小方法可以把 obj 里的除了 RegExp 和 function 的属性拷贝下来。function 就忽略了，RegExp 转成{} 2、大佬们写的两个方法。。 123456789101112131415161718192021222324252627282930313233343536373839">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-14T09:59:24.000Z">
+<meta property="og:updated_time" content="2018-06-25T06:34:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redux源码学习--applyMiddleware">
-<meta name="twitter:description" content="applyMiddleware理解  中间件的本质是作为enhancer而存在的。它是通过createStore方法传递到redux的内部中的,中间件模块是一个高阶函数下面是redux中间件的基本格式：1const reduxMiddleware = (&amp;#123;dispatch, getState&amp;#125;[简化的store]) =&amp;gt; (next[上一个中间件的dispatch方法])">
+<meta name="twitter:title" content="对象深拷贝方法">
+<meta name="twitter:description" content="分享大佬写的深拷贝的方法。。1、JSON.parse(JSON.stringify(obj))这个小方法可以把 obj 里的除了 RegExp 和 function 的属性拷贝下来。function 就忽略了，RegExp 转成{} 2、大佬们写的两个方法。。 123456789101112131415161718192021222324252627282930313233343536373839">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/11/redux源码学习-applyMiddleware/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/25/对象深拷贝方法/"/>
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>redux源码学习--applyMiddleware | Milestone</title>
+  <title>对象深拷贝方法 | Milestone</title>
   
 
 
@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/redux源码学习-applyMiddleware/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/25/对象深拷贝方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="啪叽">
@@ -352,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">redux源码学习--applyMiddleware
+          <h1 class="post-title" itemprop="name headline">对象深拷贝方法
               
             
           </h1>
@@ -377,24 +377,12 @@
                 
               
 
-              <time title="创建时间：2018-05-11 16:03:07" itemprop="dateCreated datePublished" datetime="2018-05-11T16:03:07+08:00">2018-05-11</time>
+              <time title="创建时间：2018-06-25 11:34:53 / 修改时间：14:34:55" itemprop="dateCreated datePublished" datetime="2018-06-25T11:34:53+08:00">2018-06-25</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-14 17:59:24" itemprop="dateModified" datetime="2018-05-14T17:59:24+08:00">2018-05-14</time>
               
             
           </span>
@@ -411,7 +399,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/redux源码学习/" itemprop="url" rel="index"><span itemprop="name">redux源码学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Demo练习/" itemprop="url" rel="index"><span itemprop="name">Demo练习</span></a></span>
 
                 
                 
@@ -426,8 +414,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/11/redux源码学习-applyMiddleware/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/05/11/redux源码学习-applyMiddleware/" itemprop="commentCount"></span>
+                <a href="/2018/06/25/对象深拷贝方法/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/06/25/对象深拷贝方法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -455,10 +443,11 @@
       
 
       
-        <h1>applyMiddleware理解</h1>
+        <p>分享大佬写的深拷贝的方法。。<br>1、JSON.parse(JSON.stringify(obj))<br>这个小方法可以把 obj 里的除了 RegExp 和 function 的属性拷贝下来。function 就忽略了，RegExp 转成{}</p>
+<p>2、大佬们写的两个方法。。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepClone = <span class="function"><span class="params">obj</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> innerIterator = <span class="function">(<span class="params">v, key, nb</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (v <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> result = v.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (item <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">RegExp</span>(item);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (</span><br><span class="line">          <span class="keyword">typeof</span> item === <span class="string">'function'</span> ||</span><br><span class="line">          item === <span class="literal">null</span> ||</span><br><span class="line">          <span class="keyword">typeof</span> item !== <span class="string">'object'</span></span><br><span class="line">        ) &#123;</span><br><span class="line">          <span class="keyword">return</span> item;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (item <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">          <span class="keyword">return</span> innerIterator(item);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> reduceKeys(item)();</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">return</span> key &amp;&amp; nb ? &#123; ...nb, [key]: result &#125; : result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> newObj = reduceKeys(v)();</span><br><span class="line">    <span class="keyword">return</span> &#123; ...nb, [key]: newObj &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> reduceKeys = <span class="function"><span class="params">value</span> =&gt;</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> ks = <span class="built_in">Object</span>.keys(value);</span><br><span class="line">    <span class="keyword">return</span> ks.reduce(<span class="function">(<span class="params">pre, current</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> v = value[current];</span><br><span class="line">      <span class="keyword">if</span> (v <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123; ...pre, [current]: <span class="keyword">new</span> <span class="built_in">RegExp</span>(v) &#125;;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (</span><br><span class="line">        v === <span class="literal">null</span> ||</span><br><span class="line">        <span class="keyword">typeof</span> v === <span class="string">'function'</span> ||</span><br><span class="line">        <span class="keyword">typeof</span> v !== <span class="string">'object'</span></span><br><span class="line">      ) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123; ...pre, [current]: v &#125;;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> innerIterator(v, current, pre);</span><br><span class="line">    &#125;, &#123;&#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> reduceKeys(obj)();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepClone = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> notIn = [<span class="string">'[object Function]'</span>, <span class="string">'[object Object]'</span>, <span class="string">'[object Array]'</span>];</span><br><span class="line">  <span class="keyword">const</span> getType = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(data);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> isObject = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> getType(data) === <span class="string">'[object Object]'</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> isArray = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> getType(data) === <span class="string">'[object Array]'</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> isFunction = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> getType(data) === <span class="string">'[object Function]'</span>;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> result;</span><br><span class="line">  <span class="keyword">if</span> (isObject(data)) &#123;</span><br><span class="line">    result = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> p <span class="keyword">in</span> data) &#123;</span><br><span class="line">      <span class="keyword">if</span> (notIn.includes(getType(data[p]))) &#123;</span><br><span class="line">        result[p] = deepClone(data[p]);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result[p] = data[p];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isArray(data)) &#123;</span><br><span class="line">    result = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">of</span> data) &#123;</span><br><span class="line">      <span class="keyword">if</span> (notIn.includes(getType(i))) &#123;</span><br><span class="line">        result.push(deepClone(i));</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result.push(i);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isFunction(data)) &#123;</span><br><span class="line">    result = data;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>中间件的本质是作为enhancer而存在的。它是通过createStore方法传递到redux的内部中的,中间件模块是一个高阶函数<br>下面是redux中间件的基本格式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reduxMiddleware = <span class="function">(<span class="params">&#123;dispatch, getState&#125;[简化的store]</span>) =&gt;</span> (next[上一个中间件的dispatch方法]) =&gt; <span class="function">(<span class="params">action[实际派发的action对象]</span>) =&gt;</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">applyMiddleware</span>(<span class="params">...middlewares</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// middlewares就是我们传递给applyMiddlewarez函数的一系列中间件函数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">createStore</span>) =&gt;</span> (...args) =&gt; &#123;</span><br><span class="line">    <span class="comment">// createStore就是redux用于创建store的方法,args === [reducers, preloadedState]。下面这句话就是在中间件的内部，使用我们传递的参数创建一个store对象</span></span><br><span class="line">    <span class="comment">// 注：这一块没有传递enhancer,所以返回的就是我们经常使用的store对象</span></span><br><span class="line">    <span class="keyword">const</span> store = createStore(...args)</span><br><span class="line">    <span class="comment">// 获取store对象的dispatch方法</span></span><br><span class="line">    <span class="keyword">let</span> dispatch = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(</span><br><span class="line">        <span class="string">`Dispatching while constructing your middleware is not allowed. `</span> +</span><br><span class="line">          <span class="string">`Other middleware would not be applied to this dispatch.`</span></span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 传递给中间件的第一层的函数的参数，</span></span><br><span class="line">    <span class="keyword">const</span> middlewareAPI = &#123;</span><br><span class="line">      getState: store.getState,</span><br><span class="line">      <span class="comment">// 重写了dispatch方法，其实就是store.dispatch(...args)</span></span><br><span class="line">      dispatch: <span class="function">(<span class="params">...args</span>) =&gt;</span> dispatch(...args)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 着重给大家详细的解释一下这一块</span></span><br><span class="line"><span class="comment">     * 假设我们给applyMiddleware函数传递的中间件是</span></span><br><span class="line"><span class="comment">     * applyMiddleware(</span></span><br><span class="line"><span class="comment">     *      f1 =&gt; g1 =&gt; h1(...arg) =&gt; &#123;&#125;,</span></span><br><span class="line"><span class="comment">     *      f2 =&gt; g2 =&gt; h2(...arg) =&gt; &#123;&#125;</span></span><br><span class="line"><span class="comment">     * )</span></span><br><span class="line"><span class="comment">     * 运行下面的这行代码之后，chain中保存的内容是</span></span><br><span class="line"><span class="comment">     * chain = [g1 =&gt; h1(...arg) =&gt; &#123;&#125;, g2 =&gt; h2(...arg) =&gt; &#123;&#125;]</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> chain = middlewares.map(<span class="function"><span class="params">middleware</span> =&gt;</span> middleware(middlewareAPI))</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 当我们把chain传入到 compose中后，根据我们对compose的分析，</span></span><br><span class="line"><span class="comment">     * compose(...chain)(store.dispatch)的结果就是:</span></span><br><span class="line"><span class="comment">     * g1(h2(...arg)) =&gt; h1(...arg)</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * 也就是说，按照上面的这个形式，下面的dispatch和h1函数是一样的，所以，h1的参数，就是我们需要派发的action，当我们调用dispatch的时候，其实就相当于调用h1(action)，而在h1的内部，这个action是由g1的参数</span></span><br><span class="line"><span class="comment">     * 也就是h2进行派发的，所以这个时候action就传递到了h2的内部，而h2的参数是由g2的参数，也就是实际传入的store.dispatch进行派发的，就这样层层传入，层层输出，就形成了我们强大的中间件机制。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    dispatch = compose(...chain)(store.dispatch)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回的也是一个store对象</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      ...store,</span><br><span class="line">      <span class="comment">// 这个dispatch其实就是，各个中间件的最底层(第三层)的哪个函数组成的圆环函数构成的</span></span><br><span class="line">      dispatch</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -491,10 +480,6 @@
           
             <a href="/tags/Javascript/" <i class="fa fa-tag"></i> Javascript</a>
           
-            <a href="/tags/react/" <i class="fa fa-tag"></i> react</a>
-          
-            <a href="/tags/redux/" <i class="fa fa-tag"></i> redux</a>
-          
         </div>
       
 
@@ -506,8 +491,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/11/redux源码学习-bindActionCreators/" rel="next" title="redux源码学习--bindActionCreators">
-                <i class="fa fa-chevron-left"></i> redux源码学习--bindActionCreators
+              <a href="/2018/06/25/项目action封装/" rel="next" title="项目action封装">
+                <i class="fa fa-chevron-left"></i> 项目action封装
               </a>
             
           </div>
@@ -515,10 +500,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/11/redux-devtools学习理解/" rel="prev" title="redux-devtools学习理解">
-                redux-devtools学习理解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -570,17 +551,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -713,22 +685,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">applyMiddleware理解</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
