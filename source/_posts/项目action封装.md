@@ -9,9 +9,16 @@ categories: Demo练习
 import callApi from '../../utils/callApi';
 import api from '../../api';
 
-//对dispatch进行封装。
-const commonCallApi = (dispatch, formData, url, type) => {
-  return callApi.post(url, formData).then(res => {
+/**
+ * callApi
+ * @param dispatch
+ * @param formData 
+ * @param requestUrl
+ * @param type  设置action的type
+ * @returns {function(*)}
+ */
+const commonCallApi = (dispatch, formData, requestUrl, type) => {
+  return callApi.post(requestUrl, formData).then(res => {
     if (res.code === 200) {
       const data = type
         ? dispatch({
@@ -28,13 +35,13 @@ const commonCallApi = (dispatch, formData, url, type) => {
 /**
  * 公共action
  * @param requestUrl
- * @param data
+ * @param formData
  * @param type  设置action的type
  * @returns {function(*)}
  */
-const commonAction = (requestUrl, data, type) => {
+const commonAction = (requestUrl, formData, type) => {
   return dispatch => {
-    return commonCallApi(dispatch, requestUrl, data, type);
+    return commonCallApi(dispatch, requestUrl, formData, type);
   };
 };
 
