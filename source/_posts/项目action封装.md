@@ -9,7 +9,7 @@ categories: Demo练习
 import callApi from '../../utils/callApi';
 import api from '../../api';
 
-//对dispatch的函数进行封装。
+//对dispatch进行封装。
 const commonCallApi = (dispatch, formData, url, type) => {
   return callApi.post(url, formData).then(res => {
     if (res.code === 200) {
@@ -40,7 +40,6 @@ const commonAction = (requestUrl, data, type) => {
 
 /**
  * 获取列表
- * @form:
  * @param formData
  * @returns {function(*)}
  */
