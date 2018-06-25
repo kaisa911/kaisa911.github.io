@@ -72,20 +72,24 @@
     <link href="http://yoursite.com/2018/06/19/JS%E5%8C%85%E8%A3%85%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2018/06/19/JS包装对象/</id>
     <published>2018-06-19T07:35:19.000Z</published>
-    <updated>2018-06-21T03:01:40.000Z</updated>
+    <updated>2018-06-25T02:29:50.000Z</updated>
     
-    <content type="html"><![CDATA[<p>先挖个坑</p>]]></content>
+    <content type="html"><![CDATA[<p>Q1: 什么是包装对象？<br>A1: JS 的数值，布尔，字符串类型的变量，在一定条件下，也可以自动变成对象，这就是原始类型的包装对象。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">-1</span>);</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="keyword">let</span> c = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'hello world'</span>);</span><br></pre></td></tr></table></figure><p>Q2: 包装对象和同样的原始类型的值相等么，这么做有什么目的？<br>A2: 不想等。包装对象的最大目的，首先是使得 JavaScript 的对象涵盖所有的值，其次使得原始类型的值可以方便地调用某些方法。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> a; <span class="comment">//'object'</span></span><br><span class="line"><span class="keyword">typeof</span> b; <span class="comment">//'object'</span></span><br><span class="line"><span class="keyword">typeof</span> c; <span class="comment">//'object'</span></span><br><span class="line"></span><br><span class="line">a === <span class="number">-1</span>; <span class="comment">//false</span></span><br><span class="line">b === <span class="literal">true</span>; <span class="comment">//false;</span></span><br><span class="line">c === <span class="string">'hello world'</span>; <span class="comment">//false</span></span><br></pre></td></tr></table></figure><p>Q3: 包装对象有什么实例方法？<br>A3: 包装对象可以使用 object 对象提供的原生的方法，其中主要的就是 valueOf()和 toString()方法</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a.valueOf(); <span class="comment">//-1</span></span><br><span class="line">b.valueOf(); <span class="comment">//true</span></span><br><span class="line">b.valueOf(); <span class="comment">//'hello world'</span></span><br><span class="line"></span><br><span class="line">a.toString(); <span class="comment">//'-1'</span></span><br><span class="line">b.toString(); <span class="comment">//'true'</span></span><br><span class="line">b.toString(); <span class="comment">//'hello world'</span></span><br></pre></td></tr></table></figure><p>Q4: 原始类型和实例对象怎么转换？<br>A4: 原始类型的值，可以自动当作包装对象调用，即调用各种包装对象的属性和方法。这时，JavaScript 引擎会自动将原始类型的值转为包装对象实例，在使用后立刻销毁实例。<br>自动转换生成的包装对象是只读的，无法修改。所以，字符串无法添加新属性。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="string">'Hello World'</span>;</span><br><span class="line">s.x = <span class="number">123</span>;</span><br><span class="line">s.x; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure><p>另一方面，调用结束后，包装对象实例会自动销毁。这意味着，下一次调用字符串的属性时，实际是调用一个新生成的对象，而不是上一次调用时生成的那个对象，所以取不到赋值在上一个对象的属性。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;先挖个坑&lt;/p&gt;
-
+        &lt;p&gt;Q1: 什么是包装对象？&lt;br&gt;A1: JS 的数值，布尔，字符串类型的变量，在一定条件下，也可以自动变成对象，这就是原始类型的包装对象。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
       
     
     </summary>
     
+      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
     
   </entry>
   
