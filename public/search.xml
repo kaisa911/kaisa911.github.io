@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[变量、作用域和内存问题]]></title>
+    <url>%2F2018%2F06%2F28%2F%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[这是JS高程的第四章，讲的是变量，作用域，以及JS的内存问题。现在来填坑本节包括三个部分 基本类型和引用类型 执行环境 垃圾收集 基本类型和引用类型 基本类型值：简单的数据段，Undefined，Null，number，string，boolean五种基本类型，在操作的时候，可以操作保存在变量中实际的值。 引用类型的值是保存在内存中的对象。Js不允许直接访问内存的位置，也就是不允许直接操作对象的内存空间，在操作对象时，复制对象时，操作的时对象的引用，在为对象添加属性时，操作的是对象 传递参数ES中所有的参数都是按值传递的。基本类型传的值就是变量的值，引用类型传的值是引用内存的地址。 执行环境与作用域全局执行环境，是最外围的一个执行环境。每一个函数都会有自己的执行环境。当执行流进入一个函数时，函数的环境就会被推入一个环境栈中，而在环境执行结束后，栈将其环境弹出，把控制权返回之前的执行环境。当代码在一个环境中执行时，会产生一个作用域链。作用域链的用途，是保证对执行环境有权访问的所有变量和函数的有序访问 可以通过try-catch 和 with语句来延长作用域链 垃圾收集垃圾收集一般有两个策略：标记清楚，进入环境和弹出环境分别有标记，清除弹出环境标记的变量或者函数。引用计数，引用为0的会被清除]]></content>
+      <categories>
+        <category>JS高程填坑笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[对象深拷贝方法]]></title>
     <url>%2F2018%2F06%2F25%2F%E5%AF%B9%E8%B1%A1%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[分享大佬写的深拷贝的方法。。1、JSON.parse(JSON.stringify(obj))这个小方法可以把 obj 里的除了 RegExp 和 function 的属性拷贝下来。function 就忽略了，RegExp 转成{} 2、大佬们写的两个方法。。 12345678910111213141516171819202122232425262728293031323334353637383940const deepClone = obj =&gt; &#123; const innerIterator = (v, key, nb) =&gt; &#123; if (v instanceof Array) &#123; const result = v.map(item =&gt; &#123; if (item instanceof RegExp) &#123; return new RegExp(item); &#125; else if ( typeof item === 'function' || item === null || typeof item !== 'object' ) &#123; return item; &#125; else if (item instanceof Array) &#123; return innerIterator(item); &#125; return reduceKeys(item)(); &#125;); return key &amp;&amp; nb ? &#123; ...nb, [key]: result &#125; : result; &#125; const newObj = reduceKeys(v)(); return &#123; ...nb, [key]: newObj &#125;; &#125;; const reduceKeys = value =&gt; () =&gt; &#123; const ks = Object.keys(value); return ks.reduce((pre, current) =&gt; &#123; const v = value[current]; if (v instanceof RegExp) &#123; return &#123; ...pre, [current]: new RegExp(v) &#125;; &#125; else if ( v === null || typeof v === 'function' || typeof v !== 'object' ) &#123; return &#123; ...pre, [current]: v &#125;; &#125; return innerIterator(v, current, pre); &#125;, &#123;&#125;); &#125;; return reduceKeys(obj)();&#125;; 123456789101112131415161718192021222324252627282930313233343536373839const deepClone = data =&gt; &#123; const notIn = ['[object Function]', '[object Object]', '[object Array]']; const getType = data =&gt; &#123; return Object.prototype.toString.call(data); &#125;; const isObject = data =&gt; &#123; return getType(data) === '[object Object]'; &#125;; const isArray = data =&gt; &#123; return getType(data) === '[object Array]'; &#125;; const isFunction = data =&gt; &#123; return getType(data) === '[object Function]'; &#125;; let result; if (isObject(data)) &#123; result = &#123;&#125;; for (var p in data) &#123; if (notIn.includes(getType(data[p]))) &#123; result[p] = deepClone(data[p]); &#125; else &#123; result[p] = data[p]; &#125; &#125; &#125; else if (isArray(data)) &#123; result = []; for (var i of data) &#123; if (notIn.includes(getType(i))) &#123; result.push(deepClone(i)); &#125; else &#123; result.push(i); &#125; &#125; &#125; else if (isFunction(data)) &#123; result = data; &#125; return result;&#125;;]]></content>
@@ -101,7 +112,7 @@
   </entry>
   <entry>
     <title><![CDATA[Javascript基本概念（一）]]></title>
-    <url>%2F2018%2F06%2F11%2FJavascript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <url>%2F2018%2F06%2F11%2Fjavascript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
     <content type="text"><![CDATA[这是JS高程的第三章，内容比较多的一章，所以拆分开来，慢慢的填坑。路漫漫其修远兮啊本节包括三个部分 JS语法 JS关键字 JS变量 JS语法1、JS中的一切(变量、函数名和操作符)都区分大小写2、标识符，就是指变量、函数、属性的名字，或者函数的参数。第一个字符必须是一个字母、下划线(_)或一个美元符号($）;其他字符可以是字母、下划线、美元符号或数字3、注释：12345// 单行注释/** 这是一个多行 * (块级)注释 */ 4、严格模式ECMAScript5引入了严格模式(strict mode)的概念。严格模式是为JavaScript定义了一种不同的解析与执行模型。1"use strict"; 它是一个编译指示(pragma)，用于告诉支持的JavaScript引擎切换到严格模式。这是为不破坏ECMAScript 3语法而特意选定的语法。5、ECMAScript 中的语句以一个分号结尾;如果省略分号，则由解析器确定语句的结尾。建议在语句结尾处添加“;” 关键字和保留字1、关键字，可用于表示控制语句的开始或结束，或者用于执行特定操作等。按照规则，关键字也是语言保留的，不能用作标识符。2、保留字，保留字在这门语言中还没有任何特定的用途，但它们有可能在将来被用作关键字。 变量ECMAScript的变量是松散类型的，松散类型就是可以用来保存任何类型的数据。换句话说，每个变量仅仅是一个用于保存值的占位符而已。ECMAScript 也支持直接初始化变量，因此在定义变量的同时就可以设置变量的值用var操作符定义的变量将成为定义该变量的作用域中的局部变量。也就是说，如果在函数中使用var定义一个变量，那么这个变量在函数退出后就会被销毁。（块级作用域中可以使用let 和 const来声明块级变量，形成暂时性死区）]]></content>
       <categories>
         <category>JS高程填坑笔记</category>

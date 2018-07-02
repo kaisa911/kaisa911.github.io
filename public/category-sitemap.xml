@@ -7,20 +7,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/%E6%B5%AE%E7%94%9F%E5%B0%8F%E8%AE%B0/</loc>
-        <lastmod>2018-05-14T09:59:24.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/categories/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2018-05-14T09:59:24.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/koa2%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</loc>
         <lastmod>2018-05-25T05:58:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -28,50 +14,64 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-05-25T07:07:24.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2018-05-28T08:43:38.000Z</lastmod>
+        <loc>http://yoursite.com/categories/%E6%B5%AE%E7%94%9F%E5%B0%8F%E8%AE%B0/</loc>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/categories/Glory-Road/</loc>
-        <lastmod>2018-05-29T10:19:28.000Z</lastmod>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/bug%E6%B1%87%E6%80%BB/</loc>
-        <lastmod>2018-06-10T03:42:04.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/categories/JS%E9%AB%98%E7%A8%8B%E5%A1%AB%E5%9D%91%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-19T09:15:47.000Z</lastmod>
+        <loc>http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/</loc>
-        <lastmod>2018-06-25T02:29:50.000Z</lastmod>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/bug%E6%B1%87%E6%80%BB/</loc>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/categories/Demo%E7%BB%83%E4%B9%A0/</loc>
-        <lastmod>2018-06-25T06:34:55.000Z</lastmod>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/JS%E9%AB%98%E7%A8%8B%E5%A1%AB%E5%9D%91%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-07-02T03:11:51.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
