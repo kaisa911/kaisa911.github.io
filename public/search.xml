@@ -144,11 +144,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[CSS占坑]]></title>
-    <url>%2F2018%2F05%2F29%2FCSS%E5%8D%A0%E5%9D%91%2F</url>
-    <content type="text"><![CDATA[占个坑就留着回家写吧～哈哈哈]]></content>
+    <title><![CDATA[CSS 实用片段]]></title>
+    <url>%2F2018%2F05%2F29%2FCSS%E5%AE%9E%E7%94%A8%E7%89%87%E6%AE%B5%2F</url>
+    <content type="text"><![CDATA[1、垂直对齐：垂直对齐容器中的元素. 1234567verticalcenter&#123; position: relative; top: 50%; -webkit-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%);&#125; 2、垂直居中:不知道父元素高度的情况 123456789parentElement &#123; position:relative;&#125;childElement &#123; position: absolute; top: 50%; transform: translateY(-50%);&#125; 若父容器下只有一个元素，且父元素设置了高度，则只需要使用相对定位即可 123456789parentElement &#123; height: xxx;&#125;childElement &#123; position: relative; top: 50%; transform: translateY(-50%);&#125; flex 布局 12345parentElement &#123; display: flex; /*Flex布局*/ display: -webkit-flex; /* Safari */ align-items: center; /*指定垂直居中*/&#125; line-height 设置了行间的距离（行高），将要居中的元素的 line-heigth 值设置为和其块级父元素的 height 值一样时，其内部内容会垂直居中。 1234element &#123; height: 100px; line-height: 100px;&#125; 3、水平居中:行级元素水平居中对齐:text-align:center;块级元素水平居中对齐:margin: 0 auto对于浮动的元素居中 宽度不固定的浮动元素 123&lt;div class="outerbox"&gt; &lt;div class="innerbox"&gt;我是浮动的&lt;/div&gt; &lt;/div&gt; 12345678910.outerbox &#123; float: left; position: relative; left: 50%;&#125;.innerbox &#123; float: left; position: relative; right: 50%;&#125; 。。。未完待续]]></content>
       <categories>
-        <category>Glory Road</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
         <tag>CSS</tag>

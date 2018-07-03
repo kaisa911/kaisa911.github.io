@@ -23,13 +23,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/CSS/</loc>
-        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/html/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -58,13 +51,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/%E7%AE%97%E6%B3%95/</loc>
-        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/webpack/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -72,7 +58,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/Javascript-redux/</loc>
+        <loc>http://yoursite.com/tags/%E7%AE%97%E6%B3%95/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -86,8 +72,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/tags/Javascript-redux/</loc>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/Javascript/</loc>
         <lastmod>2018-07-02T03:11:51.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/CSS/</loc>
+        <lastmod>2018-07-03T05:49:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
