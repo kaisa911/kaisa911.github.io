@@ -21,20 +21,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/</loc>
-        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/categories/Demo%E7%BB%83%E4%B9%A0/</loc>
-        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/Glory-Road/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -63,15 +49,29 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/JS%E9%AB%98%E7%A8%8B%E5%A1%AB%E5%9D%91%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-07-02T03:11:51.000Z</lastmod>
+        <loc>http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-07-03T05:49:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-07-03T05:49:11.000Z</lastmod>
+        <loc>http://yoursite.com/categories/JS%E9%AB%98%E7%A8%8B%E5%A1%AB%E5%9D%91%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-07-09T08:06:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/</loc>
+        <lastmod>2018-07-10T02:09:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/Demo%E7%BB%83%E4%B9%A0/</loc>
+        <lastmod>2018-07-10T04:46:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
