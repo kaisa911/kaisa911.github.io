@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Milestone">
 <meta property="og:description" content="JS 高程第 7 章，主要讲函数的表达式。主要内容有下面几个：  函数表达式的特征 递归 闭包等问题  一、函数表达的式的特征：1、函数声明提升具名函数会有函数生命提升，匿名函数，函数表达式，箭头函数声明不能被提升 123456789101112131415161718192021//函数声明提升sayHi();function sayHi() &amp;#123;  console.log(&apos;hi&apos;);">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-09T08:06:57.000Z">
+<meta property="og:updated_time" content="2018-07-10T07:42:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数表达式">
 <meta name="twitter:description" content="JS 高程第 7 章，主要讲函数的表达式。主要内容有下面几个：  函数表达式的特征 递归 闭包等问题  一、函数表达的式的特征：1、函数声明提升具名函数会有函数生命提升，匿名函数，函数表达式，箭头函数声明不能被提升 123456789101112131415161718192021//函数声明提升sayHi();function sayHi() &amp;#123;  console.log(&apos;hi&apos;);">
@@ -377,12 +377,24 @@
                 
               
 
-              <time title="创建时间：2018-07-09 14:57:14 / 修改时间：16:06:57" itemprop="dateCreated datePublished" datetime="2018-07-09T14:57:14+08:00">2018-07-09</time>
+              <time title="创建时间：2018-07-09 14:57:14" itemprop="dateCreated datePublished" datetime="2018-07-09T14:57:14+08:00">2018-07-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-10 15:42:57" itemprop="dateModified" datetime="2018-07-10T15:42:57+08:00">2018-07-10</time>
               
             
           </span>
@@ -454,6 +466,9 @@
 <p>二、递归<br>递归函数就是一个函数通过名字调用自身的情况下构成的</p>
 <p>三、闭包<br>闭包是指有权访问另一个函数作用域中变量的函数。常见的闭包创建方式，是在函数内创建另一个函数。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">plusFive</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + <span class="number">5</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>四、模拟块级作用域<br>ES5 中，可以用匿名函数来模拟块级作用域</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//这里是块级作用域</span></span><br><span class="line">&#125;)();</span><br><span class="line"><span class="keyword">var</span> someFunction = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//这里是块级作用域</span></span><br><span class="line">&#125;;</span><br><span class="line">someFunction();</span><br></pre></td></tr></table></figure>
+<p>五、私有变量<br>严格来讲，JS没有私有成员的概念，所有的属性都是公有的，不过，倒是有一个私有变量的概念<br>任何在函数中定义的变量，都可以认为是私有变量，因为不能在函数的外部访问这些变量。 私有变量包括函数的参数、局部变量和在函数内部定义的其他函数。</p>
 
       
     </div>
