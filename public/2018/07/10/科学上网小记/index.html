@@ -124,7 +124,7 @@
 <meta property="og:image" content="https://github.com/kaisa911/studyNotes/blob/master/public/image/macpeizhi01.png?raw=true">
 <meta property="og:image" content="https://github.com/kaisa911/studyNotes/blob/master/public/image/macpeizhi02.png?raw=true">
 <meta property="og:image" content="https://github.com/kaisa911/studyNotes/blob/master/public/image/bt01.png?raw=true">
-<meta property="og:updated_time" content="2018-07-10T04:46:39.000Z">
+<meta property="og:updated_time" content="2018-07-11T05:50:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="科学上网小记">
 <meta name="twitter:description" content="整理一下前一段时间研究科学上网的方法。科学上网需要购买国外的服务器, 会有一定的花费, 请自行判断 购买服务器科学上网是通过 VPS，搭建 ss 或者 ssr 服务器（梯子）来实现的。vps 服务器需要选择国外的（毕竟要翻墙）。一般都会在搬瓦工或者 vultr 购买服务器。我是看了同事在 vultr 买的，我也就在这里买的,感觉还不错，能够随时改变和删除服务器。网站：https://www.vul">
@@ -392,12 +392,24 @@
                 
               
 
-              <time title="创建时间：2018-07-10 10:10:49 / 修改时间：12:46:39" itemprop="dateCreated datePublished" datetime="2018-07-10T10:10:49+08:00">2018-07-10</time>
+              <time title="创建时间：2018-07-10 10:10:49" itemprop="dateCreated datePublished" datetime="2018-07-10T10:10:49+08:00">2018-07-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-11 13:50:01" itemprop="dateModified" datetime="2018-07-11T13:50:01+08:00">2018-07-11</time>
               
             
           </span>
@@ -467,6 +479,9 @@
 <p>ip 就是你新买服务器的 ip，然后会提示让你输入密码，可以把密码复制进去就可以登陆了.<br><img src="https://github.com/kaisa911/studyNotes/blob/master/public/image/lianjie01.png?raw=true" alt="连接服务器"></p>
 <p>2、搭建 ss 服务器<br>我是使用的 ubuntu 的服务器，其他服务器可以 google 其他教程。<br>在刚刚连接的命令行里</p>
 <ul>
+<li><p>安装pip前需要前置安装setuptools</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate  https://pypi.python.org/packages/source/s/setuptools/setuptools-19.6.tar.gz#md5=c607dd118eae682c44ed146367a17e26</span><br><span class="line"></span><br><span class="line">tar -zxvf setuptools-19.6.tar.gz</span><br><span class="line"></span><br><span class="line">cd setuptools-19.6</span><br><span class="line"></span><br><span class="line">python3 setup.py build</span><br><span class="line"></span><br><span class="line">python3 setup.py install</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>安装 pip<br>首先安装 pip3：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3-pip</span><br></pre></td></tr></table></figure>
 </li>
@@ -579,6 +594,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/07/10/BOM-学习/" rel="prev" title="BOM 学习">
+                BOM 学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -658,7 +677,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">53</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
