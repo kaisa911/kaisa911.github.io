@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[axios jquery.ajax fetch 区别]]></title>
+    <url>%2F2018%2F08%2F03%2Faxios-jquery-ajax-fetch-%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[最近项目在用 axios，好像出现好久了，才开始学习。 这三个都是发起 http 请求的东西,都算是对原生 XHR 的封装。从 XHR -&gt; Jquery ajax() -&gt; fetch -&gt; axios现在来分别看一下这三个东西 Jquery ajax它是对原生 XHR 的封装，支持 JsonP，是 MVC 编程的一种请求方式，已经逐渐的不适应前端的 MVVM 框架的潮流了。而且，在项目中使用的时候，要使用 ajax，就得把 jquery 都引进来，很冗余。 12345678$.ajax(&#123; type: "POST", url: url, data: data, dataType: dataType, success: function() &#123;&#125;, error: function() &#123;&#125;&#125;); fetch fetch 是一个出现比较久的，但是依旧有好多不兼容的 ajax 的替代品。采用了 es 的 promise。fetch 不会默认的传 cookies，需要添加配置项credentials: &#39;include&#39;fetch 只会对网络请求错误报错，400，500 等问题会进入 then，而不会进入 catch。fetch 不支持超时的问题。fetch 不能监听请求的进度，而 XHR 可以。 1234567try &#123; let response = await fetch(url); let data = response.json(); console.log(data);&#125; catch(e) &#123; console.log("Oops, error", e);&#125; axios 是一个很高档的东西。它不仅支持浏览器的数据请求，还支持 node 创建 http 请求。它和 fetch 一样，也是基于 Promise 的 API，能够从客户端支持防止 CSRF，提供了很多接口，可以并发等。 12345678910axios(&#123; method: "GET", url: url&#125;) .then(res =&gt; &#123; console.log(res); &#125;) .catch(err =&gt; &#123; console.log(err); &#125;);]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[react-router 4.0使用笔记]]></title>
+    <url>%2F2018%2F07%2F23%2Freact-router-4-0%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[最近项目里的 react-router 从 3.0 更新到了 4.0，重新学习了一下 react-router 的东西，感觉从 3 到 4，变化还是很多的。通过react-router 4.0 中文文档和一些其他的教程，大概学会了如何使用。记下来防止以后忘记了。。 v3 的时候，是把所有的路由都写在一个地方，通常就是组件和路由分开。到了 v4，路由就变成了一个和 UI 组件并列的组件，在你需要的地方把路由组件写在合适的地方。不在需要用组件的嵌套来实现路由嵌套。 exactexact 关键字，可以让路由只匹配一个 path，path 为’/‘的路由将不会匹配’/xxx’的 Switch可以使用 Switch 组件，来启用排他性的路由。 12345&lt;Switch&gt; &lt;Route path="/" exact component=&#123;Home&#125; /&gt; &lt;Route path="/about" component=&#123;About&#125; /&gt; &lt;Route path="/user" component=&#123;User&#125; /&gt;&lt;/Switch&gt; 嵌套路由如果需要嵌套路由，在 app 组件中可以把嵌套路由的父组件 /&gt;，在 xxx 组件中，在根据父组件来匹配路由。 12345678910111213141516171819202122232425class XXX extends Component &#123; constructor(props) &#123; super(props); this.state = &#123;&#125;; &#125; render() &#123; const &#123; history, match &#125; = this.props; return ( &lt;Layout&gt; &lt;Layout.Content style=&#123;&#123; padding: "0 50px" &#125;&#125;&gt; &lt;div style=&#123;&#123; background: "#fff", padding: 24 &#125;&#125;&gt; &lt;Divider /&gt; &lt;Route exact path=&#123;`$&#123;match.path&#125;/loan-info`&#125; component=&#123;LoanInfo&#125; /&gt; &lt;Route exact path=&#123;`$&#123;match.path&#125;/img-info`&#125; component=&#123;ImgInfo&#125; /&gt; &lt;Route exact path=&#123;`$&#123;match.path&#125;`&#125; component=&#123;LoanInfo&#125; /&gt; &lt;/div&gt; &lt;/Layout.Content&gt; &lt;/Layout&gt; ); &#125;&#125; withRouter想通过代码跳转子路由，可以用 withRouter,包装 react 组件,让它获得 history 属性 12import &#123; withRouter &#125; from "react-router";withRouter(MyComponent); 然后用this.props.history来跳转。]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>react-router</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[BOM 学习]]></title>
     <url>%2F2018%2F07%2F10%2FBOM-%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[这是js高程的第8章，这是我第一次系统的学习bom，以前都是随便用，也没有成体系的东西，这次要好好学习一下。主要内容： 理解 window 对象——BOM 的核心 控制窗口、框架和弹出窗口 利用 location 对象中的页面信息 使用 navigator 对象了解浏览器 window对象BOM的核心对象是window，它表示浏览器的一个实例。在浏览器中，window对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的Global对象 1、1全局作用域由于 window 对象同时扮演着 ECMAScript 中 Global 对象的角色，因此所有在全局作用域中声明的变量、函数都会变成 window 对象的属性和方法]]></content>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-10T08:49:32.000Z</updated>
+  <updated>2018-08-03T03:52:58.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>axios jquery.ajax fetch 区别</title>
+    <link href="http://yoursite.com/2018/08/03/axios-jquery-ajax-fetch-%E5%8C%BA%E5%88%AB/"/>
+    <id>http://yoursite.com/2018/08/03/axios-jquery-ajax-fetch-区别/</id>
+    <published>2018-08-03T02:41:38.000Z</published>
+    <updated>2018-08-03T03:52:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近项目在用 axios，好像出现好久了，才开始学习。</p><p>这三个都是发起 http 请求的东西,都算是对原生 XHR 的封装。从 XHR -&gt; Jquery ajax() -&gt; fetch -&gt; axios<br>现在来分别看一下这三个东西</p><ul><li>Jquery ajax<br>它是对原生 XHR 的封装，支持 JsonP，是 MVC 编程的一种请求方式，已经逐渐的不适应前端的 MVVM 框架的潮流了。<br>而且，在项目中使用的时候，要使用 ajax，就得把 jquery 都引进来，很冗余。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  type: <span class="string">"POST"</span>,</span><br><span class="line">  url: url,</span><br><span class="line">  data: data,</span><br><span class="line">  dataType: dataType,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ul><li>fetch</li></ul><p>fetch 是一个出现比较久的，但是依旧有好多不兼容的 ajax 的替代品。<br>采用了 es 的 promise。<br>fetch 不会默认的传 cookies，需要添加配置项<code>credentials: &#39;include&#39;</code><br>fetch 只会对网络请求错误报错，400，500 等问题会进入 then，而不会进入 catch。<br>fetch 不支持超时的问题。<br>fetch 不能监听请求的进度，而 XHR 可以。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> response = <span class="keyword">await</span> fetch(url);</span><br><span class="line">  <span class="keyword">let</span> data = response.json();</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Oops, error"</span>, e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>axios 是一个很高档的东西。它不仅支持浏览器的数据请求，还支持 node 创建 http 请求。<br>它和 fetch 一样，也是基于 Promise 的 API，能够从客户端支持防止 CSRF，提供了很多接口，可以并发等。</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">  method: <span class="string">"GET"</span>,</span><br><span class="line">  url: url</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近项目在用 axios，好像出现好久了，才开始学习。&lt;/p&gt;
+&lt;p&gt;这三个都是发起 http 请求的东西,都算是对原生 XHR 的封装。从 XHR -&amp;gt; Jquery ajax() -&amp;gt; fetch -&amp;gt; axios&lt;br&gt;现在来分别看一下这三个东西&lt;/
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react-router 4.0使用笔记</title>
+    <link href="http://yoursite.com/2018/07/23/react-router-4-0%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/07/23/react-router-4-0使用笔记/</id>
+    <published>2018-07-23T05:51:44.000Z</published>
+    <updated>2018-07-23T06:28:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近项目里的 react-router 从 3.0 更新到了 4.0，重新学习了一下 react-router 的东西，感觉从 3 到 4，变化还是很多的。通过<a href="http://reacttraining.cn/" target="_blank" rel="noopener">react-router 4.0 中文文档</a>和一些其他的教程，大概学会了如何使用。记下来防止以后忘记了。。</p><p>v3 的时候，是把所有的路由都写在一个地方，通常就是组件和路由分开。<br>到了 v4，路由就变成了一个和 UI 组件并列的组件，在你需要的地方把路由组件写在合适的地方。不在需要用<route>组件的嵌套来实现路由嵌套。</route></p><h2 id="exact"><a href="#exact" class="headerlink" title="exact"></a>exact</h2><p>exact 关键字，可以让路由只匹配一个 path，path 为’/‘的路由将不会匹配’/xxx’的</p><h2 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h2><p>可以使用 Switch 组件，来启用排他性的路由。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Switch&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/"</span> exact component=&#123;Home&#125; /&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/about"</span> component=&#123;About&#125; /&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/user"</span> component=&#123;User&#125; /&gt;</span><br><span class="line">&lt;<span class="regexp">/Switch&gt;</span></span><br></pre></td></tr></table></figure><h2 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h2><p>如果需要嵌套路由，在 app 组件中可以把嵌套路由的父组件<route path="/xx" component="{xxx}"> /&gt;，在 xxx 组件中，在根据父组件来匹配路由。</route></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XXX</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; history, match &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Layout&gt;</span><br><span class="line">        &lt;Layout.Content style=&#123;&#123; <span class="attr">padding</span>: <span class="string">"0 50px"</span> &#125;&#125;&gt;</span><br><span class="line">          &lt;div style=&#123;&#123; <span class="attr">background</span>: <span class="string">"#fff"</span>, <span class="attr">padding</span>: <span class="number">24</span> &#125;&#125;&gt;</span><br><span class="line">            &lt;Divider /&gt;</span><br><span class="line">            &lt;Route</span><br><span class="line">              exact</span><br><span class="line">              path=&#123;<span class="string">`<span class="subst">$&#123;match.path&#125;</span>/loan-info`</span>&#125;</span><br><span class="line">              component=&#123;LoanInfo&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">            &lt;Route exact path=&#123;<span class="string">`<span class="subst">$&#123;match.path&#125;</span>/img-info`</span>&#125; component=&#123;ImgInfo&#125; /&gt;</span><br><span class="line">            &lt;Route exact path=&#123;<span class="string">`<span class="subst">$&#123;match.path&#125;</span>`</span>&#125; component=&#123;LoanInfo&#125; /&gt;</span><br><span class="line">          &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>Layout.Content&gt;</span><br><span class="line">      &lt;<span class="regexp">/Layout&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure><h2 id="withRouter"><a href="#withRouter" class="headerlink" title="withRouter"></a>withRouter</h2><p>想通过代码跳转子路由，可以用 withRouter,包装 react 组件,让它获得 history 属性</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; withRouter &#125; <span class="keyword">from</span> <span class="string">"react-router"</span>;</span><br><span class="line">withRouter(MyComponent);</span><br></pre></td></tr></table></figure><p>然后用<code>this.props.history</code>来跳转。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近项目里的 react-router 从 3.0 更新到了 4.0，重新学习了一下 react-router 的东西，感觉从 3 到 4，变化还是很多的。通过&lt;a href=&quot;http://reacttraining.cn/&quot; target=&quot;_blank&quot; rel=&quot;n
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="react-router" scheme="http://yoursite.com/tags/react-router/"/>
+    
+  </entry>
   
   <entry>
     <title>BOM 学习</title>
@@ -504,61 +555,6 @@
     
     
       <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>链表</title>
-    <link href="http://yoursite.com/2018/05/28/%E9%93%BE%E8%A1%A8/"/>
-    <id>http://yoursite.com/2018/05/28/链表/</id>
-    <published>2018-05-28T08:20:40.000Z</published>
-    <updated>2018-06-28T10:00:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>链表是由一组节点组成的集合。每一个节点都使用一个对象的引用指向它的后续借点。指向另外一个节点的引用叫做链。<br>链表元素则是靠相互之间的关系进行引用。在链表中就说这个元素是某个元素的后面一个元素。遍历链表就是跟着链表从链表的头元素（head）一直走到尾元素（但是不包含链表的头节点，头通常用来作为链表的接入点）。链表的尾元素指向一个null节点。<br><img src="https://images2015.cnblogs.com/blog/72678/201609/72678-20160917225805820-1415213828.png" alt="链表的结构"></p><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>单链表<br>（见定义）</p><p>循环链表<br>循环链表的运算与单链表的运算基本一致。所不同的有以下几点：<br>1、在建立一个循环链表时，必须使其最后一个结点的指针指向表头结点，而不是象单链表那样置为NULL。此种情况还使用于在最后一个结点后插入一个新的结点。<br>2、在判断是否到表尾时，是判断该结点链域的值是否是表头结点，当链域值等于表头指针时，说明已到表尾。而非象单链表那样判断链域值是否为NULL。</p><p>双向链表<br>双向链表其实是单链表的改进。<br>当我们对单链表进行操作时，有时你要对某个结点的直接前驱进行操作时，又必须从表头开始查找。这是由单链表结点的结构所限制的。因为单链表每个结点只有一个存储直接后继结点地址的链域，那么能不能定义一个既有存储直接后继结点地址的链域，又有存储直接前驱结点地址的链域的这样一个双链域结点结构呢？这就是双向链表。<br>在双向链表中，结点除含有数据域外，还有两个链域，一个存储直接后继结点地址，一般称之为右链域；一个存储直接前驱结点地址，一般称之为左链域。</p><h2 id="链表的操作"><a href="#链表的操作" class="headerlink" title="链表的操作"></a>链表的操作</h2><p>链表的操作通常需要操作两个节点，例如，向链表中插入一个节点，需要修改它前面的节点，使其指向新加入的节点，而新加入的节点则指向前面指向的节点<br>从链表中删除一个节点也很简单，将待删除的元素的前驱节点指向待删除的后续节点，同时将待删除元素指向null来释放。</p><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Definition for singly-linked list.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ListNode</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.val = val;</span><br><span class="line">  <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>查找：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> findListNode = <span class="function">(<span class="params">listNode, target</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">while</span>(listNode) &#123;</span><br><span class="line">    <span class="keyword">if</span> (listNode.val === target) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    listNode = listNode.next ? listNode.next : <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="string">"not hava this target"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>插入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在第target个元素后添加一个节点</span></span><br><span class="line"><span class="keyword">const</span> insertListNode = <span class="function">(<span class="params">listNode1, node, target</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> count = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span>(listNode) &#123;</span><br><span class="line">    <span class="keyword">if</span> (count === target) &#123;</span><br><span class="line">      node.next = listNode.next;</span><br><span class="line">      listNode.next = node</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    listNode = listNode.next ? listNode.next : <span class="literal">null</span></span><br><span class="line">    count++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;链表是由一组节点组成的集合。每一个节点都使用一个对象的引用指向它的后续借点。指向另外一个节点的引用叫做链。&lt;br&gt;链表元素则是靠相互之间的关
-      
-    
-    </summary>
-    
-      <category term="算法学习" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>html5语意化学习</title>
-    <link href="http://yoursite.com/2018/05/28/html5%E8%AF%AD%E6%84%8F%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://yoursite.com/2018/05/28/html5语意化学习/</id>
-    <published>2018-05-28T02:46:36.000Z</published>
-    <updated>2018-06-28T10:00:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1>百度前端技术学院学习笔记（二）</h1><p>百度前端技术学院，第二天课程已经脱了好几天了，最近项目上线以及一些其他的事情，一只拖延着我这只拖延狗的进度。。今天终于抽出时间来整理一下这个知识点。</p><h2 id="目标简介"><a href="#目标简介" class="headerlink" title="目标简介"></a>目标简介</h2><ul><li>Date: 2018.05.28 Mon</li><li>Target: 熟悉html语意化。</li><li>Time: 1day</li></ul><h2 id="语意化探究"><a href="#语意化探究" class="headerlink" title="语意化探究"></a>语意化探究</h2><p>语意化，就是根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。那通俗一点来说，就是为了让编写让人和机器都认识的代码。</p><p>语意化的意义</p><ul><li>为了在没有样式的时候，页面也能呈现出很好地内容结构、代码结构</li><li>更好的用户体验</li><li>便于SEO</li><li>方便其他设备解析</li><li>便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。</li></ul><p>部分语意化标签</p><table><thead><tr><th style="text-align:center">标签</th><th style="text-align:center">意义</th><th style="text-align:center">用法 </th></tr></thead><tbody><tr><td style="text-align:center">header</td><td style="text-align:center">头部标签</td><td style="text-align:center">用于网页顶部，作为头部</td></tr><tr><td style="text-align:center">footer</td><td style="text-align:center">底部标签</td><td style="text-align:center">用于网页底部，内容多相关信息</td></tr><tr><td style="text-align:center">hgroup</td><td style="text-align:center">网页标签</td><td style="text-align:center">网页或者含有多个h标签的</td></tr><tr><td style="text-align:center">nav</td><td style="text-align:center">导航标签</td><td style="text-align:center">放置导航栏</td></tr><tr><td style="text-align:center">aside</td><td style="text-align:center">侧栏标签</td><td style="text-align:center">侧边栏的内容</td></tr><tr><td style="text-align:center">section</td><td style="text-align:center">区块的标签</td><td style="text-align:center">一个独立的区域</td></tr><tr><td style="text-align:center">article</td><td style="text-align:center">文章标签</td><td style="text-align:center">一片文章的区域</td></tr><tr><td style="text-align:center">h1-h6</td><td style="text-align:center">标题标签</td><td style="text-align:center">按照标题的大小选择</td></tr><tr><td style="text-align:center">p</td><td style="text-align:center">段落标签</td><td style="text-align:center">一个段落</td></tr><tr><td style="text-align:center">audio</td><td style="text-align:center">声音标签</td><td style="text-align:center">用来链接音频</td></tr><tr><td style="text-align:center">video</td><td style="text-align:center">视频标签</td><td style="text-align:center">用来链接视频</td></tr></tbody></table><h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><p>Q1: HTML是什么，HTML5是什么？<br>A1: 超级文本标记语言是标准通用标记语言下的一个应用，也是一种规范，一种标准，它通过标记符号来标记要显示的网页中的各个部分。HTML5是HTML的第五次修改，HTML5的革新之一：语义化标签一节元素标签。</p><p>Q2: HTML元素标签、属性都是什么概念？<br>A2: HTML的标签就是一个个网页的结构元素，一个网页是由一个个元素组合起来的。属性是标签的一些性质，包括ID、名称、URI、数字、长度单位、语言、媒体描述符、颜色、字符编码、日期和时间等。</p><p>Q3: 文档类型是什么概念，起什么作用？<br>A3: 文档类型有严格模式和非严格模式，应用严格模式来编写页面，更严谨。H5没有文档类型。</p><p>Q4: meta标签都用来做什么的？<br>A4: 元素可提供相关页面的元信息（meta-information），标签位于文档的头部，不包含任何内容。标签的属性定义了与文档相关联的名称/值对。</p><ul><li>meta标签共有两个属性，它们分别是http-equiv属性和name属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。</li><li>meta 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。</li><li>meta 标签位于文档的头部，不包含任何内容。</li><li>meta 标签的属性定义了与文档相关联的名称/值对。</li></ul><p>Q5: Web语义化是什么，是为了解决什么问题<br>A5：就是根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析<br>解决了SEO等问题</p><p>Q6: 链接是什么概念，对应什么标签？<br>A6: 是支持浏览器文档与外部资源的关系。对应link标签</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1&gt;百度前端技术学院学习笔记（二）&lt;/h1&gt;
-
-&lt;p&gt;百度前端技术学院，第二天课程已经脱了好几天了，最近项目上线以及一些其他的事情，一只拖延着我这只拖延狗的进度。。今天终于抽出时间来整理一下这个知识点。&lt;/p&gt;
-&lt;h2 id=&quot;目标简介&quot;&gt;&lt;a href=&quot;#目标简介&quot; cl
-      
-    
-    </summary>
-    
-      <category term="Glory Road" scheme="http://yoursite.com/categories/Glory-Road/"/>
-    
-    
-      <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
   </entry>
   
