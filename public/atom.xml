@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-03T03:52:58.000Z</updated>
+  <updated>2018-08-19T13:57:17.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>偷得浮生半日闲</title>
+    <link href="http://yoursite.com/2018/08/19/%E5%81%B7%E5%BE%97%E6%B5%AE%E7%94%9F%E5%8D%8A%E6%97%A5%E9%97%B2/"/>
+    <id>http://yoursite.com/2018/08/19/偷得浮生半日闲/</id>
+    <published>2018-08-19T13:28:50.000Z</published>
+    <updated>2018-08-19T13:57:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>没有什么事情是理所应当的，所有的结果都是之前付出努力的一种回报。</li><li>我是比较相信这样的努力和付出的论点的。毕竟付出努力，肯定会有回报，不一定会是在你期望的方面，但是他也会有结果，也许是另一个方面的回报。</li><li>这只是我的一段碎碎念。</li></ul><p>工作的第 8 个月零 1 天，感觉我需要更多方面的进步了。感觉到了很大的压力，最近整个人都比较的佛系，靠着工作，拿着薪水，奋斗的动力感觉少了很多。当工作忙的时候，就没时间写博客了，时间都浪费在了铺页面，联调，提测，改 bug 的过程中。我觉得我需要有一些规划，让自己能在工作期间，也能学习到一些东西。</p><p>前几天，还被说每天三个小时的通勤时间，竟然还不搬家。平时都不觉得，路上的时间总觉得都过的很快，但是有一天，突然想了一下，就是觉得，每天三个小时通勤时间确实好长啊，每天好累啊 balaba，但是又一想，唉，每天这 3 个小时都被我浪费掉了。有时候在书签里存了好多想看的书啊，想看的网页啊，教程啊，到了地铁上，就没了兴趣，游戏真好玩，虎扑真好玩，知乎真好玩，歌真好听等等等等。</p><p><blockquote> 我觉得一个人的自制力或者自控力，是不会随着长大逐渐提高的，除非有什么事情逼迫着你。</blockquote></p><div></div><p>这就是一种个人的体验，也算是一种总结吧。<br>觉得自己会写好多东西出来。其实我也写不动了。<br>但是我想我可以没事给自己打一点鸡血，让自己兴奋一些。</p><p>加油吧，少年（也许已经不是少年了）。</p><p>想想 2018 年来的时候，我还在票圈里说，我出生的时候就比别的孩子长得老，2017 过去了，我很想念它。<br>希望不要在 2019 年来的时候，继续怀念 2018.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;没有什么事情是理所应当的，所有的结果都是之前付出努力的一种回报。&lt;/li&gt;
+&lt;li&gt;我是比较相信这样的努力和付出的论点的。毕竟付出努力，肯定会有回报，不一定会是在你期望的方面，但是他也会有结果，也许是另一个方面的回报。&lt;/li&gt;
+&lt;li&gt;这只是我的一段碎碎念。&lt;
+      
+    
+    </summary>
+    
+      <category term="浮生小记" scheme="http://yoursite.com/categories/%E6%B5%AE%E7%94%9F%E5%B0%8F%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>axios jquery.ajax fetch 区别</title>
@@ -529,32 +555,6 @@
     
     
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS 实用片段</title>
-    <link href="http://yoursite.com/2018/05/29/CSS%E5%AE%9E%E7%94%A8%E7%89%87%E6%AE%B5/"/>
-    <id>http://yoursite.com/2018/05/29/CSS实用片段/</id>
-    <published>2018-05-29T10:15:44.000Z</published>
-    <updated>2018-07-03T05:49:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>1、垂直对齐：垂直对齐容器中的元素.</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">verticalcenter</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">  <span class="attribute">-o-transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2、垂直居中:<br>不知道父元素高度的情况</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentElement</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">childElement</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>若父容器下只有一个元素，且父元素设置了高度，则只需要使用相对定位即可</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentElement</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: xxx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">childElement</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>flex 布局</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentElement</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex; <span class="comment">/*Flex布局*/</span></span><br><span class="line">  <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/*指定垂直居中*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>line-height 设置了行间的距离（行高），将要居中的元素的 line-heigth 值设置为和其块级父元素的 height 值一样时，其内部内容会垂直居中。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">element</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>3、水平居中:<br>行级元素水平居中对齐:<code>text-align:center;</code><br>块级元素水平居中对齐:<code>margin: 0 auto</code><br>对于浮动的元素居中</p><ul><li>宽度不固定的浮动元素</li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"outerbox"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"innerbox"</span>&gt;</span>我是浮动的<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.outerbox</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.innerbox</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>。。。未完待续</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1、垂直对齐：垂直对齐容器中的元素.&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
   </entry>
   

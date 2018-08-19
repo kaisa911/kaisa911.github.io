@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[偷得浮生半日闲]]></title>
+    <url>%2F2018%2F08%2F19%2F%E5%81%B7%E5%BE%97%E6%B5%AE%E7%94%9F%E5%8D%8A%E6%97%A5%E9%97%B2%2F</url>
+    <content type="text"><![CDATA[没有什么事情是理所应当的，所有的结果都是之前付出努力的一种回报。 我是比较相信这样的努力和付出的论点的。毕竟付出努力，肯定会有回报，不一定会是在你期望的方面，但是他也会有结果，也许是另一个方面的回报。 这只是我的一段碎碎念。 工作的第 8 个月零 1 天，感觉我需要更多方面的进步了。感觉到了很大的压力，最近整个人都比较的佛系，靠着工作，拿着薪水，奋斗的动力感觉少了很多。当工作忙的时候，就没时间写博客了，时间都浪费在了铺页面，联调，提测，改 bug 的过程中。我觉得我需要有一些规划，让自己能在工作期间，也能学习到一些东西。 前几天，还被说每天三个小时的通勤时间，竟然还不搬家。平时都不觉得，路上的时间总觉得都过的很快，但是有一天，突然想了一下，就是觉得，每天三个小时通勤时间确实好长啊，每天好累啊 balaba，但是又一想，唉，每天这 3 个小时都被我浪费掉了。有时候在书签里存了好多想看的书啊，想看的网页啊，教程啊，到了地铁上，就没了兴趣，游戏真好玩，虎扑真好玩，知乎真好玩，歌真好听等等等等。 我觉得一个人的自制力或者自控力，是不会随着长大逐渐提高的，除非有什么事情逼迫着你。 这就是一种个人的体验，也算是一种总结吧。觉得自己会写好多东西出来。其实我也写不动了。但是我想我可以没事给自己打一点鸡血，让自己兴奋一些。 加油吧，少年（也许已经不是少年了）。 想想 2018 年来的时候，我还在票圈里说，我出生的时候就比别的孩子长得老，2017 过去了，我很想念它。希望不要在 2019 年来的时候，继续怀念 2018.]]></content>
+      <categories>
+        <category>浮生小记</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[axios jquery.ajax fetch 区别]]></title>
     <url>%2F2018%2F08%2F03%2Faxios-jquery-ajax-fetch-%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[最近项目在用 axios，好像出现好久了，才开始学习。 这三个都是发起 http 请求的东西,都算是对原生 XHR 的封装。从 XHR -&gt; Jquery ajax() -&gt; fetch -&gt; axios现在来分别看一下这三个东西 Jquery ajax它是对原生 XHR 的封装，支持 JsonP，是 MVC 编程的一种请求方式，已经逐渐的不适应前端的 MVVM 框架的潮流了。而且，在项目中使用的时候，要使用 ajax，就得把 jquery 都引进来，很冗余。 12345678$.ajax(&#123; type: "POST", url: url, data: data, dataType: dataType, success: function() &#123;&#125;, error: function() &#123;&#125;&#125;); fetch fetch 是一个出现比较久的，但是依旧有好多不兼容的 ajax 的替代品。采用了 es 的 promise。fetch 不会默认的传 cookies，需要添加配置项credentials: &#39;include&#39;fetch 只会对网络请求错误报错，400，500 等问题会进入 then，而不会进入 catch。fetch 不支持超时的问题。fetch 不能监听请求的进度，而 XHR 可以。 1234567try &#123; let response = await fetch(url); let data = response.json(); console.log(data);&#125; catch(e) &#123; console.log("Oops, error", e);&#125; axios 是一个很高档的东西。它不仅支持浏览器的数据请求，还支持 node 创建 http 请求。它和 fetch 一样，也是基于 Promise 的 API，能够从客户端支持防止 CSRF，提供了很多接口，可以并发等。 12345678910axios(&#123; method: "GET", url: url&#125;) .then(res =&gt; &#123; console.log(res); &#125;) .catch(err =&gt; &#123; console.log(err); &#125;);]]></content>
