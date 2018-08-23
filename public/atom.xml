@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-19T13:57:17.000Z</updated>
+  <updated>2018-08-23T06:23:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>react 是怎样工作的</title>
+    <link href="http://yoursite.com/2018/08/23/react-%E6%98%AF%E6%80%8E%E6%A0%B7%E5%B7%A5%E4%BD%9C%E7%9A%84/"/>
+    <id>http://yoursite.com/2018/08/23/react-是怎样工作的/</id>
+    <published>2018-08-23T06:23:33.000Z</published>
+    <updated>2018-08-23T06:23:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>占坑</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;占坑&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>理解虚拟DOM</title>
+    <link href="http://yoursite.com/2018/08/23/%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9FDOM/"/>
+    <id>http://yoursite.com/2018/08/23/理解虚拟DOM/</id>
+    <published>2018-08-23T06:23:07.000Z</published>
+    <updated>2018-08-23T07:18:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>什么是虚拟 DOM</li></ul><p>Virtual DOM 就是一个模拟 DOM 树的 Javascript 的对象。</p><ul><li>虚拟的 DOM 的核心思想</li></ul><p>对复杂的文档 DOM 结构，提供一种方便的工具，进行最小化地 DOM 操作。</p><ul><li>React 工作原理</li></ul><p>React 使用了虚拟 DOM，每次状态更新，React 比较虚拟 DOM 的差异之后，再更改变化的内容，最后统一由 React 去修改真实 DOM、完成页面的更新、渲染。</p><ul><li>Virtrual DOM 和真实 DOM 的区别</li></ul><p>真实 DOM 的的工作流程：<br>大致分 5 步：创建 DOM tree –&gt; 创建 Style Rules -&gt; 构建 Render tree -&gt; 布局 Layout –&gt; 绘制 Painting</p><p>第一步，用 HTML 分析器，分析 HTML 的各种元素，构建一颗 DOM 树。</p><p>第二步：用 CSS 分析器，分析 CSS 文件和元素上的 inline 样式，生成页面的样式表。</p><p>第三步：将上面的 DOM 树和样式表，关联起来，构建一颗 Render 树。这一过程又称为 Attachment。每个 DOM 节点都有 attach 方法，接受样式信息，返回一个 render 对象（又名 renderer）。这些 render 对象最终会被构建成一颗 Render 树。</p><p>第四步：有了 Render 树后，浏览器开始布局，会为每个 Render 树上的节点确定一个在显示屏上出现的精确坐标值。</p><p>第五步：Render 数有了，节点显示的位置坐标也有了，最后就是调用每个节点的 paint 方法，让它们显示出来。</p><p>然而操作 DOM，浏览器会从构建 DOM 树开始从头到尾执行一遍流程。然而 DOM 的批量操作不会被合并，只会第一个 DOM 操作处理完之后再重新从构建 DOM 树开始第二个操作，一直到最后一个操作结束。</p><p>Virtrual DOM 的工作流程：<br>Virtrual DOM 会对批量的操作合并到 Virtrual DOM 树上，然后根据 diff 算法，查看哪一部分发生了变化，然后将 diff 的内容保存到本地的一个 js 对象里，然后这个对象再 attach 到 DOM 树上，通知浏览器重新绘制。</p><ul><li>实现一个 Virtrual DOM</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//虚拟dom，参数分别为标签名、属性对象、子DOM列表</span></span><br><span class="line"><span class="keyword">const</span> VElement = <span class="function">(<span class="params">tagName, props, children</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//保证只能通过如下方式调用：new VElement</span></span><br><span class="line">  <span class="keyword">if</span> (!(<span class="keyword">this</span> <span class="keyword">instanceof</span> VElement)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> VElement(tagName, props, children);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//可以通过只传递tagName和children参数</span></span><br><span class="line">  <span class="keyword">if</span> (util.isArray(props)) &#123;</span><br><span class="line">    children = props;</span><br><span class="line">    props = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//设置虚拟dom的相关属性</span></span><br><span class="line">  <span class="keyword">this</span>.tagName = tagName;</span><br><span class="line">  <span class="keyword">this</span>.props = props || &#123;&#125;;</span><br><span class="line">  <span class="keyword">this</span>.children = children || [];</span><br><span class="line">  <span class="keyword">this</span>.key = props ? props.key : <span class="keyword">void</span> <span class="number">666</span>;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  util.each(<span class="keyword">this</span>.children, (child, i) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (child <span class="keyword">instanceof</span> VElement) &#123;</span><br><span class="line">      count += child.count;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      children[i] = <span class="string">""</span> + child;</span><br><span class="line">    &#125;</span><br><span class="line">    count++;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">this</span>.count = count;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">VElement.prototype.render = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//创建标签</span></span><br><span class="line">  <span class="keyword">const</span> el = <span class="built_in">document</span>.createElement(<span class="keyword">this</span>.tagName);</span><br><span class="line">  <span class="comment">//设置标签的属性</span></span><br><span class="line">  <span class="keyword">const</span> props = <span class="keyword">this</span>.props;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> propName <span class="keyword">in</span> props) &#123;</span><br><span class="line">    <span class="keyword">const</span> propValue = props[propName];</span><br><span class="line">    util.setAttr(el, propName, propValue);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//依次创建子节点的标签</span></span><br><span class="line">  util.each(<span class="keyword">this</span>.children, child =&gt; &#123;</span><br><span class="line">    <span class="comment">//如果子节点仍然为velement，则递归的创建子节点，否则直接创建文本类型节点</span></span><br><span class="line">    <span class="keyword">const</span> childEl = child <span class="keyword">instanceof</span> VElement ? child.render() : <span class="built_in">document</span>.createTextNode(child);</span><br><span class="line">    el.appendChild(childEl);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> el;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>对一个虚拟的 DOM 对象 VElement，调用其原型的 render 方法，就可以产生一颗真实的 DOM 树</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;什么是虚拟 DOM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Virtual DOM 就是一个模拟 DOM 树的 Javascript 的对象。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;虚拟的 DOM 的核心思想&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对复杂的文档 DOM 结构，提供一种方便的工具，
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>偷得浮生半日闲</title>
@@ -496,62 +558,6 @@
     </summary>
     
       <category term="JS高程填坑笔记" scheme="http://yoursite.com/categories/JS%E9%AB%98%E7%A8%8B%E5%A1%AB%E5%9D%91%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在HTML中使用JS</title>
-    <link href="http://yoursite.com/2018/06/10/%E5%9C%A8HTML%E4%B8%AD%E4%BD%BF%E7%94%A8JS/"/>
-    <id>http://yoursite.com/2018/06/10/在HTML中使用JS/</id>
-    <published>2018-06-10T14:20:34.000Z</published>
-    <updated>2018-06-28T09:52:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是js高程的第二章，主要讲的内容就是怎样在HTML中使用javascript。<br>这章的内容包含四个部分：</p><ul><li>&lt;script&gt; 标签</li><li>嵌入脚本和外部脚本</li><li>文档模式的影响</li><li>禁用javascript的场景</li></ul><h2 id="lt-script-gt-标签"><a href="#lt-script-gt-标签" class="headerlink" title="&lt;script&gt; 标签"></a>&lt;script&gt; 标签</h2><p>向HTML页面中插入JavaScript的主要方法，就是使用&lt;script&gt;元素。<br>html 4.01给script标签定义了以下属性</p><ul><li>async 异步标签，表示应该立即下载脚本，但不应妨碍页面中的其他操作。该属性只对外部脚本文件有效。但是，标记为async的脚本并不保证按照script排列的先后顺序执行。异步脚本一定会在页面的load事件前执行，但可能会在DOMContentLoaded事件触发之前或之后执行。</li><li>charset:表示通过 src 属性指定的代码的字符集。由于大多数浏览器会忽略它的值，因此这个属性很少有人用。</li><li><p>defer:表示脚本可以延迟到文档完全被解析和显示之后再执行。只对外部脚本文件有效。脚本会被延迟到整个页面都解析完毕后再运行。HTML5规范要求脚本按照它们出现的先后顺序执行，因此第一个延迟脚本会先于第二个延迟脚本执行，而这两个脚本会先于DOMContentLoaded事件执行。但是在现实当中，延迟脚本并不一定会按照顺序执行，也不一定会在 DOMContentLoaded事件触发前执行，因此最好只包含一个延迟脚本。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script defer=<span class="string">"defer"</span>&gt;</span><br></pre></td></tr></table></figure></li><li><p>src:表示包含要执行代码的外部文件。如果要通过&lt;script&gt;元素来包含外部JavaScript文件，那么src 属性就是必需的。这个属性的值是一个指向外部JavaScript文件的链接。<br>需要注意的是，带有src属性的&lt;script&gt;元素不应该在其&lt;script&gt;和&lt;script&gt;标签之间再 包含额外的JavaScript代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。<br>通过&lt;script&gt;元素的 src 属性还可以包含来自外部域的 JavaScript 文件。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"example.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li><li><p>type:type 属性规定脚本的MIME类型。type属性标示 &lt;script&gt;与&lt;/script&gt;标签之间的内容。MIME类型包括两部分：media type 和 subtype。对于JavaScript，MIME 类型是 “text/javascript”。在 HTML5中，type属性不再是必需的。默认值是”text/javascript”。</p></li></ul><h2 id="嵌入脚本和外部脚本"><a href="#嵌入脚本和外部脚本" class="headerlink" title="嵌入脚本和外部脚本"></a>嵌入脚本和外部脚本</h2><p>使用&lt;script&gt;元素的方式有两种:直接在页面中嵌入JavaScript代码和包含外部 JavaScript文件。无论如何包含代码，只要不存在defer和async属性，浏览器都会按照&lt;script&gt;元素在页面中 出现的先后顺序对它们依次进行解析。</p><p>外部脚本的优势：<br> 可维护性<br> 可缓存: 浏览器能够根据具体的设置缓存链接的所有外部 JavaScript 文件<br> 适应未来</p><h2 id="文档模式的影响"><a href="#文档模式的影响" class="headerlink" title="文档模式的影响"></a>文档模式的影响</h2><p>最初的两种文档模式是:混杂模式(quirks mode)和标准模式(standards mode)。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML 4.01 严格型 --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- HTML 5 --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br></pre></td></tr></table></figure></p><h2 id="禁用javascript的场景"><a href="#禁用javascript的场景" class="headerlink" title="禁用javascript的场景"></a>禁用javascript的场景</h2><p>关于禁用javascript的场景，主要是&lt;noscript&gt;<br>这个元素可以包含能够出现在文档&lt;body&gt;中的任何 HTML 元素——&lt;script&gt;元素除外。包含 在&lt;noscript&gt;元素中的内容只有在下列情况下才会显示出来:<br> 浏览器不支持脚本;<br> 浏览器支持脚本，但脚本被禁用。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Example HTML Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">noscript</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>本页面需要浏览器支持(启用)JavaScript。</span><br><span class="line">    <span class="tag">&lt;/<span class="name">noscript</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">defer</span>=<span class="string">"defer"</span> <span class="attr">src</span>=<span class="string">"example1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">defer</span>=<span class="string">"defer"</span> <span class="attr">src</span>=<span class="string">"example2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>把 JavaScript 插入到 HTML 页面中要使用&lt;script&gt;元素。使用这个元素可以把 JavaScript 嵌入到 HTML 页面中，让脚本与标记混合在一起;也可以包含外部的 JavaScript 文件。而我们需要注意的地方有:<br> 在包含外部 JavaScript 文件时，必须将 src 属性设置为指向相应文件的 URL。而这个文件既可 以是与包含它的页面位于同一个服务器上的文件，也可以是其他任何域中的文件。<br> 所有&lt;script&gt;元素都会按照它们在页面中出现的先后顺序依次被解析。在不使用 defer 和 async 属性的情况下，只有在解析完前面&lt;script&gt;元素中的代码之后，才会开始解析后面 &lt;script&gt;元素中的代码。<br> 由于浏览器会先解析完不使用 defer 属性的&lt;script&gt;元素中的代码，然后再解析后面的内容， 所以一般应该把&lt;script&gt;元素放在页面最后，即主要内容后面，&lt;／body&gt;标签前面。<br> 使用 defer 属性可以让脚本在文档完全呈现之后再执行。延迟脚本总是按照指定它们的顺序执行。<br> 使用 async 属性可以表示当前脚本不必等待其他脚本，也不必阻塞文档呈现。不能保证异步脚<br>本按照它们在页面中出现的顺序执行。 另外，使用&lt;noscript&gt;元素可以指定在不支持脚本的浏览器中显示的替代内容。但在启用了脚本的情况下，浏览器不会显示&lt;noscript&gt;元素中的任何内容。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这是js高程的第二章，主要讲的内容就是怎样在HTML中使用javascript。&lt;br&gt;这章的内容包含四个部分：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&amp;lt;script&amp;gt; 标签&lt;/li&gt;
-&lt;li&gt;嵌入脚本和外部脚本&lt;/li&gt;
-&lt;li&gt;文档模式的影响&lt;/li&gt;
-&lt;li&gt;禁用ja
-      
-    
-    </summary>
-    
-      <category term="JS高程填坑笔记" scheme="http://yoursite.com/categories/JS%E9%AB%98%E7%A8%8B%E5%A1%AB%E5%9D%91%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>window.location的属性</title>
-    <link href="http://yoursite.com/2018/06/10/window.location%E7%9A%84%E5%B1%9E%E6%80%A7/"/>
-    <id>http://yoursite.com/2018/06/10/window.location的属性/</id>
-    <published>2018-06-10T03:23:35.000Z</published>
-    <updated>2018-06-28T10:00:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>关于http的相关的BOM的问题</p><p>获取当前url的协议<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> protocol = <span class="built_in">window</span>.location.protocol;</span><br></pre></td></tr></table></figure></p><p>获取当前的host和端口号<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> host = <span class="built_in">window</span>.location.host;</span><br></pre></td></tr></table></figure></p><p>获取当前完整的URL<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> host = <span class="built_in">window</span>.location.href;</span><br></pre></td></tr></table></figure></p><p>获取当前pathName<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> host = <span class="built_in">window</span>.location.pathname;</span><br></pre></td></tr></table></figure></p><p>获取当前url的查找内容<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> host = <span class="built_in">window</span>.location.search;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;关于http的相关的BOM的问题&lt;/p&gt;
-&lt;p&gt;获取当前url的协议&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;
-      
-    
-    </summary>
-    
-      <category term="bug汇总" scheme="http://yoursite.com/categories/bug%E6%B1%87%E6%80%BB/"/>
     
     
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
