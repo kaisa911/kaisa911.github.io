@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-10T03:01:15.000Z</updated>
+  <updated>2018-09-10T07:47:50.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现一个解构数组的方法</title>
+    <link href="http://yoursite.com/2018/09/10/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E6%9E%84%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2018/09/10/实现一个解构数组的方法/</id>
+    <published>2018-09-10T06:48:28.000Z</published>
+    <updated>2018-09-10T07:47:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一道笔试题：</p><p>实现 destructuringArray 方法，<br>达到如下效果</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// destructuringArray( [1,[2,4],3], "[a,[b],c]" );</span></span><br><span class="line"><span class="comment">// result</span></span><br><span class="line"><span class="comment">// &#123; a:1, b:2, c:3 &#125;</span></span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> targetArray = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>];</span><br><span class="line"><span class="keyword">const</span> formater = <span class="string">'[a, [b], c]'</span>;</span><br><span class="line"><span class="keyword">const</span> formaterArray = [<span class="string">'a'</span>, [<span class="string">'b'</span>], <span class="string">'c'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> destructuringArray = <span class="function">(<span class="params">values, keys</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> keys === <span class="string">'string'</span>) &#123;</span><br><span class="line">      keys = <span class="built_in">JSON</span>.parse(keys.replace(<span class="regexp">/\w+/g</span>, <span class="string">'"$&amp;"'</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> iterate = <span class="function">(<span class="params">values, keys</span>) =&gt;</span></span><br><span class="line">      keys.forEach(<span class="function">(<span class="params">key, i</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(key)) iterate(values[i], key);</span><br><span class="line">        <span class="keyword">else</span> obj[key] = values[i];</span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">    iterate(values, keys);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(e.message);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.dir(destructuringArray(targetArray, formater));</span><br><span class="line"><span class="built_in">console</span>.dir(destructuringArray(targetArray, formaterArray));</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一道笔试题：&lt;/p&gt;
+&lt;p&gt;实现 destructuringArray 方法，&lt;br&gt;达到如下效果&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class
+      
+    
+    </summary>
+    
+      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何判断一个整数是否在40亿个整数中？</title>
+    <link href="http://yoursite.com/2018/09/10/%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%E6%98%AF%E5%90%A6%E5%9C%A840%E4%BA%BF%E4%B8%AA%E6%95%B4%E6%95%B0%E4%B8%AD%EF%BC%9F/"/>
+    <id>http://yoursite.com/2018/09/10/如何判断一个整数是否在40亿个整数中？/</id>
+    <published>2018-09-10T06:47:45.000Z</published>
+    <updated>2018-09-10T07:06:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>题目：我有 40 亿个整数，再给一个新的整数，我需要判断新的整数是否在 40 亿个整数中，你会怎么做（每个整数是32位的）？</p><p>一个数在不在就是两个状态，在或者不在，就可以用1个位来代表。<br>每个整数是32位的，那么所有的整数也就2^32个，大概42亿个数左右。<br>可以申请2^32的位，把每一个整数都覆盖了，40亿个数的位分别为1，剩下的位为0。<br>新的整数，就可以跟进它的大小来判断相应的位，比如1245，就去看1245位是1还是0来判断是否在这40亿个整数中。</p><p>2^32个位，就是2^29个字节，也就是500M左右。</p><p>位图法（bitmap）</p><p>链接：<br><a href="https://mp.weixin.qq.com/s/XC7Wpc5ZdvcT_7h3I956RQ" target="_blank" rel="noopener">漫画：如何判断一个数是否在 40 亿个整数中</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;题目：我有 40 亿个整数，再给一个新的整数，我需要判断新的整数是否在 40 亿个整数中，你会怎么做（每个整数是32位的）？&lt;/p&gt;
+&lt;p&gt;一个数在不在就是两个状态，在或者不在，就可以用1个位来代表。&lt;br&gt;每个整数是32位的，那么所有的整数也就2^32个，大概42亿个数左
+      
+    
+    </summary>
+    
+      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>关于xss和csrf</title>
@@ -505,57 +558,6 @@
     
     
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>display的属性们</title>
-    <link href="http://yoursite.com/2018/06/13/display%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BB%AC/"/>
-    <id>http://yoursite.com/2018/06/13/display的属性们/</id>
-    <published>2018-06-13T03:11:58.000Z</published>
-    <updated>2018-06-28T10:00:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>display： none | inline | block | list-item | inline-block | table | inline-table | table-caption | table-cell | table-row | table-row-group | table-column | table-column-group | table-footer-group | table-header-group | run-in | box | inline-box | flexbox | inline-flexbox | flex | inline-flex<br>默认值：inline</p><p>none： 隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间<br>inline： 指定对象为内联元素。<br>block： 指定对象为块元素。<br>list-item： 指定对象为列表项目。<br>inline-block： 指定对象为内联块元素。（CSS2）<br>table： 指定对象作为块元素级的表格。类同于html标签&lt;table&gt;（CSS2）<br>inline-table： 指定对象作为内联元素级的表格。类同于html标签&lt;table&gt;（CSS2）<br>table-caption： 指定对象作为表格标题。类同于html标签&lt;caption&gt;（CSS2）<br>table-cell： 指定对象作为表格单元格。类同于html标签&lt;td&gt;（CSS2）<br>table-row： 指定对象作为表格行。类同于html标签&lt;tr&gt;（CSS2）<br>table-row-group： 指定对象作为表格行组。类同于html标签&lt;tbody&gt;（CSS2）<br>table-column： 指定对象作为表格列。类同于html标签&lt;col&gt;（CSS2）<br>table-column-group： 指定对象作为表格列组显示。类同于html标签&lt;colgroup&gt;（CSS2）<br>table-header-group： 指定对象作为表格标题组。类同于html标签&lt;thead&gt;（CSS2）<br>table-footer-group： 指定对象作为表格脚注组。类同于html标签&lt;tfoot&gt;（CSS2）<br>run-in： 根据上下文决定对象是内联对象还是块级对象。（CSS3）<br>box： 将对象作为弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）<br>inline-box： 将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）<br>flexbox： 将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）<br>inline-flexbox： 将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）<br>flex： 将对象作为弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）<br>inline-flex： 将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;display： none | inline | block | list-item | inline-block | table | inline-table | table-caption | table-cell | table-row | table-row-gro
-      
-    
-    </summary>
-    
-      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
-    
-    
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>link和@import之争</title>
-    <link href="http://yoursite.com/2018/06/13/link%E5%92%8C-import%E4%B9%8B%E4%BA%89/"/>
-    <id>http://yoursite.com/2018/06/13/link和-import之争/</id>
-    <published>2018-06-13T02:52:26.000Z</published>
-    <updated>2018-06-13T03:05:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>看到知乎大神说，先问是不是，再问为什么</p><p>我页不知道为什么要写这句话，反正就是很奇怪的想法，就先记下来。<br>今天研究的link和@import，是外部引入外部引入 CSS 的两种方式。<br>两者是有区别的（是不是）。<br>我们来研究一下有哪些区别（为什么）</p><ul><li>link是XHTML(HTML)标签，除了加载CSS外，还可以定义RSS,rel等其他事务； @import是 CSS 提供的语法规则, 只有导入样式表的作用。</li><li>link引用CSS时，在页面载入时同时加载； @import需要页面网页完全载入以后加载。</li><li>link是XHTML(HTML)标签，无兼容问题； @import是在CSS2.1提出的，低版本的浏览器不支持(IE5+)。</li><li>link支持使用Javascript控制DOM去改变样式；而@import不支持。</li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"style.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  @<span class="keyword">import</span> url(style.css);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;看到知乎大神说，先问是不是，再问为什么&lt;/p&gt;
-&lt;p&gt;我页不知道为什么要写这句话，反正就是很奇怪的想法，就先记下来。&lt;br&gt;今天研究的link和@import，是外部引入外部引入 CSS 的两种方式。&lt;br&gt;两者是有区别的（是不是）。&lt;br&gt;我们来研究一下有哪些区别（为什么
-      
-    
-    </summary>
-    
-      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
-    
-    
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
   </entry>
   
