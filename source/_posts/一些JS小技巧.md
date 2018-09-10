@@ -7,19 +7,21 @@ categories: 学习笔记
 
 整理一些自己遇到的 js 小技巧，希望以后能变成一个炫技派，哈哈哈～
 
-1、对象深拷贝的小方法
+0、对象深拷贝的小方法
 
 ```javascript
 JSON.parse(JSON.stringify(obj));
 ```
 
-2、数组去重
+1、数组去重
 
 ```javascript
 const deleteSame = array => [...new Set(array)];
 ```
+去重只能基本数据类型的，String，Number，Boolean, undefined, null, Symbol。
+如果是对象，都不会去重。
 
-3、用`Object.is(a, b)` 代替 `===`
+2、用`Object.is(a, b)` 代替 `===`
 
 ```javascript
 if (Object.is(a, b)) {
@@ -27,7 +29,7 @@ if (Object.is(a, b)) {
 }
 ```
 
-4、用`+ a`操作符去代替`Number(a)`
+3、用`+ a`操作符去代替`Number(a)`
 
 ```javascript
 const a = "123";
@@ -36,7 +38,7 @@ typeof Number(a); // "number"
 typeof +a; // "number"
 ```
 
-5、短路操作
+4、短路操作
 
 ```javascript
 if (!foo) {
@@ -46,7 +48,7 @@ if (!foo) {
 foo = foo || bar;
 ```
 
-6、通过!!确认 bool 值
+5、通过!!确认 bool 值
 
 ```javascript
 const foo = false;
@@ -55,7 +57,7 @@ if (!!foo) {
 }
 ```
 
-7、判断变量的类型
+6、判断变量的类型
 
 ```javascript
 Object.prototype.toString.call(data);
@@ -68,9 +70,9 @@ Object.prototype.toString.call(data);
 // "[object RegExp]"
 ```
 
-8、`str.trim()`来清除前后空格
+7、`str.trim()`来清除前后空格
 
-9、遍历对象的方法
+8、遍历对象的方法
 
 ```javascript
 const obj = { "0": "a", "1": "b", "2": "c" };
