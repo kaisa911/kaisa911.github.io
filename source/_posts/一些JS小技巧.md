@@ -18,6 +18,7 @@ JSON.parse(JSON.stringify(obj));
 ```javascript
 const deleteSame = array => [...new Set(array)];
 ```
+
 去重只能基本数据类型的，String，Number，Boolean, undefined, null, Symbol。
 如果是对象，都不会去重。
 
@@ -32,7 +33,7 @@ if (Object.is(a, b)) {
 3、用`+ a`操作符去代替`Number(a)`
 
 ```javascript
-const a = "123";
+const a = '123';
 typeof a; // "string"
 typeof Number(a); // "number"
 typeof +a; // "number"
@@ -75,8 +76,16 @@ Object.prototype.toString.call(data);
 8、遍历对象的方法
 
 ```javascript
-const obj = { "0": "a", "1": "b", "2": "c" };
+const obj = { '0': 'a', '1': 'b', '2': 'c' };
 Object.keys(obj).forEach(function(key) {
   console.log(key, obj[key]);
 });
+```
+
+9、删除数组里的某个元素
+
+```javascript
+let arr = [1, 2, 3, 4, 5, 6, 7];
+const target = 3;
+arr = arr.filter(v => !Object.is(v, target));
 ```
