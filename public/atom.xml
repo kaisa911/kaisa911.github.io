@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-10T07:47:50.000Z</updated>
+  <updated>2018-09-29T08:05:49.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>for 循环作用域的探究</title>
+    <link href="http://yoursite.com/2018/09/29/for-%E5%BE%AA%E7%8E%AF%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E6%8E%A2%E7%A9%B6/"/>
+    <id>http://yoursite.com/2018/09/29/for-循环作用域的探究/</id>
+    <published>2018-09-29T06:22:18.000Z</published>
+    <updated>2018-09-29T08:05:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前看到这么一个题，问最后输出什么？</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="function">(<span class="params">setTimeout((</span>) =&gt;</span> <span class="built_in">console</span>.log(i), <span class="number">2333</span>), <span class="number">0</span>); i &lt; <span class="number">2</span>; i++) &#123;&#125;</span><br></pre></td></tr></table></figure><p>答案是在 2333ms 之后，输出了 0。</p><p>一直在想什么原因。今天闲着没事重新在看阮一峰 es6 入门，然后想起来这个问题。</p><p>es6 入门的 let 和 const 的那一章里，他说了一个问题：</p><p><b>for 循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</b></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="string">'abc'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure><p><strong> 因为输出了 3 遍 abc，这表明函数内部的变量 i 与循环变量 i 不在同一个作用域，有各自单独的作用域。</strong></p><p>我 google 了一下，发现：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br></pre></td></tr></table></figure><p>在声明的（）内存在一个变量 i，会存在 JavaScript 引擎内部。 每一次循环的时候， JavaScript 引擎内部会记住上一轮循环的值，然后将新的 i 的值赋值给 i。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="string">'abc'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在循环体里面，这是一个新的作用域，重新声明一个 i；不会影响（）里 i 的值。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  i = <span class="string">'abc'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure><p>但是如果不声明 i，直接给 i 赋值，会影响（）里 i 的值，说明（）是循环体的上一级作用域，在循环体里直接改变 i 的值会影响上一级作用域里的 i 值。</p><p>回到最初的那道题里面：</p><p>for 循环有三个语句：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (语句 <span class="number">1</span>; 语句 <span class="number">2</span>; 语句 <span class="number">3</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  被执行的代码块</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p>语句 1 在循环（代码块）开始前执行，就是 for()之前开始执行，只会执行一次。并且在 js 引擎里记住这个变量，他的值随着条件改变。</p><p>语句 2 定义运行循环（代码块）的条件。</p><p>语句 3 在循环（代码块）已被执行之后执行。</p><p>语句1如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="function">(<span class="params">setTimeout((</span>) =&gt;</span> <span class="built_in">console</span>.log(i), <span class="number">2333</span>), <span class="number">0</span>);</span><br></pre></td></tr></table></figure><p>这个表达式，同步执行的时候，因为括号里是逗号表达式，所以返回了 0，i=0；同时把 setTimeout 放到了 macrotasks 中。并继续向下执行。</p><p>这个题目，就会变成这样了</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> o = <span class="function">(<span class="params">setTimeout((</span>) =&gt;</span> <span class="built_in">console</span>.log(o), <span class="number">2333</span>), <span class="number">0</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = o; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> j = i;</span><br><span class="line">    <span class="built_in">console</span>.log(j);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>就好理解了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;之前看到这么一个题，问最后输出什么？&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;
+      
+    
+    </summary>
+    
+      <category term="Demo练习" scheme="http://yoursite.com/categories/Demo%E7%BB%83%E4%B9%A0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>实现一个解构数组的方法</title>
@@ -521,35 +547,6 @@
 &lt;li&gt;函数&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;语句&quot;&gt;&lt;a href=&quot;#语句&quot; class=&quot;headerlink&quot; title=&quot;语句&quot;&gt;&lt;/a&gt;语句&lt;/h2&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="JS高程填坑笔记" scheme="http://yoursite.com/categories/JS%E9%AB%98%E7%A8%8B%E5%A1%AB%E5%9D%91%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript 基本概念（三）</title>
-    <link href="http://yoursite.com/2018/06/13/Javascript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%88%E4%B8%89%EF%BC%89/"/>
-    <id>http://yoursite.com/2018/06/13/Javascript基本概念（三）/</id>
-    <published>2018-06-13T15:27:09.000Z</published>
-    <updated>2018-06-19T03:25:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是JS高程第三章的第三部分。这一章内容是真的多。。我觉得重新刷高程，对我来说，也是一种不一样的进步吧。<br>本节的主要内容是</p><ul><li>操作符</li></ul><h2 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符"></a>一元操作符</h2><p>只能操作一个一个值的操作符叫做<b>一元操作符</b>。<br>1、递增递减操作符<br>  有两个版本，前置型和后置型。<br>  前置型，先操作，后执行。<br>  后置型，先执行，后操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">5</span>, b = <span class="number">6</span>;</span><br><span class="line"><span class="keyword">let</span> sum = ++a + b;</span><br><span class="line"><span class="keyword">let</span> sum2 = a++ + b;</span><br><span class="line"><span class="built_in">console</span>.log(sum); <span class="comment">//12</span></span><br><span class="line"><span class="built_in">console</span>.log(sum2) <span class="comment">//12</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//7</span></span><br></pre></td></tr></table></figure></p><p>  递增递减操作符对数值，布尔，字符串，对象都有作用！！！！！<br>  规则如下：</p><ul><li>如果字符串包含有效数字，则先转化成数值变量，然后加减1；不包含有效数字，则转化成NaN。字符串变量变成数值变量</li><li>数值变量加减1；</li><li>布尔变量，true先变成1，false变成0，然后加减1,布尔变了转换成数值变量；</li><li>对象变量，先查看valueOf()方法，如果是NaN，则调用toString()，对象转换成数值变量。</li></ul><p>2、一元加减操作符。<br>  一元+操作符，会像Number()方法一样对变量转换成数值变量<code>var a; a = +a</code>;<br>  一元-操作符，主要是变成负数。会像Number()方法一样，不过是负数。</p><h2 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h2><p>首先ES里所有的数值都是有64位来储存，但是位操作符并不是操作64位，而是先转化成32位的整数，然后操作，再将结果转换成64位的，这样，NaN和Infinity就会变成0。<br>对于有符号数，第32位是符号位，0代表正数，1代表负数，符号位决定了其他位数值的格式。剩下31位用来储存数据。<br>正数都是以二进制格式存储，负数以二进制的补码格式存储。默认情况下，ES里所有的正数都是有符号数。<br>无符号数，第32位是数值。但是无符号数只能是正数。<br>位操作符对其他变量，会先用Number()方法变成数值，然后再按位操作。<br>1、按位非（NOT）<br>  按位非是用～表示，执行按位非的结果是返回数值的反码。<br>2、按位与（AND）<br>  按位与是用&amp;表示，它有两个操作符数，运算的时候，将两个数的二进制每一位对齐，都是1得1，其他为0；<br>3、按位或（OR）<br>  按位或是用|表示，它有两个操作符数，运算的时候，将两个数的二进制每一位对齐，都是0得0，其他为1；<br>4、按位异或（XOR）<br>  按位或是用^表示，它有两个操作符数，运算的时候，将两个数的二进制每一位对齐，相同得0，不同为1；<br>5、左移<br>  左移用&lt;&lt;表示，会将数值所有位数向左移动指定的位数。后面补0；左移不会影响符号。<br>6、有符号右移<br>  有符号右移用&gt;&gt;表示，会将数值所有位数向右移动指定的位数。前面补0；保留符号位，不会影响符号。<br>7、无符号右移<br>  无符号右移用&gt;&gt;&gt;表示，会将数值所有位数向右移动指定的位数。前面补0；会影响符号。而且会把负数的补码当成二进制码来运算。</p><h2 id="布尔运算符"><a href="#布尔运算符" class="headerlink" title="布尔运算符"></a>布尔运算符</h2><p>布尔运算符有三个，主要用来测试值的关系<br>1、逻辑非(!)<br>这个操作符会返回一个布尔值，逻辑非运算会将操作数先转换成布尔值，然后求反。</p><ul><li>操作数是对象，返回false</li><li>操作数是空字符串，返回true</li><li>操作数是非空字符串，返回false</li><li>操作数是非0数值，返回false</li><li>操作数是0，null，NaN，undefined，返回true</li></ul><p>2、逻辑与(&amp;&amp;)<br>逻辑与操作符两边有两个操作数。都是true才为true。<br>逻辑与操作可以应用于所有变量，在有一个操作数不是布尔值的情况下，逻辑与不一定会返回布尔值。<br>规则：</p><ul><li>如果第一个操作数是对象，则返回第二个操作数</li><li>如果第二个操作数是对象，则必须第一个操作数是true才会返回该对象。</li><li>如果两个数都是对象，则返回第二个操作数</li><li>如果有一个操作数是null，NaN，undefined，则返回null，NaN，undefined。</li></ul><p>逻辑与属于短路操作，第一个操作数能决定结果，就不会对第二个操作数求值。</p><p>3、逻辑或(||)<br>逻辑或两边有两个操作数，有一个为true就是true。<br>逻辑或操作可以应用于所有变量，在有一个操作数不是布尔值的情况下，逻辑与不一定会返回布尔值。<br>规则：</p><ul><li>如果第一个操作数是对象，则返回第一个操作数</li><li>如果第一个操作数是false，则返回第二个操作数</li><li>两个操作数都是对象，则返回第一个操作数</li><li>如果两个操作数是null，NaN，undefined，则返回null，NaN，undefined。</li></ul><h2 id="乘性操作符"><a href="#乘性操作符" class="headerlink" title="乘性操作符"></a>乘性操作符</h2><p>ES有三个乘性操作符，乘法，除法和求模。<br>如果乘性操作符的某一个操作数不是数值，则将会用Number()方法，先转换成数值。<br>1、乘法(*)<br>规则：</p><ul><li>乘积超过限制，则显示Infinity或者-Infinity</li><li>有一个操作数为NaN，结果为NaN</li><li>Infinity与0相乘，结果是NaN</li><li>Infinity与非0数相乘，结果是Infinity或者-Infinity</li><li>Infinity与Infinity相乘，结果是Infinity</li></ul><p>2、除法(/)<br>规则：</p><ul><li>Infinity与Infinity相除，结果是NaN</li><li>0/0结果是NaN</li><li>其他操作数／0 结果是Infinity或者-Infinity</li></ul><p>3、求模(%)<br>规则：</p><ul><li>Infinity%操作数 结果是NaN</li><li>操作数%0，结果是NaN</li><li>Infinity%Infinity，结果是NaN</li><li>操作数%Infinity，结果是操作数</li></ul><h2 id="加性操作符"><a href="#加性操作符" class="headerlink" title="加性操作符"></a>加性操作符</h2><p>ES中有两个加性操作符，加法和减法<br>1、加法(+)<br>规则：</p><ul><li>有一个操作数是NaN，结果就是NaN</li><li>Infinity + Infinity = Infinity</li><li>-Infinity + -Infinity = -Infinity</li><li>Infinity + -Infinity = NaN</li><li>+0 + +0 = +0</li><li>-0 + -0 = -0</li><li>+0 + -0 = +0</li><li>两个操作数都是字符串，则将字符串拼接起来</li><li>只有一个操作数是字符串，另一个操作数则会转换成字符串，然后拼接起来。</li></ul><p>2、减法(-)<br>规则：</p><ul><li>Infinity - Infinity = NaN</li><li>-Infinity - -Infinity = NaN</li><li>Infinity - -Infinity = Infinity</li><li>-Infinity - Infinity = -Infinity</li></ul><h2 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h2><p>关系操作符有大于(&gt;)，小于(&lt;),小于等于(&lt;=),大于等于(&gt;=)<br>规则：</p><ul><li>都是数值，执行数值比较</li><li>都是字符串，执行字符串编码比较</li><li>一个是数值，则另一个转换成数值比较</li></ul><h2 id="相等操作符"><a href="#相等操作符" class="headerlink" title="相等操作符"></a>相等操作符</h2><p>ES中提供了两种相等操作符：<br>相等操作符：先转换再比较<br>全等操作符：不转换只比较<br>1、相等操作符(==,!=),强制转型，然后比较。<br>规则：</p><ul><li>如果有一个是布尔类型的操作数，则先转换成数值。</li><li>如果有一个是数值，一个是字符串，则将字符串转换成数值</li><li>如果有一个是对象，则用valueOf转成基本类型比较</li><li>null 和undefined 相等</li><li>如果有一个操作数是NaN，则==返回false，!=返回true</li><li>如果都是对象，则比较两个对象是不是一个对象，是否来指向同一个对象。</li></ul><p>2、全等操作符(===,!==),不转换，只比较。<br>规则：</p><ul><li>只要是完全一样就为true，其他为false。</li></ul><p>##条件操作符<br>ES中的条件操作符(?:)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">variable ? <span class="built_in">console</span>.log(<span class="literal">true</span>): <span class="built_in">console</span>.log(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure></p><p>##赋值操作符<br>其中有+= ，-=，*=，／=，%=，&lt;&lt;=, &gt;&gt;=, &gt;&gt;&gt;=</p><p>##逗号操作符<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>, b = <span class="number">2</span>, c = <span class="number">3</span>;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这是JS高程第三章的第三部分。这一章内容是真的多。。我觉得重新刷高程，对我来说，也是一种不一样的进步吧。&lt;br&gt;本节的主要内容是&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;操作符&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;一元操作符&quot;&gt;&lt;a href=&quot;#一元操作符&quot; class=&quot;heade
       
     
     </summary>
