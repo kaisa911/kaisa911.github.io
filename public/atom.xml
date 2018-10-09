@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-29T08:05:49.000Z</updated>
+  <updated>2018-10-09T03:38:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Javascript原型学习</title>
+    <link href="http://yoursite.com/2018/10/09/Javascript%E5%8E%9F%E5%9E%8B%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2018/10/09/Javascript原型学习/</id>
+    <published>2018-10-09T03:21:29.000Z</published>
+    <updated>2018-10-09T03:38:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p><code>prototype</code>是函数才有的一个属性。</p></li><li><p>函数的 prototype 属性指向了一个对象，这个对象正是<b>调用该构造函数而创建的<i>实例</i></b>的原型。</p></li><li><p>原型可以理解成：每一个 JS 对象（null 除外），在创建的时候，就会与之关联另一个对象，这个对象就是我们说的原型。每个对象都会从原型继承属性。</p></li><li><p>每一个 JS 对象（null 除外）都有一个<code>_proto_</code>的属性，该属性指向该对象的原型。</p></li><li><p>每一个原型都会有一个<code>constructor</code>属性，指向关联的构造函数。</p></li><li><p>原型也是一个对象，是通过<code>Object()</code>构造函数生成的。</p></li><li><p><code>Object.prototype</code>没有原型</p></li><li><p>关系图<br><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype5.png" alt="关系图"></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;prototype&lt;/code&gt;是函数才有的一个属性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;函数的 prototype 属性指向了一个对象，这个对象正是&lt;b&gt;调用该构造函数而创建的&lt;i&gt;实例&lt;/i&gt;&lt;/b&gt;的原型。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>for 循环作用域的探究</title>
@@ -522,36 +552,6 @@
     </summary>
     
       <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript基本概念（四）</title>
-    <link href="http://yoursite.com/2018/06/19/Javascript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
-    <id>http://yoursite.com/2018/06/19/Javascript基本概念（四）/</id>
-    <published>2018-06-19T06:32:32.000Z</published>
-    <updated>2018-06-19T09:15:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是 JS 高程第三章的第四部分。<br>本节的主要内容是</p><ul><li>语句</li><li>函数</li></ul><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><p><code>if (condition) statement1 else statement2</code><br>eg:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &gt; <span class="number">25</span>) &#123;</span><br><span class="line">  alert(<span class="string">'Greater than 25.'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; <span class="number">0</span>) &#123;</span><br><span class="line">  alert(<span class="string">'Less than 0.'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">'Between 0 and 25, inclusive.'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="do-while-语句"><a href="#do-while-语句" class="headerlink" title="do-while 语句"></a>do-while 语句</h3><p>后测试循环语句</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  statement;</span><br><span class="line">&#125; <span class="keyword">while</span> (expression);</span><br></pre></td></tr></table></figure><h3 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a>while 语句</h3><p>前测试循环语句<br><code>while(expression) statement</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  i += <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="for-语句"><a href="#for-语句" class="headerlink" title="for 语句"></a>for 语句</h3><p>前测试循环语句<br><code>for (initialization; expression; post-loop-expression) statement</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">  alert(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="for-in-语句"><a href="#for-in-语句" class="headerlink" title="for-in 语句"></a>for-in 语句</h3><p>精准迭代语句，可以用来枚举对象属性<br><code>for (property in expression) statement</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> propName <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">  <span class="built_in">document</span>.write(propName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="label-语句"><a href="#label-语句" class="headerlink" title="label 语句"></a>label 语句</h3><p><code>label: statement</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">start: <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">  alert(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这个例子中的 start 标签，可以在将来由 break 和 continue 语句引用，加标签的语句一般都要与 for 语句等循环语句配合使用。</p><h3 id="break-和-continue-语句"><a href="#break-和-continue-语句" class="headerlink" title="break 和 continue 语句"></a>break 和 continue 语句</h3><p>break 语句会立即跳出循环，然后执行循环后的代码<br>continue 语句会跳出循环，然后从循环顶部开始执行循环。</p><h3 id="switch-语句"><a href="#switch-语句" class="headerlink" title="switch 语句"></a>switch 语句</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (expression) &#123;</span><br><span class="line">  <span class="keyword">case</span> value:</span><br><span class="line">    statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> value:</span><br><span class="line">    statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> value:</span><br><span class="line">    statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>ES 中采用 function 来声明一个函数，后面跟一组参数和函数体，函数会在执行完 return 语句之后停止并立即退出。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span>(<span class="params">arg0, arg1,...,argN</span>) </span>&#123;</span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="参数理解"><a href="#参数理解" class="headerlink" title="参数理解"></a>参数理解</h3><p>函数内部通过一个数组arguments来接收参数。arguments对象只是与数组很像，但是并不是Array的实例。<br>可以用arguments[0]来获取内部的元素。<br>ECMAScript 中的所有的参数传递的都是值，不可能通过引用传递参数</p><h3 id="没有重载"><a href="#没有重载" class="headerlink" title="没有重载"></a>没有重载</h3><p>ES中的函数没有重载</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这是 JS 高程第三章的第四部分。&lt;br&gt;本节的主要内容是&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;语句&lt;/li&gt;
-&lt;li&gt;函数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;语句&quot;&gt;&lt;a href=&quot;#语句&quot; class=&quot;headerlink&quot; title=&quot;语句&quot;&gt;&lt;/a&gt;语句&lt;/h2&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="JS高程填坑笔记" scheme="http://yoursite.com/categories/JS%E9%AB%98%E7%A8%8B%E5%A1%AB%E5%9D%91%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>

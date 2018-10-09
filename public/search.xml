@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>Javascript原型学习</title>
+      <link href="/2018/10/09/Javascript%E5%8E%9F%E5%9E%8B%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2018/10/09/Javascript%E5%8E%9F%E5%9E%8B%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"><![CDATA[<ul><li><p><code>prototype</code>是函数才有的一个属性。</p></li><li><p>函数的 prototype 属性指向了一个对象，这个对象正是<b>调用该构造函数而创建的<i>实例</i></b>的原型。</p></li><li><p>原型可以理解成：每一个 JS 对象（null 除外），在创建的时候，就会与之关联另一个对象，这个对象就是我们说的原型。每个对象都会从原型继承属性。</p></li><li><p>每一个 JS 对象（null 除外）都有一个<code>_proto_</code>的属性，该属性指向该对象的原型。</p></li><li><p>每一个原型都会有一个<code>constructor</code>属性，指向关联的构造函数。</p></li><li><p>原型也是一个对象，是通过<code>Object()</code>构造函数生成的。</p></li><li><p><code>Object.prototype</code>没有原型</p></li><li><p>关系图<br><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype5.png" alt="关系图"></p></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>for 循环作用域的探究</title>
       <link href="/2018/09/29/for-%E5%BE%AA%E7%8E%AF%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E6%8E%A2%E7%A9%B6/"/>
       <url>/2018/09/29/for-%E5%BE%AA%E7%8E%AF%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E6%8E%A2%E7%A9%B6/</url>
