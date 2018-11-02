@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-09T03:38:59.000Z</updated>
+  <updated>2018-11-02T07:09:44.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux 服务器安装nginx及配置</title>
+    <link href="http://yoursite.com/2018/11/02/linux-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85nginx/"/>
+    <id>http://yoursite.com/2018/11/02/linux-服务器安装nginx/</id>
+    <published>2018-11-02T02:53:39.000Z</published>
+    <updated>2018-11-02T07:09:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 linux 服务器上安装 nginx，是想把自己写的项目配置到服务器上, 于是就研究了一下 nginx</p><h2 id="安装-nginx"><a href="#安装-nginx" class="headerlink" title="安装 nginx"></a>安装 nginx</h2><p>我是用 yum 安装的 nginx，简单快捷，命令也简单</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">yum -y install nginx;</span><br><span class="line"></span><br><span class="line">已加载插件：fastestmirror, security</span><br><span class="line">设置安装进程</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line">解决依赖关系</span><br><span class="line">--&gt; 执行事务检查</span><br><span class="line">---&gt; Package nginx.i686 0:1.0.15-12.el6 will be 安装</span><br><span class="line">--&gt; 完成依赖关系计算</span><br><span class="line"></span><br><span class="line">依赖关系解决</span><br><span class="line"></span><br><span class="line">========================================================================================================================================</span><br><span class="line"> 软件包                        架构                         版本                                     仓库                          大小</span><br><span class="line">========================================================================================================================================</span><br><span class="line">正在安装:</span><br><span class="line"> nginx                         i686                         1.0.15-12.el6                            epel                         410 k</span><br><span class="line"></span><br><span class="line">事务概要</span><br><span class="line">========================================================================================================================================</span><br><span class="line">Install       1 Package(s)</span><br><span class="line"></span><br><span class="line">总下载量：410 k</span><br><span class="line">Installed size: 1.1 M</span><br><span class="line">下载软件包：</span><br><span class="line">nginx-1.0.15-12.el6.i686.rpm                                                                                     | 410 kB     00:00</span><br><span class="line">运行 rpm_check_debug</span><br><span class="line">执行事务测试</span><br><span class="line">事务测试成功</span><br><span class="line">执行事务</span><br><span class="line">Warning: RPMDB altered outside of yum.</span><br><span class="line">  正在安装   : nginx-1.0.15-12.el6.i686                                                                                             1/1</span><br><span class="line">  Verifying  : nginx-1.0.15-12.el6.i686                                                                                             1/1</span><br><span class="line"></span><br><span class="line">已安装:</span><br><span class="line">  nginx.i686 0:1.0.15-12.el6</span><br><span class="line"></span><br><span class="line">完毕！</span><br></pre></td></tr></table></figure><p>然后可以查看一下 nginx 的版本</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -v</span><br><span class="line">nginx version: nginx/1.12.2</span><br></pre></td></tr></table></figure><p>然后记一下 nginx 的启动，停止，和重启的问题就好了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 启动服务</span><br><span class="line">service nginx start</span><br><span class="line"></span><br><span class="line">// 关闭服务</span><br><span class="line">service nginx stop</span><br><span class="line"></span><br><span class="line">// 重启服务</span><br><span class="line">service nginx restart</span><br></pre></td></tr></table></figure><p>然后把项目记得放在／usr 目录下，然后你就需要配置 nginx.conf 了</p><p>我的 nginx.conf 是放在/etc/nginx/目录下，打开目录。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim nginx.conf</span><br></pre></td></tr></table></figure><p>然后可以在 vim 里处理 nginx.conf 文件</p><p>默认配置可以不动。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 由于是单页应用虚拟路由的原因，需要将nginx的所有请求都转发到index.html页面，所以需要修改配置文件：</span><br><span class="line">server &#123;</span><br><span class="line">        listen       80 default_server;</span><br><span class="line">        listen       [::]:80 default_server;</span><br><span class="line">        server_name  _;</span><br><span class="line">        root         /usr/project/projectName/dist;</span><br><span class="line"></span><br><span class="line">        # Load configuration files for the default server block.</span><br><span class="line">        include /etc/nginx/default.d/*.conf;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        location ~* html &#123;</span><br><span class="line">            rewrite .* /index.html break;</span><br><span class="line">            root /usr/project/projectName/dist/;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 404 /404.html;</span><br><span class="line">            location = /index.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 500 502 503 504 /50x.html;</span><br><span class="line">            location = /50x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>然后重启nginx服务，在浏览器里输入ip地址就可以看到你的项目啦～</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在 linux 服务器上安装 nginx，是想把自己写的项目配置到服务器上, 于是就研究了一下 nginx&lt;/p&gt;
+&lt;h2 id=&quot;安装-nginx&quot;&gt;&lt;a href=&quot;#安装-nginx&quot; class=&quot;headerlink&quot; title=&quot;安装 nginx&quot;&gt;&lt;/a&gt;安
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="nginx" scheme="http://yoursite.com/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端性能优化</title>
+    <link href="http://yoursite.com/2018/10/10/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    <id>http://yoursite.com/2018/10/10/前端性能优化/</id>
+    <published>2018-10-10T07:14:35.000Z</published>
+    <updated>2018-10-10T09:35:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在整理前端面试的一些知识点，感觉前端的性能优化是一个很重要的方面，还是得好好整理一下。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">问题：前端优化有那些解决方案？</span><br></pre></td></tr></table></figure><p>前端性能优化的原则以<b>更好的用户体验为标准</b>,具体就是要实现以下两个目标</p><ul><li>多使用内存、缓存或者其他方法</li><li>减少 CPU 和GPU 计算，更快展现</li></ul><p>而前端优化的方向有两个：</p><ul><li>减少页面体积，提升网络加载</li><li>优化页面渲染</li></ul><p>具体的方案有：</p><h2 id="减少页面体积，提升网络加载："><a href="#减少页面体积，提升网络加载：" class="headerlink" title="减少页面体积，提升网络加载："></a>减少页面体积，提升网络加载：</h2><p>1、静态资源压缩合并<br>    webpack 打包，把js，css，等文件压缩打包<br>2、静态资源缓存</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近在整理前端面试的一些知识点，感觉前端的性能优化是一个很重要的方面，还是得好好整理一下。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端性能优化" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>Javascript原型学习</title>
@@ -503,58 +555,6 @@
     
     
       <category term="Javascript redux" scheme="http://yoursite.com/tags/Javascript-redux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>对象字面量声明和构造函数声明的比较</title>
-    <link href="http://yoursite.com/2018/06/20/%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E7%9A%84%E6%AF%94%E8%BE%83/"/>
-    <id>http://yoursite.com/2018/06/20/对象字面量声明和构造函数声明的比较/</id>
-    <published>2018-06-20T15:58:01.000Z</published>
-    <updated>2018-06-28T10:00:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>去某家面试的时候，在笔试的时候，看到了这个问题，回来研究一下。<br>JS 中有很多种对象的声明方式，一般我用到的也就是这两种，通过字面量来声明对象和通过构造函数来声明对象。</p><h2 id="用字面量来声明对象"><a href="#用字面量来声明对象" class="headerlink" title="用字面量来声明对象"></a>用字面量来声明对象</h2><p>我们可以直接在创建对象的时候添加功能</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">  name: <span class="string">'paji'</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  sex: <span class="string">'male'</span>,</span><br><span class="line">  speak: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'大家好'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>或者在一开始先声明一个空的对象，当然这个空对象也不是空对象，也是从 object 上继承了好多 object 的属性，只是没有自有属性</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;&#125;,</span><br><span class="line">person.name = <span class="string">'paji'</span>;</span><br><span class="line">person.age = <span class="number">18</span>;</span><br><span class="line">person.sex = <span class="string">'male'</span>;</span><br><span class="line">person.speak = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'大家好'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="用构造函数声明对象"><a href="#用构造函数声明对象" class="headerlink" title="用构造函数声明对象"></a>用构造函数声明对象</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person.name = <span class="string">'paji'</span>;</span><br><span class="line">person.age = <span class="number">18</span>;</span><br><span class="line">person.sex = <span class="string">'male'</span>;</span><br><span class="line">person.speak = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'大家好'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="字面量的优势"><a href="#字面量的优势" class="headerlink" title="字面量的优势"></a>字面量的优势</h2><ul><li>代码量更少，更易读</li><li>强调对象就是一个简单的可变的散列表，而不必一定派生自某个类</li><li>对象字面量运行速度更快，因为它们可以在解析的时候被优化：它们不需要”作用域解析(scope resolution)”；因为存在我们创建了一个同名的构造函数Object()的可能，当我们调用Object()的时候，解析器需要顺着作用域链从当前作用域开始查找，如果在当前作用域找到了名为Object()的函数就执行，如果没找到，就继续顺着作用域链往上照，直到找到全局Object()构造函数为止</li><li>Object()构造函数可以接收参数，通过这个参数可以把对象实例的创建过程委托给另一个内置构造函数，并返回另外一个对象实例，而这往往不是你想要的。</li></ul><p><b><i>尽量用对象字面量的方式来创建对象</i></b></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;去某家面试的时候，在笔试的时候，看到了这个问题，回来研究一下。&lt;br&gt;JS 中有很多种对象的声明方式，一般我用到的也就是这两种，通过字面量来声明对象和通过构造函数来声明对象。&lt;/p&gt;
-&lt;h2 id=&quot;用字面量来声明对象&quot;&gt;&lt;a href=&quot;#用字面量来声明对象&quot; class
-      
-    
-    </summary>
-    
-      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS包装对象</title>
-    <link href="http://yoursite.com/2018/06/19/JS%E5%8C%85%E8%A3%85%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2018/06/19/JS包装对象/</id>
-    <published>2018-06-19T07:35:19.000Z</published>
-    <updated>2018-06-25T02:29:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Q1: 什么是包装对象？<br>A1: JS 的数值，布尔，字符串类型的变量，在一定条件下，也可以自动变成对象，这就是原始类型的包装对象。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">-1</span>);</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="keyword">let</span> c = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'hello world'</span>);</span><br></pre></td></tr></table></figure><p>Q2: 包装对象和同样的原始类型的值相等么，这么做有什么目的？<br>A2: 不想等。包装对象的最大目的，首先是使得 JavaScript 的对象涵盖所有的值，其次使得原始类型的值可以方便地调用某些方法。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> a; <span class="comment">//'object'</span></span><br><span class="line"><span class="keyword">typeof</span> b; <span class="comment">//'object'</span></span><br><span class="line"><span class="keyword">typeof</span> c; <span class="comment">//'object'</span></span><br><span class="line"></span><br><span class="line">a === <span class="number">-1</span>; <span class="comment">//false</span></span><br><span class="line">b === <span class="literal">true</span>; <span class="comment">//false;</span></span><br><span class="line">c === <span class="string">'hello world'</span>; <span class="comment">//false</span></span><br></pre></td></tr></table></figure><p>Q3: 包装对象有什么实例方法？<br>A3: 包装对象可以使用 object 对象提供的原生的方法，其中主要的就是 valueOf()和 toString()方法</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a.valueOf(); <span class="comment">//-1</span></span><br><span class="line">b.valueOf(); <span class="comment">//true</span></span><br><span class="line">b.valueOf(); <span class="comment">//'hello world'</span></span><br><span class="line"></span><br><span class="line">a.toString(); <span class="comment">//'-1'</span></span><br><span class="line">b.toString(); <span class="comment">//'true'</span></span><br><span class="line">b.toString(); <span class="comment">//'hello world'</span></span><br></pre></td></tr></table></figure><p>Q4: 原始类型和实例对象怎么转换？<br>A4: 原始类型的值，可以自动当作包装对象调用，即调用各种包装对象的属性和方法。这时，JavaScript 引擎会自动将原始类型的值转为包装对象实例，在使用后立刻销毁实例。<br>自动转换生成的包装对象是只读的，无法修改。所以，字符串无法添加新属性。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="string">'Hello World'</span>;</span><br><span class="line">s.x = <span class="number">123</span>;</span><br><span class="line">s.x; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure><p>另一方面，调用结束后，包装对象实例会自动销毁。这意味着，下一次调用字符串的属性时，实际是调用一个新生成的对象，而不是上一次调用时生成的那个对象，所以取不到赋值在上一个对象的属性。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Q1: 什么是包装对象？&lt;br&gt;A1: JS 的数值，布尔，字符串类型的变量，在一定条件下，也可以自动变成对象，这就是原始类型的包装对象。&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
-      
-    
-    </summary>
-    
-      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
     
   </entry>
   
