@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/11/08/react-%E4%B8%BB%E8%A6%81%E6%A6%82%E5%BF%B5%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-11-08T08:20:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/11/02/linux-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85nginx/</loc>
         <lastmod>2018-11-02T07:09:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -231,14 +239,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/11/redux-%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E2%80%94createStore/</loc>
-        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-applyMiddleware/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -247,7 +247,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-bindActionCreators/</loc>
+        <loc>http://yoursite.com/2018/05/11/redux-%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E2%80%94createStore/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -256,6 +256,14 @@
 
     <url>
         <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-compose/</loc>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-bindActionCreators/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -343,7 +351,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/24/%E6%94%BE%E9%A3%9E%E7%9A%84thinking%EF%BD%9E/</loc>
+        <loc>http://yoursite.com/2018/05/25/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -351,7 +359,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/25/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</loc>
+        <loc>http://yoursite.com/2018/05/24/%E6%94%BE%E9%A3%9E%E7%9A%84thinking%EF%BD%9E/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -375,7 +383,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/15/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E6%8E%A2%E7%A9%B6/</loc>
+        <loc>http://yoursite.com/2018/05/19/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -383,7 +391,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/19/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</loc>
+        <loc>http://yoursite.com/2018/05/15/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E6%8E%A2%E7%A9%B6/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
