@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Milestone">
 <meta property="og:description" content="React v16.5.2 文档学习 Hello WorldReact 应用的构成模块：元素和组件 JSX 简介JSX 是一种 JavaScript 的语法扩展，推荐在 React 中使用 JSX 来描述用户界面。可以在 JSX 中任意的使用 JS 表达式，但是 JS 表达式要放在大括号里。 JSX 本身也是一种表达式，在编译之后，JSX 会被转化成普通的 JS 对象。JSX 的中，ReactDO">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-08T08:20:38.000Z">
+<meta property="og:updated_time" content="2018-11-16T05:52:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react 主要概念笔记">
 <meta name="twitter:description" content="React v16.5.2 文档学习 Hello WorldReact 应用的构成模块：元素和组件 JSX 简介JSX 是一种 JavaScript 的语法扩展，推荐在 React 中使用 JSX 来描述用户界面。可以在 JSX 中任意的使用 JS 表达式，但是 JS 表达式要放在大括号里。 JSX 本身也是一种表达式，在编译之后，JSX 会被转化成普通的 JS 对象。JSX 的中，ReactDO">
@@ -377,12 +377,24 @@
                 
               
 
-              <time title="创建时间：2018-11-08 14:15:22 / 修改时间：16:20:38" itemprop="dateCreated datePublished" datetime="2018-11-08T14:15:22+08:00">2018-11-08</time>
+              <time title="创建时间：2018-11-08 14:15:22" itemprop="dateCreated datePublished" datetime="2018-11-08T14:15:22+08:00">2018-11-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-16 13:52:35" itemprop="dateModified" datetime="2018-11-16T13:52:35+08:00">2018-11-16</time>
               
             
           </span>
@@ -461,8 +473,19 @@
 <p>正确的使用状态：<br>1、不要直接更新状态，直接更新不会重新渲染组件，应使用<code>this.setState({})</code>来更新。<br>2、状态更新可能是异步的。<br>3、状态更新合并，也可以独立更新。</p>
 <p>数据自顶向下流动。<br>父组件和子组件都不知道某一个组件是否有状态，所以状态被称为局部状态，除了拥有并设置它的组件外，其他组件不可访问。组件可以选择状态，当作属性传给子组件。这被称为单向数据流。<br>任何状态始终由某些特定组件所有，并且从该状态导出的任何数据或 UI 只能影响树中下方的组件。</p>
 <p>在 React 应用程序中，组件是有状态还是无状态被认为是可能随时间而变化的组件的实现细节。 可以在有状态组件中使用无状态组件，反之亦然。</p>
-<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><p>React的事件绑定属性的命名采用驼峰式写法，并为其赋值一个事件处理函数。<br>在函数中，要调用<code>preventDefault()</code>方法来阻止默认行为。</p>
-<p>事件绑定this：<br>因为类的方法不会默认绑定this，所以用ES5写函数的时候，在调用的时候，需要在constructor里绑定this。<br>也可以用ES6的箭头函数来写。</p>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><p>React 的事件绑定属性的命名采用驼峰式写法，并为其赋值一个事件处理函数。<br>在函数中，要调用<code>preventDefault()</code>方法来阻止默认行为。</p>
+<p>事件绑定 this：<br>因为类的方法不会默认绑定 this，所以用 ES5 写函数的时候，在调用的时候，需要在 constructor 里绑定 this。<br>也可以用 ES6 的箭头函数来写。</p>
+<p>用 ES6 class 语法来定义一个组件的时候，事件处理器会成为类的一个方法</p>
+<p>向事件处理程序传递参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;(e) =&gt; <span class="keyword">this</span>.deleteRow(id, e)&#125;&gt;Delete Row&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button onClick=&#123;this.deleteRow.bind(this, id)&#125;&gt;Delete Row&lt;/</span>button&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><p>可以使用 if..else..语句来条件渲染。<br>可以使用与运算符 &amp;&amp;来条件渲染<br>可以使用 JavaScript 的条件运算符 condition ? true : false 来条件渲染</p>
+<p>阻止条件渲染，可以用三目运算符，让 render 方法返回 null 而不是它的渲染结果即可实现。<br>组件的 render 方法返回 null 并不会影响该组件生命周期方法的回调。</p>
+<h2 id="列表-amp-Keys"><a href="#列表-amp-Keys" class="headerlink" title="列表 &amp; Keys"></a>列表 &amp; Keys</h2><p>使用 map()函数，让每一个元素返回一个标签或者组件。</p>
+<p>Keys 可以在 DOM 中的某些元素被增加或删除的时候帮助 React 识别哪些元素发生了变化。因此你应当给列表中的每一个元素赋予一个确定的标识</p>
+<p>元素的 key 在他的兄弟元素之间应该唯一</p>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>其值由 React 控制的输入表单元素称为“受控组件”</p>
+<p>通过受控组件，来构造一个处理提交表单并可访问用户输入表单数据的函数<br>在 react 中，受控组件需要使用 this.setState 来进行更新。<br>使用”受控组件”,每个状态的改变都有一个与之相关的处理函数。这样就可以直接修改或验证用户输入。</p>
+<h2 id="状态提升"><a href="#状态提升" class="headerlink" title="状态提升"></a>状态提升</h2><p>使用 react 经常会遇到几个组件需要共用状态数据的情况。这种情况下，我们最好将这部分共享的状态提升至他们最近的父组件当中进行管理。<br>在 React 应用中，对应任何可变数据理应只有一个单一“数据源”。通常，状态都是首先添加在需要渲染数据的组件中。此时，如果另一个组件也需要这些数据，你可以将数据提升至离它们最近的父组件中。你应该在应用中保持 自上而下的数据流，而不是尝试在不同组件中同步状态。</p>
 
       
     </div>
@@ -732,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-World"><span class="nav-number">1.</span> <span class="nav-text">Hello World</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX-简介"><span class="nav-number">2.</span> <span class="nav-text">JSX 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素渲染"><span class="nav-number">3.</span> <span class="nav-text">元素渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件-amp-props"><span class="nav-number">4.</span> <span class="nav-text">组件&amp;props</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#State-amp-生命周期"><span class="nav-number">5.</span> <span class="nav-text">State&amp;生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件处理"><span class="nav-number">6.</span> <span class="nav-text">事件处理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-World"><span class="nav-number">1.</span> <span class="nav-text">Hello World</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX-简介"><span class="nav-number">2.</span> <span class="nav-text">JSX 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素渲染"><span class="nav-number">3.</span> <span class="nav-text">元素渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件-amp-props"><span class="nav-number">4.</span> <span class="nav-text">组件&amp;props</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#State-amp-生命周期"><span class="nav-number">5.</span> <span class="nav-text">State&amp;生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件处理"><span class="nav-number">6.</span> <span class="nav-text">事件处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number">7.</span> <span class="nav-text">条件渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表-amp-Keys"><span class="nav-number">8.</span> <span class="nav-text">列表 &amp; Keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单"><span class="nav-number">9.</span> <span class="nav-text">表单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态提升"><span class="nav-number">10.</span> <span class="nav-text">状态提升</span></a></li></ol></div>
             
 
           </div>
