@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-16T05:52:35.000Z</updated>
+  <updated>2019-01-09T07:35:15.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,82 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP status</title>
+    <link href="http://yoursite.com/2019/01/09/HTTP-status/"/>
+    <id>http://yoursite.com/2019/01/09/HTTP-status/</id>
+    <published>2019-01-09T07:33:58.000Z</published>
+    <updated>2019-01-09T07:35:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HttpStatus"><a href="#HttpStatus" class="headerlink" title="HttpStatus"></a>HttpStatus</h1><h2 id="Http-Status-Code-分类"><a href="#Http-Status-Code-分类" class="headerlink" title="Http Status Code 分类"></a>Http Status Code 分类</h2><p>1XX 信息，服务器收到请求，需要请求者继续执行操作<br>2XX 成功，操作被成功接收并处理<br>3XX 重定向，需要进一步的操作以完成请求<br>4XX 客户端错误，请求包含语法错误或无法完成请求<br>5XX 服务器错误，服务器在处理请求的过程中发生了错误</p><h2 id="1XX-相关具体的内容"><a href="#1XX-相关具体的内容" class="headerlink" title="1XX 相关具体的内容"></a>1XX 相关具体的内容</h2><p><img src="https://github.com/kaisa911/Shrek/blob/master/HTTP/images/1xx.png?raw=true"></p><h2 id="2XX-相关具体的内容"><a href="#2XX-相关具体的内容" class="headerlink" title="2XX 相关具体的内容"></a>2XX 相关具体的内容</h2><p><img src="https://github.com/kaisa911/Shrek/blob/master/HTTP/images/2xx.png?raw=true"></p><h2 id="3XX-相关具体的内容"><a href="#3XX-相关具体的内容" class="headerlink" title="3XX 相关具体的内容"></a>3XX 相关具体的内容</h2><p><img src="https://github.com/kaisa911/Shrek/blob/master/HTTP/images/3xx.png?raw=true"></p><h2 id="4XX-相关具体的内容"><a href="#4XX-相关具体的内容" class="headerlink" title="4XX 相关具体的内容"></a>4XX 相关具体的内容</h2><p><img src="https://github.com/kaisa911/Shrek/blob/master/HTTP/images/4xx-1.png?raw=true"><br><img src="https://github.com/kaisa911/Shrek/blob/master/HTTP/images/4xx-2.png?raw=true"></p><h2 id="5XX-相关具体的内容"><a href="#5XX-相关具体的内容" class="headerlink" title="5XX 相关具体的内容"></a>5XX 相关具体的内容</h2><p><img src="https://github.com/kaisa911/Shrek/blob/master/HTTP/images/5xx.png?raw=true"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;HttpStatus&quot;&gt;&lt;a href=&quot;#HttpStatus&quot; class=&quot;headerlink&quot; title=&quot;HttpStatus&quot;&gt;&lt;/a&gt;HttpStatus&lt;/h1&gt;&lt;h2 id=&quot;Http-Status-Code-分类&quot;&gt;&lt;a href=&quot;#Ht
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>react 相关知识整理</title>
+    <link href="http://yoursite.com/2018/12/11/react-%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/"/>
+    <id>http://yoursite.com/2018/12/11/react-相关知识整理/</id>
+    <published>2018-12-11T05:50:22.000Z</published>
+    <updated>2018-12-13T09:54:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>整理一下脑图里关于 react 的相关的知识。</p><h2 id="react-的思想"><a href="#react-的思想" class="headerlink" title="react 的思想"></a>react 的思想</h2><h3 id="Just-The-UI"><a href="#Just-The-UI" class="headerlink" title="Just The UI"></a>Just The UI</h3><p>react 只是一个 UI 库，可以当作一个模板引擎，用在各种 mv*的框架中作为 view 层</p><h3 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h3><h4 id="什么是-Virtual-DOM"><a href="#什么是-Virtual-DOM" class="headerlink" title="什么是 Virtual DOM"></a>什么是 Virtual DOM</h4><p>在 React 中，render 执行的结果得到的并不是真正的 DOM 节点，而是轻量级的 JavaScript 对象，我们称之为 virtual DOM。</p><h4 id="Virtual-DOM-为什么能提高性能"><a href="#Virtual-DOM-为什么能提高性能" class="headerlink" title="Virtual DOM 为什么能提高性能"></a>Virtual DOM 为什么能提高性能</h4><p>react 在内存中维护 virtual DOM 来处理我们数据的改变，通过 diff 算法，得到一个 patch，然后将这个 patch 放到一个队列里，然后批量的更新这些 patch 到真实 DOM 里。</p><p>真实 DOM 的的工作流程：<br>大致分 5 步：创建 DOM tree –&gt; 创建 Style Rules -&gt; 构建 Render tree -&gt; 布局 Layout –&gt; 绘制 Painting<br>操作 DOM，浏览器会从构建 DOM 树开始从头到尾执行一遍流程。然而 DOM 的批量操作不会被合并，只会第一个 DOM 操作处理完之后再重新从构建 DOM 树开始第二个操作，一直到最后一个操作结束。</p><p>Virtrual DOM 的工作流程：<br>Virtrual DOM 会对批量的操作合并到 Virtrual DOM 树上，然后根据 diff 算法，查看哪一部分发生了变化，然后将 diff 的内容保存到本地的一个 js 对象里，然后这个对象再 attach 到 DOM 树上，通知浏览器重新绘制。</p><h4 id="diff-算法"><a href="#diff-算法" class="headerlink" title="diff 算法"></a>diff 算法</h4><p>React 通过制定大胆的策略，将 O(n^3) 复杂度的问题转换成 O(n) 复杂度的问题。</p><p><strong>diff 策略</strong><br>1、Web UI 中 DOM 节点跨层级的移动操作特别少，可以忽略不计。<br>2、拥有相同类的两个组件将会生成相似的树形结构，拥有不同类的两个组件将会生成不同的树形结构。<br>3、对于同一层级的一组子节点，它们可以通过唯一 id 进行区分。</p><p>基于以上三个前提策略，React 分别对 tree diff、component diff 以及 element diff 进行算法优化，事实也证明这三个前提策略是合理且准确的，它保证了整体界面构建的性能。</p><ul><li><strong>tree diff</strong><br>基于策略一，React 对树的算法进行了简洁明了的优化，即对树进行分层比较，两棵树只会对同一层次的节点进行比较。<br>React 通过 updateDepth 对 Virtual DOM 树进行层级控制，只会对相同颜色方框内的 DOM 节点进行比较，即同一个父节点下的所有子节点。当发现节点已经不存在，则该节点及其子节点会被完全删除掉，不会用于进一步的比较。这样只需要对树进行一次遍历，便能完成整个 DOM 树的比较。</li><li><strong>component diff</strong><br>React 是基于组件构建应用的，对于组件间的比较所采取的策略也是简洁高效。<br>如果是同一类型的组件，按照原策略继续比较 virtual DOM tree。<br>如果不是，则将该组件判断为 dirty component，从而替换整个组件下的所有子节点。<br>对于同一类型的组件，有可能其 Virtual DOM 没有任何变化，如果能够确切的知道这点那可以节省大量的 diff 运算时间，因此 React 允许用户通过 shouldComponentUpdate() 来判断该组件是否需要进行 diff。</li><li><strong>element diff</strong><br>当节点处于同一层级时，React diff 提供了三种节点操作，分别为：INSERT_MARKUP（插入）、MOVE_EXISTING（移动）和 REMOVE_NODE（删除）。<br>INSERT_MARKUP，新的 component 类型不在老集合里， 即是全新的节点，需要对新节点执行插入操作。<br>MOVE_EXISTING，在老集合有新 component 类型，且 element 是可更新的类型，generateComponentChildren 已调用 receiveComponent，这种情况下 prevChild=nextChild，就需要做移动操作，可以复用以前的 DOM 节点。<br>REMOVE_NODE，老 component 类型，在新集合里也有，但对应的 element 不同则不能直接复用和更新，需要执行删除操作，或者老 component 不在新集合里的，也需要执行删除操作。</li></ul><h3 id="Data-Flow"><a href="#Data-Flow" class="headerlink" title="Data Flow"></a>Data Flow</h3><p>单向数据流，只需要关心从数据怎么得出界面就行。由数据驱动页面的方式，可以轻松让用户界面和数据保持一致。<br>更新 DOM 的数据总是从顶层流下来，用户事件不直接操作 DOM，而是操作顶层数据</p><h2 id="react-解决了前端哪些痛点"><a href="#react-解决了前端哪些痛点" class="headerlink" title="react 解决了前端哪些痛点"></a>react 解决了前端哪些痛点</h2><p>1、组件化，模块化 ：react 组件化，和基于 webpack 可以使用 Es6 或 CommonJs 的写法实现模块化代码<br>2、开发效率：React 的代码基本就是组件的组合，分而治之的方式让代码的可阅读性很高，容易理解<br>3、运行效率：React 使用 Virtual DOM，通过 diff 算法，更新特定的 dom，加快了效率<br>4、可维护性：维护性强<br>5、用户体验：spa</p><h2 id="react-生命周期"><a href="#react-生命周期" class="headerlink" title="react 生命周期"></a>react 生命周期</h2><h3 id="react-完整的生命周期"><a href="#react-完整的生命周期" class="headerlink" title="react 完整的生命周期"></a>react 完整的生命周期</h3><p>react 的生命周期包括：<br><img src="https://github.com/kaisa911/studyNotes/blob/master/public/image/react-lifecycle.jpg?raw=true" alt="react生命周期"></p><h3 id="数据请求"><a href="#数据请求" class="headerlink" title="数据请求"></a>数据请求</h3><p>react 在 16.3 中，将 componentWillMount 标为不安全的生命周期函数，所以需要在 componentDidMount 里面获取数据。<br><strong>为什么不在 constructor？</strong><br>constructor 被调用是在组件准备要挂载的最一开始，所以此时组件尚未挂载到网页上，而且在未渲染的时候，数据获取到也不会存在。</p><h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>shouldComponentUpdate ：<br>组件接受到新属性或者新状态的时候（可以返回 false，接收数据后不更新，阻止 render 调用，后面的函数不会被继续执行了）</p><p>这个方法用来判断是否需要调用 render 方法重新描绘 dom。因为 dom 的描绘非常消耗性能，如果我们能在 shouldComponentUpdate 方法中能够写出更优化的 dom diff 算法，可以极大的提高性能。</p><h2 id="JSX-相关"><a href="#JSX-相关" class="headerlink" title="JSX 相关"></a>JSX 相关</h2><h3 id="JSX-怎么被浏览器认识"><a href="#JSX-怎么被浏览器认识" class="headerlink" title="JSX 怎么被浏览器认识"></a>JSX 怎么被浏览器认识</h3><p>JSX 是 React 对 JS 语法的拓展，需要编译后才能正确使用它，JSX 的构建非常简洁明</p><p>JSX 是需要编译才能被浏览器识别的，它就是被 Babel 编译的，具体说来是被 babel-preset-react 来编译的。不过 Babel 的最主要目的其实并非编译 JSX，Babel 应该算是一个编译平台，其主要目的是转换你在代码中使用了的 ES6 甚至 ES7 语法为浏览器识别的 ES5 语法（babel-core,babel-preset-es2015 模块）。</p><p>Babel 转译器会把 JSX 转换成一个名为 React.createElement() 的方法调用。</p><p>本质上来讲，JSX 只是为 React.createElement(component, props, …children) 方法提供的语法糖。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">className</span>=<span class="string">"greeting"</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"><span class="keyword">const</span> element = React.createElement(<span class="string">'h1'</span>, &#123; <span class="attr">className</span>: <span class="string">'greeting'</span> &#125;, <span class="string">'Hello, world!'</span>);</span><br></pre></td></tr></table></figure><h3 id="JSX-组件的首字母为什么要大写"><a href="#JSX-组件的首字母为什么要大写" class="headerlink" title="JSX 组件的首字母为什么要大写"></a>JSX 组件的首字母为什么要大写</h3><p>当元素类型以小写字母开头时，它表示一个内置的组件，<br>如 <code>&lt;div&gt;</code> 或 <code>&lt;span&gt;</code>，并将字符串 ‘div’ 或 ‘span’ 传 递给 React.createElement。 以大写字母开头的类型，如 <foo> 编译为 React.createElement(Foo)，并它正对应于你在 JavaScript 文件中定义或导入的组件。</foo></p><h2 id="函数绑定-this"><a href="#函数绑定-this" class="headerlink" title="函数绑定 this"></a>函数绑定 this</h2><p>react 中函数绑定 this 有那么几种方法：<br>1、箭头函数<br>不管是在类里面，还是在 render 里面，都可以用箭头函数，箭头函数会自动绑定 this。</p><p>2、在构造函数里绑定 this</p><p>3、在 render 里用.bind(this)</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.handleClick3 = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'this &gt; '</span>, <span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  handleClick2 = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'this &gt; '</span>, <span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  handleClick3() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'this &gt; '</span>, <span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  handleClick4() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'this &gt; '</span>, <span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div onClick=&#123;<span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>)&#125;&gt;test&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div onClick=&#123;this.handleClick2&#125;&gt;test2&lt;/</span>div&gt;</span><br><span class="line">      &lt;div onClick=&#123;<span class="keyword">this</span>.handleClick3&#125;&gt;test3&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div onClick=&#123;e=&gt;handleClick4(e)&#125;&gt;test4&lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="组件的三种定义方法"><a href="#组件的三种定义方法" class="headerlink" title="组件的三种定义方法"></a>组件的三种定义方法</h3><p>1、纯函数组件</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">HelloComponent</span>(<span class="params">props <span class="regexp">/* context */</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello &#123;props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2、使用 React.createClass 创建组件</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> InputControlES5 = React.createClass(&#123;</span><br><span class="line">  propTypes: &#123;</span><br><span class="line">    <span class="comment">//定义传入props中的属性各种类型</span></span><br><span class="line">    initialValue: React.PropTypes.string</span><br><span class="line">  &#125;,</span><br><span class="line">  defaultProps: &#123;</span><br><span class="line">    <span class="comment">//组件默认的props对象</span></span><br><span class="line">    initialValue: <span class="string">''</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 设置 initial state</span></span><br><span class="line">  getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//组件相关的状态对象</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="keyword">this</span>.props.initialValue || <span class="string">'placeholder'</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  handleChange: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      <span class="comment">//this represents react component instance</span></span><br><span class="line">      text: event.target.value</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        Type something:</span><br><span class="line">        &lt;input onChange=&#123;<span class="keyword">this</span>.handleChange&#125; value=&#123;<span class="keyword">this</span>.state.text&#125; /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure><p>3、使用 ES6 的类，继承 React.Component 来创建组件</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InputControlES6</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      text: props.initialValue || <span class="string">'placeholder'</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleChange = <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      text: event.target.value</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        Type something:</span><br><span class="line">        &lt;input onChange=&#123;<span class="keyword">this</span>.handleChange&#125; value=&#123;<span class="keyword">this</span>.state.text&#125; /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;整理一下脑图里关于 react 的相关的知识。&lt;/p&gt;
+&lt;h2 id=&quot;react-的思想&quot;&gt;&lt;a href=&quot;#react-的思想&quot; class=&quot;headerlink&quot; title=&quot;react 的思想&quot;&gt;&lt;/a&gt;react 的思想&lt;/h2&gt;&lt;h3 id=&quot;Just-T
+      
+    
+    </summary>
+    
+      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>作用域及闭包</title>
+    <link href="http://yoursite.com/2018/12/06/%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%8F%8A%E9%97%AD%E5%8C%85/"/>
+    <id>http://yoursite.com/2018/12/06/作用域及闭包/</id>
+    <published>2018-12-06T04:03:36.000Z</published>
+    <updated>2018-12-10T07:21:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>想搞一个大事情！</p><p>开篇点题，嗯，这个题目真的是一个大事情。感觉要准备好多东西，要理解很多东西。</p><h2 id="什么是作用域"><a href="#什么是作用域" class="headerlink" title="什么是作用域"></a>什么是作用域</h2><p>作用域，看了一些书啊，文章啊，似乎对作用域的解释都是那么几句话，比如<br>《你不知道的 JavaScript（上）》里说，作用域就是一套设计良好的用来存储变量规则 。<br>mqyqingfeng (冴羽) 说，作用域是指程序源代码中定义变量的区域。</p><p>嗯，反正就是一个区域，用来定义变量，存储变量，在需要的时候找到变量的地方。</p><h2 id="为什么需要作用域"><a href="#为什么需要作用域" class="headerlink" title="为什么需要作用域"></a>为什么需要作用域</h2><p>为什么需要作用域呢？有一个最小访问原则。<br>设置作用域的一个优势，是为你的代码提供了一个安全层级。计算机安全中，有个常规的原则是：用户只能访问他们当前需要的东西。这叫做最小访问原则。这个原则应用于编程语言设计，在大多数编程语言（包括 JavaScript）中就被称为作用域。<br>当然，设置作用域还有一些提高性能，减少 bug 的优势，还能解决不同范围内的同名变量命名的问题等。</p><h2 id="JS-中的作用域"><a href="#JS-中的作用域" class="headerlink" title="JS 中的作用域"></a>JS 中的作用域</h2><p>JavaScript 中的采用的是词法作用域，也就是静态作用域。<br>JavaScript 中的作用域包括</p><ul><li>全局作用域</li><li>函数作用域</li><li>块级作用域</li><li>词法作用域（静态作用域）</li><li>动态作用域</li></ul><h3 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h3><p>直接编写在 script 标签中的 JS 代码，都在全局作用域。<br>变量的生命周期：在页面打开时创建，在页面关闭时销毁，<br>全局作用域中，创建变量都会作为 window 对象的属性保存，创建的函数都会作为 window 对象的方法保存，<br>全局作用域中的变量和函数都是全局变量，在页面的任何部分都可以访问的到</p><p>在函数中，未使用var关键字定义的变量都是全局变量。</p><h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><h3 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h3><h3 id="动态作用域"><a href="#动态作用域" class="headerlink" title="动态作用域"></a>动态作用域</h3><h2 id="闭包作用域"><a href="#闭包作用域" class="headerlink" title="闭包作用域"></a>闭包作用域</h2><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;想搞一个大事情！&lt;/p&gt;
+&lt;p&gt;开篇点题，嗯，这个题目真的是一个大事情。感觉要准备好多东西，要理解很多东西。&lt;/p&gt;
+&lt;h2 id=&quot;什么是作用域&quot;&gt;&lt;a href=&quot;#什么是作用域&quot; class=&quot;headerlink&quot; title=&quot;什么是作用域&quot;&gt;&lt;/a&gt;什么是作用域
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>react 主要概念笔记</title>
@@ -258,34 +334,6 @@
   </entry>
   
   <entry>
-    <title>react 是怎样工作的</title>
-    <link href="http://yoursite.com/2018/08/23/react-%E6%98%AF%E6%80%8E%E6%A0%B7%E5%B7%A5%E4%BD%9C%E7%9A%84/"/>
-    <id>http://yoursite.com/2018/08/23/react-是怎样工作的/</id>
-    <published>2018-08-23T06:23:33.000Z</published>
-    <updated>2018-08-23T06:23:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>占坑</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;占坑&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
     <title>理解虚拟DOM</title>
     <link href="http://yoursite.com/2018/08/23/%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9FDOM/"/>
     <id>http://yoursite.com/2018/08/23/理解虚拟DOM/</id>
@@ -501,63 +549,6 @@
     
     
       <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>变量、作用域和内存问题</title>
-    <link href="http://yoursite.com/2018/06/28/%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2018/06/28/变量、作用域和内存问题/</id>
-    <published>2018-06-28T10:02:07.000Z</published>
-    <updated>2018-07-02T03:11:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是JS高程的第四章，讲的是变量，作用域，以及JS的内存问题。<br>现在来填坑<br>本节包括三个部分</p><ul><li>基本类型和引用类型</li><li>执行环境</li><li>垃圾收集</li></ul><h2 id="基本类型和引用类型"><a href="#基本类型和引用类型" class="headerlink" title="基本类型和引用类型"></a>基本类型和引用类型</h2><ul><li>基本类型值：简单的数据段，Undefined，Null，number，string，boolean五种基本类型，在操作的时候，可以操作保存在变量中实际的值。</li><li>引用类型的值是保存在内存中的对象。Js不允许直接访问内存的位置，也就是不允许直接操作对象的内存空间，在操作对象时，复制对象时，操作的时对象的引用，在为对象添加属性时，操作的是对象</li><li>传递参数<br>ES中所有的参数都是按值传递的。基本类型传的值就是变量的值，引用类型传的值是引用内存的地址。</li></ul><h2 id="执行环境与作用域"><a href="#执行环境与作用域" class="headerlink" title="执行环境与作用域"></a>执行环境与作用域</h2><p>全局执行环境，是最外围的一个执行环境。<br>每一个函数都会有自己的执行环境。当执行流进入一个函数时，函数的环境就会被推入一个环境栈中，而在环境执行结束后，栈将其环境弹出，把控制权返回之前的执行环境。<br>当代码在一个环境中执行时，会产生一个作用域链。作用域链的用途，是保证对执行环境有权访问的所有变量和函数的有序访问</p><p>可以通过try-catch 和 with语句来延长作用域链</p><h2 id="垃圾收集"><a href="#垃圾收集" class="headerlink" title="垃圾收集"></a>垃圾收集</h2><p>垃圾收集一般有两个策略：<br>标记清楚，进入环境和弹出环境分别有标记，清除弹出环境标记的变量或者函数。<br>引用计数，引用为0的会被清除</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这是JS高程的第四章，讲的是变量，作用域，以及JS的内存问题。&lt;br&gt;现在来填坑&lt;br&gt;本节包括三个部分&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;基本类型和引用类型&lt;/li&gt;
-&lt;li&gt;执行环境&lt;/li&gt;
-&lt;li&gt;垃圾收集&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;基本类型和引用类型&quot;&gt;&lt;a 
-      
-    
-    </summary>
-    
-      <category term="JS高程填坑笔记" scheme="http://yoursite.com/categories/JS%E9%AB%98%E7%A8%8B%E5%A1%AB%E5%9D%91%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>对象深拷贝方法</title>
-    <link href="http://yoursite.com/2018/06/25/%E5%AF%B9%E8%B1%A1%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2018/06/25/对象深拷贝方法/</id>
-    <published>2018-06-25T03:34:53.000Z</published>
-    <updated>2018-06-28T10:00:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>分享大佬写的深拷贝的方法。。<br>1、JSON.parse(JSON.stringify(obj))<br>这个小方法可以把 obj 里的除了 RegExp 和 function 的属性拷贝下来。function 就忽略了，RegExp 转成{}</p><p>2、大佬们写的两个方法。。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepClone = <span class="function"><span class="params">obj</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> innerIterator = <span class="function">(<span class="params">v, key, nb</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (v <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> result = v.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (item <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">RegExp</span>(item);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (</span><br><span class="line">          <span class="keyword">typeof</span> item === <span class="string">'function'</span> ||</span><br><span class="line">          item === <span class="literal">null</span> ||</span><br><span class="line">          <span class="keyword">typeof</span> item !== <span class="string">'object'</span></span><br><span class="line">        ) &#123;</span><br><span class="line">          <span class="keyword">return</span> item;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (item <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">          <span class="keyword">return</span> innerIterator(item);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> reduceKeys(item)();</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">return</span> key &amp;&amp; nb ? &#123; ...nb, [key]: result &#125; : result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> newObj = reduceKeys(v)();</span><br><span class="line">    <span class="keyword">return</span> &#123; ...nb, [key]: newObj &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> reduceKeys = <span class="function"><span class="params">value</span> =&gt;</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> ks = <span class="built_in">Object</span>.keys(value);</span><br><span class="line">    <span class="keyword">return</span> ks.reduce(<span class="function">(<span class="params">pre, current</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> v = value[current];</span><br><span class="line">      <span class="keyword">if</span> (v <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123; ...pre, [current]: <span class="keyword">new</span> <span class="built_in">RegExp</span>(v) &#125;;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (</span><br><span class="line">        v === <span class="literal">null</span> ||</span><br><span class="line">        <span class="keyword">typeof</span> v === <span class="string">'function'</span> ||</span><br><span class="line">        <span class="keyword">typeof</span> v !== <span class="string">'object'</span></span><br><span class="line">      ) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123; ...pre, [current]: v &#125;;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> innerIterator(v, current, pre);</span><br><span class="line">    &#125;, &#123;&#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> reduceKeys(obj)();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepClone = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> notIn = [<span class="string">'[object Function]'</span>, <span class="string">'[object Object]'</span>, <span class="string">'[object Array]'</span>];</span><br><span class="line">  <span class="keyword">const</span> getType = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(data);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> isObject = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> getType(data) === <span class="string">'[object Object]'</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> isArray = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> getType(data) === <span class="string">'[object Array]'</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> isFunction = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> getType(data) === <span class="string">'[object Function]'</span>;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> result;</span><br><span class="line">  <span class="keyword">if</span> (isObject(data)) &#123;</span><br><span class="line">    result = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> p <span class="keyword">in</span> data) &#123;</span><br><span class="line">      <span class="keyword">if</span> (notIn.includes(getType(data[p]))) &#123;</span><br><span class="line">        result[p] = deepClone(data[p]);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result[p] = data[p];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isArray(data)) &#123;</span><br><span class="line">    result = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">of</span> data) &#123;</span><br><span class="line">      <span class="keyword">if</span> (notIn.includes(getType(i))) &#123;</span><br><span class="line">        result.push(deepClone(i));</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result.push(i);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isFunction(data)) &#123;</span><br><span class="line">    result = data;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;分享大佬写的深拷贝的方法。。&lt;br&gt;1、JSON.parse(JSON.stringify(obj))&lt;br&gt;这个小方法可以把 obj 里的除了 RegExp 和 function 的属性拷贝下来。function 就忽略了，RegExp 转成{}&lt;/p&gt;
-&lt;p&gt;2、大佬们
-      
-    
-    </summary>
-    
-      <category term="Demo练习" scheme="http://yoursite.com/categories/Demo%E7%BB%83%E4%B9%A0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
     
   </entry>
   
