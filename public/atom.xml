@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-09T07:35:15.000Z</updated>
+  <updated>2019-01-10T08:04:18.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>函数防抖与节流</title>
+    <link href="http://yoursite.com/2019/01/10/%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/"/>
+    <id>http://yoursite.com/2019/01/10/函数防抖与节流/</id>
+    <published>2019-01-10T08:03:35.000Z</published>
+    <updated>2019-01-10T08:04:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h1><p>函数节流的核心是，让一个函数不要执行得太频繁，减少一些过快的调用来节流。</p><p>函数去抖就是对于一定时间段的连续的函数调用，只让其执行一次。</p><h2 id="应用条件"><a href="#应用条件" class="headerlink" title="应用条件"></a>应用条件</h2><p>发送一个 ajax 表单，给一个 button 绑定 click 事件，并且监听触发 ajax 请求。如果是 debounce，则用户不管点多少次，都只会发送一次请求；如果是 throttle，不断点击的过程中会间隔发送请求。这时候最好使用 debounce.<br>监听滚动事件判断是否到页面底部自动加载更多，如果是 debounce，则只有在用户停止滚动的时候的才会判断是否到了底部，如果是 throttle，则页面滚动的过程中会间隔判断是否到达底部。 此时最好使用 throttle</p><h2 id="函数防抖"><a href="#函数防抖" class="headerlink" title="函数防抖"></a>函数防抖</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 防抖函数，返回函数连续调用时，空闲时间必须大于或等于 wait，func 才会执行</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param  &#123;function&#125; func        回调函数</span></span><br><span class="line"><span class="comment"> * @param  &#123;number&#125;   wait        表示时间窗口的间隔</span></span><br><span class="line"><span class="comment"> * @param  &#123;boolean&#125;  immediate   设置为ture时，是否立即调用函数</span></span><br><span class="line"><span class="comment"> * @return &#123;function&#125;             返回客户调用函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> debounce = <span class="function">(<span class="params">func, wait = <span class="number">1000</span>, immediate = <span class="literal">true</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> timer;</span><br><span class="line">  <span class="keyword">let</span> context;</span><br><span class="line">  <span class="keyword">let</span> args;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 延迟执行函数</span></span><br><span class="line">  <span class="keyword">const</span> later = <span class="function"><span class="params">()</span> =&gt;</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 延迟函数执行完毕，清空缓存的定时器序号</span></span><br><span class="line">      timer = <span class="literal">null</span>;</span><br><span class="line">      <span class="comment">// 延迟执行的情况下，函数会在延迟函数中执行</span></span><br><span class="line">      <span class="comment">// 使用到之前缓存的参数和上下文</span></span><br><span class="line">      <span class="keyword">if</span> (!immediate) &#123;</span><br><span class="line">        func.apply(context, args);</span><br><span class="line">        context = <span class="literal">null</span>;</span><br><span class="line">        args = <span class="literal">null</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, wait);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 这里返回的函数是每次实际调用的函数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">...params</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 如果没有创建延迟执行函数（later），就创建一个</span></span><br><span class="line">    <span class="keyword">if</span> (!timer) &#123;</span><br><span class="line">      timer = later();</span><br><span class="line">      <span class="comment">// 如果是立即执行，调用函数</span></span><br><span class="line">      <span class="comment">// 否则缓存参数和调用上下文</span></span><br><span class="line">      <span class="keyword">if</span> (immediate) &#123;</span><br><span class="line">        func.apply(<span class="keyword">this</span>, params);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        context = <span class="keyword">this</span>;</span><br><span class="line">        args = params;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 如果已有延迟执行函数（later），调用的时候清除原来的并重新设定一个</span></span><br><span class="line">      <span class="comment">// 这样做延迟函数会重新计时</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      clearTimeout(timer);</span><br><span class="line">      timer = later();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> debounce;</span><br></pre></td></tr></table></figure><h2 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> throttle = <span class="function">(<span class="params">func, delay</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> last, deferTimer;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> _args = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="keyword">const</span> now = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="keyword">if</span> (last &amp;&amp; now &lt; last + delay) &#123;</span><br><span class="line">      clearTimeout(deferTimer);</span><br><span class="line">      deferTimer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        last = now;</span><br><span class="line">        func.apply(<span class="keyword">this</span>, _args);</span><br><span class="line">      &#125;, delay);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      last = now;</span><br><span class="line">      func.apply(<span class="keyword">this</span>, _args);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;防抖和节流&quot;&gt;&lt;a href=&quot;#防抖和节流&quot; class=&quot;headerlink&quot; title=&quot;防抖和节流&quot;&gt;&lt;/a&gt;防抖和节流&lt;/h1&gt;&lt;p&gt;函数节流的核心是，让一个函数不要执行得太频繁，减少一些过快的调用来节流。&lt;/p&gt;
+&lt;p&gt;函数去抖就是对于一定时间段的
+      
+    
+    </summary>
+    
+      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>HTTP status</title>
@@ -523,32 +549,6 @@
     
     
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>圣杯布局，双飞翼布局</title>
-    <link href="http://yoursite.com/2018/07/03/%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%EF%BC%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80/"/>
-    <id>http://yoursite.com/2018/07/03/圣杯布局，双飞翼布局/</id>
-    <published>2018-07-03T05:51:38.000Z</published>
-    <updated>2018-07-10T02:09:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>等待填坑</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;等待填坑&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="面试锦囊" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95%E9%94%A6%E5%9B%8A/"/>
-    
-    
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
   </entry>
   

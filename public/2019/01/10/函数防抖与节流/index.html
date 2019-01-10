@@ -102,17 +102,18 @@
 
 
 
-  <meta name="description" content="没有什么事情是理所应当的，所有的结果都是之前付出努力的一种回报。 我是比较相信这样的努力和付出的论点的。毕竟付出努力，肯定会有回报，不一定会是在你期望的方面，但是他也会有结果，也许是另一个方面的回报。 这只是我的一段碎碎念。  工作的第 8 个月零 1 天，感觉我需要更多方面的进步了。感觉到了很大的压力，最近整个人都比较的佛系，靠着工作，拿着薪水，奋斗的动力感觉少了很多。当工作忙的时候，就没时间">
+  <meta name="description" content="防抖和节流函数节流的核心是，让一个函数不要执行得太频繁，减少一些过快的调用来节流。 函数去抖就是对于一定时间段的连续的函数调用，只让其执行一次。 应用条件发送一个 ajax 表单，给一个 button 绑定 click 事件，并且监听触发 ajax 请求。如果是 debounce，则用户不管点多少次，都只会发送一次请求；如果是 throttle，不断点击的过程中会间隔发送请求。这时候最好使用 de">
+<meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="偷得浮生半日闲">
-<meta property="og:url" content="http://yoursite.com/2018/08/19/偷得浮生半日闲/index.html">
+<meta property="og:title" content="函数防抖与节流">
+<meta property="og:url" content="http://yoursite.com/2019/01/10/函数防抖与节流/index.html">
 <meta property="og:site_name" content="Milestone">
-<meta property="og:description" content="没有什么事情是理所应当的，所有的结果都是之前付出努力的一种回报。 我是比较相信这样的努力和付出的论点的。毕竟付出努力，肯定会有回报，不一定会是在你期望的方面，但是他也会有结果，也许是另一个方面的回报。 这只是我的一段碎碎念。  工作的第 8 个月零 1 天，感觉我需要更多方面的进步了。感觉到了很大的压力，最近整个人都比较的佛系，靠着工作，拿着薪水，奋斗的动力感觉少了很多。当工作忙的时候，就没时间">
+<meta property="og:description" content="防抖和节流函数节流的核心是，让一个函数不要执行得太频繁，减少一些过快的调用来节流。 函数去抖就是对于一定时间段的连续的函数调用，只让其执行一次。 应用条件发送一个 ajax 表单，给一个 button 绑定 click 事件，并且监听触发 ajax 请求。如果是 debounce，则用户不管点多少次，都只会发送一次请求；如果是 throttle，不断点击的过程中会间隔发送请求。这时候最好使用 de">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-19T13:57:17.000Z">
+<meta property="og:updated_time" content="2019-01-10T08:04:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="偷得浮生半日闲">
-<meta name="twitter:description" content="没有什么事情是理所应当的，所有的结果都是之前付出努力的一种回报。 我是比较相信这样的努力和付出的论点的。毕竟付出努力，肯定会有回报，不一定会是在你期望的方面，但是他也会有结果，也许是另一个方面的回报。 这只是我的一段碎碎念。  工作的第 8 个月零 1 天，感觉我需要更多方面的进步了。感觉到了很大的压力，最近整个人都比较的佛系，靠着工作，拿着薪水，奋斗的动力感觉少了很多。当工作忙的时候，就没时间">
+<meta name="twitter:title" content="函数防抖与节流">
+<meta name="twitter:description" content="防抖和节流函数节流的核心是，让一个函数不要执行得太频繁，减少一些过快的调用来节流。 函数去抖就是对于一定时间段的连续的函数调用，只让其执行一次。 应用条件发送一个 ajax 表单，给一个 button 绑定 click 事件，并且监听触发 ajax 请求。如果是 debounce，则用户不管点多少次，都只会发送一次请求；如果是 throttle，不断点击的过程中会间隔发送请求。这时候最好使用 de">
 
 
 
@@ -121,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/19/偷得浮生半日闲/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/10/函数防抖与节流/"/>
 
 
 
@@ -131,7 +132,7 @@
   };
 </script>
 
-  <title>偷得浮生半日闲 | Milestone</title>
+  <title>函数防抖与节流 | Milestone</title>
   
 
 
@@ -334,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/偷得浮生半日闲/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/10/函数防抖与节流/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="啪叽">
@@ -351,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">偷得浮生半日闲
+          <h1 class="post-title" itemprop="name headline">函数防抖与节流
               
             
           </h1>
@@ -376,7 +377,7 @@
                 
               
 
-              <time title="创建时间：2018-08-19 21:28:50 / 修改时间：21:57:17" itemprop="dateCreated datePublished" datetime="2018-08-19T21:28:50+08:00">2018-08-19</time>
+              <time title="创建时间：2019-01-10 16:03:35 / 修改时间：16:04:18" itemprop="dateCreated datePublished" datetime="2019-01-10T16:03:35+08:00">2019-01-10</time>
             
 
             
@@ -398,7 +399,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/浮生小记/" itemprop="url" rel="index"><span itemprop="name">浮生小记</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试锦囊/" itemprop="url" rel="index"><span itemprop="name">面试锦囊</span></a></span>
 
                 
                 
@@ -413,8 +414,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/19/偷得浮生半日闲/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/19/偷得浮生半日闲/" itemprop="commentCount"></span>
+                <a href="/2019/01/10/函数防抖与节流/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/10/函数防抖与节流/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -442,19 +443,11 @@
       
 
       
-        <ul>
-<li>没有什么事情是理所应当的，所有的结果都是之前付出努力的一种回报。</li>
-<li>我是比较相信这样的努力和付出的论点的。毕竟付出努力，肯定会有回报，不一定会是在你期望的方面，但是他也会有结果，也许是另一个方面的回报。</li>
-<li>这只是我的一段碎碎念。</li>
-</ul>
-<p>工作的第 8 个月零 1 天，感觉我需要更多方面的进步了。感觉到了很大的压力，最近整个人都比较的佛系，靠着工作，拿着薪水，奋斗的动力感觉少了很多。当工作忙的时候，就没时间写博客了，时间都浪费在了铺页面，联调，提测，改 bug 的过程中。我觉得我需要有一些规划，让自己能在工作期间，也能学习到一些东西。</p>
-<p>前几天，还被说每天三个小时的通勤时间，竟然还不搬家。平时都不觉得，路上的时间总觉得都过的很快，但是有一天，突然想了一下，就是觉得，每天三个小时通勤时间确实好长啊，每天好累啊 balaba，但是又一想，唉，每天这 3 个小时都被我浪费掉了。有时候在书签里存了好多想看的书啊，想看的网页啊，教程啊，到了地铁上，就没了兴趣，游戏真好玩，虎扑真好玩，知乎真好玩，歌真好听等等等等。</p>
-<p><blockquote> 我觉得一个人的自制力或者自控力，是不会随着长大逐渐提高的，除非有什么事情逼迫着你。</blockquote></p>
-<div></div>
-
-<p>这就是一种个人的体验，也算是一种总结吧。<br>觉得自己会写好多东西出来。其实我也写不动了。<br>但是我想我可以没事给自己打一点鸡血，让自己兴奋一些。</p>
-<p>加油吧，少年（也许已经不是少年了）。</p>
-<p>想想 2018 年来的时候，我还在票圈里说，我出生的时候就比别的孩子长得老，2017 过去了，我很想念它。<br>希望不要在 2019 年来的时候，继续怀念 2018.</p>
+        <h1 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h1><p>函数节流的核心是，让一个函数不要执行得太频繁，减少一些过快的调用来节流。</p>
+<p>函数去抖就是对于一定时间段的连续的函数调用，只让其执行一次。</p>
+<h2 id="应用条件"><a href="#应用条件" class="headerlink" title="应用条件"></a>应用条件</h2><p>发送一个 ajax 表单，给一个 button 绑定 click 事件，并且监听触发 ajax 请求。如果是 debounce，则用户不管点多少次，都只会发送一次请求；如果是 throttle，不断点击的过程中会间隔发送请求。这时候最好使用 debounce.<br>监听滚动事件判断是否到页面底部自动加载更多，如果是 debounce，则只有在用户停止滚动的时候的才会判断是否到了底部，如果是 throttle，则页面滚动的过程中会间隔判断是否到达底部。 此时最好使用 throttle</p>
+<h2 id="函数防抖"><a href="#函数防抖" class="headerlink" title="函数防抖"></a>函数防抖</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 防抖函数，返回函数连续调用时，空闲时间必须大于或等于 wait，func 才会执行</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param  &#123;function&#125; func        回调函数</span></span><br><span class="line"><span class="comment"> * @param  &#123;number&#125;   wait        表示时间窗口的间隔</span></span><br><span class="line"><span class="comment"> * @param  &#123;boolean&#125;  immediate   设置为ture时，是否立即调用函数</span></span><br><span class="line"><span class="comment"> * @return &#123;function&#125;             返回客户调用函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> debounce = <span class="function">(<span class="params">func, wait = <span class="number">1000</span>, immediate = <span class="literal">true</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> timer;</span><br><span class="line">  <span class="keyword">let</span> context;</span><br><span class="line">  <span class="keyword">let</span> args;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 延迟执行函数</span></span><br><span class="line">  <span class="keyword">const</span> later = <span class="function"><span class="params">()</span> =&gt;</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 延迟函数执行完毕，清空缓存的定时器序号</span></span><br><span class="line">      timer = <span class="literal">null</span>;</span><br><span class="line">      <span class="comment">// 延迟执行的情况下，函数会在延迟函数中执行</span></span><br><span class="line">      <span class="comment">// 使用到之前缓存的参数和上下文</span></span><br><span class="line">      <span class="keyword">if</span> (!immediate) &#123;</span><br><span class="line">        func.apply(context, args);</span><br><span class="line">        context = <span class="literal">null</span>;</span><br><span class="line">        args = <span class="literal">null</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, wait);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 这里返回的函数是每次实际调用的函数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">...params</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 如果没有创建延迟执行函数（later），就创建一个</span></span><br><span class="line">    <span class="keyword">if</span> (!timer) &#123;</span><br><span class="line">      timer = later();</span><br><span class="line">      <span class="comment">// 如果是立即执行，调用函数</span></span><br><span class="line">      <span class="comment">// 否则缓存参数和调用上下文</span></span><br><span class="line">      <span class="keyword">if</span> (immediate) &#123;</span><br><span class="line">        func.apply(<span class="keyword">this</span>, params);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        context = <span class="keyword">this</span>;</span><br><span class="line">        args = params;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 如果已有延迟执行函数（later），调用的时候清除原来的并重新设定一个</span></span><br><span class="line">      <span class="comment">// 这样做延迟函数会重新计时</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      clearTimeout(timer);</span><br><span class="line">      timer = later();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> debounce;</span><br></pre></td></tr></table></figure>
+<h2 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> throttle = <span class="function">(<span class="params">func, delay</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> last, deferTimer;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> _args = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="keyword">const</span> now = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="keyword">if</span> (last &amp;&amp; now &lt; last + delay) &#123;</span><br><span class="line">      clearTimeout(deferTimer);</span><br><span class="line">      deferTimer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        last = now;</span><br><span class="line">        func.apply(<span class="keyword">this</span>, _args);</span><br><span class="line">      &#125;, delay);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      last = now;</span><br><span class="line">      func.apply(<span class="keyword">this</span>, _args);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -484,6 +477,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" <i class="fa fa-tag"></i> Javascript</a>
+          
+        </div>
+      
 
       
       
@@ -493,8 +492,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/03/axios-jquery-ajax-fetch-区别/" rel="next" title="axios jquery.ajax fetch 区别">
-                <i class="fa fa-chevron-left"></i> axios jquery.ajax fetch 区别
+              <a href="/2019/01/09/HTTP-status/" rel="next" title="HTTP status">
+                <i class="fa fa-chevron-left"></i> HTTP status
               </a>
             
           </div>
@@ -502,10 +501,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/23/理解虚拟DOM/" rel="prev" title="理解虚拟DOM">
-                理解虚拟DOM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -557,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -701,6 +705,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#防抖和节流"><span class="nav-number">1.</span> <span class="nav-text">防抖和节流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用条件"><span class="nav-number">1.1.</span> <span class="nav-text">应用条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数防抖"><span class="nav-number">1.2.</span> <span class="nav-text">函数防抖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数节流"><span class="nav-number">1.3.</span> <span class="nav-text">函数节流</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
