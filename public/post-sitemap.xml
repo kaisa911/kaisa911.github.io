@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2019/01/11/async%E5%92%8Cawait/</loc>
+        <lastmod>2019-01-11T08:30:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2019/01/10/%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/</loc>
-        <lastmod>2019-01-10T08:08:34.000Z</lastmod>
+        <lastmod>2019-01-11T08:30:12.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -247,14 +255,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/11/immutable-js-%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2018/06/11/javascript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -263,7 +263,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-compose/</loc>
+        <loc>http://yoursite.com/2018/05/11/immutable-js-%E5%AD%A6%E4%B9%A0/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -295,7 +295,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E2%80%94combineReducers/</loc>
+        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-compose/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -311,7 +311,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/19/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</loc>
+        <loc>http://yoursite.com/2018/05/11/redux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E2%80%94combineReducers/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -327,7 +327,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/14/%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%E7%9A%84%E5%B0%BA%E5%AF%B8/</loc>
+        <loc>http://yoursite.com/2018/05/19/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -343,6 +343,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/05/14/%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%E7%9A%84%E5%B0%BA%E5%AF%B8/</loc>
+        <lastmod>2018-06-28T10:00:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/05/14/%E5%A6%82%E4%BD%95%E5%8E%BB%E6%8E%89%E4%B8%A4%E4%B8%AAspan%E9%97%B4%E7%9A%84%E9%97%B4%E8%B7%9D/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -351,7 +359,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/06/20/%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E7%9A%84%E6%AF%94%E8%BE%83/</loc>
+        <loc>http://yoursite.com/2018/06/25/%E5%AF%B9%E8%B1%A1%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%96%B9%E6%B3%95/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -359,7 +367,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/06/25/%E5%AF%B9%E8%B1%A1%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%96%B9%E6%B3%95/</loc>
+        <loc>http://yoursite.com/2018/06/20/%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E7%9A%84%E6%AF%94%E8%BE%83/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -383,7 +391,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/09/%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/</loc>
+        <loc>http://yoursite.com/2018/05/24/%E6%94%BE%E9%A3%9E%E7%9A%84thinking%EF%BD%9E/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -391,7 +399,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/24/%E6%94%BE%E9%A3%9E%E7%9A%84thinking%EF%BD%9E/</loc>
+        <loc>http://yoursite.com/2018/05/09/%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -407,7 +415,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/15/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E6%8E%A2%E7%A9%B6/</loc>
+        <loc>http://yoursite.com/2018/05/28/%E9%93%BE%E8%A1%A8/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -415,7 +423,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/28/%E9%93%BE%E8%A1%A8/</loc>
+        <loc>http://yoursite.com/2018/05/15/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E6%8E%A2%E7%A9%B6/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
