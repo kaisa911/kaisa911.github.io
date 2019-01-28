@@ -23,14 +23,14 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/html/</loc>
+        <loc>http://yoursite.com/tags/immutable/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/immutable/</loc>
+        <loc>http://yoursite.com/tags/html/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -51,14 +51,14 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+        <loc>http://yoursite.com/tags/Javascript-redux/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/Javascript-redux/</loc>
+        <loc>http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
         <lastmod>2018-06-28T10:00:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -122,7 +122,7 @@
 
     <url>
         <loc>http://yoursite.com/tags/Javascript/</loc>
-        <lastmod>2019-01-11T08:30:31.000Z</lastmod>
+        <lastmod>2019-01-28T06:38:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
