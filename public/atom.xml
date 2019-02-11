@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-06T12:45:53.000Z</updated>
+  <updated>2019-02-11T07:13:36.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>从输入url到页面加载完成都发生了什么？</title>
+    <link href="http://yoursite.com/2019/02/11/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%AE%8C%E6%88%90%E9%83%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/"/>
+    <id>http://yoursite.com/2019/02/11/从输入url到页面加载完成都发生了什么？/</id>
+    <published>2019-02-11T06:48:52.000Z</published>
+    <updated>2019-02-11T07:13:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这个问题是一个比较经典的问题，答案如下：<br>1、浏览器的地址栏输入URL并按下回车。<br>2、浏览器查找当前URL是否存在缓存，并比较缓存是否过期。<br>3、DNS解析URL对应的IP。<br>4、根据IP建立TCP连接（三次握手）。<br>5、发起HTTP请求。<br>6、服务器处理请求，浏览器接收HTTP响应。<br>7、渲染页面，构建DOM树。<br>8、关闭TCP连接（四次挥手）。</p><ul><li>缓存，通过cache-control来控制。</li><li>DNS解析是指把域名URL转成对应的ip</li><li>TCP连接<br>　　在通过第一步的DNS域名解析后，获取到了服务器的IP地址，在获取到IP地址后，便会开始建立一次连接，这是由TCP协议完成的，主要通过三次握手进行连接。<br>　　第一次握手： 建立连接时，客户端发送syn包（syn=j）到服务器，并进入SYN_SENT状态，等待服务器确认；<br>　　第二次握手： 服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（syn=k），即SYN+ACK包，此时服务器进入SYN_RECV状态；<br>　　第三次握手： 客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1），此包发送完毕，客户端和服务器进入ESTABLISHED（TCP连接成功）状态，完成三次握手。<br>　　完成三次握手，客户端与服务器开始传送数据。</li></ul><p>三次握手，如果某一次握手莫名的失败，tcp会把同样的包再发送一次</p><ul><li><p>浏览器向服务器发送HTTP请求<br>　　完整的HTTP请求包含请求起始行、请求头部、请求主体三部分。</p></li><li><p>渲染页面包括：解析和渲染，生成DOM树和CSSOM树。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这个问题是一个比较经典的问题，答案如下：&lt;br&gt;1、浏览器的地址栏输入URL并按下回车。&lt;br&gt;2、浏览器查找当前URL是否存在缓存，并比较缓存是否过期。&lt;br&gt;3、DNS解析URL对应的IP。&lt;br&gt;4、根据IP建立TCP连接（三次握手）。&lt;br&gt;5、发起HTTP请求。&lt;
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>把整数转成2进制表示</title>
     <link href="http://yoursite.com/2019/02/06/%E6%8A%8A%E6%95%B0%E5%AD%97%E8%BD%AC%E6%88%902%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA/"/>
     <id>http://yoursite.com/2019/02/06/把数字转成2进制表示/</id>
     <published>2019-02-06T12:43:34.000Z</published>
-    <updated>2019-02-06T12:45:53.000Z</updated>
+    <updated>2019-02-11T06:41:13.000Z</updated>
     
     <content type="html"><![CDATA[<p>把整数转成 2 进制，负数转成补码</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">Number</span>(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">if</span> (n &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">  str = n.toString(<span class="number">2</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> num = <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">32</span>) + n;</span><br><span class="line">  str = (<span class="built_in">Array</span>(<span class="number">32</span>).join(<span class="string">'0'</span>) + num.toString(<span class="number">2</span>)).slice(<span class="number">-32</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -174,7 +199,7 @@
     <link href="http://yoursite.com/2018/12/06/%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%8F%8A%E9%97%AD%E5%8C%85/"/>
     <id>http://yoursite.com/2018/12/06/作用域及闭包/</id>
     <published>2018-12-06T04:03:36.000Z</published>
-    <updated>2018-12-10T07:21:33.000Z</updated>
+    <updated>2019-02-11T06:43:06.000Z</updated>
     
     <content type="html"><![CDATA[<p>想搞一个大事情！</p><p>开篇点题，嗯，这个题目真的是一个大事情。感觉要准备好多东西，要理解很多东西。</p><h2 id="什么是作用域"><a href="#什么是作用域" class="headerlink" title="什么是作用域"></a>什么是作用域</h2><p>作用域，看了一些书啊，文章啊，似乎对作用域的解释都是那么几句话，比如<br>《你不知道的 JavaScript（上）》里说，作用域就是一套设计良好的用来存储变量规则 。<br>mqyqingfeng (冴羽) 说，作用域是指程序源代码中定义变量的区域。</p><p>嗯，反正就是一个区域，用来定义变量，存储变量，在需要的时候找到变量的地方。</p><h2 id="为什么需要作用域"><a href="#为什么需要作用域" class="headerlink" title="为什么需要作用域"></a>为什么需要作用域</h2><p>为什么需要作用域呢？有一个最小访问原则。<br>设置作用域的一个优势，是为你的代码提供了一个安全层级。计算机安全中，有个常规的原则是：用户只能访问他们当前需要的东西。这叫做最小访问原则。这个原则应用于编程语言设计，在大多数编程语言（包括 JavaScript）中就被称为作用域。<br>当然，设置作用域还有一些提高性能，减少 bug 的优势，还能解决不同范围内的同名变量命名的问题等。</p><h2 id="JS-中的作用域"><a href="#JS-中的作用域" class="headerlink" title="JS 中的作用域"></a>JS 中的作用域</h2><p>JavaScript 中的采用的是词法作用域，也就是静态作用域。<br>JavaScript 中的作用域包括</p><ul><li>全局作用域</li><li>函数作用域</li><li>块级作用域</li><li>词法作用域（静态作用域）</li><li>动态作用域</li></ul><h3 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h3><p>直接编写在 script 标签中的 JS 代码，都在全局作用域。<br>变量的生命周期：在页面打开时创建，在页面关闭时销毁，<br>全局作用域中，创建变量都会作为 window 对象的属性保存，创建的函数都会作为 window 对象的方法保存，<br>全局作用域中的变量和函数都是全局变量，在页面的任何部分都可以访问的到</p><p>在函数中，未使用var关键字定义的变量都是全局变量。</p><h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><h3 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h3><h3 id="动态作用域"><a href="#动态作用域" class="headerlink" title="动态作用域"></a>动态作用域</h3><h2 id="闭包作用域"><a href="#闭包作用域" class="headerlink" title="闭包作用域"></a>闭包作用域</h2><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2>]]></content>
     
@@ -520,31 +545,6 @@
     
     
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>react-router 4.0使用笔记</title>
-    <link href="http://yoursite.com/2018/07/23/react-router-4-0%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/07/23/react-router-4-0使用笔记/</id>
-    <published>2018-07-23T05:51:44.000Z</published>
-    <updated>2018-07-23T06:28:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近项目里的 react-router 从 3.0 更新到了 4.0，重新学习了一下 react-router 的东西，感觉从 3 到 4，变化还是很多的。通过<a href="http://reacttraining.cn/" target="_blank" rel="noopener">react-router 4.0 中文文档</a>和一些其他的教程，大概学会了如何使用。记下来防止以后忘记了。。</p><p>v3 的时候，是把所有的路由都写在一个地方，通常就是组件和路由分开。<br>到了 v4，路由就变成了一个和 UI 组件并列的组件，在你需要的地方把路由组件写在合适的地方。不在需要用<route>组件的嵌套来实现路由嵌套。</route></p><h2 id="exact"><a href="#exact" class="headerlink" title="exact"></a>exact</h2><p>exact 关键字，可以让路由只匹配一个 path，path 为’/‘的路由将不会匹配’/xxx’的</p><h2 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h2><p>可以使用 Switch 组件，来启用排他性的路由。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Switch&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/"</span> exact component=&#123;Home&#125; /&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/about"</span> component=&#123;About&#125; /&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/user"</span> component=&#123;User&#125; /&gt;</span><br><span class="line">&lt;<span class="regexp">/Switch&gt;</span></span><br></pre></td></tr></table></figure><h2 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h2><p>如果需要嵌套路由，在 app 组件中可以把嵌套路由的父组件<route path="/xx" component="{xxx}"> /&gt;，在 xxx 组件中，在根据父组件来匹配路由。</route></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XXX</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; history, match &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Layout&gt;</span><br><span class="line">        &lt;Layout.Content style=&#123;&#123; <span class="attr">padding</span>: <span class="string">"0 50px"</span> &#125;&#125;&gt;</span><br><span class="line">          &lt;div style=&#123;&#123; <span class="attr">background</span>: <span class="string">"#fff"</span>, <span class="attr">padding</span>: <span class="number">24</span> &#125;&#125;&gt;</span><br><span class="line">            &lt;Divider /&gt;</span><br><span class="line">            &lt;Route</span><br><span class="line">              exact</span><br><span class="line">              path=&#123;<span class="string">`<span class="subst">$&#123;match.path&#125;</span>/loan-info`</span>&#125;</span><br><span class="line">              component=&#123;LoanInfo&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">            &lt;Route exact path=&#123;<span class="string">`<span class="subst">$&#123;match.path&#125;</span>/img-info`</span>&#125; component=&#123;ImgInfo&#125; /&gt;</span><br><span class="line">            &lt;Route exact path=&#123;<span class="string">`<span class="subst">$&#123;match.path&#125;</span>`</span>&#125; component=&#123;LoanInfo&#125; /&gt;</span><br><span class="line">          &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>Layout.Content&gt;</span><br><span class="line">      &lt;<span class="regexp">/Layout&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure><h2 id="withRouter"><a href="#withRouter" class="headerlink" title="withRouter"></a>withRouter</h2><p>想通过代码跳转子路由，可以用 withRouter,包装 react 组件,让它获得 history 属性</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; withRouter &#125; <span class="keyword">from</span> <span class="string">"react-router"</span>;</span><br><span class="line">withRouter(MyComponent);</span><br></pre></td></tr></table></figure><p>然后用<code>this.props.history</code>来跳转。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;最近项目里的 react-router 从 3.0 更新到了 4.0，重新学习了一下 react-router 的东西，感觉从 3 到 4，变化还是很多的。通过&lt;a href=&quot;http://reacttraining.cn/&quot; target=&quot;_blank&quot; rel=&quot;n
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="react-router" scheme="http://yoursite.com/tags/react-router/"/>
     
   </entry>
   
