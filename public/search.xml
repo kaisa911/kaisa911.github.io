@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[把整数转成2进制表示]]></title>
+    <url>%2F2019%2F02%2F06%2F%E6%8A%8A%E6%95%B0%E5%AD%97%E8%BD%AC%E6%88%902%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%2F</url>
+    <content type="text"><![CDATA[把整数转成 2 进制，负数转成补码 12345678n = Number(10);let str = '';if (n &gt;= 0) &#123; str = n.toString(2);&#125; else &#123; const num = Math.pow(2, 32) + n; str = (Array(32).join('0') + num.toString(2)).slice(-32);&#125;]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[js字符与ASCII的互换方法]]></title>
     <url>%2F2019%2F01%2F28%2Fjs%E5%AD%97%E7%AC%A6%E4%B8%8EASCII%E7%9A%84%E4%BA%92%E6%8D%A2%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[大写字母 A-Z 对应的 ASCII 码值是 65-90小写字母 a-z 对应的 ASCII 码值是 97-122 将字母转为 ASCII 码的方法： 12var string = 'A';string.charCodeAt(); // 65 将 ASCII 码转为对应字母的方法： 12var number = 97;String.fromCharCode(number); // 'a']]></content>
