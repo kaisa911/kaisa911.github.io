@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-04T06:42:28.000Z</updated>
+  <updated>2019-03-04T08:48:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭一个框架的步骤</title>
+    <link href="http://yoursite.com/2019/03/04/%E6%90%AD%E4%B8%80%E4%B8%AA%E6%A1%86%E6%9E%B6%E7%9A%84%E6%AD%A5%E9%AA%A4/"/>
+    <id>http://yoursite.com/2019/03/04/搭一个框架的步骤/</id>
+    <published>2019-03-04T08:13:24.000Z</published>
+    <updated>2019-03-04T08:48:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、<code>npm init</code><br>2、创建文件夹：client，webpack，html，和 public<br>3、在 html 文件里，创建一个 index.html;</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-ua-compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,Chrome=1"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span></span></span><br><span class="line"><span class="tag">      <span class="attr">name</span>=<span class="string">"viewport"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">content</span>=<span class="string">"width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no"</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telephone=no"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">title</span> %&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bd"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"global"</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"&lt;%= vendor %&gt;"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p>4、在 client 文件里，创建一个 index.tsx 文件，内容先留空。<br>5、安装 react，react-dom，react-router，react-router-dom，redux，react-redux, redux-thunk<br>6、安装 webpack，webpack-cli，webpack-dev-server<br>7、安装@types/react,@types/react-dom,@types/react-redux,@types/react-router-dom,@types/redux</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、&lt;code&gt;npm init&lt;/code&gt;&lt;br&gt;2、创建文件夹：client，webpack，html，和 public&lt;br&gt;3、在 html 文件里，创建一个 index.html;&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;tabl
+      
+    
+    </summary>
+    
+      <category term="Demo练习" scheme="http://yoursite.com/categories/Demo%E7%BB%83%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>CommonJS 和ES6 模块的区别</title>
@@ -41,6 +65,33 @@
     
     
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给Linux服务器安装node</title>
+    <link href="http://yoursite.com/2019/02/26/%E7%BB%99Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85node/"/>
+    <id>http://yoursite.com/2019/02/26/给Linux服务器安装node/</id>
+    <published>2019-02-26T05:11:09.000Z</published>
+    <updated>2019-03-06T05:12:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>新买了一个腾讯云的服务器，需要给新服务器搞定一大些东西，准备记录一下，方便以后更换服务器的时候不用再谷歌了</p><p>步骤 1、安装 nvm ：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash</span><br></pre></td></tr></table></figure><p>source ~/.bashrc</p><p>步骤 2、nvm –version 查看安装的 nvm 的版本</p><p>步骤 3、nvm ls-remote 可查看 node 所有版本</p><p>步骤 4、nvm install <version>(版本号)例如：nvm install v10.6.0</version></p><p>步骤 5、node -v ,npm -v 查看版本</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;新买了一个腾讯云的服务器，需要给新服务器搞定一大些东西，准备记录一下，方便以后更换服务器的时候不用再谷歌了&lt;/p&gt;
+&lt;p&gt;步骤 1、安装 nvm ：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+      
+    
+    </summary>
+    
+      <category term="服务器配置" scheme="http://yoursite.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
   </entry>
   
@@ -282,7 +333,7 @@
     <link href="http://yoursite.com/2018/11/02/linux-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85nginx/"/>
     <id>http://yoursite.com/2018/11/02/linux-服务器安装nginx/</id>
     <published>2018-11-02T02:53:39.000Z</published>
-    <updated>2019-03-04T06:38:57.000Z</updated>
+    <updated>2019-03-06T05:07:51.000Z</updated>
     
     <content type="html"><![CDATA[<p>在 linux 服务器上安装 nginx，是想把自己写的项目配置到服务器上, 于是就研究了一下 nginx</p><h2 id="安装-nginx"><a href="#安装-nginx" class="headerlink" title="安装 nginx"></a>安装 nginx</h2><p>我是用 yum 安装的 nginx，简单快捷，命令也简单</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">yum -y install nginx;</span><br><span class="line"></span><br><span class="line">已加载插件：fastestmirror, security</span><br><span class="line">设置安装进程</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line">解决依赖关系</span><br><span class="line">--&gt; 执行事务检查</span><br><span class="line">---&gt; Package nginx.i686 0:1.0.15-12.el6 will be 安装</span><br><span class="line">--&gt; 完成依赖关系计算</span><br><span class="line"></span><br><span class="line">依赖关系解决</span><br><span class="line"></span><br><span class="line">========================================================================================================================================</span><br><span class="line"> 软件包                        架构                         版本                                     仓库                          大小</span><br><span class="line">========================================================================================================================================</span><br><span class="line">正在安装:</span><br><span class="line"> nginx                         i686                         1.0.15-12.el6                            epel                         410 k</span><br><span class="line"></span><br><span class="line">事务概要</span><br><span class="line">========================================================================================================================================</span><br><span class="line">Install       1 Package(s)</span><br><span class="line"></span><br><span class="line">总下载量：410 k</span><br><span class="line">Installed size: 1.1 M</span><br><span class="line">下载软件包：</span><br><span class="line">nginx-1.0.15-12.el6.i686.rpm                                                                                     | 410 kB     00:00</span><br><span class="line">运行 rpm_check_debug</span><br><span class="line">执行事务测试</span><br><span class="line">事务测试成功</span><br><span class="line">执行事务</span><br><span class="line">Warning: RPMDB altered outside of yum.</span><br><span class="line">  正在安装   : nginx-1.0.15-12.el6.i686                                                                                             1/1</span><br><span class="line">  Verifying  : nginx-1.0.15-12.el6.i686                                                                                             1/1</span><br><span class="line"></span><br><span class="line">已安装:</span><br><span class="line">  nginx.i686 0:1.0.15-12.el6</span><br><span class="line"></span><br><span class="line">完毕！</span><br></pre></td></tr></table></figure><p>然后可以查看一下 nginx 的版本</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -v</span><br><span class="line">nginx version: nginx/1.12.2</span><br></pre></td></tr></table></figure><p>然后记一下 nginx 的启动，停止，和重启的问题就好了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 启动服务</span><br><span class="line">service nginx start</span><br><span class="line"></span><br><span class="line">// 关闭服务</span><br><span class="line">service nginx stop</span><br><span class="line"></span><br><span class="line">// 重启服务</span><br><span class="line">service nginx restart</span><br></pre></td></tr></table></figure><p>然后把项目记得放在／usr 目录下，然后你就需要配置 nginx.conf 了</p><p>我的 nginx.conf 是放在/etc/nginx/目录下，打开目录。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim nginx.conf</span><br></pre></td></tr></table></figure><p>然后可以在 vim 里处理 nginx.conf 文件</p><p>默认配置可以不动。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 由于是单页应用虚拟路由的原因，需要将nginx的所有请求都转发到index.html页面，所以需要修改配置文件：</span><br><span class="line">server &#123;</span><br><span class="line">        listen       80 default_server;</span><br><span class="line">        listen       [::]:80 default_server;</span><br><span class="line">        server_name  _;</span><br><span class="line">        root         /usr/project/projectName/dist;</span><br><span class="line"></span><br><span class="line">        # Load configuration files for the default server block.</span><br><span class="line">        include /etc/nginx/default.d/*.conf;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        location ~* html &#123;</span><br><span class="line">            rewrite .* /index.html break;</span><br><span class="line">            root /usr/project/projectName/dist/;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 404 /404.html;</span><br><span class="line">            location = /index.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page 500 502 503 504 /50x.html;</span><br><span class="line">            location = /50x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>然后重启nginx服务，在浏览器里输入ip地址就可以看到你的项目啦～</p>]]></content>
     
@@ -296,7 +347,7 @@
     
     </summary>
     
-      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="服务器配置" scheme="http://yoursite.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
     
     
       <category term="nginx" scheme="http://yoursite.com/tags/nginx/"/>
@@ -487,66 +538,6 @@
     
     
       <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>理解虚拟DOM</title>
-    <link href="http://yoursite.com/2018/08/23/%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9FDOM/"/>
-    <id>http://yoursite.com/2018/08/23/理解虚拟DOM/</id>
-    <published>2018-08-23T06:23:07.000Z</published>
-    <updated>2019-03-04T06:38:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>什么是虚拟 DOM</li></ul><p>Virtual DOM 就是一个模拟 DOM 树的 Javascript 的对象。</p><ul><li>虚拟的 DOM 的核心思想</li></ul><p>对复杂的文档 DOM 结构，提供一种方便的工具，进行最小化地 DOM 操作。</p><ul><li>React 工作原理</li></ul><p>React 使用了虚拟 DOM，每次状态更新，React 比较虚拟 DOM 的差异之后，再更改变化的内容，最后统一由 React 去修改真实 DOM、完成页面的更新、渲染。</p><ul><li>Virtrual DOM 和真实 DOM 的区别</li></ul><p>真实 DOM 的的工作流程：<br>大致分 5 步：创建 DOM tree –&gt; 创建 Style Rules -&gt; 构建 Render tree -&gt; 布局 Layout –&gt; 绘制 Painting</p><p>第一步，用 HTML 分析器，分析 HTML 的各种元素，构建一颗 DOM 树。</p><p>第二步：用 CSS 分析器，分析 CSS 文件和元素上的 inline 样式，生成页面的样式表。</p><p>第三步：将上面的 DOM 树和样式表，关联起来，构建一颗 Render 树。这一过程又称为 Attachment。每个 DOM 节点都有 attach 方法，接受样式信息，返回一个 render 对象（又名 renderer）。这些 render 对象最终会被构建成一颗 Render 树。</p><p>第四步：有了 Render 树后，浏览器开始布局，会为每个 Render 树上的节点确定一个在显示屏上出现的精确坐标值。</p><p>第五步：Render 数有了，节点显示的位置坐标也有了，最后就是调用每个节点的 paint 方法，让它们显示出来。</p><p>然而操作 DOM，浏览器会从构建 DOM 树开始从头到尾执行一遍流程。然而 DOM 的批量操作不会被合并，只会第一个 DOM 操作处理完之后再重新从构建 DOM 树开始第二个操作，一直到最后一个操作结束。</p><p>Virtrual DOM 的工作流程：<br>Virtrual DOM 会对批量的操作合并到 Virtrual DOM 树上，然后根据 diff 算法，查看哪一部分发生了变化，然后将 diff 的内容保存到本地的一个 js 对象里，然后这个对象再 attach 到 DOM 树上，通知浏览器重新绘制。</p><ul><li>实现一个 Virtrual DOM</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//虚拟dom，参数分别为标签名、属性对象、子DOM列表</span></span><br><span class="line"><span class="keyword">const</span> VElement = <span class="function">(<span class="params">tagName, props, children</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//保证只能通过如下方式调用：new VElement</span></span><br><span class="line">  <span class="keyword">if</span> (!(<span class="keyword">this</span> <span class="keyword">instanceof</span> VElement)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> VElement(tagName, props, children);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//可以通过只传递tagName和children参数</span></span><br><span class="line">  <span class="keyword">if</span> (util.isArray(props)) &#123;</span><br><span class="line">    children = props;</span><br><span class="line">    props = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//设置虚拟dom的相关属性</span></span><br><span class="line">  <span class="keyword">this</span>.tagName = tagName;</span><br><span class="line">  <span class="keyword">this</span>.props = props || &#123;&#125;;</span><br><span class="line">  <span class="keyword">this</span>.children = children || [];</span><br><span class="line">  <span class="keyword">this</span>.key = props ? props.key : <span class="keyword">void</span> <span class="number">666</span>;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  util.each(<span class="keyword">this</span>.children, (child, i) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (child <span class="keyword">instanceof</span> VElement) &#123;</span><br><span class="line">      count += child.count;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      children[i] = <span class="string">""</span> + child;</span><br><span class="line">    &#125;</span><br><span class="line">    count++;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">this</span>.count = count;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">VElement.prototype.render = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//创建标签</span></span><br><span class="line">  <span class="keyword">const</span> el = <span class="built_in">document</span>.createElement(<span class="keyword">this</span>.tagName);</span><br><span class="line">  <span class="comment">//设置标签的属性</span></span><br><span class="line">  <span class="keyword">const</span> props = <span class="keyword">this</span>.props;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> propName <span class="keyword">in</span> props) &#123;</span><br><span class="line">    <span class="keyword">const</span> propValue = props[propName];</span><br><span class="line">    util.setAttr(el, propName, propValue);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//依次创建子节点的标签</span></span><br><span class="line">  util.each(<span class="keyword">this</span>.children, child =&gt; &#123;</span><br><span class="line">    <span class="comment">//如果子节点仍然为velement，则递归的创建子节点，否则直接创建文本类型节点</span></span><br><span class="line">    <span class="keyword">const</span> childEl = child <span class="keyword">instanceof</span> VElement ? child.render() : <span class="built_in">document</span>.createTextNode(child);</span><br><span class="line">    el.appendChild(childEl);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> el;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>对一个虚拟的 DOM 对象 VElement，调用其原型的 render 方法，就可以产生一颗真实的 DOM 树</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;什么是虚拟 DOM&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Virtual DOM 就是一个模拟 DOM 树的 Javascript 的对象。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;虚拟的 DOM 的核心思想&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;对复杂的文档 DOM 结构，提供一种方便的工具，
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
-    
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>偷得浮生半日闲</title>
-    <link href="http://yoursite.com/2018/08/19/%E5%81%B7%E5%BE%97%E6%B5%AE%E7%94%9F%E5%8D%8A%E6%97%A5%E9%97%B2/"/>
-    <id>http://yoursite.com/2018/08/19/偷得浮生半日闲/</id>
-    <published>2018-08-19T13:28:50.000Z</published>
-    <updated>2019-03-04T06:38:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>没有什么事情是理所应当的，所有的结果都是之前付出努力的一种回报。</li><li>我是比较相信这样的努力和付出的论点的。毕竟付出努力，肯定会有回报，不一定会是在你期望的方面，但是他也会有结果，也许是另一个方面的回报。</li><li>这只是我的一段碎碎念。</li></ul><p>工作的第 8 个月零 1 天，感觉我需要更多方面的进步了。感觉到了很大的压力，最近整个人都比较的佛系，靠着工作，拿着薪水，奋斗的动力感觉少了很多。当工作忙的时候，就没时间写博客了，时间都浪费在了铺页面，联调，提测，改 bug 的过程中。我觉得我需要有一些规划，让自己能在工作期间，也能学习到一些东西。</p><p>前几天，还被说每天三个小时的通勤时间，竟然还不搬家。平时都不觉得，路上的时间总觉得都过的很快，但是有一天，突然想了一下，就是觉得，每天三个小时通勤时间确实好长啊，每天好累啊 balaba，但是又一想，唉，每天这 3 个小时都被我浪费掉了。有时候在书签里存了好多想看的书啊，想看的网页啊，教程啊，到了地铁上，就没了兴趣，游戏真好玩，虎扑真好玩，知乎真好玩，歌真好听等等等等。</p><p><blockquote> 我觉得一个人的自制力或者自控力，是不会随着长大逐渐提高的，除非有什么事情逼迫着你。</blockquote></p><div></div><p>这就是一种个人的体验，也算是一种总结吧。<br>觉得自己会写好多东西出来。其实我也写不动了。<br>但是我想我可以没事给自己打一点鸡血，让自己兴奋一些。</p><p>加油吧，少年（也许已经不是少年了）。</p><p>想想 2018 年来的时候，我还在票圈里说，我出生的时候就比别的孩子长得老，2017 过去了，我很想念它。<br>希望不要在 2019 年来的时候，继续怀念 2018.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;没有什么事情是理所应当的，所有的结果都是之前付出努力的一种回报。&lt;/li&gt;
-&lt;li&gt;我是比较相信这样的努力和付出的论点的。毕竟付出努力，肯定会有回报，不一定会是在你期望的方面，但是他也会有结果，也许是另一个方面的回报。&lt;/li&gt;
-&lt;li&gt;这只是我的一段碎碎念。&lt;
-      
-    
-    </summary>
-    
-      <category term="浮生小记" scheme="http://yoursite.com/categories/%E6%B5%AE%E7%94%9F%E5%B0%8F%E8%AE%B0/"/>
-    
     
   </entry>
   

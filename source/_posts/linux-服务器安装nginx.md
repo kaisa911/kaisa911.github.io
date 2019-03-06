@@ -2,7 +2,7 @@
 title: linux 服务器安装nginx及配置
 date: 2018-11-02 10:53:39
 tags: nginx
-categories: 学习笔记
+categories: 服务器配置
 ---
 
 在 linux 服务器上安装 nginx，是想把自己写的项目配置到服务器上, 于是就研究了一下 nginx

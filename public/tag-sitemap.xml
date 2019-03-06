@@ -37,13 +37,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/nginx/</loc>
-        <lastmod>2019-03-04T06:38:57.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/Koa/</loc>
         <lastmod>2019-03-04T06:38:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -123,6 +116,20 @@
     <url>
         <loc>http://yoursite.com/tags/Javascript/</loc>
         <lastmod>2019-03-04T06:42:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/nginx/</loc>
+        <lastmod>2019-03-06T05:07:51.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/Linux/</loc>
+        <lastmod>2019-03-06T05:12:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

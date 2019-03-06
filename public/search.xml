@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[搭一个框架的步骤]]></title>
+    <url>%2F2019%2F03%2F04%2F%E6%90%AD%E4%B8%80%E4%B8%AA%E6%A1%86%E6%9E%B6%E7%9A%84%E6%AD%A5%E9%AA%A4%2F</url>
+    <content type="text"><![CDATA[1、npm init2、创建文件夹：client，webpack，html，和 public3、在 html 文件里，创建一个 index.html; 123456789101112131415161718&lt;!DOCTYPE html&gt;&lt;html lang="zh-CN"&gt; &lt;head&gt; &lt;meta charset="UTF-8" /&gt; &lt;meta http-equiv="x-ua-compatible" content="IE=edge,Chrome=1" /&gt; &lt;meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" /&gt; &lt;meta name="format-detection" content="telephone=no" /&gt; &lt;title&gt;&lt;%= title %&gt;&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id="bd"&gt;&lt;/div&gt; &lt;section id="global"&gt;&lt;/section&gt; &lt;script src="&lt;%= vendor %&gt;"&gt;&lt;/script&gt; &lt;/body&gt;&lt;/html&gt; 4、在 client 文件里，创建一个 index.tsx 文件，内容先留空。5、安装 react，react-dom，react-router，react-router-dom，redux，react-redux, redux-thunk6、安装 webpack，webpack-cli，webpack-dev-server7、安装@types/react,@types/react-dom,@types/react-redux,@types/react-router-dom,@types/redux]]></content>
+      <categories>
+        <category>Demo练习</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[CommonJS 和ES6 模块的区别]]></title>
     <url>%2F2019%2F03%2F04%2FCommonJS-%E5%92%8CES6-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[ES6 模块输出的是值的引用，CommonJS 模块输出的是一个值的拷贝 ES6 模块是编译时输出接口，CommonJS 模块是运行时加载。 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成。而 CommonJS 加载的是一个对象（即 module.exports 属性），该对象只有在脚本运行完才会生成。 ES6 模块的设计思想，是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。比如，CommonJS 模块就是对象，输入时必须查找对象属性。 es6 { export : ‘可以输出多个，输出方式为 {}’ ， export default : ‘ 只能输出一个 ，可以与 export 同时输出，但是不建议这么做’， 解析阶段确定对外输出的接口，解析阶段生成接口， 模块不是对象，加载的不是对象， 可以单独加载其中的某个接口（方法）， 静态分析，动态引用，输出的是值的引用，值改变，引用也改变，即原来模块中的值改变则该加载的值也改变， this 指向 undefined}commonJS { module.exports = … : ‘只能输出一个，且后面的会覆盖上面的’ ， exports. … : ‘ 可以输出多个’， 运行阶段确定接口，运行时才会加载模块， 模块就是对象，加载的是该对象， 加载的是整个模块，即将所有的接口全部加载进来， 输出的是值的拷贝，即原来模块中的值改变不会影响已经加载的该值， this 指向当前模块}]]></content>
@@ -9,6 +17,17 @@
       </categories>
       <tags>
         <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[给Linux服务器安装node]]></title>
+    <url>%2F2019%2F02%2F26%2F%E7%BB%99Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85node%2F</url>
+    <content type="text"><![CDATA[新买了一个腾讯云的服务器，需要给新服务器搞定一大些东西，准备记录一下，方便以后更换服务器的时候不用再谷歌了 步骤 1、安装 nvm ： 1curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash source ~/.bashrc 步骤 2、nvm –version 查看安装的 nvm 的版本 步骤 3、nvm ls-remote 可查看 node 所有版本 步骤 4、nvm install (版本号)例如：nvm install v10.6.0 步骤 5、node -v ,npm -v 查看版本]]></content>
+      <categories>
+        <category>服务器配置</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -111,7 +130,7 @@
     <url>%2F2018%2F11%2F02%2Flinux-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85nginx%2F</url>
     <content type="text"><![CDATA[在 linux 服务器上安装 nginx，是想把自己写的项目配置到服务器上, 于是就研究了一下 nginx 安装 nginx我是用 yum 安装的 nginx，简单快捷，命令也简单 1234567891011121314151617181920212223242526272829303132333435363738yum -y install nginx;已加载插件：fastestmirror, security设置安装进程Loading mirror speeds from cached hostfile解决依赖关系--&gt; 执行事务检查---&gt; Package nginx.i686 0:1.0.15-12.el6 will be 安装--&gt; 完成依赖关系计算依赖关系解决======================================================================================================================================== 软件包 架构 版本 仓库 大小========================================================================================================================================正在安装: nginx i686 1.0.15-12.el6 epel 410 k事务概要========================================================================================================================================Install 1 Package(s)总下载量：410 kInstalled size: 1.1 M下载软件包：nginx-1.0.15-12.el6.i686.rpm | 410 kB 00:00运行 rpm_check_debug执行事务测试事务测试成功执行事务Warning: RPMDB altered outside of yum. 正在安装 : nginx-1.0.15-12.el6.i686 1/1 Verifying : nginx-1.0.15-12.el6.i686 1/1已安装: nginx.i686 0:1.0.15-12.el6完毕！ 然后可以查看一下 nginx 的版本 12nginx -vnginx version: nginx/1.12.2 然后记一下 nginx 的启动，停止，和重启的问题就好了 12345678// 启动服务service nginx start// 关闭服务service nginx stop// 重启服务service nginx restart 然后把项目记得放在／usr 目录下，然后你就需要配置 nginx.conf 了 我的 nginx.conf 是放在/etc/nginx/目录下，打开目录。 1vim nginx.conf 然后可以在 vim 里处理 nginx.conf 文件 默认配置可以不动。 123456789101112131415161718192021222324// 由于是单页应用虚拟路由的原因，需要将nginx的所有请求都转发到index.html页面，所以需要修改配置文件：server &#123; listen 80 default_server; listen [::]:80 default_server; server_name _; root /usr/project/projectName/dist; # Load configuration files for the default server block. include /etc/nginx/default.d/*.conf; location ~* html &#123; rewrite .* /index.html break; root /usr/project/projectName/dist/; &#125; error_page 404 /404.html; location = /index.html &#123; &#125; error_page 500 502 503 504 /50x.html; location = /50x.html &#123; &#125; &#125; 然后重启nginx服务，在浏览器里输入ip地址就可以看到你的项目啦～]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>服务器配置</category>
       </categories>
       <tags>
         <tag>nginx</tag>
