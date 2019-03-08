@@ -16,6 +16,13 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/tags/Jquery/</loc>
+        <lastmod>2019-03-04T06:38:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/immutable/</loc>
         <lastmod>2019-03-04T06:38:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -24,13 +31,6 @@
 
     <url>
         <loc>http://yoursite.com/tags/react/</loc>
-        <lastmod>2019-03-04T06:38:57.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/Jquery/</loc>
         <lastmod>2019-03-04T06:38:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -72,14 +72,14 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</loc>
+        <loc>http://yoursite.com/tags/%E7%AE%97%E6%B3%95/</loc>
         <lastmod>2019-03-04T06:38:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/%E7%AE%97%E6%B3%95/</loc>
+        <loc>http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</loc>
         <lastmod>2019-03-04T06:38:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
