@@ -63,13 +63,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Demo%E7%BB%83%E4%B9%A0/</loc>
-        <lastmod>2019-03-09T03:17:50.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2019-03-14T09:17:05.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -79,6 +72,13 @@
     <url>
         <loc>http://yoursite.com/categories/Glory-Road/</loc>
         <lastmod>2019-03-14T09:17:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/Demo%E7%BB%83%E4%B9%A0/</loc>
+        <lastmod>2019-03-14T12:45:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
