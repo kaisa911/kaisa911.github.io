@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="把身份证校验规则整理一下，以后万一能用的到呢。。。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788const p">
+<meta name="description" content="把身份证校验规则整理一下，以后万一能用的到呢。。。">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="身份证校验规则">
 <meta property="og:url" content="http://yoursite.com/2019/03/14/身份证校验规则/index.html">
 <meta property="og:site_name" content="Milestone">
-<meta property="og:description" content="把身份证校验规则整理一下，以后万一能用的到呢。。。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788const p">
+<meta property="og:description" content="把身份证校验规则整理一下，以后万一能用的到呢。。。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-14T12:45:00.000Z">
+<meta property="og:updated_time" content="2019-03-14T12:52:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="身份证校验规则">
-<meta name="twitter:description" content="把身份证校验规则整理一下，以后万一能用的到呢。。。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788const p">
+<meta name="twitter:description" content="把身份证校验规则整理一下，以后万一能用的到呢。。。">
 
 
 
@@ -96,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -325,7 +325,7 @@
                 
               
 
-              <time title="创建于：2019-03-14 20:41:35 / 更新于：20:45:00" itemprop="dateCreated datePublished" datetime="2019-03-14T20:41:35+08:00">2019-03-14</time>
+              <time title="创建于：2019-03-14 20:41:35 / 更新于：20:52:53" itemprop="dateCreated datePublished" datetime="2019-03-14T20:41:35+08:00">2019-03-14</time>
             
 
             
@@ -363,7 +363,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2019/03/14/身份证校验规则/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">post.comments_count：</span> <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2019/03/14/身份证校验规则/" itemprop="commentCount">0</span>
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2019/03/14/身份证校验规则/" itemprop="commentCount">0</span>
                 </a>
               </span>
             
@@ -392,6 +392,7 @@
 
       
         <p>把身份证校验规则整理一下，以后万一能用的到呢。。。</p>
+ <a id="more"></a> 
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> powers = [</span><br><span class="line">  <span class="string">'7'</span>,</span><br><span class="line">  <span class="string">'9'</span>,</span><br><span class="line">  <span class="string">'10'</span>,</span><br><span class="line">  <span class="string">'5'</span>,</span><br><span class="line">  <span class="string">'8'</span>,</span><br><span class="line">  <span class="string">'4'</span>,</span><br><span class="line">  <span class="string">'2'</span>,</span><br><span class="line">  <span class="string">'1'</span>,</span><br><span class="line">  <span class="string">'6'</span>,</span><br><span class="line">  <span class="string">'3'</span>,</span><br><span class="line">  <span class="string">'7'</span>,</span><br><span class="line">  <span class="string">'9'</span>,</span><br><span class="line">  <span class="string">'10'</span>,</span><br><span class="line">  <span class="string">'5'</span>,</span><br><span class="line">  <span class="string">'8'</span>,</span><br><span class="line">  <span class="string">'4'</span>,</span><br><span class="line">  <span class="string">'2'</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> parityBit = [<span class="string">'1'</span>, <span class="string">'0'</span>, <span class="string">'X'</span>, <span class="string">'9'</span>, <span class="string">'8'</span>, <span class="string">'7'</span>, <span class="string">'6'</span>, <span class="string">'5'</span>, <span class="string">'4'</span>, <span class="string">'3'</span>, <span class="string">'2'</span>];</span><br><span class="line"><span class="comment">// 校验身份证号码的主调用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> validId18 = <span class="function"><span class="params">_id</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> id = _id;</span><br><span class="line">  id += <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">const</span> num = id.substr(<span class="number">0</span>, <span class="number">17</span>);</span><br><span class="line">  <span class="keyword">const</span> IparityBit = id.substr(<span class="number">17</span>);</span><br><span class="line">  <span class="comment">// let IparityBit = id.substr(17); // 如果允许小写x</span></span><br><span class="line">  <span class="keyword">let</span> power = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">17</span>; i += <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// 校验每一位的合法性</span></span><br><span class="line">    <span class="keyword">if</span> (num.charAt(i) &lt; <span class="string">'0'</span> || num.charAt(i) &gt; <span class="string">'9'</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 加权</span></span><br><span class="line">    power += <span class="built_in">parseInt</span>(num.charAt(i), <span class="number">10</span>) * <span class="built_in">parseInt</span>(powers[i], <span class="number">10</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 取模</span></span><br><span class="line">  <span class="keyword">const</span> mod = <span class="built_in">parseInt</span>(power, <span class="number">10</span>) % <span class="number">11</span>;</span><br><span class="line">  <span class="comment">//如果小写x也支持</span></span><br><span class="line">  <span class="comment">// if(IparityBit==='x')&#123; IparityBit = 'X'; &#125;</span></span><br><span class="line">  <span class="keyword">if</span> (parityBit[mod] === IparityBit) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">validId15</span>(<span class="params">_id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> id = _id;</span><br><span class="line">  id += <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; id.length; i += <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// 校验每一位的合法性</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (id.charAt(i) &lt; <span class="string">'0'</span> || id.charAt(i) &gt; <span class="string">'9'</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> year = id.substr(<span class="number">6</span>, <span class="number">2</span>);</span><br><span class="line">  <span class="keyword">const</span> month = id.substr(<span class="number">8</span>, <span class="number">2</span>);</span><br><span class="line">  <span class="keyword">const</span> day = id.substr(<span class="number">10</span>, <span class="number">2</span>);</span><br><span class="line">  <span class="comment">// 校验年份位</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (year &lt; <span class="string">'01'</span> || year &gt; <span class="string">'90'</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  <span class="comment">// 校验月份</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (month &lt; <span class="string">'01'</span> || month &gt; <span class="string">'12'</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  <span class="comment">// 校验日</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (day &lt; <span class="string">'01'</span> || day &gt; <span class="string">'31'</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* eslint consistent-return: 0 */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">validId</span>(<span class="params">_id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> id = _id;</span><br><span class="line">  <span class="keyword">if</span> (id === <span class="string">''</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="keyword">let</span> valid = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">if</span> (id.length === <span class="number">15</span>) &#123;</span><br><span class="line">    valid = validId15(id);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (id.length === <span class="number">18</span>) &#123;</span><br><span class="line">    valid = validId18(id);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> valid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> validId;</span><br></pre></td></tr></table></figure>
 
       
@@ -612,7 +613,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v</div>
 
 
 
@@ -711,6 +712,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v="></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v="></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
