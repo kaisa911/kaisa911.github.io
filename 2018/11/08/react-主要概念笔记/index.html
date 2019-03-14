@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Javascript,react,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Milestone" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="React v16.5.2 文档学习 Hello WorldReact 应用的构成模块：元素和组件 JSX 简介JSX 是一种 JavaScript 的语法扩展，推荐在 React 中使用 JSX 来描述用户界面。可以在 JSX 中任意的使用 JS 表达式，但是 JS 表达式要放在大括号里。 JSX 本身也是一种表达式，在编译之后，JSX 会被转化成普通的 JS 对象。JSX 的中，ReactDO">
+<meta name="keywords" content="Javascript,react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react 主要概念笔记">
+<meta property="og:url" content="http://yoursite.com/2018/11/08/react-主要概念笔记/index.html">
+<meta property="og:site_name" content="Milestone">
+<meta property="og:description" content="React v16.5.2 文档学习 Hello WorldReact 应用的构成模块：元素和组件 JSX 简介JSX 是一种 JavaScript 的语法扩展，推荐在 React 中使用 JSX 来描述用户界面。可以在 JSX 中任意的使用 JS 表达式，但是 JS 表达式要放在大括号里。 JSX 本身也是一种表达式，在编译之后，JSX 会被转化成普通的 JS 对象。JSX 的中，ReactDO">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-14T09:17:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react 主要概念笔记">
+<meta name="twitter:description" content="React v16.5.2 文档学习 Hello WorldReact 应用的构成模块：元素和组件 JSX 简介JSX 是一种 JavaScript 的语法扩展，推荐在 React 中使用 JSX 来描述用户界面。可以在 JSX 中任意的使用 JS 表达式，但是 JS 表达式要放在大括号里。 JSX 本身也是一种表达式，在编译之后，JSX 会被转化成普通的 JS 对象。JSX 的中，ReactDO">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/08/react-主要概念笔记/">
+
+
+
+
+
+  <title>react 主要概念笔记 | Milestone</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Milestone</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/react-主要概念笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="啪叽">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/image/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Milestone">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">react 主要概念笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2018-11-08 14:15:22" itemprop="dateCreated datePublished" datetime="2018-11-08T14:15:22+08:00">2018-11-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">post.edited</span>
+                
+                <time title="更新于：2019-03-14 17:17:05" itemprop="dateModified" datetime="2019-03-14T17:17:05+08:00">2019-03-14</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/08/react-主要概念笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">post.comments_count：</span> <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/11/08/react-主要概念笔记/" itemprop="commentCount">0</span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>React v16.5.2 文档学习</p>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>React 应用的构成模块：元素和组件</p>
+<h2 id="JSX-简介"><a href="#JSX-简介" class="headerlink" title="JSX 简介"></a>JSX 简介</h2><p>JSX 是一种 JavaScript 的语法扩展，推荐在 React 中使用 JSX 来描述用户界面。<br>可以在 JSX 中任意的使用 JS 表达式，但是 JS 表达式要放在大括号里。</p>
+<p>JSX 本身也是一种表达式，在编译之后，JSX 会被转化成普通的 JS 对象。<br>JSX 的中，ReactDOM 使用小驼峰来命名。</p>
+<p>JSX 防注入攻击，因为 React DOM 在渲染之前默认会过滤所有传入的值，所有的内容在渲染之前都被转换成了字符串。可以有效的防止 XSS 攻击。</p>
+<p>JSX 代表 Objects，Babel 转译器会把 JSX 专换成一个名为<code>React.createElement()</code>的方法调用。<br><code>React.createElement()</code>会返回一个对象，这个对象被称为“React 元素”。React 通过读取这些对象来构建 DOM 并且保持数据一致。</p>
+<h2 id="元素渲染"><a href="#元素渲染" class="headerlink" title="元素渲染"></a>元素渲染</h2><p>元素是构成 React 应用的最小单位。<br>元素用来描述在屏幕上看到的东西，React 中的元素是普通的 JS 对象，ReactDOM 可以确保浏览器 DOM 的数据和 react 元素保持一致。</p>
+<p>在 Html 页面里定义一个<code>id=&quot;root&quot;</code>根节点。<br>然后通过<code>ReactDOM.render()</code>方法，将 React 元素渲染到根 DOM 里。</p>
+<p>更新元素渲染，是创建一个新的元素，然后用<code>ReactDOM.render()</code>方法，将 React 元素渲染到根 DOM 里。<br>但是，React DOM 会比较元素内容先后的不同，然后在渲染过程中，只更新改变了的部分。</p>
+<h2 id="组件-amp-props"><a href="#组件-amp-props" class="headerlink" title="组件&amp;props"></a>组件&amp;props</h2><p>组件是独立的可复用的 ui 部件，从概念上看就像是函数，可以接受任意的输入值（props），并返回一个 React 元素。</p>
+<p>定义组件，可以是一个 JavaScript 函数或者用一个 ES6 的 class 来定义一个组件。<br>React 元素可以是 DOM 标签，也可以是自定义的组件。<br>组件名称必须以大写字母开头。并且在使用组件时，需要引入或者定义它。<br>组件可以在输出中引用其他组件，但是组件的返回值只能有一个根元素。</p>
+<p>Props 的只读性，无论是使用函数或者时类来声明一个组件，它不允许修改自己的 props。所有的 React 组件必须像纯函数那样使用它们的 props。</p>
+<h2 id="State-amp-生命周期"><a href="#State-amp-生命周期" class="headerlink" title="State&amp;生命周期"></a>State&amp;生命周期</h2><p>使用类来声明一个组件，可以允许使用局部状态，生命周期钩子等。<br>使用类声明组件时，使用<code>constructor</code>把 props 传递到组件里:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">  <span class="keyword">super</span>(props);</span><br><span class="line">  <span class="keyword">this</span>.state = &#123;<span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>()&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>生命周期：<br>当组件第一次加载到 DOM 中的时候，称为挂载；<br>当组件生成的 DOM 被移除时，称为卸载。</p>
+<p>正确的使用状态：<br>1、不要直接更新状态，直接更新不会重新渲染组件，应使用<code>this.setState({})</code>来更新。<br>2、状态更新可能是异步的。<br>3、状态更新合并，也可以独立更新。</p>
+<p>数据自顶向下流动。<br>父组件和子组件都不知道某一个组件是否有状态，所以状态被称为局部状态，除了拥有并设置它的组件外，其他组件不可访问。组件可以选择状态，当作属性传给子组件。这被称为单向数据流。<br>任何状态始终由某些特定组件所有，并且从该状态导出的任何数据或 UI 只能影响树中下方的组件。</p>
+<p>在 React 应用程序中，组件是有状态还是无状态被认为是可能随时间而变化的组件的实现细节。 可以在有状态组件中使用无状态组件，反之亦然。</p>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><p>React 的事件绑定属性的命名采用驼峰式写法，并为其赋值一个事件处理函数。<br>在函数中，要调用<code>preventDefault()</code>方法来阻止默认行为。</p>
+<p>事件绑定 this：<br>因为类的方法不会默认绑定 this，所以用 ES5 写函数的时候，在调用的时候，需要在 constructor 里绑定 this。<br>也可以用 ES6 的箭头函数来写。</p>
+<p>用 ES6 class 语法来定义一个组件的时候，事件处理器会成为类的一个方法</p>
+<p>向事件处理程序传递参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;(e) =&gt; <span class="keyword">this</span>.deleteRow(id, e)&#125;&gt;Delete Row&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button onClick=&#123;this.deleteRow.bind(this, id)&#125;&gt;Delete Row&lt;/</span>button&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><p>可以使用 if..else..语句来条件渲染。<br>可以使用与运算符 &amp;&amp;来条件渲染<br>可以使用 JavaScript 的条件运算符 condition ? true : false 来条件渲染</p>
+<p>阻止条件渲染，可以用三目运算符，让 render 方法返回 null 而不是它的渲染结果即可实现。<br>组件的 render 方法返回 null 并不会影响该组件生命周期方法的回调。</p>
+<h2 id="列表-amp-Keys"><a href="#列表-amp-Keys" class="headerlink" title="列表 &amp; Keys"></a>列表 &amp; Keys</h2><p>使用 map()函数，让每一个元素返回一个标签或者组件。</p>
+<p>Keys 可以在 DOM 中的某些元素被增加或删除的时候帮助 React 识别哪些元素发生了变化。因此你应当给列表中的每一个元素赋予一个确定的标识</p>
+<p>元素的 key 在他的兄弟元素之间应该唯一</p>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>其值由 React 控制的输入表单元素称为“受控组件”</p>
+<p>通过受控组件，来构造一个处理提交表单并可访问用户输入表单数据的函数<br>在 react 中，受控组件需要使用 this.setState 来进行更新。<br>使用”受控组件”,每个状态的改变都有一个与之相关的处理函数。这样就可以直接修改或验证用户输入。</p>
+<h2 id="状态提升"><a href="#状态提升" class="headerlink" title="状态提升"></a>状态提升</h2><p>使用 react 经常会遇到几个组件需要共用状态数据的情况。这种情况下，我们最好将这部分共享的状态提升至他们最近的父组件当中进行管理。<br>在 React 应用中，对应任何可变数据理应只有一个单一“数据源”。通常，状态都是首先添加在需要渲染数据的组件中。此时，如果另一个组件也需要这些数据，你可以将数据提升至离它们最近的父组件中。你应该在应用中保持 自上而下的数据流，而不是尝试在不同组件中同步状态。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    <div>
+    
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 &nbsp;<i class="fa fa-chrome"></i>  &nbsp感谢您的阅读-------------</div>
+    
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" <i class="fa fa-tag"> Javascript</a>
+          
+            <a href="/tags/react/" <i class="fa fa-tag"> react</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/02/linux-服务器安装nginx/" rel="next" title="linux 服务器安装nginx及配置">
+                <i class="fa fa-chevron-left"></i> linux 服务器安装nginx及配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/06/作用域及闭包/" rel="prev" title="作用域及闭包">
+                作用域及闭包 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/image/avatar.png" alt="啪叽">
+            
+              <p class="site-author-name" itemprop="name">啪叽</p>
+              <p class="site-description motion-element" itemprop="description">恣情扬溢的thinking～～</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kaisa911" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-World"><span class="nav-number">1.</span> <span class="nav-text">Hello World</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX-简介"><span class="nav-number">2.</span> <span class="nav-text">JSX 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素渲染"><span class="nav-number">3.</span> <span class="nav-text">元素渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件-amp-props"><span class="nav-number">4.</span> <span class="nav-text">组件&amp;props</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#State-amp-生命周期"><span class="nav-number">5.</span> <span class="nav-text">State&amp;生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件处理"><span class="nav-number">6.</span> <span class="nav-text">事件处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number">7.</span> <span class="nav-text">条件渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表-amp-Keys"><span class="nav-number">8.</span> <span class="nav-text">列表 &amp; Keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单"><span class="nav-number">9.</span> <span class="nav-text">表单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态提升"><span class="nav-number">10.</span> <span class="nav-text">状态提升</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-[object Object]"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">啪叽</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
+<script type="text/javascript" src="/js/src/post-details.js?v="></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'gVlpUbmfpDD45oSDSodSjHyA-gzGzoHsz',
+        appKey: '0JbBIA04kEk3ugLhrPcpwlVe',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
