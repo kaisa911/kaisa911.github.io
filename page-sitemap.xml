@@ -7,7 +7,7 @@
     </url>
     
     <url>
-        <loc>http://yoursite.com/about/</loc>
+        <loc>http://yoursite.com/tags/</loc>
         <lastmod>2019-03-04T06:38:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -21,7 +21,7 @@
     </url>
     
     <url>
-        <loc>http://yoursite.com/tags/</loc>
+        <loc>http://yoursite.com/about/</loc>
         <lastmod>2019-03-04T06:38:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
