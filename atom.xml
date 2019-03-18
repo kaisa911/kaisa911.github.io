@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-14T12:52:53.000Z</updated>
+  <updated>2019-03-18T02:58:45.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码整洁的规则</title>
+    <link href="http://yoursite.com/2019/03/18/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E7%9A%84%E5%B0%8F%E8%A7%84%E5%88%99/"/>
+    <id>http://yoursite.com/2019/03/18/代码整洁的小规则/</id>
+    <published>2019-03-18T02:20:01.000Z</published>
+    <updated>2019-03-18T02:58:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在知乎看到的，说代码要几个基础原则：<br>单一原则、开闭原则、里氏代换原则、组合复用原则、接口隔离原则、 依赖倒置原则、迪米特原则。</p><p>学习一下，争取以后能用到。</p><h2 id="单一原则（SRP，Single-Responsibility-Principle）"><a href="#单一原则（SRP，Single-Responsibility-Principle）" class="headerlink" title="单一原则（SRP，Single Responsibility Principle）"></a>单一原则（SRP，Single Responsibility Principle）</h2><blockquote><p>There should never be more than one reason for a class to change。</p></blockquote><p>一个类（JavaScript 下是一个对象或者一个函数）应该有一组紧密相关的行为。<br>遵守单一职责的好处是可以让我们很容易地来维护这个对象或者这个函数，如果一个对象或者函数封装了很多功能的话，一旦一个功能需要修改，必然会影响该对象或函数里其他功能的代码。<br>我们通过解耦可以让每个功能更加有弹性地变化。</p><p>毕竟函数是 JavaScript 的一等公民，一个函数完成一个功能，最后叠加成了想要的系统。</p><h2 id="开闭原则-（OCP，The-Open-Closed-Principle）"><a href="#开闭原则-（OCP，The-Open-Closed-Principle）" class="headerlink" title="开闭原则 （OCP，The Open/Closed Principle）"></a>开闭原则 （OCP，The Open/Closed Principle）</h2><blockquote><p>Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.</p></blockquote><p>软件实体（类，模块，方法等等）应当对扩展开放，对修改关闭，即软件实体应当在不修改的前提下扩展。<br>当新需求出现的时候，可以通过扩展现有模型达到目的, 不允许对该实体做任何修改。<br>需要执行多样行为的实体应该设计成不需要修改就可以实现各种的变化，坚持开闭原则有利于用最少的代码进行项目维护。</p><h2 id="里氏替换原则-（LSP-Liskov-Substitution-Principle）"><a href="#里氏替换原则-（LSP-Liskov-Substitution-Principle）" class="headerlink" title="里氏替换原则 （LSP Liskov Substitution Principle）"></a>里氏替换原则 （LSP Liskov Substitution Principle）</h2><blockquote><p>Subtypes must be substitutable for their base types.</p></blockquote><p>派生类型必须可以替换它的基类型。<br>如果对每一个类型为 T1 的对象 o1，都有类型为 T2 的对象 o2，使得以 T1 定义的所有程序 P 在所有的对象 o1 都换成 o2 时，程序 P 的行为没有变化，那么类型 T2 是类型 T1 的子类型。<br>更通俗的说：子类可以扩展父类的功能，但不能改变父类原有的功能。</p><p>里氏替换原则包含以下 4 层含义</p><pre><code>- 子类可以实现父类的抽象方法，但是不能覆盖父类的非抽象方法。- 子类中可以增加自己特有的方法。- 当子类覆盖或实现父类的方法时，方法的前置条件（即方法的形参）要比父类方法的输入参数更宽松。- 当子类的方法实现父类的抽象方法时，方法的后置条件（即方法的返回值）要比父类更严格。</code></pre><h2 id="如何才能使代码贴近这些原则"><a href="#如何才能使代码贴近这些原则" class="headerlink" title="如何才能使代码贴近这些原则"></a>如何才能使代码贴近这些原则</h2><p>只需要牢记，使代码保持足够简单, 还有一个，就是尽早重构～～～</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在知乎看到的，说代码要几个基础原则：&lt;br&gt;单一原则、开闭原则、里氏代换原则、组合复用原则、接口隔离原则、 依赖倒置原则、迪米特原则。&lt;/p&gt;
+&lt;p&gt;学习一下，争取以后能用到。&lt;/p&gt;
+&lt;h2 id=&quot;单一原则（SRP，Single-Responsibility-Princ
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>身份证校验规则</title>
@@ -508,31 +535,6 @@
     
     
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于xss和csrf</title>
-    <link href="http://yoursite.com/2018/09/06/%E5%85%B3%E4%BA%8Exss%E5%92%8Ccsrf/"/>
-    <id>http://yoursite.com/2018/09/06/关于xss和csrf/</id>
-    <published>2018-09-06T08:10:57.000Z</published>
-    <updated>2019-03-04T06:38:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><p>xss 是跨网站指令码，是代码注入的一种，它允许恶意使用者将程式码注入到网页上，其他使用者在观看网页时就会受到影响。这类攻击通常包含了 HTML 以及使用者端脚本语言。</p><p>攻击方式: XSS 通过修改 HTML 节点或者执行 JS 代码来攻击网站。比如通过 url 来在页面上添加 html 后者 js 文件。</p><p>防止: 最普遍的方法，是将输出的内容进行转义，比如对于引号，尖括号，斜杠进行转义等，再就是设置白名单或者黑名单等。比如只允许加载本站资源等。。</p><h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><p>csrf 跨站请求伪造，是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。简单点说，CSRF 就是利用用户的登录态发起恶意请求。</p><p>防止：防范 CSRF 可以遵循以下几种规则：</p><ul><li>Get 请求不对数据进行修改</li><li>不让第三方网站访问到用户 Cookie</li><li>阻止第三方网站请求接口</li><li>请求时附带验证信息，比如验证码或者 token</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;XSS&quot;&gt;&lt;a href=&quot;#XSS&quot; class=&quot;headerlink&quot; title=&quot;XSS&quot;&gt;&lt;/a&gt;XSS&lt;/h2&gt;&lt;p&gt;xss 是跨网站指令码，是代码注入的一种，它允许恶意使用者将程式码注入到网页上，其他使用者在观看网页时就会受到影响。这类攻击通常包含
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="前端安全" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   

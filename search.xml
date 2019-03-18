@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[代码整洁的规则]]></title>
+    <url>%2F2019%2F03%2F18%2F%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E7%9A%84%E5%B0%8F%E8%A7%84%E5%88%99%2F</url>
+    <content type="text"><![CDATA[在知乎看到的，说代码要几个基础原则：单一原则、开闭原则、里氏代换原则、组合复用原则、接口隔离原则、 依赖倒置原则、迪米特原则。 学习一下，争取以后能用到。 单一原则（SRP，Single Responsibility Principle） There should never be more than one reason for a class to change。 一个类（JavaScript 下是一个对象或者一个函数）应该有一组紧密相关的行为。遵守单一职责的好处是可以让我们很容易地来维护这个对象或者这个函数，如果一个对象或者函数封装了很多功能的话，一旦一个功能需要修改，必然会影响该对象或函数里其他功能的代码。我们通过解耦可以让每个功能更加有弹性地变化。 毕竟函数是 JavaScript 的一等公民，一个函数完成一个功能，最后叠加成了想要的系统。 开闭原则 （OCP，The Open/Closed Principle） Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. 软件实体（类，模块，方法等等）应当对扩展开放，对修改关闭，即软件实体应当在不修改的前提下扩展。当新需求出现的时候，可以通过扩展现有模型达到目的, 不允许对该实体做任何修改。需要执行多样行为的实体应该设计成不需要修改就可以实现各种的变化，坚持开闭原则有利于用最少的代码进行项目维护。 里氏替换原则 （LSP Liskov Substitution Principle） Subtypes must be substitutable for their base types. 派生类型必须可以替换它的基类型。如果对每一个类型为 T1 的对象 o1，都有类型为 T2 的对象 o2，使得以 T1 定义的所有程序 P 在所有的对象 o1 都换成 o2 时，程序 P 的行为没有变化，那么类型 T2 是类型 T1 的子类型。更通俗的说：子类可以扩展父类的功能，但不能改变父类原有的功能。 里氏替换原则包含以下 4 层含义 - 子类可以实现父类的抽象方法，但是不能覆盖父类的非抽象方法。 - 子类中可以增加自己特有的方法。 - 当子类覆盖或实现父类的方法时，方法的前置条件（即方法的形参）要比父类方法的输入参数更宽松。 - 当子类的方法实现父类的抽象方法时，方法的后置条件（即方法的返回值）要比父类更严格。 如何才能使代码贴近这些原则只需要牢记，使代码保持足够简单, 还有一个，就是尽早重构～～～]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[身份证校验规则]]></title>
     <url>%2F2019%2F03%2F14%2F%E8%BA%AB%E4%BB%BD%E8%AF%81%E6%A0%A1%E9%AA%8C%E8%A7%84%E5%88%99%2F</url>
     <content type="text"><![CDATA[把身份证校验规则整理一下，以后万一能用的到呢。。。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788const powers = [ '7', '9', '10', '5', '8', '4', '2', '1', '6', '3', '7', '9', '10', '5', '8', '4', '2'];const parityBit = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'];// 校验身份证号码的主调用const validId18 = _id =&gt; &#123; let id = _id; id += ''; const num = id.substr(0, 17); const IparityBit = id.substr(17); // let IparityBit = id.substr(17); // 如果允许小写x let power = 0; for (let i = 0; i &lt; 17; i += 1) &#123; // 校验每一位的合法性 if (num.charAt(i) &lt; '0' || num.charAt(i) &gt; '9') &#123; return false; &#125; // 加权 power += parseInt(num.charAt(i), 10) * parseInt(powers[i], 10); &#125; // 取模 const mod = parseInt(power, 10) % 11; //如果小写x也支持 // if(IparityBit==='x')&#123; IparityBit = 'X'; &#125; if (parityBit[mod] === IparityBit) &#123; return true; &#125; return false;&#125;;function validId15(_id) &#123; let id = _id; id += ''; for (let i = 0; i &lt; id.length; i += 1) &#123; // 校验每一位的合法性 if (id.charAt(i) &lt; '0' || id.charAt(i) &gt; '9') &#123; return false; &#125; &#125; const year = id.substr(6, 2); const month = id.substr(8, 2); const day = id.substr(10, 2); // 校验年份位 if (year &lt; '01' || year &gt; '90') return false; // 校验月份 if (month &lt; '01' || month &gt; '12') return false; // 校验日 if (day &lt; '01' || day &gt; '31') return false; return true;&#125;/* eslint consistent-return: 0 */function validId(_id) &#123; const id = _id; if (id === '') return; let valid = false; if (id.length === 15) &#123; valid = validId15(id); &#125; else if (id.length === 18) &#123; valid = validId18(id); &#125; return valid;&#125;export default validId;]]></content>
