@@ -2,7 +2,7 @@
 title: jquery监控浏览器大小变化
 date: 2018-05-14 18:10:06
 tags: Jquery
-categories: Demo练习
+categories: Jquery
 ---
 ```javascript
 var screenWidth = window.screen.width;

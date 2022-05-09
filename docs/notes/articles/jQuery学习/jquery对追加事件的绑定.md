@@ -2,7 +2,7 @@
 title: jquery对追加事件的绑定
 date: 2018-05-14 15:01:10
 tags: [Javascript, Jquery]
-categories: bug汇总
+categories: Jquery
 ---
 写项目的时候又用到了jquery，突然发现，对于用jquery追加的元素，on方法绑定不能用。
 
