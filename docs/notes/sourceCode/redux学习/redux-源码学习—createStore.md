@@ -2,7 +2,7 @@
 title: redux 源码学习——createStore
 date: 2018-05-11 10:07:29
 tags: [Javascript, react, redux]
-categories: redux源码学习
+categories: 源码学习
 ---
 <h1>createStore 理解</h1>
 

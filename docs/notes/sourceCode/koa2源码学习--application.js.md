@@ -2,7 +2,7 @@
 title: koa2源码学习--application.js
 date: 2018-05-24 14:00:14
 tags: [Koa, Node]
-categories: koa2源码学习
+categories: 源码学习
 ---
 一直很想研究下koa2，虽然还是小白一枚，但终于决定入坑koa2。之前只知道koa2采用了ES2015和ES2016的一些东西，还知道洋葱头的中间件的运行机制。还是先研究一下源码，学习一下大神写代码的畅快感。
 

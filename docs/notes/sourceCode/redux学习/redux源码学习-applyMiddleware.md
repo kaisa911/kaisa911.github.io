@@ -2,7 +2,7 @@
 title: redux源码学习--applyMiddleware
 date: 2018-05-11 16:03:07
 tags: [Javascript, react, redux]
-categories: redux源码学习
+categories: 源码学习
 ---
 <h1>applyMiddleware理解</h1>
 

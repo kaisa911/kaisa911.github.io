@@ -2,7 +2,7 @@
 title: redux源码学习--bindActionCreators
 date: 2018-05-11 15:24:40
 tags: [Javascript, react, redux]
-categories: redux源码学习
+categories: 源码学习
 ---
 <h1>bindActionCreators</h1>
 

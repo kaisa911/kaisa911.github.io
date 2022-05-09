@@ -2,7 +2,7 @@
 title: redux源码学习--combineReducers
 date: 2018-05-11 14:16:47
 tags: [Javascript, react, redux]
-categories: redux源码学习
+categories: 源码学习
 ---
 <h1>combineReducers 理解</h1>
 

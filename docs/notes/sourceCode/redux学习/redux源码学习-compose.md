@@ -2,7 +2,7 @@
 title: redux源码学习--compose
 date: 2018-05-11 13:48:56
 tags: [Javascript, react, redux]
-categories: redux源码学习
+categories: 源码学习
 ---
 <h1>compose</h1>
 compose 是一个从右向左编写单参数组成的函数。最右边的函数可以接受多个参数，因为它提供了签名由此产生的复合函数。
