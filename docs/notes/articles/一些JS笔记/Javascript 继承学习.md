@@ -1,7 +1,7 @@
 ---
 title: Javascript 继承学习
 date: 2018-05-08 15:07:28
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 javascript的继承方式有好多方式，之前ES5通过原型链继承，ES6中引入了Class，javascript可以像java一样使用extends关键字继承。现在整理一下js中的继承方式。

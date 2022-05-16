@@ -1,7 +1,7 @@
 ---
 title: ajax实现
 date: 2018-05-16 11:18:33
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 Q1: 何谓ajax，它有何优点？

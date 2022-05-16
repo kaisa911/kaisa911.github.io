@@ -1,7 +1,7 @@
 ---
 title: Javascript原型学习
 date: 2018-10-09 11:21:29
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 

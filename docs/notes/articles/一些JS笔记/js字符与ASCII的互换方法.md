@@ -1,7 +1,7 @@
 ---
 title: js字符与ASCII的互换方法
 date: 2019-01-28 14:36:23
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 

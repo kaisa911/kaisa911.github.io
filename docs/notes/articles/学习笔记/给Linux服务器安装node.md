@@ -1,7 +1,7 @@
 ---
 title: 给Linux服务器安装node
 date: 2019-02-26 13:11:09
-tags: Linux
+tags: [Linux]
 categories: 学习笔记
 ---
 

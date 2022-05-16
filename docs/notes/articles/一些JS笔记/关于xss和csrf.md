@@ -1,7 +1,7 @@
 ---
 title: 关于xss和csrf
 date: 2018-09-06 16:10:57
-tags: 前端安全
+tags: [前端安全]
 categories: Javascript
 ---
 

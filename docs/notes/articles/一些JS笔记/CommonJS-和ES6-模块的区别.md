@@ -1,7 +1,7 @@
 ---
 title: CommonJS 和ES6 模块的区别
 date: 2019-03-04 14:08:04
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 

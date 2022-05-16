@@ -1,7 +1,7 @@
 ---
 title: axios jquery.ajax fetch 区别
 date: 2018-08-03 10:41:38
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 

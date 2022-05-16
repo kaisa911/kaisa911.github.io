@@ -1,7 +1,7 @@
 ---
 title: async和await
 date: 2019-01-11 16:29:52
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 

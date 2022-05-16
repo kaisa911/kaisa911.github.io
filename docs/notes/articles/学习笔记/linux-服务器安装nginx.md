@@ -1,7 +1,7 @@
 ---
 title: linux 服务器安装nginx及配置
 date: 2018-11-02 10:53:39
-tags: nginx
+tags: [nginx]
 categories: 学习笔记
 ---
 

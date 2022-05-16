@@ -1,7 +1,7 @@
 ---
 title: Event Loop 问题理解
 date: 2018-05-09 10:08:43
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 Q1:事件循环机制是什么？

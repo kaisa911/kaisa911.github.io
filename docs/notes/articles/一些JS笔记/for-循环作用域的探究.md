@@ -1,7 +1,7 @@
 ---
 title: for 循环作用域的探究
 date: 2018-09-29 14:22:18
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 

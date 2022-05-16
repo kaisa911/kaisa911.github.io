@@ -1,7 +1,7 @@
 ---
 title: 从输入url到页面加载完成都发生了什么？
 date: 2019-02-11 14:48:52
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 这个问题是一个比较经典的问题，答案如下：

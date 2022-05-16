@@ -1,7 +1,7 @@
 ---
 title: JS包装对象
 date: 2018-06-19 15:35:19
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 

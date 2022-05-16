@@ -1,7 +1,7 @@
 ---
 title: 一些JS小技巧
 date: 2018-08-23 17:08:51
-tags: Javascript
+tags: [Javascript]
 categories: Javascript
 ---
 
