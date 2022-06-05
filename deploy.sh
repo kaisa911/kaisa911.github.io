@@ -7,8 +7,8 @@ set -e
 npm run build
 
 # 发布到自定义域名
-echo "把域名放到CNAME文件中"
-echo 'blog.pudge.tech' > CNAME
+# echo "把域名放到CNAME文件中"
+echo 'blog.pudge.tech' > docs/.vuepress/dist/CNAME
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist
