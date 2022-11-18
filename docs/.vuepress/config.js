@@ -25,7 +25,7 @@ module.exports = {
     nav: [
       { text: '首页', link: '/' },
       { text: '笔记', link: '/notes/default' },
-      { text: 'Vue源码学习', link: '/notes/Vue源码学习/1.Vue源码学习-开始' },
+      { text: 'Vue源码学习', link: '/notes/Vue源码学习/1.开始' },
       { text: '时间轴', link: '/timeline/', icon: 'reco-date' },
     ],
     sidebar: {
@@ -53,7 +53,7 @@ module.exports = {
         },
       ],
     },
-    sidebarDepths: 1,
+    sidebarDepths: 3,
     blogConfig: {
       category: {
         location: 4, // 在导航栏菜单中所占的位置，默认2
