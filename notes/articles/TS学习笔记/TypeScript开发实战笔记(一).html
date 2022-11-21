@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TypeScript开发实战笔记(一) | 帕吉小馆</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="谁人不爱大肉排">
+    
+    <link rel="preload" href="/assets/css/0.styles.97bfe4d2.css" as="style"><link rel="preload" href="/assets/js/app.9f54aad8.js" as="script"><link rel="preload" href="/assets/js/3.66c6d2e3.js" as="script"><link rel="preload" href="/assets/js/1.fb29bb8d.js" as="script"><link rel="preload" href="/assets/js/55.6669318c.js" as="script"><link rel="prefetch" href="/assets/js/10.e6830bc8.js"><link rel="prefetch" href="/assets/js/100.edb1c45a.js"><link rel="prefetch" href="/assets/js/101.bfc1ab44.js"><link rel="prefetch" href="/assets/js/102.e438be42.js"><link rel="prefetch" href="/assets/js/103.7986b521.js"><link rel="prefetch" href="/assets/js/104.af687c1a.js"><link rel="prefetch" href="/assets/js/105.96bfac7e.js"><link rel="prefetch" href="/assets/js/106.da0f790f.js"><link rel="prefetch" href="/assets/js/107.abbcf1aa.js"><link rel="prefetch" href="/assets/js/108.7ef90850.js"><link rel="prefetch" href="/assets/js/109.71fb782e.js"><link rel="prefetch" href="/assets/js/11.70c3b19b.js"><link rel="prefetch" href="/assets/js/110.a382f647.js"><link rel="prefetch" href="/assets/js/111.20d86553.js"><link rel="prefetch" href="/assets/js/112.8d4d1ec6.js"><link rel="prefetch" href="/assets/js/113.b4e46412.js"><link rel="prefetch" href="/assets/js/114.171c729f.js"><link rel="prefetch" href="/assets/js/115.fa9cf809.js"><link rel="prefetch" href="/assets/js/116.0d76f886.js"><link rel="prefetch" href="/assets/js/117.dd872f19.js"><link rel="prefetch" href="/assets/js/118.4843d821.js"><link rel="prefetch" href="/assets/js/119.607dfddd.js"><link rel="prefetch" href="/assets/js/12.d3c58988.js"><link rel="prefetch" href="/assets/js/120.dd4ea072.js"><link rel="prefetch" href="/assets/js/121.c6550b2d.js"><link rel="prefetch" href="/assets/js/122.035033f7.js"><link rel="prefetch" href="/assets/js/123.2854bdb8.js"><link rel="prefetch" href="/assets/js/124.34a1fd38.js"><link rel="prefetch" href="/assets/js/125.47b1a6f0.js"><link rel="prefetch" href="/assets/js/126.313e5ae9.js"><link rel="prefetch" href="/assets/js/127.8126a350.js"><link rel="prefetch" href="/assets/js/128.46f0ce2f.js"><link rel="prefetch" href="/assets/js/129.8718db8d.js"><link rel="prefetch" href="/assets/js/13.d4d8a2b4.js"><link rel="prefetch" href="/assets/js/130.2132550f.js"><link rel="prefetch" href="/assets/js/131.e34dbfc9.js"><link rel="prefetch" href="/assets/js/132.fb90e4de.js"><link rel="prefetch" href="/assets/js/133.57e5768d.js"><link rel="prefetch" href="/assets/js/134.2396b44f.js"><link rel="prefetch" href="/assets/js/135.5c4f4bb7.js"><link rel="prefetch" href="/assets/js/14.7f0859d7.js"><link rel="prefetch" href="/assets/js/15.da50216d.js"><link rel="prefetch" href="/assets/js/16.e15b31a4.js"><link rel="prefetch" href="/assets/js/17.f72ddc87.js"><link rel="prefetch" href="/assets/js/18.b380cda3.js"><link rel="prefetch" href="/assets/js/19.3b73a84b.js"><link rel="prefetch" href="/assets/js/20.5004f3db.js"><link rel="prefetch" href="/assets/js/21.1fb10f14.js"><link rel="prefetch" href="/assets/js/22.3f3c32ea.js"><link rel="prefetch" href="/assets/js/23.07be3542.js"><link rel="prefetch" href="/assets/js/24.1aadd2e1.js"><link rel="prefetch" href="/assets/js/25.50c1833c.js"><link rel="prefetch" href="/assets/js/26.e7570349.js"><link rel="prefetch" href="/assets/js/27.212208b2.js"><link rel="prefetch" href="/assets/js/28.c437bba6.js"><link rel="prefetch" href="/assets/js/29.c7a8d5bb.js"><link rel="prefetch" href="/assets/js/30.8dea2e34.js"><link rel="prefetch" href="/assets/js/31.caa18ea4.js"><link rel="prefetch" href="/assets/js/32.c64ebe90.js"><link rel="prefetch" href="/assets/js/33.e6967afc.js"><link rel="prefetch" href="/assets/js/34.03c83416.js"><link rel="prefetch" href="/assets/js/35.8104c755.js"><link rel="prefetch" href="/assets/js/36.5a64d8d6.js"><link rel="prefetch" href="/assets/js/37.c5f84675.js"><link rel="prefetch" href="/assets/js/38.a35aeb0f.js"><link rel="prefetch" href="/assets/js/39.bf084451.js"><link rel="prefetch" href="/assets/js/4.f5407bcd.js"><link rel="prefetch" href="/assets/js/40.4e021789.js"><link rel="prefetch" href="/assets/js/41.4d32f553.js"><link rel="prefetch" href="/assets/js/42.fe9e64fd.js"><link rel="prefetch" href="/assets/js/43.e77777d2.js"><link rel="prefetch" href="/assets/js/44.7973c553.js"><link rel="prefetch" href="/assets/js/45.3d9875cc.js"><link rel="prefetch" href="/assets/js/46.249f98b1.js"><link rel="prefetch" href="/assets/js/47.36042c17.js"><link rel="prefetch" href="/assets/js/48.82b266fd.js"><link rel="prefetch" href="/assets/js/49.e3a71139.js"><link rel="prefetch" href="/assets/js/5.d80a4435.js"><link rel="prefetch" href="/assets/js/50.8f493b1a.js"><link rel="prefetch" href="/assets/js/51.f619fabf.js"><link rel="prefetch" href="/assets/js/52.799663a2.js"><link rel="prefetch" href="/assets/js/53.4bd16307.js"><link rel="prefetch" href="/assets/js/54.54885a11.js"><link rel="prefetch" href="/assets/js/56.95510e16.js"><link rel="prefetch" href="/assets/js/57.96cadbdb.js"><link rel="prefetch" href="/assets/js/58.df1e1959.js"><link rel="prefetch" href="/assets/js/59.46a6f230.js"><link rel="prefetch" href="/assets/js/6.7757751a.js"><link rel="prefetch" href="/assets/js/60.0906a186.js"><link rel="prefetch" href="/assets/js/61.24b594a1.js"><link rel="prefetch" href="/assets/js/62.e0183315.js"><link rel="prefetch" href="/assets/js/63.98521145.js"><link rel="prefetch" href="/assets/js/64.9020a094.js"><link rel="prefetch" href="/assets/js/65.893f1068.js"><link rel="prefetch" href="/assets/js/66.087677cc.js"><link rel="prefetch" href="/assets/js/67.77547f6a.js"><link rel="prefetch" href="/assets/js/68.39698b29.js"><link rel="prefetch" href="/assets/js/69.e7ecd502.js"><link rel="prefetch" href="/assets/js/7.76a1c987.js"><link rel="prefetch" href="/assets/js/70.a61ef4cd.js"><link rel="prefetch" href="/assets/js/71.bdbb8e7d.js"><link rel="prefetch" href="/assets/js/72.02333085.js"><link rel="prefetch" href="/assets/js/73.f47c0f70.js"><link rel="prefetch" href="/assets/js/74.c90d42d3.js"><link rel="prefetch" href="/assets/js/75.9c2bf020.js"><link rel="prefetch" href="/assets/js/76.90e7bbd1.js"><link rel="prefetch" href="/assets/js/77.c0f6eb6e.js"><link rel="prefetch" href="/assets/js/78.f0a04efe.js"><link rel="prefetch" href="/assets/js/79.00785ba2.js"><link rel="prefetch" href="/assets/js/8.232328c1.js"><link rel="prefetch" href="/assets/js/80.84bb97f1.js"><link rel="prefetch" href="/assets/js/81.b31b2f8c.js"><link rel="prefetch" href="/assets/js/82.8f356dad.js"><link rel="prefetch" href="/assets/js/83.e4a797de.js"><link rel="prefetch" href="/assets/js/84.1d7a8306.js"><link rel="prefetch" href="/assets/js/85.bd5d03cd.js"><link rel="prefetch" href="/assets/js/86.4e2c230b.js"><link rel="prefetch" href="/assets/js/87.a16c70ab.js"><link rel="prefetch" href="/assets/js/88.bfa8a824.js"><link rel="prefetch" href="/assets/js/89.6e5d03dd.js"><link rel="prefetch" href="/assets/js/9.bef0526f.js"><link rel="prefetch" href="/assets/js/90.fcc54519.js"><link rel="prefetch" href="/assets/js/91.6805caa3.js"><link rel="prefetch" href="/assets/js/92.8abd5e37.js"><link rel="prefetch" href="/assets/js/93.f4675de4.js"><link rel="prefetch" href="/assets/js/94.ba3fcbab.js"><link rel="prefetch" href="/assets/js/95.1390bad0.js"><link rel="prefetch" href="/assets/js/96.86a06d7b.js"><link rel="prefetch" href="/assets/js/97.15be2b85.js"><link rel="prefetch" href="/assets/js/98.46d0c691.js"><link rel="prefetch" href="/assets/js/99.166a73a9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.97bfe4d2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-0929c46a><div data-v-0929c46a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-1be9dd52 data-v-0929c46a data-v-0929c46a><h3 class="title" data-v-1be9dd52 data-v-1be9dd52>帕吉小馆</h3> <p class="description" data-v-1be9dd52 data-v-1be9dd52>谁人不爱大肉排</p> <label id="box" class="inputBox" data-v-1be9dd52 data-v-1be9dd52><input type="password" value="" data-v-1be9dd52> <span data-v-1be9dd52>Konck! Knock!</span> <button data-v-1be9dd52>OK</button></label> <div class="footer" data-v-1be9dd52 data-v-1be9dd52><span data-v-1be9dd52><i class="iconfont reco-theme" data-v-1be9dd52></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1be9dd52>vuePress-theme-reco</a></span> <span data-v-1be9dd52><i class="iconfont reco-copyright" data-v-1be9dd52></i> <a data-v-1be9dd52><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-0929c46a><header class="navbar" data-v-0929c46a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">帕吉小馆</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/notes/default.html" class="nav-link"><i class="undefined"></i>
+  笔记
+</a></div><div class="nav-item"><a href="/notes/Vue源码学习/1.开始.html" class="nav-link"><i class="undefined"></i>
+  Vue源码学习
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML+CSS/" class="nav-link"><i class="undefined"></i>
+  HTML+CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTTP/" class="nav-link"><i class="undefined"></i>
+  HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS高程填坑笔记/" class="nav-link"><i class="undefined"></i>
+  JS高程填坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/TS学习/" class="nav-link"><i class="undefined"></i>
+  TS学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Jquery/" class="nav-link"><i class="undefined"></i>
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法学习/" class="nav-link"><i class="undefined"></i>
+  算法学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微信小程序/" class="nav-link"><i class="undefined"></i>
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-0929c46a></div> <aside class="sidebar" data-v-0929c46a><div class="personal-info-wrapper" data-v-2885a809 data-v-0929c46a><!----> <!----> <div class="num" data-v-2885a809><div data-v-2885a809><h3 data-v-2885a809>125</h3> <h6 data-v-2885a809>文章</h6></div> <div data-v-2885a809><h3 data-v-2885a809>34</h3> <h6 data-v-2885a809>标签</h6></div></div> <ul class="social-links" data-v-2885a809></ul> <hr data-v-2885a809></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/notes/default.html" class="nav-link"><i class="undefined"></i>
+  笔记
+</a></div><div class="nav-item"><a href="/notes/Vue源码学习/1.开始.html" class="nav-link"><i class="undefined"></i>
+  Vue源码学习
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML+CSS/" class="nav-link"><i class="undefined"></i>
+  HTML+CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTTP/" class="nav-link"><i class="undefined"></i>
+  HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS高程填坑笔记/" class="nav-link"><i class="undefined"></i>
+  JS高程填坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/TS学习/" class="nav-link"><i class="undefined"></i>
+  TS学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Jquery/" class="nav-link"><i class="undefined"></i>
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法学习/" class="nav-link"><i class="undefined"></i>
+  算法学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微信小程序/" class="nav-link"><i class="undefined"></i>
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>笔记们</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/articles/" aria-current="page" class="sidebar-link">笔记汇总</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>看不懂的源码们</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/sourceCode/" class="sidebar-link">看不懂看不懂</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>刷不完的lc</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/leetcode/" class="sidebar-link">洗刷刷</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>师夷长技</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/translations/" class="sidebar-link">翻译文章</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1be9dd52 data-v-0929c46a><h3 class="title" data-v-1be9dd52 data-v-1be9dd52>TypeScript开发实战笔记(一)</h3> <!----> <label id="box" class="inputBox" data-v-1be9dd52 data-v-1be9dd52><input type="password" value="" data-v-1be9dd52> <span data-v-1be9dd52>Konck! Knock!</span> <button data-v-1be9dd52>OK</button></label> <div class="footer" data-v-1be9dd52 data-v-1be9dd52><span data-v-1be9dd52><i class="iconfont reco-theme" data-v-1be9dd52></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1be9dd52>vuePress-theme-reco</a></span> <span data-v-1be9dd52><i class="iconfont reco-copyright" data-v-1be9dd52></i> <a data-v-1be9dd52><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-0929c46a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">TypeScript开发实战笔记(一)</h1> <div data-v-449bb262><!----> <i class="iconfont reco-date" data-v-449bb262><span data-v-449bb262>2021/1/5</span></i> <!----> <i class="tags iconfont reco-tag" data-v-449bb262><span class="tag-item" data-v-449bb262>TypeScript</span></i></div></div> <div class="content__default"><h2 id="_1、什么是-typescript"><a href="#_1、什么是-typescript" class="header-anchor">#</a> 1、什么是 TypeScript？</h2> <p>一个拥有类型系统的 JavaScript 超集，可以编译成纯 JavaScript。三个要点：</p> <ul><li>类型检查，严格的类型检查，在编译阶段发现问题，不必把问题带到线上</li> <li>语言扩展，包含 ES6 及未来提案中的特性，也从其他语言借鉴特性，比如接口和抽象类</li> <li>工具属性，可以编译成纯 JavaScript，可以在任何浏览器上运行，更像一个工具</li></ul> <h2 id="_2、为什么要使用-typescript"><a href="#_2、为什么要使用-typescript" class="header-anchor">#</a> 2、为什么要使用 TypeScript？</h2> <ul><li>更好的 IDE 支持，比如 VS Code 的自动补全，导航和重构功能，使得接口定义可以代替文档，</li> <li>可以提升效率，降低维护成本</li> <li>可以构建类型思维，从代码的编写者蜕变成代码的设计者</li></ul> <h2 id="_3、静态类型语言和动态类型语言"><a href="#_3、静态类型语言和动态类型语言" class="header-anchor">#</a> 3、静态类型语言和动态类型语言</h2> <ul><li>静态类型语言：在编译阶段确定所有变量的类型</li> <li>动态类型语言：在执行阶段确定所有变量的语言
+<img src="https://img-blog.csdnimg.cn/20210104173011606.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ2Mjc4MDc=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li></ul> <h2 id="_4、typescript-的数据类型"><a href="#_4、typescript-的数据类型" class="header-anchor">#</a> 4、TypeScript 的数据类型</h2> <p>除了 ES6 包含的数据类型，TypeScript 又新增了</p> <ul><li>void</li> <li>any</li> <li>never</li> <li>元组： 特殊的数组类型，限制了数组的元素的类型和数量</li> <li>枚举</li> <li>高级类型</li></ul> <p>1）类型注解：相当于强类型语言中的类型声明。
+2）联合类型，通过一个竖线来分开
+3）元组越界问题，设置好的元组，可以通过 push方法给元组新增元素，元素也可以被添加到元组中，但是在访问的时候报错<br>
+4）一个变量被声明为 undefined/null 类型，就不能再赋值
+其他类型，只能被赋值为它本身。 但是 undefined/null 类型是所有类型的子类型，是可以赋值给其他类型的，可以通过
+tsconfig.json 里的 strictNullChecks 设置成 false 来实现
+5）在 JavaScript 中，void 是一个操符，可以让任何表达式返回
+undefined，比如最简单的返回 undefined 的方式是 void 0，而且 undefined 不是一个保留字，可以通过设置一个 undefined 变量来
+覆盖全局的 undefined 变量。在 TypeScript 中，void 类型就是指，没有任何返回值的类型。
+6）没有声明的变量就是 any 类型
+7）never 是指永远不会有返回值的类型
+8）枚举类型，就是一组有名字的常量集合
+9）枚举类型分为：</p> <ul><li>数字枚举和字符串枚举，数字枚举的实现原理是反向映射，成员名称分别作为 key 和 value</li> <li>字符串枚举，只有成员名称当做了 key，</li> <li>异构枚举，包含数字枚举和字符串枚举，不推荐使用</li></ul> <p>10）枚举成员的值是一个只读类型，不能修改枚举成员的类型分为 2 类</p> <ul><li>常量枚举，会在编译的时候计算出结果，以常量的形式出现在运行环境
+<ul><li>没有初始值的情况</li> <li>对已有枚举成员的引用</li> <li>常量表达式</li></ul></li> <li>需要被计算的枚举成员：一些非常量的表达式，不会再编译时计算，会在运行时计算。（在 computed member 成员后面的枚举成员，
+一定要有一个初始值，否则会报错）</li></ul> <p>11）常量枚举，用 const 声明的枚举类型为常量枚举，会在编译之后被删除作用： 当我们不需要一个对象，而只需要对象的值的时候，
+就可以声明常量枚举，减少我们在编译环境的代码
+12）枚举类型：两种不同类型的枚举，是不可以进行比较的。</p> <h2 id="_5、对象类型接口"><a href="#_5、对象类型接口" class="header-anchor">#</a> 5、对象类型接口</h2> <p>接口可以用来约束对象，函数，类的一种结构，是代码协作的契约类型断言 x as string 明确的告诉编译器，这个 x 就是一个 string
+类型，字符串索引签名</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">result</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  <span class="token punctuation">[</span>x<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span> <span class="token comment">// 字符串索引签名</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接口成员的属性：</p> <ul><li>可选属性：？</li> <li>只读属性：readonly name：string</li></ul> <p>不能知道接口的属性的数目，就可以使用，可索引类型的接口</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">interface</span> <span class="token class-name">StringArray</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>index<span class="token operator">:</span> number<span class="token punctuation">]</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">Names</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>x<span class="token operator">:</span> string<span class="token punctuation">]</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 混用</span>
+<span class="token keyword">interface</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>x<span class="token operator">:</span> string<span class="token punctuation">]</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
+  <span class="token punctuation">[</span>y<span class="token operator">:</span> number<span class="token punctuation">]</span><span class="token operator">:</span> string<span class="token punctuation">;</span> <span class="token comment">// 数字类型的属性值的类型一定要是string类型的子类型，js会进行类型转换</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接口定义函数</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">x</span><span class="token operator">:</span> number<span class="token punctuation">,</span> <span class="token literal-property property">y</span><span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> number<span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Add</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>x<span class="token operator">:</span> number<span class="token punctuation">,</span> <span class="token literal-property property">y</span><span class="token operator">:</span> number<span class="token punctuation">)</span><span class="token operator">:</span> number<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 类型别名</span>
+type <span class="token function-variable function">Add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">x</span><span class="token operator">:</span> number<span class="token punctuation">,</span> <span class="token literal-property property">y</span><span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> number<span class="token punctuation">;</span>
+</code></pre></div><p>类型别名，就是为这个类型起一个名字</p> <p>混合类型接口</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">interface</span> <span class="token class-name">Lib</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+  <span class="token literal-property property">version</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
+  <span class="token function">dosomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> <span class="token literal-property property">lib</span><span class="token operator">:</span> Lib <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token keyword">as</span> Lib<span class="token punctuation">;</span>
+lib<span class="token punctuation">.</span>version <span class="token operator">=</span> <span class="token string">'1.0.0'</span><span class="token punctuation">;</span>
+lib<span class="token punctuation">.</span><span class="token function-variable function">dosomething</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">// 👆是一个lib单例，如果想生成多个lib，可以写一个函数</span>
+<span class="token keyword">let</span> <span class="token function-variable function">createLib</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> <span class="token literal-property property">lib</span><span class="token operator">:</span> Lib <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token keyword">as</span> Lib<span class="token punctuation">;</span>
+  lib<span class="token punctuation">.</span>version <span class="token operator">=</span> <span class="token string">'1.0.0'</span><span class="token punctuation">;</span>
+  lib<span class="token punctuation">.</span><span class="token function-variable function">dosomething</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> lib<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_6、函数类型接口"><a href="#_6、函数类型接口" class="header-anchor">#</a> 6、函数类型接口</h2> <p>1）在 TS 中，函数的形参合实参必须一一对应，可选参数必须在必选参数之后。且参数可以设置默认值，在必选参数之前，默认参数不可省略，必须传入 undefined 才能获取到其默认值。剩余参数…rest, 剩余参数是以数组方式来处理的
+2）函数重载：如果一个函数，函数名一样，参数个数不一样，就实现了一个函数重载。 TS 的函数重载，要求先定义一系列的函数声明，然后在一个类型最宽泛的声明中实现这个函数</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>rest<span class="token operator">:</span> number<span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span><span class="token operator">:</span> number<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>rest<span class="token operator">:</span> string<span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>rest<span class="token operator">:</span> any<span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span><span class="token operator">:</span> any <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> first <span class="token operator">=</span> rest<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> first <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> rest<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> first <span class="token operator">===</span> <span class="token string">'number'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	<span class="token keyword">return</span> rest<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">pre<span class="token punctuation">,</span> cur</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> pre <span class="token operator">+</span> cur<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>TS 在处理函数重载的时候，回去查询一个列表，就是上面定义的函数声明的列表，会从第一个开始匹配。</p> <h2 id="_7、ts-中的类"><a href="#_7、ts-中的类" class="header-anchor">#</a> 7、TS 中的类</h2> <p>1）无论在 TS 还是在 ES 中，类成员的属性都是实例属性，不是原型属性。类成员的方法都是原型方法
+2）在 TS 中，实例的属性必须有初始值或者在构造函数中有默认值
+3）类的继承，使用 extends 关键字，必须在子类里的构造函数中调用 super()，并在 super 后再使用 this
+4）类的成员修饰符</p> <ul><li>public，默认属性都是 public</li> <li>private，私有属性，只能在类的本身被调用，不能被类的子类和实例调用，给构造函数添加 private 属性，就会使这个类既不能被实
+例化也不能被继承</li> <li>protected，只能在类和子类中使用，不能在实例中使用，构造函数添加 protected 属性，就会使这个类不能被实例化，只能用于继承
+，这就声明了一个抽象类。</li> <li>readonly，只读属性不可更改，必须初始化</li> <li>static，静态属性，只能由类名来调用，不能通过实例来调用</li></ul> <p>除了类的成员可以添加修饰符以外，构造函数的参数也能添加修饰符。这样会使参数自动变为实例的属性</p> <p>5）抽象类：只能用于继承，不能用于实例化的类。使用 abstruct 来修饰类名。可以在抽象类里添加一个抽象方法，不具体实现该方法。抽象类呢，用于抽离代码的共性，有利于代码的复用。
+6）多态：使用抽象类的抽象方法，可以实现不同的类里面不同的方法的绑定。
+7）this 类型，类的成员类型，可以返回一个 this，这样就可以很容易实现链式调用。在子类中的成员方法也返回 this 时，在实例化
+的时候就可以形成一个多态，该 this 既可以调用子类里的方法，也可以调用父类里的方法。</p> <h2 id="_8、类和接口的关系"><a href="#_8、类和接口的关系" class="header-anchor">#</a> 8、类和接口的关系</h2> <p>1）接口可以约束类的成员类型</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">interface</span> <span class="token class-name">Human</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
+  <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Asian</span> <span class="token keyword">implements</span> <span class="token class-name">Human</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">name</span><span class="token operator">:</span> string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
+  <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>类实现接口的时候，必须实现接口中所有的属性。</li> <li>接口只能约束类的公有成员</li> <li>接口不能约束类的构造函数</li></ul> <p>2）接口的继承，使用 extends 继承，继承接口时，多个接口时，用逗号分开，继承类时，使用该接口的类需要有类的属性接口在抽离
+类的成员的时候，会把 public，private 和 protected 成员都抽离出来
+<img src="https://img-blog.csdnimg.cn/20210105094243197.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ2Mjc4MDc=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-878d94b6></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-1bfb1bbb data-v-1bfb1bbb><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-1bfb1bbb><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-1bfb1bbb></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-1bfb1bbb></path></svg></div></div></div>
+    <script src="/assets/js/app.9f54aad8.js" defer></script><script src="/assets/js/3.66c6d2e3.js" defer></script><script src="/assets/js/1.fb29bb8d.js" defer></script><script src="/assets/js/55.6669318c.js" defer></script>
+  </body>
+</html>

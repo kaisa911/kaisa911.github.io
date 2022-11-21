@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>koa2源码学习--application.js | 帕吉小馆</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="谁人不爱大肉排">
+    
+    <link rel="preload" href="/assets/css/0.styles.97bfe4d2.css" as="style"><link rel="preload" href="/assets/js/app.9f54aad8.js" as="script"><link rel="preload" href="/assets/js/3.66c6d2e3.js" as="script"><link rel="preload" href="/assets/js/1.fb29bb8d.js" as="script"><link rel="preload" href="/assets/js/120.dd4ea072.js" as="script"><link rel="prefetch" href="/assets/js/10.e6830bc8.js"><link rel="prefetch" href="/assets/js/100.edb1c45a.js"><link rel="prefetch" href="/assets/js/101.bfc1ab44.js"><link rel="prefetch" href="/assets/js/102.e438be42.js"><link rel="prefetch" href="/assets/js/103.7986b521.js"><link rel="prefetch" href="/assets/js/104.af687c1a.js"><link rel="prefetch" href="/assets/js/105.96bfac7e.js"><link rel="prefetch" href="/assets/js/106.da0f790f.js"><link rel="prefetch" href="/assets/js/107.abbcf1aa.js"><link rel="prefetch" href="/assets/js/108.7ef90850.js"><link rel="prefetch" href="/assets/js/109.71fb782e.js"><link rel="prefetch" href="/assets/js/11.70c3b19b.js"><link rel="prefetch" href="/assets/js/110.a382f647.js"><link rel="prefetch" href="/assets/js/111.20d86553.js"><link rel="prefetch" href="/assets/js/112.8d4d1ec6.js"><link rel="prefetch" href="/assets/js/113.b4e46412.js"><link rel="prefetch" href="/assets/js/114.171c729f.js"><link rel="prefetch" href="/assets/js/115.fa9cf809.js"><link rel="prefetch" href="/assets/js/116.0d76f886.js"><link rel="prefetch" href="/assets/js/117.dd872f19.js"><link rel="prefetch" href="/assets/js/118.4843d821.js"><link rel="prefetch" href="/assets/js/119.607dfddd.js"><link rel="prefetch" href="/assets/js/12.d3c58988.js"><link rel="prefetch" href="/assets/js/121.c6550b2d.js"><link rel="prefetch" href="/assets/js/122.035033f7.js"><link rel="prefetch" href="/assets/js/123.2854bdb8.js"><link rel="prefetch" href="/assets/js/124.34a1fd38.js"><link rel="prefetch" href="/assets/js/125.47b1a6f0.js"><link rel="prefetch" href="/assets/js/126.313e5ae9.js"><link rel="prefetch" href="/assets/js/127.8126a350.js"><link rel="prefetch" href="/assets/js/128.46f0ce2f.js"><link rel="prefetch" href="/assets/js/129.8718db8d.js"><link rel="prefetch" href="/assets/js/13.d4d8a2b4.js"><link rel="prefetch" href="/assets/js/130.2132550f.js"><link rel="prefetch" href="/assets/js/131.e34dbfc9.js"><link rel="prefetch" href="/assets/js/132.fb90e4de.js"><link rel="prefetch" href="/assets/js/133.57e5768d.js"><link rel="prefetch" href="/assets/js/134.2396b44f.js"><link rel="prefetch" href="/assets/js/135.5c4f4bb7.js"><link rel="prefetch" href="/assets/js/14.7f0859d7.js"><link rel="prefetch" href="/assets/js/15.da50216d.js"><link rel="prefetch" href="/assets/js/16.e15b31a4.js"><link rel="prefetch" href="/assets/js/17.f72ddc87.js"><link rel="prefetch" href="/assets/js/18.b380cda3.js"><link rel="prefetch" href="/assets/js/19.3b73a84b.js"><link rel="prefetch" href="/assets/js/20.5004f3db.js"><link rel="prefetch" href="/assets/js/21.1fb10f14.js"><link rel="prefetch" href="/assets/js/22.3f3c32ea.js"><link rel="prefetch" href="/assets/js/23.07be3542.js"><link rel="prefetch" href="/assets/js/24.1aadd2e1.js"><link rel="prefetch" href="/assets/js/25.50c1833c.js"><link rel="prefetch" href="/assets/js/26.e7570349.js"><link rel="prefetch" href="/assets/js/27.212208b2.js"><link rel="prefetch" href="/assets/js/28.c437bba6.js"><link rel="prefetch" href="/assets/js/29.c7a8d5bb.js"><link rel="prefetch" href="/assets/js/30.8dea2e34.js"><link rel="prefetch" href="/assets/js/31.caa18ea4.js"><link rel="prefetch" href="/assets/js/32.c64ebe90.js"><link rel="prefetch" href="/assets/js/33.e6967afc.js"><link rel="prefetch" href="/assets/js/34.03c83416.js"><link rel="prefetch" href="/assets/js/35.8104c755.js"><link rel="prefetch" href="/assets/js/36.5a64d8d6.js"><link rel="prefetch" href="/assets/js/37.c5f84675.js"><link rel="prefetch" href="/assets/js/38.a35aeb0f.js"><link rel="prefetch" href="/assets/js/39.bf084451.js"><link rel="prefetch" href="/assets/js/4.f5407bcd.js"><link rel="prefetch" href="/assets/js/40.4e021789.js"><link rel="prefetch" href="/assets/js/41.4d32f553.js"><link rel="prefetch" href="/assets/js/42.fe9e64fd.js"><link rel="prefetch" href="/assets/js/43.e77777d2.js"><link rel="prefetch" href="/assets/js/44.7973c553.js"><link rel="prefetch" href="/assets/js/45.3d9875cc.js"><link rel="prefetch" href="/assets/js/46.249f98b1.js"><link rel="prefetch" href="/assets/js/47.36042c17.js"><link rel="prefetch" href="/assets/js/48.82b266fd.js"><link rel="prefetch" href="/assets/js/49.e3a71139.js"><link rel="prefetch" href="/assets/js/5.d80a4435.js"><link rel="prefetch" href="/assets/js/50.8f493b1a.js"><link rel="prefetch" href="/assets/js/51.f619fabf.js"><link rel="prefetch" href="/assets/js/52.799663a2.js"><link rel="prefetch" href="/assets/js/53.4bd16307.js"><link rel="prefetch" href="/assets/js/54.54885a11.js"><link rel="prefetch" href="/assets/js/55.6669318c.js"><link rel="prefetch" href="/assets/js/56.95510e16.js"><link rel="prefetch" href="/assets/js/57.96cadbdb.js"><link rel="prefetch" href="/assets/js/58.df1e1959.js"><link rel="prefetch" href="/assets/js/59.46a6f230.js"><link rel="prefetch" href="/assets/js/6.7757751a.js"><link rel="prefetch" href="/assets/js/60.0906a186.js"><link rel="prefetch" href="/assets/js/61.24b594a1.js"><link rel="prefetch" href="/assets/js/62.e0183315.js"><link rel="prefetch" href="/assets/js/63.98521145.js"><link rel="prefetch" href="/assets/js/64.9020a094.js"><link rel="prefetch" href="/assets/js/65.893f1068.js"><link rel="prefetch" href="/assets/js/66.087677cc.js"><link rel="prefetch" href="/assets/js/67.77547f6a.js"><link rel="prefetch" href="/assets/js/68.39698b29.js"><link rel="prefetch" href="/assets/js/69.e7ecd502.js"><link rel="prefetch" href="/assets/js/7.76a1c987.js"><link rel="prefetch" href="/assets/js/70.a61ef4cd.js"><link rel="prefetch" href="/assets/js/71.bdbb8e7d.js"><link rel="prefetch" href="/assets/js/72.02333085.js"><link rel="prefetch" href="/assets/js/73.f47c0f70.js"><link rel="prefetch" href="/assets/js/74.c90d42d3.js"><link rel="prefetch" href="/assets/js/75.9c2bf020.js"><link rel="prefetch" href="/assets/js/76.90e7bbd1.js"><link rel="prefetch" href="/assets/js/77.c0f6eb6e.js"><link rel="prefetch" href="/assets/js/78.f0a04efe.js"><link rel="prefetch" href="/assets/js/79.00785ba2.js"><link rel="prefetch" href="/assets/js/8.232328c1.js"><link rel="prefetch" href="/assets/js/80.84bb97f1.js"><link rel="prefetch" href="/assets/js/81.b31b2f8c.js"><link rel="prefetch" href="/assets/js/82.8f356dad.js"><link rel="prefetch" href="/assets/js/83.e4a797de.js"><link rel="prefetch" href="/assets/js/84.1d7a8306.js"><link rel="prefetch" href="/assets/js/85.bd5d03cd.js"><link rel="prefetch" href="/assets/js/86.4e2c230b.js"><link rel="prefetch" href="/assets/js/87.a16c70ab.js"><link rel="prefetch" href="/assets/js/88.bfa8a824.js"><link rel="prefetch" href="/assets/js/89.6e5d03dd.js"><link rel="prefetch" href="/assets/js/9.bef0526f.js"><link rel="prefetch" href="/assets/js/90.fcc54519.js"><link rel="prefetch" href="/assets/js/91.6805caa3.js"><link rel="prefetch" href="/assets/js/92.8abd5e37.js"><link rel="prefetch" href="/assets/js/93.f4675de4.js"><link rel="prefetch" href="/assets/js/94.ba3fcbab.js"><link rel="prefetch" href="/assets/js/95.1390bad0.js"><link rel="prefetch" href="/assets/js/96.86a06d7b.js"><link rel="prefetch" href="/assets/js/97.15be2b85.js"><link rel="prefetch" href="/assets/js/98.46d0c691.js"><link rel="prefetch" href="/assets/js/99.166a73a9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.97bfe4d2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-0929c46a><div data-v-0929c46a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-1be9dd52 data-v-0929c46a data-v-0929c46a><h3 class="title" data-v-1be9dd52 data-v-1be9dd52>帕吉小馆</h3> <p class="description" data-v-1be9dd52 data-v-1be9dd52>谁人不爱大肉排</p> <label id="box" class="inputBox" data-v-1be9dd52 data-v-1be9dd52><input type="password" value="" data-v-1be9dd52> <span data-v-1be9dd52>Konck! Knock!</span> <button data-v-1be9dd52>OK</button></label> <div class="footer" data-v-1be9dd52 data-v-1be9dd52><span data-v-1be9dd52><i class="iconfont reco-theme" data-v-1be9dd52></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1be9dd52>vuePress-theme-reco</a></span> <span data-v-1be9dd52><i class="iconfont reco-copyright" data-v-1be9dd52></i> <a data-v-1be9dd52><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-0929c46a><header class="navbar" data-v-0929c46a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">帕吉小馆</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/notes/default.html" class="nav-link"><i class="undefined"></i>
+  笔记
+</a></div><div class="nav-item"><a href="/notes/Vue源码学习/1.开始.html" class="nav-link"><i class="undefined"></i>
+  Vue源码学习
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML+CSS/" class="nav-link"><i class="undefined"></i>
+  HTML+CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTTP/" class="nav-link"><i class="undefined"></i>
+  HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS高程填坑笔记/" class="nav-link"><i class="undefined"></i>
+  JS高程填坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/TS学习/" class="nav-link"><i class="undefined"></i>
+  TS学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Jquery/" class="nav-link"><i class="undefined"></i>
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法学习/" class="nav-link"><i class="undefined"></i>
+  算法学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微信小程序/" class="nav-link"><i class="undefined"></i>
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-0929c46a></div> <aside class="sidebar" data-v-0929c46a><div class="personal-info-wrapper" data-v-2885a809 data-v-0929c46a><!----> <!----> <div class="num" data-v-2885a809><div data-v-2885a809><h3 data-v-2885a809>125</h3> <h6 data-v-2885a809>文章</h6></div> <div data-v-2885a809><h3 data-v-2885a809>34</h3> <h6 data-v-2885a809>标签</h6></div></div> <ul class="social-links" data-v-2885a809></ul> <hr data-v-2885a809></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/notes/default.html" class="nav-link"><i class="undefined"></i>
+  笔记
+</a></div><div class="nav-item"><a href="/notes/Vue源码学习/1.开始.html" class="nav-link"><i class="undefined"></i>
+  Vue源码学习
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML+CSS/" class="nav-link"><i class="undefined"></i>
+  HTML+CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTTP/" class="nav-link"><i class="undefined"></i>
+  HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS高程填坑笔记/" class="nav-link"><i class="undefined"></i>
+  JS高程填坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/TS学习/" class="nav-link"><i class="undefined"></i>
+  TS学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Jquery/" class="nav-link"><i class="undefined"></i>
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法学习/" class="nav-link"><i class="undefined"></i>
+  算法学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微信小程序/" class="nav-link"><i class="undefined"></i>
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>笔记们</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/articles/" class="sidebar-link">笔记汇总</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>看不懂的源码们</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/sourceCode/" aria-current="page" class="sidebar-link">看不懂看不懂</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>刷不完的lc</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/leetcode/" class="sidebar-link">洗刷刷</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>师夷长技</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/translations/" class="sidebar-link">翻译文章</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1be9dd52 data-v-0929c46a><h3 class="title" data-v-1be9dd52 data-v-1be9dd52>koa2源码学习--application.js</h3> <!----> <label id="box" class="inputBox" data-v-1be9dd52 data-v-1be9dd52><input type="password" value="" data-v-1be9dd52> <span data-v-1be9dd52>Konck! Knock!</span> <button data-v-1be9dd52>OK</button></label> <div class="footer" data-v-1be9dd52 data-v-1be9dd52><span data-v-1be9dd52><i class="iconfont reco-theme" data-v-1be9dd52></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1be9dd52>vuePress-theme-reco</a></span> <span data-v-1be9dd52><i class="iconfont reco-copyright" data-v-1be9dd52></i> <a data-v-1be9dd52><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-0929c46a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">koa2源码学习--application.js</h1> <div data-v-449bb262><!----> <i class="iconfont reco-date" data-v-449bb262><span data-v-449bb262>2018/5/24</span></i> <!----> <i class="tags iconfont reco-tag" data-v-449bb262><span class="tag-item" data-v-449bb262>Koa</span><span class="tag-item" data-v-449bb262>Node</span></i></div></div> <div class="theme-reco-content content__default"><p>一直很想研究下koa2，虽然还是小白一枚，但终于决定入坑koa2。之前只知道koa2采用了ES2015和ES2016的一些东西，还知道洋葱头的中间件的运行机制。还是先研究一下源码，学习一下大神写代码的畅快感。</p> <p>把代码拉下来之后，发现lib里只有四个源码文件：application.js, context.js, request.js, response.js。</p> <p>application.js 是koa的入口文件,是一个构造函数，它暴露整个应用的class, 这个class继承自node自带的events，并且把 context、request 和 response 属性指向了原型链指向其他三个文件导出对象的实例。</p> <p>application暴露了一些公用的api, 比如listen，use, callback等。</p> <p>下面来研究一些application.js的源码</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 依赖的模块
+ */</span>
+
+<span class="token keyword">const</span> isGeneratorFunction <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'is-generator-function'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//判断函数是否为generator函数</span>
+<span class="token keyword">const</span> debug <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'debug'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'koa:application'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//调试模式</span>
+<span class="token keyword">const</span> onFinished <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'on-finished'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//HTTP请求关闭，完成或错误时执行回调。</span>
+<span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./response'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//reponse.js</span>
+<span class="token keyword">const</span> compose <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-compose'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//koa中间件组合工具</span>
+<span class="token keyword">const</span> isJSON <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-is-json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//检查body应该是一个json格式</span>
+<span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./context'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//上下文context.js</span>
+<span class="token keyword">const</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//request.js</span>
+<span class="token keyword">const</span> statuses <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'statuses'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">////http状态工具status(403) // =&gt; 'Forbidden'，可以通过code转换成msg，也可以通过msg转换成code</span>
+<span class="token keyword">const</span> Cookies <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'cookies'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//提供一个读写cookie的API</span>
+<span class="token keyword">const</span> accepts <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'accepts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//一个比较高级的API用来http处理请求中的接受类型，</span>
+<span class="token keyword">const</span> Emitter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'events'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//node的events模块？</span>
+<span class="token keyword">const</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'assert'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//通过状态码进行断言？</span>
+<span class="token keyword">const</span> Stream <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'stream'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//流文件？</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// node的http模块？</span>
+<span class="token keyword">const</span> only <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'only'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//返回白名单中的值。其实就是根据一个列表获取一个对象中的部分属性返回一个obj</span>
+<span class="token keyword">const</span> convert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-convert'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//提供function *的语法的转换器</span>
+<span class="token keyword">const</span> deprecate <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'depd'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//提示？</span>
+
+<span class="token comment">/**
+ * 暴露一个application的类
+ * 继承自 `Emitter.prototype`.
+ */</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token class-name">Application</span> <span class="token keyword">extends</span> <span class="token class-name">Emitter</span> <span class="token punctuation">{</span>
+  <span class="token comment">/**
+   * 初始化一个新的 `Application`.
+   *
+   * @api public
+   */</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//定义下面的属性</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>proxy <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">//代理</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>middleware <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//中间件的队列</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>subdomainOffset <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">//对于要忽略的 .subdomains 偏移[2]</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>env <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">||</span> <span class="token string">'development'</span><span class="token punctuation">;</span> <span class="token comment">//env默认是 NODE_ENV 或 &quot;development&quot;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>context <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//创建一个新context对象，使用context对象来提供新创建的对象的__proto__。 </span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>request <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一个新request对象</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>response <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一个新response对象</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * Shorthand for:
+   *
+   *    http.createServer(app.callback()).listen(...)
+   *
+   * @param {Mixed} ...
+   * @return {Server}
+   * @api public
+   */</span>
+
+  <span class="token comment">//listen(),调用node的createServer方法，返回一个服务器。参数为端口号，</span>
+  <span class="token function">listen</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">'listen'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//</span>
+    <span class="token keyword">return</span> server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * Return JSON representation.
+   * We only bother showing settings.
+   *
+   * @return {Object}
+   * @api public
+   */</span>
+
+  <span class="token comment">//toJSON 方法，通过only方法，把key放到obj里 返回一个object对象</span>
+  <span class="token function">toJSON</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">only</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+      <span class="token string">'subdomainOffset'</span><span class="token punctuation">,</span>
+      <span class="token string">'proxy'</span><span class="token punctuation">,</span>
+      <span class="token string">'env'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * Inspect implementation.
+   *
+   * @return {Object}
+   * @api public
+   */</span>
+  <span class="token comment">//检查,返回一个object对象</span>
+  <span class="token function">inspect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toJSON</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * 把给定的中间件函数fn，推入到middleware队列中
+   *
+   * 以前写法的中间件将会被转换
+   *
+   * @param {Function} fn
+   * @return {Application} self
+   * @api public
+   */</span>
+
+
+  <span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> fn <span class="token operator">!==</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'middleware must be a function!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isGeneratorFunction</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">deprecate</span><span class="token punctuation">(</span><span class="token string">'Support for generators will be removed in v3. '</span> <span class="token operator">+</span>
+                <span class="token string">'See the documentation for examples of how to convert old middleware '</span> <span class="token operator">+</span>
+                <span class="token string">'https://github.com/koajs/koa/blob/master/docs/migration.md'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      fn <span class="token operator">=</span> <span class="token function">convert</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">'use %s'</span><span class="token punctuation">,</span> fn<span class="token punctuation">.</span>_name <span class="token operator">||</span> fn<span class="token punctuation">.</span>name <span class="token operator">||</span> <span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>middleware<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * Return a request handler callback
+   * for node's native http server.
+   *
+   * @return {Function}
+   * @api public
+   */</span>
+
+  <span class="token comment">//返回适用于 http.createServer() 方法的回调函数来处理请求。</span>
+  <span class="token comment">//启动server和接收请求</span>
+  <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fn <span class="token operator">=</span> <span class="token function">compose</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>middleware<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//启动server时执行，初始化中间件</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">listenerCount</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onerror<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//接收请求时执行处理请求的函数</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">handleRequest</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> ctx <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createContext</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一个最终可用的context</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> fn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> handleRequest<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * callback里的一个处理请求的方法，
+   *
+   * @api private
+   */</span>
+
+  <span class="token function">handleRequest</span><span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> fnMiddleware</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> ctx<span class="token punctuation">.</span>res<span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span>statusCode <span class="token operator">=</span> <span class="token number">404</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">onerror</span> <span class="token operator">=</span> <span class="token parameter">err</span> <span class="token operator">=&gt;</span> ctx<span class="token punctuation">.</span><span class="token function">onerror</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">handleResponse</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">respond</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">onFinished</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> onerror<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">fnMiddleware</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>handleResponse<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>onerror<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * Initialize a new context.
+   *
+   * @api private
+   */</span>
+
+  <span class="token function">createContext</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> context <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> request <span class="token operator">=</span> context<span class="token punctuation">.</span>request <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> response <span class="token operator">=</span> context<span class="token punctuation">.</span>response <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    context<span class="token punctuation">.</span>app <span class="token operator">=</span> request<span class="token punctuation">.</span>app <span class="token operator">=</span> response<span class="token punctuation">.</span>app <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    context<span class="token punctuation">.</span>req <span class="token operator">=</span> request<span class="token punctuation">.</span>req <span class="token operator">=</span> response<span class="token punctuation">.</span>req <span class="token operator">=</span> req<span class="token punctuation">;</span>
+    context<span class="token punctuation">.</span>res <span class="token operator">=</span> request<span class="token punctuation">.</span>res <span class="token operator">=</span> response<span class="token punctuation">.</span>res <span class="token operator">=</span> res<span class="token punctuation">;</span>
+    request<span class="token punctuation">.</span>ctx <span class="token operator">=</span> response<span class="token punctuation">.</span>ctx <span class="token operator">=</span> context<span class="token punctuation">;</span>
+    request<span class="token punctuation">.</span>response <span class="token operator">=</span> response<span class="token punctuation">;</span>
+    response<span class="token punctuation">.</span>request <span class="token operator">=</span> request<span class="token punctuation">;</span>
+    context<span class="token punctuation">.</span>originalUrl <span class="token operator">=</span> request<span class="token punctuation">.</span>originalUrl <span class="token operator">=</span> req<span class="token punctuation">.</span>url<span class="token punctuation">;</span>
+    context<span class="token punctuation">.</span>cookies <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cookies</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">keys</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>keys<span class="token punctuation">,</span>
+      <span class="token literal-property property">secure</span><span class="token operator">:</span> request<span class="token punctuation">.</span>secure
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    request<span class="token punctuation">.</span>ip <span class="token operator">=</span> request<span class="token punctuation">.</span>ips<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">||</span> req<span class="token punctuation">.</span>socket<span class="token punctuation">.</span>remoteAddress <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    context<span class="token punctuation">.</span>accept <span class="token operator">=</span> request<span class="token punctuation">.</span>accept <span class="token operator">=</span> <span class="token function">accepts</span><span class="token punctuation">(</span>req<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    context<span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> context<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * Default error handler.
+   *
+   * @param {Error} err
+   * @api private
+   */</span>
+
+  <span class="token function">onerror</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">assert</span><span class="token punctuation">(</span>err <span class="token keyword">instanceof</span> <span class="token class-name">Error</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">non-error thrown: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>err<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">404</span> <span class="token operator">==</span> err<span class="token punctuation">.</span>status <span class="token operator">||</span> err<span class="token punctuation">.</span>expose<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>silent<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> msg <span class="token operator">=</span> err<span class="token punctuation">.</span>stack <span class="token operator">||</span> err<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>msg<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^</span><span class="token regex-delimiter">/</span><span class="token regex-flags">gm</span></span><span class="token punctuation">,</span> <span class="token string">'  '</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Response helper.
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">respond</span><span class="token punctuation">(</span><span class="token parameter">ctx</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// allow bypassing koa</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">false</span> <span class="token operator">===</span> ctx<span class="token punctuation">.</span>respond<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> res <span class="token operator">=</span> ctx<span class="token punctuation">.</span>res<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ctx<span class="token punctuation">.</span>writable<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> body <span class="token operator">=</span> ctx<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> code <span class="token operator">=</span> ctx<span class="token punctuation">.</span>status<span class="token punctuation">;</span>
+
+  <span class="token comment">// ignore body</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>statuses<span class="token punctuation">.</span>empty<span class="token punctuation">[</span>code<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// strip headers</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'HEAD'</span> <span class="token operator">==</span> ctx<span class="token punctuation">.</span>method<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>res<span class="token punctuation">.</span>headersSent <span class="token operator">&amp;&amp;</span> <span class="token function">isJSON</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ctx<span class="token punctuation">.</span>length <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">byteLength</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// status body</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">null</span> <span class="token operator">==</span> body<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    body <span class="token operator">=</span> ctx<span class="token punctuation">.</span>message <span class="token operator">||</span> <span class="token function">String</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>res<span class="token punctuation">.</span>headersSent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ctx<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">'text'</span><span class="token punctuation">;</span>
+      ctx<span class="token punctuation">.</span>length <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">byteLength</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// responses</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>Buffer<span class="token punctuation">.</span><span class="token function">isBuffer</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'string'</span> <span class="token operator">==</span> <span class="token keyword">typeof</span> body<span class="token punctuation">)</span> <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>body <span class="token keyword">instanceof</span> <span class="token class-name">Stream</span><span class="token punctuation">)</span> <span class="token keyword">return</span> body<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// body: json</span>
+  body <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>res<span class="token punctuation">.</span>headersSent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ctx<span class="token punctuation">.</span>length <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">byteLength</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+</code></pre></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-878d94b6></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-1bfb1bbb data-v-1bfb1bbb><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-1bfb1bbb><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-1bfb1bbb></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-1bfb1bbb></path></svg></div></div></div>
+    <script src="/assets/js/app.9f54aad8.js" defer></script><script src="/assets/js/3.66c6d2e3.js" defer></script><script src="/assets/js/1.fb29bb8d.js" defer></script><script src="/assets/js/120.dd4ea072.js" defer></script>
+  </body>
+</html>

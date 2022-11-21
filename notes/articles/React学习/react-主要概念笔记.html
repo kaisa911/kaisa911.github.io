@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>react 主要概念笔记 | 帕吉小馆</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="谁人不爱大肉排">
+    
+    <link rel="preload" href="/assets/css/0.styles.97bfe4d2.css" as="style"><link rel="preload" href="/assets/js/app.9f54aad8.js" as="script"><link rel="preload" href="/assets/js/3.66c6d2e3.js" as="script"><link rel="preload" href="/assets/js/1.fb29bb8d.js" as="script"><link rel="preload" href="/assets/js/48.82b266fd.js" as="script"><link rel="prefetch" href="/assets/js/10.e6830bc8.js"><link rel="prefetch" href="/assets/js/100.edb1c45a.js"><link rel="prefetch" href="/assets/js/101.bfc1ab44.js"><link rel="prefetch" href="/assets/js/102.e438be42.js"><link rel="prefetch" href="/assets/js/103.7986b521.js"><link rel="prefetch" href="/assets/js/104.af687c1a.js"><link rel="prefetch" href="/assets/js/105.96bfac7e.js"><link rel="prefetch" href="/assets/js/106.da0f790f.js"><link rel="prefetch" href="/assets/js/107.abbcf1aa.js"><link rel="prefetch" href="/assets/js/108.7ef90850.js"><link rel="prefetch" href="/assets/js/109.71fb782e.js"><link rel="prefetch" href="/assets/js/11.70c3b19b.js"><link rel="prefetch" href="/assets/js/110.a382f647.js"><link rel="prefetch" href="/assets/js/111.20d86553.js"><link rel="prefetch" href="/assets/js/112.8d4d1ec6.js"><link rel="prefetch" href="/assets/js/113.b4e46412.js"><link rel="prefetch" href="/assets/js/114.171c729f.js"><link rel="prefetch" href="/assets/js/115.fa9cf809.js"><link rel="prefetch" href="/assets/js/116.0d76f886.js"><link rel="prefetch" href="/assets/js/117.dd872f19.js"><link rel="prefetch" href="/assets/js/118.4843d821.js"><link rel="prefetch" href="/assets/js/119.607dfddd.js"><link rel="prefetch" href="/assets/js/12.d3c58988.js"><link rel="prefetch" href="/assets/js/120.dd4ea072.js"><link rel="prefetch" href="/assets/js/121.c6550b2d.js"><link rel="prefetch" href="/assets/js/122.035033f7.js"><link rel="prefetch" href="/assets/js/123.2854bdb8.js"><link rel="prefetch" href="/assets/js/124.34a1fd38.js"><link rel="prefetch" href="/assets/js/125.47b1a6f0.js"><link rel="prefetch" href="/assets/js/126.313e5ae9.js"><link rel="prefetch" href="/assets/js/127.8126a350.js"><link rel="prefetch" href="/assets/js/128.46f0ce2f.js"><link rel="prefetch" href="/assets/js/129.8718db8d.js"><link rel="prefetch" href="/assets/js/13.d4d8a2b4.js"><link rel="prefetch" href="/assets/js/130.2132550f.js"><link rel="prefetch" href="/assets/js/131.e34dbfc9.js"><link rel="prefetch" href="/assets/js/132.fb90e4de.js"><link rel="prefetch" href="/assets/js/133.57e5768d.js"><link rel="prefetch" href="/assets/js/134.2396b44f.js"><link rel="prefetch" href="/assets/js/135.5c4f4bb7.js"><link rel="prefetch" href="/assets/js/14.7f0859d7.js"><link rel="prefetch" href="/assets/js/15.da50216d.js"><link rel="prefetch" href="/assets/js/16.e15b31a4.js"><link rel="prefetch" href="/assets/js/17.f72ddc87.js"><link rel="prefetch" href="/assets/js/18.b380cda3.js"><link rel="prefetch" href="/assets/js/19.3b73a84b.js"><link rel="prefetch" href="/assets/js/20.5004f3db.js"><link rel="prefetch" href="/assets/js/21.1fb10f14.js"><link rel="prefetch" href="/assets/js/22.3f3c32ea.js"><link rel="prefetch" href="/assets/js/23.07be3542.js"><link rel="prefetch" href="/assets/js/24.1aadd2e1.js"><link rel="prefetch" href="/assets/js/25.50c1833c.js"><link rel="prefetch" href="/assets/js/26.e7570349.js"><link rel="prefetch" href="/assets/js/27.212208b2.js"><link rel="prefetch" href="/assets/js/28.c437bba6.js"><link rel="prefetch" href="/assets/js/29.c7a8d5bb.js"><link rel="prefetch" href="/assets/js/30.8dea2e34.js"><link rel="prefetch" href="/assets/js/31.caa18ea4.js"><link rel="prefetch" href="/assets/js/32.c64ebe90.js"><link rel="prefetch" href="/assets/js/33.e6967afc.js"><link rel="prefetch" href="/assets/js/34.03c83416.js"><link rel="prefetch" href="/assets/js/35.8104c755.js"><link rel="prefetch" href="/assets/js/36.5a64d8d6.js"><link rel="prefetch" href="/assets/js/37.c5f84675.js"><link rel="prefetch" href="/assets/js/38.a35aeb0f.js"><link rel="prefetch" href="/assets/js/39.bf084451.js"><link rel="prefetch" href="/assets/js/4.f5407bcd.js"><link rel="prefetch" href="/assets/js/40.4e021789.js"><link rel="prefetch" href="/assets/js/41.4d32f553.js"><link rel="prefetch" href="/assets/js/42.fe9e64fd.js"><link rel="prefetch" href="/assets/js/43.e77777d2.js"><link rel="prefetch" href="/assets/js/44.7973c553.js"><link rel="prefetch" href="/assets/js/45.3d9875cc.js"><link rel="prefetch" href="/assets/js/46.249f98b1.js"><link rel="prefetch" href="/assets/js/47.36042c17.js"><link rel="prefetch" href="/assets/js/49.e3a71139.js"><link rel="prefetch" href="/assets/js/5.d80a4435.js"><link rel="prefetch" href="/assets/js/50.8f493b1a.js"><link rel="prefetch" href="/assets/js/51.f619fabf.js"><link rel="prefetch" href="/assets/js/52.799663a2.js"><link rel="prefetch" href="/assets/js/53.4bd16307.js"><link rel="prefetch" href="/assets/js/54.54885a11.js"><link rel="prefetch" href="/assets/js/55.6669318c.js"><link rel="prefetch" href="/assets/js/56.95510e16.js"><link rel="prefetch" href="/assets/js/57.96cadbdb.js"><link rel="prefetch" href="/assets/js/58.df1e1959.js"><link rel="prefetch" href="/assets/js/59.46a6f230.js"><link rel="prefetch" href="/assets/js/6.7757751a.js"><link rel="prefetch" href="/assets/js/60.0906a186.js"><link rel="prefetch" href="/assets/js/61.24b594a1.js"><link rel="prefetch" href="/assets/js/62.e0183315.js"><link rel="prefetch" href="/assets/js/63.98521145.js"><link rel="prefetch" href="/assets/js/64.9020a094.js"><link rel="prefetch" href="/assets/js/65.893f1068.js"><link rel="prefetch" href="/assets/js/66.087677cc.js"><link rel="prefetch" href="/assets/js/67.77547f6a.js"><link rel="prefetch" href="/assets/js/68.39698b29.js"><link rel="prefetch" href="/assets/js/69.e7ecd502.js"><link rel="prefetch" href="/assets/js/7.76a1c987.js"><link rel="prefetch" href="/assets/js/70.a61ef4cd.js"><link rel="prefetch" href="/assets/js/71.bdbb8e7d.js"><link rel="prefetch" href="/assets/js/72.02333085.js"><link rel="prefetch" href="/assets/js/73.f47c0f70.js"><link rel="prefetch" href="/assets/js/74.c90d42d3.js"><link rel="prefetch" href="/assets/js/75.9c2bf020.js"><link rel="prefetch" href="/assets/js/76.90e7bbd1.js"><link rel="prefetch" href="/assets/js/77.c0f6eb6e.js"><link rel="prefetch" href="/assets/js/78.f0a04efe.js"><link rel="prefetch" href="/assets/js/79.00785ba2.js"><link rel="prefetch" href="/assets/js/8.232328c1.js"><link rel="prefetch" href="/assets/js/80.84bb97f1.js"><link rel="prefetch" href="/assets/js/81.b31b2f8c.js"><link rel="prefetch" href="/assets/js/82.8f356dad.js"><link rel="prefetch" href="/assets/js/83.e4a797de.js"><link rel="prefetch" href="/assets/js/84.1d7a8306.js"><link rel="prefetch" href="/assets/js/85.bd5d03cd.js"><link rel="prefetch" href="/assets/js/86.4e2c230b.js"><link rel="prefetch" href="/assets/js/87.a16c70ab.js"><link rel="prefetch" href="/assets/js/88.bfa8a824.js"><link rel="prefetch" href="/assets/js/89.6e5d03dd.js"><link rel="prefetch" href="/assets/js/9.bef0526f.js"><link rel="prefetch" href="/assets/js/90.fcc54519.js"><link rel="prefetch" href="/assets/js/91.6805caa3.js"><link rel="prefetch" href="/assets/js/92.8abd5e37.js"><link rel="prefetch" href="/assets/js/93.f4675de4.js"><link rel="prefetch" href="/assets/js/94.ba3fcbab.js"><link rel="prefetch" href="/assets/js/95.1390bad0.js"><link rel="prefetch" href="/assets/js/96.86a06d7b.js"><link rel="prefetch" href="/assets/js/97.15be2b85.js"><link rel="prefetch" href="/assets/js/98.46d0c691.js"><link rel="prefetch" href="/assets/js/99.166a73a9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.97bfe4d2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-0929c46a><div data-v-0929c46a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-1be9dd52 data-v-0929c46a data-v-0929c46a><h3 class="title" data-v-1be9dd52 data-v-1be9dd52>帕吉小馆</h3> <p class="description" data-v-1be9dd52 data-v-1be9dd52>谁人不爱大肉排</p> <label id="box" class="inputBox" data-v-1be9dd52 data-v-1be9dd52><input type="password" value="" data-v-1be9dd52> <span data-v-1be9dd52>Konck! Knock!</span> <button data-v-1be9dd52>OK</button></label> <div class="footer" data-v-1be9dd52 data-v-1be9dd52><span data-v-1be9dd52><i class="iconfont reco-theme" data-v-1be9dd52></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1be9dd52>vuePress-theme-reco</a></span> <span data-v-1be9dd52><i class="iconfont reco-copyright" data-v-1be9dd52></i> <a data-v-1be9dd52><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-0929c46a><header class="navbar" data-v-0929c46a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">帕吉小馆</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/notes/default.html" class="nav-link"><i class="undefined"></i>
+  笔记
+</a></div><div class="nav-item"><a href="/notes/Vue源码学习/1.开始.html" class="nav-link"><i class="undefined"></i>
+  Vue源码学习
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML+CSS/" class="nav-link"><i class="undefined"></i>
+  HTML+CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTTP/" class="nav-link"><i class="undefined"></i>
+  HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS高程填坑笔记/" class="nav-link"><i class="undefined"></i>
+  JS高程填坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/TS学习/" class="nav-link"><i class="undefined"></i>
+  TS学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Jquery/" class="nav-link"><i class="undefined"></i>
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法学习/" class="nav-link"><i class="undefined"></i>
+  算法学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微信小程序/" class="nav-link"><i class="undefined"></i>
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-0929c46a></div> <aside class="sidebar" data-v-0929c46a><div class="personal-info-wrapper" data-v-2885a809 data-v-0929c46a><!----> <!----> <div class="num" data-v-2885a809><div data-v-2885a809><h3 data-v-2885a809>125</h3> <h6 data-v-2885a809>文章</h6></div> <div data-v-2885a809><h3 data-v-2885a809>34</h3> <h6 data-v-2885a809>标签</h6></div></div> <ul class="social-links" data-v-2885a809></ul> <hr data-v-2885a809></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/notes/default.html" class="nav-link"><i class="undefined"></i>
+  笔记
+</a></div><div class="nav-item"><a href="/notes/Vue源码学习/1.开始.html" class="nav-link"><i class="undefined"></i>
+  Vue源码学习
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/源码学习/" class="nav-link"><i class="undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTML+CSS/" class="nav-link"><i class="undefined"></i>
+  HTML+CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/HTTP/" class="nav-link"><i class="undefined"></i>
+  HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS高程填坑笔记/" class="nav-link"><i class="undefined"></i>
+  JS高程填坑笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="undefined"></i>
+  react
+</a></li><li class="dropdown-item"><!----> <a href="/categories/TS学习/" class="nav-link"><i class="undefined"></i>
+  TS学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Jquery/" class="nav-link"><i class="undefined"></i>
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法学习/" class="nav-link"><i class="undefined"></i>
+  算法学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Javascript/" class="nav-link"><i class="undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/微信小程序/" class="nav-link"><i class="undefined"></i>
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习笔记/" class="nav-link"><i class="undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>笔记们</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/articles/" aria-current="page" class="sidebar-link">笔记汇总</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>看不懂的源码们</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/sourceCode/" class="sidebar-link">看不懂看不懂</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>刷不完的lc</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/leetcode/" class="sidebar-link">洗刷刷</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>师夷长技</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/translations/" class="sidebar-link">翻译文章</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1be9dd52 data-v-0929c46a><h3 class="title" data-v-1be9dd52 data-v-1be9dd52>react 主要概念笔记</h3> <!----> <label id="box" class="inputBox" data-v-1be9dd52 data-v-1be9dd52><input type="password" value="" data-v-1be9dd52> <span data-v-1be9dd52>Konck! Knock!</span> <button data-v-1be9dd52>OK</button></label> <div class="footer" data-v-1be9dd52 data-v-1be9dd52><span data-v-1be9dd52><i class="iconfont reco-theme" data-v-1be9dd52></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1be9dd52>vuePress-theme-reco</a></span> <span data-v-1be9dd52><i class="iconfont reco-copyright" data-v-1be9dd52></i> <a data-v-1be9dd52><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-0929c46a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">react 主要概念笔记</h1> <div data-v-449bb262><!----> <i class="iconfont reco-date" data-v-449bb262><span data-v-449bb262>2018/11/8</span></i> <!----> <i class="tags iconfont reco-tag" data-v-449bb262><span class="tag-item" data-v-449bb262>Javascript</span><span class="tag-item" data-v-449bb262>react</span></i></div></div> <div class="theme-reco-content content__default"><p>React v16.5.2 文档学习</p> <h2 id="hello-world"><a href="#hello-world" class="header-anchor">#</a> Hello World</h2> <p>React 应用的构成模块：元素和组件</p> <h2 id="jsx-简介"><a href="#jsx-简介" class="header-anchor">#</a> JSX 简介</h2> <p>JSX 是一种 JavaScript 的语法扩展，推荐在 React 中使用 JSX 来描述用户界面。
+可以在 JSX 中任意的使用 JS 表达式，但是 JS 表达式要放在大括号里。</p> <p>JSX 本身也是一种表达式，在编译之后，JSX 会被转化成普通的 JS 对象。
+JSX 的中，ReactDOM 使用小驼峰来命名。</p> <p>JSX 防注入攻击，因为 React DOM 在渲染之前默认会过滤所有传入的值，所有的内容在渲染之前都被转换成了字符串。可以有效的防止 XSS 攻击。</p> <p>JSX 代表 Objects，Babel 转译器会把 JSX 专换成一个名为<code>React.createElement()</code>的方法调用。
+<code>React.createElement()</code>会返回一个对象，这个对象被称为“React 元素”。React 通过读取这些对象来构建 DOM 并且保持数据一致。</p> <h2 id="元素渲染"><a href="#元素渲染" class="header-anchor">#</a> 元素渲染</h2> <p>元素是构成 React 应用的最小单位。
+元素用来描述在屏幕上看到的东西，React 中的元素是普通的 JS 对象，ReactDOM 可以确保浏览器 DOM 的数据和 react 元素保持一致。</p> <p>在 Html 页面里定义一个<code>id=&quot;root&quot;</code>根节点。
+然后通过<code>ReactDOM.render()</code>方法，将 React 元素渲染到根 DOM 里。</p> <p>更新元素渲染，是创建一个新的元素，然后用<code>ReactDOM.render()</code>方法，将 React 元素渲染到根 DOM 里。
+但是，React DOM 会比较元素内容先后的不同，然后在渲染过程中，只更新改变了的部分。</p> <h2 id="组件-props"><a href="#组件-props" class="header-anchor">#</a> 组件&amp;props</h2> <p>组件是独立的可复用的 ui 部件，从概念上看就像是函数，可以接受任意的输入值（props），并返回一个 React 元素。</p> <p>定义组件，可以是一个 JavaScript 函数或者用一个 ES6 的 class 来定义一个组件。
+React 元素可以是 DOM 标签，也可以是自定义的组件。
+组件名称必须以大写字母开头。并且在使用组件时，需要引入或者定义它。
+组件可以在输出中引用其他组件，但是组件的返回值只能有一个根元素。</p> <p>Props 的只读性，无论是使用函数或者时类来声明一个组件，它不允许修改自己的 props。所有的 React 组件必须像纯函数那样使用它们的 props。</p> <h2 id="state-生命周期"><a href="#state-生命周期" class="header-anchor">#</a> State&amp;生命周期</h2> <p>使用类来声明一个组件，可以允许使用局部状态，生命周期钩子等。
+使用类声明组件时，使用<code>constructor</code>把 props 传递到组件里:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">date</span><span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>生命周期：
+当组件第一次加载到 DOM 中的时候，称为挂载；
+当组件生成的 DOM 被移除时，称为卸载。</p> <p>正确的使用状态：
+1、不要直接更新状态，直接更新不会重新渲染组件，应使用<code>this.setState({})</code>来更新。
+2、状态更新可能是异步的。
+3、状态更新合并，也可以独立更新。</p> <p>数据自顶向下流动。
+父组件和子组件都不知道某一个组件是否有状态，所以状态被称为局部状态，除了拥有并设置它的组件外，其他组件不可访问。组件可以选择状态，当作属性传给子组件。这被称为单向数据流。
+任何状态始终由某些特定组件所有，并且从该状态导出的任何数据或 UI 只能影响树中下方的组件。</p> <p>在 React 应用程序中，组件是有状态还是无状态被认为是可能随时间而变化的组件的实现细节。 可以在有状态组件中使用无状态组件，反之亦然。</p> <h2 id="事件处理"><a href="#事件处理" class="header-anchor">#</a> 事件处理</h2> <p>React 的事件绑定属性的命名采用驼峰式写法，并为其赋值一个事件处理函数。
+在函数中，要调用<code>preventDefault()</code>方法来阻止默认行为。</p> <p>事件绑定 this：
+因为类的方法不会默认绑定 this，所以用 ES5 写函数的时候，在调用的时候，需要在 constructor 里绑定 this。
+也可以用 ES6 的箭头函数来写。</p> <p>用 ES6 class 语法来定义一个组件的时候，事件处理器会成为类的一个方法</p> <p>向事件处理程序传递参数</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">deleteRow</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Delete Row<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">deleteRow</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Delete Row<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+</code></pre></div><h2 id="条件渲染"><a href="#条件渲染" class="header-anchor">#</a> 条件渲染</h2> <p>可以使用 if..else..语句来条件渲染。
+可以使用与运算符 &amp;&amp;来条件渲染
+可以使用 JavaScript 的条件运算符 condition ? true : false 来条件渲染</p> <p>阻止条件渲染，可以用三目运算符，让 render 方法返回 null 而不是它的渲染结果即可实现。
+组件的 render 方法返回 null 并不会影响该组件生命周期方法的回调。</p> <h2 id="列表-keys"><a href="#列表-keys" class="header-anchor">#</a> 列表 &amp; Keys</h2> <p>使用 map()函数，让每一个元素返回一个标签或者组件。</p> <p>Keys 可以在 DOM 中的某些元素被增加或删除的时候帮助 React 识别哪些元素发生了变化。因此你应当给列表中的每一个元素赋予一个确定的标识</p> <p>元素的 key 在他的兄弟元素之间应该唯一</p> <h2 id="表单"><a href="#表单" class="header-anchor">#</a> 表单</h2> <p>其值由 React 控制的输入表单元素称为“受控组件”</p> <p>通过受控组件，来构造一个处理提交表单并可访问用户输入表单数据的函数
+在 react 中，受控组件需要使用 this.setState 来进行更新。
+使用”受控组件”,每个状态的改变都有一个与之相关的处理函数。这样就可以直接修改或验证用户输入。</p> <h2 id="状态提升"><a href="#状态提升" class="header-anchor">#</a> 状态提升</h2> <p>使用 react 经常会遇到几个组件需要共用状态数据的情况。这种情况下，我们最好将这部分共享的状态提升至他们最近的父组件当中进行管理。
+在 React 应用中，对应任何可变数据理应只有一个单一“数据源”。通常，状态都是首先添加在需要渲染数据的组件中。此时，如果另一个组件也需要这些数据，你可以将数据提升至离它们最近的父组件中。你应该在应用中保持 自上而下的数据流，而不是尝试在不同组件中同步状态。</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-878d94b6></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-1bfb1bbb data-v-1bfb1bbb><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-1bfb1bbb><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-1bfb1bbb></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-1bfb1bbb></path></svg></div></div></div>
+    <script src="/assets/js/app.9f54aad8.js" defer></script><script src="/assets/js/3.66c6d2e3.js" defer></script><script src="/assets/js/1.fb29bb8d.js" defer></script><script src="/assets/js/48.82b266fd.js" defer></script>
+  </body>
+</html>
